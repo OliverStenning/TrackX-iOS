@@ -7,15 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F2396D23283BEFB60084DF79 /* NextLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D22283BEFB60084DF79 /* NextLaunchView.swift */; };
+		F2396D272844060E0084DF79 /* LaunchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D262844060E0084DF79 /* LaunchDetailViewController.swift */; };
+		F2396D2F284552720084DF79 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D2E284552720084DF79 /* EndPointType.swift */; };
+		F2396D31284552DB0084DF79 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D30284552DB0084DF79 /* HTTPMethod.swift */; };
+		F2396D332845531C0084DF79 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D322845531C0084DF79 /* HTTPTask.swift */; };
+		F2396D35284553E00084DF79 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D34284553E00084DF79 /* ParameterEncoding.swift */; };
+		F2396D372845559A0084DF79 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D362845559A0084DF79 /* URLParameterEncoder.swift */; };
+		F2396D39284557100084DF79 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D38284557100084DF79 /* JSONParameterEncoder.swift */; };
+		F2396D3B284558220084DF79 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D3A284558220084DF79 /* NetworkRouter.swift */; };
+		F2396D3D284558F20084DF79 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D3C284558F20084DF79 /* Router.swift */; };
+		F2396D3F28455C170084DF79 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D3E28455C170084DF79 /* NetworkManager.swift */; };
+		F2396D412845639A0084DF79 /* LaunchEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D402845639A0084DF79 /* LaunchEndPoint.swift */; };
 		F2F0937C27EE2818005CCD09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0937B27EE2818005CCD09 /* AppDelegate.swift */; };
 		F2F0937E27EE2818005CCD09 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0937D27EE2818005CCD09 /* SceneDelegate.swift */; };
-		F2F0938027EE2818005CCD09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0937F27EE2818005CCD09 /* ViewController.swift */; };
-		F2F0938327EE2818005CCD09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2F0938127EE2818005CCD09 /* Main.storyboard */; };
+		F2F0938027EE2818005CCD09 /* LaunchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0937F27EE2818005CCD09 /* LaunchListViewController.swift */; };
 		F2F0938527EE2819005CCD09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F0938427EE2819005CCD09 /* Assets.xcassets */; };
 		F2F0938827EE2819005CCD09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2F0938627EE2819005CCD09 /* LaunchScreen.storyboard */; };
 		F2F0939327EE2819005CCD09 /* TrackXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0939227EE2819005CCD09 /* TrackXTests.swift */; };
 		F2F0939D27EE2819005CCD09 /* TrackXUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0939C27EE2819005CCD09 /* TrackXUITests.swift */; };
 		F2F0939F27EE2819005CCD09 /* TrackXUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0939E27EE2819005CCD09 /* TrackXUITestsLaunchTests.swift */; };
+		F2F093B027EE2BBF005CCD09 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F093AF27EE2BBF005CCD09 /* UIView+Extensions.swift */; };
+		F2F093B227EE2D9C005CCD09 /* LaunchListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F093B127EE2D9C005CCD09 /* LaunchListCell.swift */; };
+		F2F093B627EE2F8B005CCD09 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F093B527EE2F8B005CCD09 /* Launch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +50,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F2396D22283BEFB60084DF79 /* NextLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLaunchView.swift; sourceTree = "<group>"; };
+		F2396D262844060E0084DF79 /* LaunchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailViewController.swift; sourceTree = "<group>"; };
+		F2396D2E284552720084DF79 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		F2396D30284552DB0084DF79 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		F2396D322845531C0084DF79 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		F2396D34284553E00084DF79 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		F2396D362845559A0084DF79 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		F2396D38284557100084DF79 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		F2396D3A284558220084DF79 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		F2396D3C284558F20084DF79 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		F2396D3E28455C170084DF79 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F2396D402845639A0084DF79 /* LaunchEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchEndPoint.swift; sourceTree = "<group>"; };
 		F2F0937827EE2818005CCD09 /* TrackX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F0937B27EE2818005CCD09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2F0937D27EE2818005CCD09 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F2F0937F27EE2818005CCD09 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F2F0938227EE2818005CCD09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F2F0937F27EE2818005CCD09 /* LaunchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListViewController.swift; sourceTree = "<group>"; };
 		F2F0938427EE2819005CCD09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2F0938727EE2819005CCD09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2F0938927EE2819005CCD09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +74,9 @@
 		F2F0939827EE2819005CCD09 /* TrackXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F0939C27EE2819005CCD09 /* TrackXUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackXUITests.swift; sourceTree = "<group>"; };
 		F2F0939E27EE2819005CCD09 /* TrackXUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackXUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F2F093AF27EE2BBF005CCD09 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		F2F093B127EE2D9C005CCD09 /* LaunchListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LaunchListCell.swift; path = TrackX/Presentation/LaunchList/LaunchListCell.swift; sourceTree = SOURCE_ROOT; };
+		F2F093B527EE2F8B005CCD09 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +104,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F2396D28284552270084DF79 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F2396D2D2845524C0084DF79 /* EndPoint */,
+				F2396D2B284552400084DF79 /* Manager */,
+				F2396D2A2845523A0084DF79 /* Service */,
+				F2396D29284552320084DF79 /* Encoding */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F2396D29284552320084DF79 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				F2396D34284553E00084DF79 /* ParameterEncoding.swift */,
+				F2396D362845559A0084DF79 /* URLParameterEncoder.swift */,
+				F2396D38284557100084DF79 /* JSONParameterEncoder.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		F2396D2A2845523A0084DF79 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F2396D2E284552720084DF79 /* EndPointType.swift */,
+				F2396D30284552DB0084DF79 /* HTTPMethod.swift */,
+				F2396D322845531C0084DF79 /* HTTPTask.swift */,
+				F2396D3A284558220084DF79 /* NetworkRouter.swift */,
+				F2396D3C284558F20084DF79 /* Router.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F2396D2B284552400084DF79 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				F2396D3E28455C170084DF79 /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		F2396D2D2845524C0084DF79 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				F2396D402845639A0084DF79 /* LaunchEndPoint.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
 		F2F0936F27EE2817005CCD09 = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +176,10 @@
 		F2F0937A27EE2818005CCD09 /* TrackX */ = {
 			isa = PBXGroup;
 			children = (
-				F2F0937B27EE2818005CCD09 /* AppDelegate.swift */,
-				F2F0937D27EE2818005CCD09 /* SceneDelegate.swift */,
-				F2F0937F27EE2818005CCD09 /* ViewController.swift */,
-				F2F0938127EE2818005CCD09 /* Main.storyboard */,
-				F2F0938427EE2819005CCD09 /* Assets.xcassets */,
-				F2F0938627EE2819005CCD09 /* LaunchScreen.storyboard */,
-				F2F0938927EE2819005CCD09 /* Info.plist */,
+				F2396D28284552270084DF79 /* Networking */,
+				F2F093B327EE2F77005CCD09 /* Model */,
+				F2F093AB27EE2829005CCD09 /* Application */,
+				F2F093AD27EE2870005CCD09 /* Presentation */,
 			);
 			path = TrackX;
 			sourceTree = "<group>";
@@ -127,6 +201,62 @@
 			path = TrackXUITests;
 			sourceTree = "<group>";
 		};
+		F2F093AB27EE2829005CCD09 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				F2F093AC27EE2833005CCD09 /* Resources */,
+				F2F0937B27EE2818005CCD09 /* AppDelegate.swift */,
+				F2F0937D27EE2818005CCD09 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F2F093AC27EE2833005CCD09 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F2F0938427EE2819005CCD09 /* Assets.xcassets */,
+				F2F0938927EE2819005CCD09 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F2F093AD27EE2870005CCD09 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F2F093B727EE34B5005CCD09 /* LaunchList */,
+				F2F093AE27EE2B9C005CCD09 /* Utilities */,
+				F2F0938627EE2819005CCD09 /* LaunchScreen.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F2F093AE27EE2B9C005CCD09 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F2F093AF27EE2BBF005CCD09 /* UIView+Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F2F093B327EE2F77005CCD09 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2F093B527EE2F8B005CCD09 /* Launch.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2F093B727EE34B5005CCD09 /* LaunchList */ = {
+			isa = PBXGroup;
+			children = (
+				F2F0937F27EE2818005CCD09 /* LaunchListViewController.swift */,
+				F2F093B127EE2D9C005CCD09 /* LaunchListCell.swift */,
+				F2396D22283BEFB60084DF79 /* NextLaunchView.swift */,
+				F2396D262844060E0084DF79 /* LaunchDetailViewController.swift */,
+			);
+			path = LaunchList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +273,8 @@
 			dependencies = (
 			);
 			name = TrackX;
+			packageProductDependencies = (
+			);
 			productName = TrackX;
 			productReference = F2F0937827EE2818005CCD09 /* TrackX.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +347,8 @@
 				Base,
 			);
 			mainGroup = F2F0936F27EE2817005CCD09;
+			packageReferences = (
+			);
 			productRefGroup = F2F0937927EE2818005CCD09 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,7 +367,6 @@
 			files = (
 				F2F0938827EE2819005CCD09 /* LaunchScreen.storyboard in Resources */,
 				F2F0938527EE2819005CCD09 /* Assets.xcassets in Resources */,
-				F2F0938327EE2818005CCD09 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +391,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2F0938027EE2818005CCD09 /* ViewController.swift in Sources */,
+				F2F0938027EE2818005CCD09 /* LaunchListViewController.swift in Sources */,
 				F2F0937C27EE2818005CCD09 /* AppDelegate.swift in Sources */,
+				F2396D3B284558220084DF79 /* NetworkRouter.swift in Sources */,
+				F2396D2F284552720084DF79 /* EndPointType.swift in Sources */,
+				F2F093B027EE2BBF005CCD09 /* UIView+Extensions.swift in Sources */,
 				F2F0937E27EE2818005CCD09 /* SceneDelegate.swift in Sources */,
+				F2396D272844060E0084DF79 /* LaunchDetailViewController.swift in Sources */,
+				F2396D35284553E00084DF79 /* ParameterEncoding.swift in Sources */,
+				F2396D3D284558F20084DF79 /* Router.swift in Sources */,
+				F2396D23283BEFB60084DF79 /* NextLaunchView.swift in Sources */,
+				F2396D3F28455C170084DF79 /* NetworkManager.swift in Sources */,
+				F2396D372845559A0084DF79 /* URLParameterEncoder.swift in Sources */,
+				F2396D332845531C0084DF79 /* HTTPTask.swift in Sources */,
+				F2396D412845639A0084DF79 /* LaunchEndPoint.swift in Sources */,
+				F2F093B627EE2F8B005CCD09 /* Launch.swift in Sources */,
+				F2396D31284552DB0084DF79 /* HTTPMethod.swift in Sources */,
+				F2396D39284557100084DF79 /* JSONParameterEncoder.swift in Sources */,
+				F2F093B227EE2D9C005CCD09 /* LaunchListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +445,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F2F0938127EE2818005CCD09 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F2F0938227EE2818005CCD09 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F2F0938627EE2819005CCD09 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -439,12 +579,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 36LYYU944F;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TrackX/Info.plist;
+				INFOPLIST_FILE = TrackX/Application/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,7 +594,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -467,12 +607,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 36LYYU944F;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TrackX/Info.plist;
+				INFOPLIST_FILE = TrackX/Application/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -482,7 +622,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
