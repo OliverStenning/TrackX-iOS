@@ -9,7 +9,7 @@ import UIKit
 
 final class NextLaunchView: UIView {
     
-    var nextLaunch = Launch(name: "", rocket: "", launchpad: "", details: "")
+    var nextLaunch: Launch? = nil
     
     var launchView = UIView()
     

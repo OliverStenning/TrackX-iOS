@@ -19,6 +19,8 @@
 		F2396D3D284558F20084DF79 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D3C284558F20084DF79 /* Router.swift */; };
 		F2396D3F28455C170084DF79 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D3E28455C170084DF79 /* NetworkManager.swift */; };
 		F2396D412845639A0084DF79 /* LaunchEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D402845639A0084DF79 /* LaunchEndPoint.swift */; };
+		F2396D432846B8770084DF79 /* RocketEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D422846B8770084DF79 /* RocketEndPoint.swift */; };
+		F2396D452846BADD0084DF79 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D442846BADD0084DF79 /* Rocket.swift */; };
 		F2F0937C27EE2818005CCD09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0937B27EE2818005CCD09 /* AppDelegate.swift */; };
 		F2F0937E27EE2818005CCD09 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0937D27EE2818005CCD09 /* SceneDelegate.swift */; };
 		F2F0938027EE2818005CCD09 /* LaunchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0937F27EE2818005CCD09 /* LaunchListViewController.swift */; };
@@ -62,6 +64,8 @@
 		F2396D3C284558F20084DF79 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F2396D3E28455C170084DF79 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F2396D402845639A0084DF79 /* LaunchEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchEndPoint.swift; sourceTree = "<group>"; };
+		F2396D422846B8770084DF79 /* RocketEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketEndPoint.swift; sourceTree = "<group>"; };
+		F2396D442846BADD0084DF79 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
 		F2F0937827EE2818005CCD09 /* TrackX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F0937B27EE2818005CCD09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2F0937D27EE2818005CCD09 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				F2396D402845639A0084DF79 /* LaunchEndPoint.swift */,
+				F2396D422846B8770084DF79 /* RocketEndPoint.swift */,
 			);
 			path = EndPoint;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				F2F093B527EE2F8B005CCD09 /* Launch.swift */,
+				F2396D442846BADD0084DF79 /* Rocket.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -394,6 +400,8 @@
 				F2F0938027EE2818005CCD09 /* LaunchListViewController.swift in Sources */,
 				F2F0937C27EE2818005CCD09 /* AppDelegate.swift in Sources */,
 				F2396D3B284558220084DF79 /* NetworkRouter.swift in Sources */,
+				F2396D452846BADD0084DF79 /* Rocket.swift in Sources */,
+				F2396D432846B8770084DF79 /* RocketEndPoint.swift in Sources */,
 				F2396D2F284552720084DF79 /* EndPointType.swift in Sources */,
 				F2F093B027EE2BBF005CCD09 /* UIView+Extensions.swift in Sources */,
 				F2F0937E27EE2818005CCD09 /* SceneDelegate.swift in Sources */,

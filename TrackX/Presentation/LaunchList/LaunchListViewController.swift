@@ -28,7 +28,7 @@ class LaunchListViewController: UIViewController {
     
     // Data
     var launches: [Launch] = []
-    var testLaunches: [Launch] = []
+    var rockets: [Rocket] = []
     
     var networkManager: NetworkManager!
     
@@ -47,22 +47,26 @@ class LaunchListViewController: UIViewController {
         view.backgroundColor = UIColor(named: "Background")
         title = "Launches"
   
-        networkManager.getLaunches() { launches, error in
-            self.launches = launches ?? []
-            print("Launches:")
-            print(launches ?? "")
+        let networkGroup = DispatchGroup()
 
-            DispatchQueue.main.async {
-                self.launchTableView.reloadData()
-            }
-            
+        networkGroup.enter()
+        networkManager.getLaunches() { launches, error in
+            self.launches = launches?.reversed() ?? []
+            networkGroup.leave()
         }
         
-        //networkRequest()
+        networkGroup.enter()
+        networkManager.getRockets() { rockets, error in
+            self.rockets = rockets ?? []
+            networkGroup.leave()
+        }
+        
+        networkGroup.notify(queue: .main) {
+            self.launchTableView.reloadData()
+        }
+        
         configureNextLaunchView()
         configureTableView()
-        
-
         
     }
     
@@ -120,33 +124,6 @@ class LaunchListViewController: UIViewController {
         launchTableView.delegate = self
         launchTableView.dataSource = self
     }
-    
-    func networkRequest() {
-        
-        let urlString: String
-        urlString = "https://api.spacexdata.com/v5/launches"
-        
-        DispatchQueue.global(qos: .userInitiated).async {
-            if let url = URL(string: urlString) {
-                if let data = try? Data(contentsOf: url) {
-                    self.parse(json: data)
-                    return
-                }
-            }
-        }
-        
-    }
-    
-    func parse(json: Data) {
-        let decoder = JSONDecoder()
-
-        if let jsonLaunches = try? decoder.decode([Launch].self, from: json) {
-            launches = jsonLaunches.reversed()
-            DispatchQueue.main.async {
-                self.launchTableView.reloadData()
-            }
-        }
-    }
 
 }
 
@@ -159,7 +136,16 @@ extension LaunchListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = launchTableView.dequeueReusableCell(withIdentifier: Cells.launchCell) as! LaunchListCell
         let launch = launches[indexPath.row]
-        cell.set(launch: launch)
+        
+        var launchRocket: Rocket? = nil
+        
+        for rocket in rockets {
+            if rocket.id == launch.rocket {
+                launchRocket = rocket
+            }
+        }
+        
+        cell.set(launch: launch, rocket: launchRocket)
         cell.accessoryType = .disclosureIndicator
         cell.backgroundColor = UIColor(named: "Background")
         

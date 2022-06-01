@@ -83,11 +83,11 @@ class LaunchListCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set(launch: Launch){
+    func set(launch: Launch, rocket: Rocket?){
         nameLabel.text = launch.name
         nameLabel.textColor = .black
         
-        rocketLabel.text = "Falcon 9 • Cape Canaveral"
+        rocketLabel.text = "\(rocket?.name ?? "Missing") • Cape Canaveral"
         dateLabel.text = "April 9"
         //launchpadLabel.text = "Cape Canaveral"
     }

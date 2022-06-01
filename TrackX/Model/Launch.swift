@@ -7,65 +7,146 @@
 
 import Foundation
 
-struct Launch {
-    var name: String?
-    var rocket: String?
-    var launchpad: String?
-    var details: String?
-}
-
-extension Launch: Decodable {
+struct Launch: Codable {
+    let flightNumber: Int
+    let name: String
+    let dateUtc: String
+    let dateUnix: Int
+    let dateLocal: String
+    let datePrecision: String
+    let staticFireDateUtc: String?
+    let staticFireDateUnix: Int?
+    let tbd: Bool
+    let net: Bool
+    let window: Int?
+    let rocket: String?
+    let success: Bool?
+    let failures: [Failure]?
+    let upcoming: Bool
+    let details: String?
+    let fairings: Fairing?
+    let crew: [Crew]?
+    let ships: [String]?
+    let capsules: [String]?
+    let payloads: [String]?
+    let launchpad: String?
+    let cores: [Core]?
+    let links: Links?
+    let autoUpdate: Bool
     
-    enum LaunchCodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
+        case flightNumber = "flight_number"
         case name
+        case dateUtc = "date_utc"
+        case dateUnix = "date_unix"
+        case dateLocal = "date_local"
+        case datePrecision = "date_precision"
+        case staticFireDateUtc = "static_fire_date_utc"
+        case staticFireDateUnix = "static_fire_date_unix"
+        case tbd
+        case net
+        case window
         case rocket
-        case launchpad
+        case success
+        case failures
+        case upcoming
         case details
+        case fairings
+        case crew
+        case ships
+        case capsules
+        case payloads
+        case launchpad
+        case cores
+        case links
+        case autoUpdate = "auto_update"
     }
-    
-    init(from decoder: Decoder) throws {
-        let launchContainer = try decoder.container(keyedBy: LaunchCodingKeys.self)
-        
-        name = try launchContainer.decode(String?.self, forKey: .name)
-        rocket = try launchContainer.decode(String?.self, forKey: .rocket)
-        launchpad = try launchContainer.decode(String?.self, forKey: .launchpad)
-        details = try launchContainer.decode(String?.self, forKey: .details)
-    }
-    
 }
 
-struct LaunchApiResponse {
-    let launch: Launch
+struct Failure: Codable {
+    var time: Int?
+    var altitude: Int?
+    var reason: String?
 }
 
-extension LaunchApiResponse: Decodable {
+struct Fairing: Codable {
+    var reused: Bool?
+    var recoveryAttempt: Bool?
+    var recovered: Bool?
+    var ships: [String]?
     
-    private enum LaunchApiResponseCodingKeys: String, CodingKey {
-        case launch
+    enum CodingKeys: String, CodingKey {
+        case reused
+        case recoveryAttempt = "recovery_attempt"
+        case recovered
+        case ships
     }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: LaunchApiResponseCodingKeys.self)
-        
-        launch = try container.decode(Launch.self, forKey: .launch)
-    }
-    
 }
 
-struct LaunchesApiResponse {
-    let launches: [Launch]
+struct Crew: Codable {
+    var crew: String?
+    var role: String?
 }
 
-extension LaunchesApiResponse: Decodable {
+struct Core: Codable {
+    var core: String?
+    var flight: Int?
+    var gridfins: Bool?
+    var legs: Bool?
+    var reused: Bool?
+    var landingAttempt: Bool?
+    var landingSuccess: Bool?
+    var landingType: String?
+    var landpad: String?
     
-    private enum LaunchesApiResponseCodingKeys: String, CodingKey {
-        case launches
+    enum CodingKeys: String, CodingKey {
+        case core
+        case flight
+        case gridfins
+        case legs
+        case reused
+        case landingAttempt = "landing_attempt"
+        case landingSuccess = "landing_success"
+        case landingType = "landing_type"
+        case landpad
     }
+}
+
+struct Links: Codable {
+    var patch: Patch?
+    var reddit: Reddit?
+    var flickr: Flickr?
+    var presskit: String?
+    var webcast: String?
+    var youtubeId: String?
+    var article: String?
+    var wikipedia: String?
     
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: LaunchesApiResponseCodingKeys.self)
-        
-        launches = try container.decode([Launch].self, forKey: .launches)
+    enum CodingKeys: String, CodingKey {
+        case patch
+        case reddit
+        case flickr
+        case presskit
+        case webcast
+        case youtubeId = "youtube_id"
+        case article
+        case wikipedia
     }
-    
+}
+
+struct Patch: Codable {
+    var small: String?
+    var large: String?
+}
+
+struct Reddit: Codable {
+    var campaign: String?
+    var launch: String?
+    var media: String?
+    var recovery: String?
+}
+
+struct Flickr: Codable {
+    var small: [String]?
+    var original: [String]?
 }

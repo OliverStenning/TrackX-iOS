@@ -22,12 +22,83 @@ enum Result<String>{
     case failure(String)
 }
 
+enum NetworkEnvironment {
+    case production
+}
+
 struct NetworkManager {
     static let environment : NetworkEnvironment = .production
-    private let router = Router<LaunchApi>()
+    private let launchRouter = Router<LaunchApi>()
+    private let rocketRouter = Router<RocketApi>()
     
     func getLaunches(completion: @escaping (_ launches: [Launch]?, _ error: String?) -> ()) {
-        router.request(.all) { data, response, error in
+        launchRouter.request(.all) { data, response, error in
+            
+            if error != nil {
+                completion(nil, "Please check your network connection.")
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                let result = self.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let responseData = data else {
+                        completion(nil, NetworkResponse.noData.rawValue)
+                        return
+                    }
+                    do {
+                        //print(responseData)
+                        //let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
+                        //print(jsonData)
+                        let apiResponse = try JSONDecoder().decode([Launch].self, from: responseData)
+                        completion(apiResponse, nil)
+                    } catch {
+                        print(error)
+                        completion(nil, NetworkResponse.unableToDecode.rawValue)
+                    }
+                case .failure(let networkFailureError):
+                    completion(nil, networkFailureError)
+                }
+            }
+            
+        }
+    }
+    
+    func getNextLaunch(completion: @escaping (_ launch: Launch?, _ error: String?) -> ()) {
+        launchRouter.request(.next) { data, response, error in
+            
+            if error != nil {
+                completion(nil, "Please check your network connection.")
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                let result = self.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let responseData = data else {
+                        completion(nil, NetworkResponse.noData.rawValue)
+                        return
+                    }
+                    do {
+                        //print(responseData)
+                        //let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
+                        //print(jsonData)
+                        let apiResponse = try JSONDecoder().decode(Launch.self, from: responseData)
+                        completion(apiResponse, nil)
+                    } catch {
+                        print(error)
+                        completion(nil, NetworkResponse.unableToDecode.rawValue)
+                    }
+                case .failure(let networkFailureError):
+                    completion(nil, networkFailureError)
+                }
+            }
+            
+        }
+    }
+    
+    func getRockets(completion: @escaping (_ rockets: [Rocket]?, _ error: String?) -> ()) {
+        rocketRouter.request(.all) { data, response, error in
             
             if error != nil {
                 completion(nil, "Please check your network connection.")
@@ -45,7 +116,7 @@ struct NetworkManager {
                         print(responseData)
                         let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
                         print(jsonData)
-                        let apiResponse = try JSONDecoder().decode([Launch].self, from: responseData)
+                        let apiResponse = try JSONDecoder().decode([Rocket].self, from: responseData)
                         completion(apiResponse, nil)
                     } catch {
                         print(error)
