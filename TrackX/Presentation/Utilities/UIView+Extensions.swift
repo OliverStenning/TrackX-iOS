@@ -32,3 +32,29 @@ extension UIImageView {
         }
     }
 }
+
+extension UIView {
+    func addGradient(startColor: CGColor, endColor: CGColor, frame: CGRect) {
+        let gradient = CAGradientLayer()
+        gradient.frame = self.frame
+        gradient.colors = [startColor, endColor]
+        gradient.borderWidth = 5
+        gradient.borderColor = UIColor.red.cgColor
+        //gradient.locations = [0.0, 1.0]
+        self.layer.insertSublayer(gradient, at: 0)
+    }
+}
+
+class GradientView: UIView {
+    var topColor: UIColor = UIColor.clear
+    var bottomColor: UIColor = UIColor(named: "Background") ?? UIColor.clear
+    
+    override class var layerClass: AnyClass {
+        return CAGradientLayer.self
+    }
+    
+    override func layoutSubviews() {
+        (layer as! CAGradientLayer).colors = [topColor.cgColor, bottomColor.cgColor]
+        (layer as! CAGradientLayer).locations = [0.0, 1.0]
+    }
+}

@@ -30,7 +30,7 @@ struct Launch: Codable {
     let capsules: [String]?
     let payloads: [String]?
     let launchpad: String?
-    let cores: [Core]?
+    let cores: [LaunchCore]?
     let links: Links?
     let autoUpdate: Bool
     
@@ -88,7 +88,7 @@ struct Crew: Codable {
     var role: String?
 }
 
-struct Core: Codable {
+struct LaunchCore: Codable {
     var core: String?
     var flight: Int?
     var gridfins: Bool?

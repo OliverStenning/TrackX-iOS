@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let navController = UINavigationController(rootViewController: LaunchListViewController(networkManager: NetworkManager()))
-        navController.navigationBar.prefersLargeTitles = true
+        //navController.setNavigationBarHidden(true, animated: false)
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene

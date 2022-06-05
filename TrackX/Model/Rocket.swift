@@ -25,7 +25,7 @@ struct Rocket: Codable {
     let payloadWeights: [PayloadMass]?
     let firstStage: FirstStage?
     let secondStage: SecondStage?
-    let payloads: Payload?
+    let payloads: RocketPayload?
     let engines: Engine?
     let landingLegs: LandingLegs?
     let flickrImages: [String]?
@@ -115,7 +115,7 @@ struct Thrust: Codable {
     let lbf: Int?
 }
 
-struct Payload: Codable {
+struct RocketPayload: Codable {
     let option1: String?
     let compositeFairing: Dimension?
     
