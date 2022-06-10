@@ -8,6 +8,7 @@
 import Foundation
 
 struct Launch: Codable {
+    let id: String
     let flightNumber: Int
     let name: String
     let dateUtc: String
@@ -35,6 +36,7 @@ struct Launch: Codable {
     let autoUpdate: Bool
     
     enum CodingKeys: String, CodingKey {
+        case id
         case flightNumber = "flight_number"
         case name
         case dateUtc = "date_utc"

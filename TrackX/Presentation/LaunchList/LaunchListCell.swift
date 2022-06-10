@@ -9,24 +9,42 @@ import UIKit
 
 class LaunchListCell: UITableViewCell {
     
-    var typeIcon: UIImageView = {
+    let container: UIView = {
+        let view = UIView()
+//        view.backgroundColor = UIColor(named: "BackgroundSecondary")
+        view.layer.cornerRadius = 12
+        view.clipsToBounds = true
+        return view
+    }()
+    
+    let typeIcon: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.tintColor = UIColor.secondaryLabel
+        imageView.tintColor = UIColor(named: "AccentColor")
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    lazy var nameLabel: UILabel = {
+    let infoStack: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = NSLayoutConstraint.Axis.vertical
+        stackView.distribution = UIStackView.Distribution.fillProportionally
+        stackView.alignment = UIStackView.Alignment.leading
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    let nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .label
-        label.font = .systemFont(ofSize: 15, weight: .medium)
+        label.font = .systemFont(ofSize: 16, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    var rocketLabel: UILabel = {
+    let rocketLabel: UILabel = {
        let label = UILabel()
         label.textColor = .secondaryLabel
         label.font = .systemFont(ofSize: 13, weight: .medium)
@@ -34,10 +52,10 @@ class LaunchListCell: UITableViewCell {
         return label
     }()
     
-    var dateLabel: UILabel = {
+    let dateLabel: UILabel = {
        let label = UILabel()
         label.textColor = .secondaryLabel
-        label.font = .systemFont(ofSize: 13)
+        label.font = .systemFont(ofSize: 13, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -49,47 +67,47 @@ class LaunchListCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        contentView.addSubview(typeIcon)
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(dateLabel)
-        contentView.addSubview(rocketLabel)
-        backgroundColor = UIColor(named: "BackgroundSecondary")
-        accessoryType = .disclosureIndicator
-        
-        setupLayout()
+        setupViews()
+        setupConstraints()
     }
     
-    required init?(coder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupLayout() {
-        NSLayoutConstraint.activate([
-            typeIcon.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-            typeIcon.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
-            //typeIcon.heightAnchor.constraint(equalToConstant: 40),
-            typeIcon.widthAnchor.constraint(equalToConstant: 40),
-            typeIcon.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8)
-        ])
+    func setupViews() {
+        backgroundColor = .clear
+        selectionStyle = .none
         
-        NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            nameLabel.leadingAnchor.constraint(equalTo: typeIcon.trailingAnchor, constant: 16)
-        ])
+        contentView.addSubview(container)
+        container.addSubview(typeIcon)
+        container.addSubview(infoStack)
+        infoStack.addArrangedSubview(nameLabel)
+        infoStack.addArrangedSubview(rocketLabel)
+        infoStack.addArrangedSubview(dateLabel)
+    }
+    
+    func setupConstraints() {
+        container.anchor(
+            to: contentView,
+            padding: .init(top: 4, left: 16, bottom: 0, right: 16)
+        )
         
-        NSLayoutConstraint.activate([
-            rocketLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
-            rocketLabel.leadingAnchor.constraint(equalTo: typeIcon.trailingAnchor, constant: 16),
-            rocketLabel.heightAnchor.constraint(equalTo: nameLabel.heightAnchor, multiplier: 0.8)
-        ])
+        typeIcon.translatesAutoresizingMaskIntoConstraints = false
+        typeIcon.topAnchor.constraint(equalTo: container.topAnchor, constant: 16).isActive = true
+        typeIcon.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16).isActive = true
+        typeIcon.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 16).isActive = true
+        typeIcon.centerYAnchor.constraint(equalTo: infoStack.centerYAnchor).isActive = true
+        typeIcon.widthAnchor.constraint(equalToConstant: 48).isActive = true
+        typeIcon.heightAnchor.constraint(equalToConstant: 48).isActive = true
         
-        NSLayoutConstraint.activate([
-            dateLabel.topAnchor.constraint(equalTo: rocketLabel.bottomAnchor),
-            dateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-            dateLabel.leadingAnchor.constraint(equalTo: typeIcon.trailingAnchor, constant: 16),
-            dateLabel.heightAnchor.constraint(equalTo: rocketLabel.heightAnchor)
-        ])
+        infoStack.anchor(
+            top: container.topAnchor,
+            leading: typeIcon.trailingAnchor,
+            bottom: container.bottomAnchor,
+            trailing: container.trailingAnchor,
+            padding: .init(top: 8, left: 16, bottom: 8, right: 16)
+        )
     }
                                     
     func set(launch: Launch, rocket: Rocket?, launchpad: Launchpad?, payloads: [Payload]?){
@@ -136,6 +154,30 @@ class LaunchListCell: UITableViewCell {
         
         let icon = UIImage(named: iconString, in: nil, with: UIImage.SymbolConfiguration(pointSize: 24, weight: .ultraLight))
         typeIcon.image = icon
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        if highlighted {
+            UIView.animate(
+                withDuration: 0.2,
+                delay: 0,
+                options: .curveEaseInOut,
+                animations: {
+                    self.container.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+                },
+                completion: nil
+            )
+        } else {
+            UIView.animate(
+                withDuration: 0.2,
+                delay: 0,
+                options: .curveEaseInOut,
+                animations: {
+                    self.container.transform = CGAffineTransform.identity
+                },
+                completion: nil
+            )
+        }
     }
     
 }

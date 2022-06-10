@@ -73,7 +73,7 @@ final class NextLaunchView: UIView {
     }
     
     func setupView() {
-        backgroundColor = UIColor(named: "BackgroundSecondary")
+        //backgroundColor = UIColor(named: "BackgroundSecondary")
 
         addSubview(mainImage)
         addSubview(infoStack)
