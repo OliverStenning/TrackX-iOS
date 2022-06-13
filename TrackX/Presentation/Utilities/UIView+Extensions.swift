@@ -9,31 +9,6 @@ import UIKit
 
 extension UIView {
     
-    func pin(to superView: UIView) {
-        translatesAutoresizingMaskIntoConstraints = false
-        topAnchor.constraint(equalTo: superView.topAnchor).isActive = true
-        leadingAnchor.constraint(equalTo: superView.leadingAnchor).isActive = true
-        trailingAnchor.constraint(equalTo: superView.trailingAnchor).isActive = true
-        bottomAnchor.constraint(equalTo: superView.bottomAnchor).isActive = true
-    }
-    
-    func pinBelow(_ superView: UIView, padding: CGFloat) {
-        translatesAutoresizingMaskIntoConstraints = false
-        topAnchor.constraint(equalTo: superView.bottomAnchor, constant: padding).isActive = true
-    }
-    
-    func pinToSides(of superView: UIView, padding: CGFloat) {
-        translatesAutoresizingMaskIntoConstraints = false
-        leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: padding).isActive = true
-        trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: (-1 * padding)).isActive = true
-    }
-    
-    func anchorSize(to view: UIView) {
-        translatesAutoresizingMaskIntoConstraints = false
-        widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
-    }
-    
     func anchor(top: NSLayoutYAxisAnchor? = nil, leading: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, trailing: NSLayoutXAxisAnchor? = nil, padding: UIEdgeInsets = .zero, size: CGSize = .zero) {
         
         translatesAutoresizingMaskIntoConstraints = false
@@ -68,32 +43,42 @@ extension UIView {
         trailingAnchor.constraint(equalTo: anchorView.trailingAnchor, constant: -padding.right).isActive = true
     }
     
+    func anchorSize(to view: UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
+        widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+    }
     
-}
+    func anchorSize(height: CGFloat? = nil, width: CGFloat? = nil) {
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        if let height = height {
+            heightAnchor.constraint(equalToConstant: height).isActive = true
+        }
+        if let width = width {
+            widthAnchor.constraint(equalToConstant: width).isActive = true
+        }
+    }
 
-extension UIView {
-    func addGradient(startColor: CGColor, endColor: CGColor, frame: CGRect) {
-        let gradient = CAGradientLayer()
-        gradient.frame = self.frame
-        gradient.colors = [startColor, endColor]
-        gradient.borderWidth = 5
-        gradient.borderColor = UIColor.red.cgColor
-        //gradient.locations = [0.0, 1.0]
-        self.layer.insertSublayer(gradient, at: 0)
-    }
-}
-
-class GradientView: UIView {
-    var topColor: UIColor = UIColor.clear
-//    var bottomColor: UIColor = UIColor(named: "Background") ?? UIColor.clear
-    var bottomColor: UIColor = UIColor.black
-    
-    override class var layerClass: AnyClass {
-        return CAGradientLayer.self
+    func anchorHeight(to anchorView: UIView, multiplier: CGFloat = 1.0) {
+        translatesAutoresizingMaskIntoConstraints = false
+        heightAnchor.constraint(equalTo: anchorView.heightAnchor, multiplier: multiplier).isActive = true
     }
     
-    override func layoutSubviews() {
-        (layer as! CAGradientLayer).colors = [topColor.cgColor, bottomColor.cgColor]
-        (layer as! CAGradientLayer).locations = [0.0, 1.0]
+    func anchorWidth(to anchorView: UIView, multiplier: CGFloat = 1.0) {
+        translatesAutoresizingMaskIntoConstraints = false
+        widthAnchor.constraint(equalTo: anchorView.widthAnchor, multiplier: multiplier).isActive = true
     }
+    
+    func anchorYCenter(to anchorView: UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
+        centerYAnchor.constraint(equalTo: anchorView.centerYAnchor).isActive = true
+    }
+    
+    func anchorXCenter(to anchorview: UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
+        centerXAnchor.constraint(equalTo: anchorview.centerXAnchor).isActive = true
+    }
+    
+    
 }

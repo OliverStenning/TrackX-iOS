@@ -1,5 +1,5 @@
 //
-//  LaunchListCell.swift
+//  LaunchListSecondaryCell.swift
 //  TrackX
 //
 //  Created by Oliver Stenning on 25/03/2022.
@@ -7,11 +7,10 @@
 
 import UIKit
 
-class LaunchListCell: UITableViewCell {
+class LaunchListSecondaryCell: UITableViewCell {
     
     let container: UIView = {
         let view = UIView()
-//        view.backgroundColor = UIColor(named: "BackgroundSecondary")
         view.layer.cornerRadius = 12
         view.clipsToBounds = true
         return view

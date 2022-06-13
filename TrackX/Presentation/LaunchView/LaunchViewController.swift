@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LaunchViewController.swift
 //  TrackX
 //
 //  Created by Oliver Stenning on 25/03/2022.
@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-class LaunchListViewController: UIViewController {
+class LaunchViewController: UIViewController {
     
     let launchTableControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: ["Previous", "Upcoming"])
@@ -28,7 +28,7 @@ class LaunchListViewController: UIViewController {
         tableView.backgroundColor = UIColor(named: "Background")
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.register(LaunchListPrimaryCell.self, forCellReuseIdentifier: LaunchCells.launchCellPrimary)
-        tableView.register(LaunchListCell.self, forCellReuseIdentifier: LaunchCells.launchCell)
+        tableView.register(LaunchListSecondaryCell.self, forCellReuseIdentifier: LaunchCells.launchCell)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -258,7 +258,7 @@ class LaunchListViewController: UIViewController {
     }
 }
 
-extension LaunchListViewController: UITableViewDelegate, UITableViewDataSource {
+extension LaunchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         if launchTableControl.selectedSegmentIndex == 0 {
@@ -277,7 +277,7 @@ extension LaunchListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = SectionHeaderView()
+        let header = LaunchListSectionHeader()
         if launchTableControl.selectedSegmentIndex == 0 {
             header.name = previousLaunchSections[section]
         } else {
@@ -308,7 +308,7 @@ extension LaunchListViewController: UITableViewDelegate, UITableViewDataSource {
             }
             return cell
         } else {
-            let cell = launchTableView.dequeueReusableCell(withIdentifier: LaunchCells.launchCell) as! LaunchListCell
+            let cell = launchTableView.dequeueReusableCell(withIdentifier: LaunchCells.launchCell) as! LaunchListSecondaryCell
             if launchTableControl.selectedSegmentIndex == 0 {
                 if let launch = launches[previousLaunchIds[indexPath.section][indexPath.row]] {
                     var launchPayloads: [Payload] = []

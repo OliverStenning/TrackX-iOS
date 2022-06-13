@@ -12,8 +12,7 @@ func formatDate(from inputDate: String) -> String {
     dateFormatterStart.formatOptions.insert(.withFractionalSeconds)
     
     let dateFormatterEnd = DateFormatter()
-    dateFormatterEnd.dateFormat = "MMMM d, h:mm a"
-    
+    dateFormatterEnd.dateFormat = "d MMM yyyy, h:mm a"
     
     if let date = dateFormatterStart.date(from: inputDate) {
         return dateFormatterEnd.string(from: date)

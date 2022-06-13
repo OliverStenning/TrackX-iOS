@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SectionHeaderView: UIView {
+class LaunchListSectionHeader: UIView {
     
     fileprivate let nameLabel: UILabel = {
         let label = UILabel()

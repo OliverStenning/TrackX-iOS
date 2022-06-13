@@ -9,70 +9,79 @@ import UIKit
 
 final class NameValueView: UIView {
     
-    var nameText: String
-    var valueText: String = ""
-    
-    let container: UIView = {
-        let view = UIView()
-        
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+    private let infoStack: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = NSLayoutConstraint.Axis.vertical
+        stackView.distribution = UIStackView.Distribution.fill
+        return stackView
     }()
     
-    let nameLabel: UILabel = {
+    private let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14, weight: .medium)
-        label.textColor = .label
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont(name: "RubikRoman-Medium", size: 15)
+        label.textColor = UIColor(named: "SecondaryTextColor")
         return label
     }()
     
-    let valueLabel: UILabel = {
+    private let valueLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14, weight: .regular)
-        label.textColor = .secondaryLabel
+        label.font = UIFont(name: "RubikRoman-Regular", size: 15)
+        label.textColor = UIColor(named: "TextColor")
         label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    private let value2Label: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "RubikRoman-Regular", size: 15)
+        label.textColor = UIColor(named: "TextColor")
+        label.numberOfLines = 0
+        label.isHidden = true
+        return label
+    }()
+    
+    var name: String = "" {
+        didSet {
+            nameLabel.text = name
+        }
+    }
+    var value: String = "" {
+        didSet {
+            valueLabel.text = value
+        }
+    }
+    var value2: String? = nil {
+        didSet {
+            if let value2String = value2 {
+                value2Label.text = value2String
+                value2Label.isHidden = false
+            } else {
+                value2Label.isHidden = true
+            }
+        }
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(nameText: String) {
-        self.nameText = nameText
+    init(name: String) {
+        self.name = name
+        nameLabel.text = name
         super.init(frame: .zero)
-        setupView()
+        setupViews()
+        setupConstraints()
     }
     
-    private func setupView() {
-        nameLabel.text = nameText
-        valueLabel.text = valueText
-        
-        addViews()
-        setupLayout()
+    private func setupViews() {
+        addSubview(infoStack)
+        infoStack.addArrangedSubview(nameLabel)
+        infoStack.addArrangedSubview(valueLabel)
+        infoStack.addArrangedSubview(value2Label)
     }
     
-    private func addViews() {
-        addSubview(container)
-        container.addSubview(nameLabel)
-        container.addSubview(valueLabel)
-    }
-    
-    private func setupLayout() {
-        NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: topAnchor),
-            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            valueLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
-            valueLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
-            valueLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            valueLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
-        ])
+    private func setupConstraints() {
+        infoStack.anchor(to: self)
     }
     
 }
