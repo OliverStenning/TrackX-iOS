@@ -24,29 +24,13 @@ class LaunchListPrimaryCell: UITableViewCell {
     
     let backgroundGradient: UIView = {
         let view = GradientView()
+        view.bottomColor = .black
         return view
     }()
     
-    let nameLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 18, weight: .semibold)
-        label.textColor = .white
-        return label
-    }()
-    
-    let detailsLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 14, weight: .medium)
-        label.textColor = .init(white: 1, alpha: 0.9)
-        return label
-    }()
-    
-    let dateLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 14, weight: .medium)
-        label.textColor = .init(white: 1, alpha: 0.9)
-        return label
-    }()
+    let nameLabel = SubheadingLabel()
+    let detailsLabel = BodyLabel()
+    let dateLabel = BodyLabel()
     
     var launch: Launch?
     var rocket: Rocket?
@@ -77,7 +61,7 @@ class LaunchListPrimaryCell: UITableViewCell {
     func setupConstaints() {
         container.anchor(
             to: contentView,
-            padding: .init(top: 8, left: 16, bottom: 8, right: 16)
+            padding: .init(top: 0, left: 16, bottom: 0, right: 16)
         )
         container.heightAnchor.constraint(equalToConstant: 200).isActive = true
         

@@ -9,16 +9,11 @@ import UIKit
 
 class LaunchListSectionHeader: UIView {
     
-    fileprivate let nameLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 24, weight: .bold)
-        label.textColor = .label
-        return label
-    }()
+    fileprivate let nameLabel = HeadingLabel()
     
     var name = "" {
         didSet {
-            nameLabel.text = name
+            nameLabel.name = name
         }
     }
     
@@ -26,19 +21,23 @@ class LaunchListSectionHeader: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init() {
+    init(name: String) {
         super.init(frame: .zero)
+        self.name = name
+        nameLabel.text = name
+        
         setupViews()
         setupConstraints()
+        
     }
     
     fileprivate func setupViews() {
-        backgroundColor = UIColor(named: "Background")
+        backgroundColor = UIColor(named: "BackgroundColor")
         addSubview(nameLabel)
     }
     
     fileprivate func setupConstraints() {
-        nameLabel.anchor(to: self, padding: .init(top: 8, left: 24, bottom: 0, right: 24))
+        nameLabel.anchor(to: self, padding: .init(top: 16, left: 24, bottom: 8, right: 24))
     }
     
 }

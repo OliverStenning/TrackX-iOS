@@ -9,6 +9,7 @@ import UIKit
 
 final class NameValueView: UIView {
     
+    //MARK: - Views 
     private let infoStack: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = NSLayoutConstraint.Axis.vertical
@@ -27,7 +28,6 @@ final class NameValueView: UIView {
         let label = UILabel()
         label.font = UIFont(name: "RubikRoman-Regular", size: 15)
         label.textColor = UIColor(named: "TextColor")
-        label.numberOfLines = 0
         return label
     }()
     
@@ -35,11 +35,11 @@ final class NameValueView: UIView {
         let label = UILabel()
         label.font = UIFont(name: "RubikRoman-Regular", size: 15)
         label.textColor = UIColor(named: "TextColor")
-        label.numberOfLines = 0
         label.isHidden = true
         return label
     }()
     
+    //MARK: - Properties
     var name: String = "" {
         didSet {
             nameLabel.text = name
@@ -60,28 +60,52 @@ final class NameValueView: UIView {
             }
         }
     }
+    var expanded: Bool = false {
+        didSet {
+            valueLabel.numberOfLines = expanded ? 0 : lineCount
+            value2Label.numberOfLines = expanded ? 0 : lineCount
+        }
+    }
+    let lineCount: Int
     
+    //MARK: - Initializers
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(name: String) {
+    init(name: String, lineCount: Int = 3) {
         self.name = name
+        self.lineCount = lineCount
         nameLabel.text = name
         super.init(frame: .zero)
         setupViews()
         setupConstraints()
     }
     
+    //MARK: - Setup Functions
     private func setupViews() {
         addSubview(infoStack)
         infoStack.addArrangedSubview(nameLabel)
         infoStack.addArrangedSubview(valueLabel)
         infoStack.addArrangedSubview(value2Label)
+        
+        valueLabel.numberOfLines = lineCount
+        value2Label.numberOfLines = lineCount
+        
+        self.isUserInteractionEnabled = true
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapBody))
+        gesture.numberOfTapsRequired = 1
+        addGestureRecognizer(gesture)
+        addGestureRecognizer(gesture)
     }
     
     private func setupConstraints() {
         infoStack.anchor(to: self)
     }
     
+    //MARK: - Update Functions
+    @objc func tapBody() {
+        expanded.toggle()
+    }
 }
