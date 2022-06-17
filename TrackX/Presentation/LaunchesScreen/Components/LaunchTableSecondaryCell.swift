@@ -9,6 +9,7 @@ import UIKit
 
 class LaunchTableSecondaryCell: UITableViewCell {
     
+    //MARK: - Views
     let container: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 12
@@ -25,6 +26,7 @@ class LaunchTableSecondaryCell: UITableViewCell {
         view.layer.cornerRadius = 6
         return view
     }()
+    
     private let statusLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "RubikRoman-Medium", size: 14)
@@ -58,6 +60,7 @@ class LaunchTableSecondaryCell: UITableViewCell {
     private let launchpadLabel = BodyLabel(bold: true)
     private let landpadLabel = BodyLabel(bold: true)
     
+    //MARK: - Data
     var fullLaunch: FullLaunch? = nil
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
