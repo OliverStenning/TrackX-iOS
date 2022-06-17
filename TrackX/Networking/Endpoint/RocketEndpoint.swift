@@ -7,12 +7,12 @@
 
 import Foundation
 
-public enum RocketApi {
+public enum RocketEndpoint {
     case all
     case one(id:String)
 }
 
-extension RocketApi: EndPointType {
+extension RocketEndpoint: EndPointType {
     var environmentBaseURL: String {
         switch NetworkManager.environment {
         case .production: return "https://api.spacexdata.com/v4/rockets/"

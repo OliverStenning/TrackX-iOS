@@ -1,5 +1,5 @@
 //
-//  LaunchpadEndPoint.swift
+//  LaunchpadEndpoint.swift
 //  TrackX
 //
 //  Created by Oliver Stenning on 01/06/2022.
@@ -7,12 +7,12 @@
 
 import Foundation
 
-public enum LaunchpadApi {
+public enum LaunchpadEndpoint {
     case all
     case one(id:String)
 }
 
-extension LaunchpadApi: EndPointType {
+extension LaunchpadEndpoint: EndPointType {
     var environmentBaseURL: String {
         switch NetworkManager.environment {
         case .production: return "https://api.spacexdata.com/v4/launchpads"

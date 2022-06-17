@@ -1,5 +1,5 @@
 //
-//  LaunchEndPoint.swift
+//  LaunchEndpoint.swift
 //  TrackX
 //
 //  Created by Oliver Stenning on 17/06/2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum LaunchApi {
+public enum LaunchEndpoint {
     case all
     case one(id:String)
     case latest
@@ -16,7 +16,7 @@ public enum LaunchApi {
     case upcoming
 }
 
-extension LaunchApi: EndPointType {
+extension LaunchEndpoint: EndPointType {
     var environmentBaseURL: String {
         switch NetworkManager.environment {
         case .production: return "https://api.spacexdata.com/v5/launches/"

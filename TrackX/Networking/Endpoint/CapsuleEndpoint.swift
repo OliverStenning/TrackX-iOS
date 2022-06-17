@@ -1,5 +1,5 @@
 //
-//  CapsuleEndPoint.swift
+//  CapsuleEndpoint.swift
 //  TrackX
 //
 //  Created by Oliver Stenning on 01/06/2022.
@@ -7,12 +7,12 @@
 
 import Foundation
 
-public enum CapsuleApi {
+public enum CapsuleEndpoint {
     case all
     case one(id:String)
 }
 
-extension CapsuleApi: EndPointType {
+extension CapsuleEndpoint: EndPointType {
     var environmentBaseURL: String {
         switch NetworkManager.environment {
         case .production: return "https://api.spacexdata.com/v4/capsules"

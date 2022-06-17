@@ -1,5 +1,5 @@
 //
-//  LandpadsEndPoint.swift
+//  LandpadEndoint.swift
 //  TrackX
 //
 //  Created by Oliver Stenning on 01/06/2022.
@@ -7,12 +7,12 @@
 
 import Foundation
 
-public enum LandpadApi {
+public enum LandpadEndpoint {
     case all
     case one(id:String)
 }
 
-extension LandpadApi: EndPointType {
+extension LandpadEndpoint: EndPointType {
     var environmentBaseURL: String {
         switch NetworkManager.environment {
         case .production: return "https://api.spacexdata.com/v4/landpads"
