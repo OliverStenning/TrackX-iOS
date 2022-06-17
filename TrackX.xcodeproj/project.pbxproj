@@ -15,7 +15,6 @@
 		F2396D35284553E00084DF79 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D34284553E00084DF79 /* ParameterEncoding.swift */; };
 		F2396D372845559A0084DF79 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D362845559A0084DF79 /* URLParameterEncoder.swift */; };
 		F2396D39284557100084DF79 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D38284557100084DF79 /* JSONParameterEncoder.swift */; };
-		F2396D3B284558220084DF79 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D3A284558220084DF79 /* NetworkRouter.swift */; };
 		F2396D3D284558F20084DF79 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D3C284558F20084DF79 /* Router.swift */; };
 		F2396D3F28455C170084DF79 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D3E28455C170084DF79 /* NetworkManager.swift */; };
 		F2396D432846B8770084DF79 /* RocketEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D422846B8770084DF79 /* RocketEndpoint.swift */; };
@@ -91,7 +90,6 @@
 		F2396D34284553E00084DF79 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 		F2396D362845559A0084DF79 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		F2396D38284557100084DF79 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
-		F2396D3A284558220084DF79 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		F2396D3C284558F20084DF79 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F2396D3E28455C170084DF79 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F2396D422846B8770084DF79 /* RocketEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketEndpoint.swift; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 				F2396D2E284552720084DF79 /* EndPointType.swift */,
 				F2396D30284552DB0084DF79 /* HTTPMethod.swift */,
 				F2396D322845531C0084DF79 /* HTTPTask.swift */,
-				F2396D3A284558220084DF79 /* NetworkRouter.swift */,
 				F2396D3C284558F20084DF79 /* Router.swift */,
 				F2396D5A2848DE550084DF79 /* NetworkLogger.swift */,
 			);
@@ -557,7 +554,6 @@
 				F2F2344E2852968200CAB70C /* LaunchTablePrimaryCell.swift in Sources */,
 				F254D45728579E8B0009A2A0 /* LaunchSectionStackView.swift in Sources */,
 				F2F234442850079A00CAB70C /* UIImageView+Extensions.swift in Sources */,
-				F2396D3B284558220084DF79 /* NetworkRouter.swift in Sources */,
 				F2396D492847A9960084DF79 /* LandpadEndpoint.swift in Sources */,
 				F2396D572847AB090084DF79 /* CapsuleEndpoint.swift in Sources */,
 				F2E2EC4628592EC500AF06CC /* LaunchTableDataSource.swift in Sources */,
