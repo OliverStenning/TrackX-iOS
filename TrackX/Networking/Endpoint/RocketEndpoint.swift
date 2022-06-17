@@ -1,25 +1,21 @@
 //
-//  LaunchEndPoint.swift
+//  RocketEndpoint.swift
 //  TrackX
 //
-//  Created by Oliver Stenning on 30/05/2022.
+//  Created by Oliver Stenning on 31/05/2022.
 //
 
 import Foundation
 
-public enum LaunchApi {
+public enum RocketApi {
     case all
     case one(id:String)
-    case latest
-    case next
-    case past
-    case upcoming
 }
 
-extension LaunchApi: EndPointType {
-    var environmentBaseURL : String {
+extension RocketApi: EndPointType {
+    var environmentBaseURL: String {
         switch NetworkManager.environment {
-        case .production: return "https://api.spacexdata.com/v5/launches/"
+        case .production: return "https://api.spacexdata.com/v4/rockets/"
         }
     }
     
@@ -27,21 +23,13 @@ extension LaunchApi: EndPointType {
         guard let url = URL(string: environmentBaseURL) else { fatalError("baseURL could not be configured.") }
         return url
     }
-
+    
     var path: String {
         switch self {
         case .all:
             return ""
         case .one(let id):
             return ":\(id)"
-        case .latest:
-            return "latest"
-        case .next:
-            return "next"
-        case .past:
-            return "past"
-        case .upcoming:
-            return "upcoming"
         }
     }
     
@@ -61,4 +49,3 @@ extension LaunchApi: EndPointType {
     }
     
 }
-

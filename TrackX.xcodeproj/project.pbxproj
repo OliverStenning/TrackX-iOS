@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F2051657285D3BC000584F11 /* LaunchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2051656285D3BC000584F11 /* LaunchEndpoint.swift */; };
 		F2396D272844060E0084DF79 /* LaunchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D262844060E0084DF79 /* LaunchDetailViewController.swift */; };
 		F2396D2F284552720084DF79 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D2E284552720084DF79 /* EndPointType.swift */; };
 		F2396D31284552DB0084DF79 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D30284552DB0084DF79 /* HTTPMethod.swift */; };
@@ -17,19 +18,18 @@
 		F2396D3B284558220084DF79 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D3A284558220084DF79 /* NetworkRouter.swift */; };
 		F2396D3D284558F20084DF79 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D3C284558F20084DF79 /* Router.swift */; };
 		F2396D3F28455C170084DF79 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D3E28455C170084DF79 /* NetworkManager.swift */; };
-		F2396D412845639A0084DF79 /* LaunchEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D402845639A0084DF79 /* LaunchEndPoint.swift */; };
-		F2396D432846B8770084DF79 /* RocketEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D422846B8770084DF79 /* RocketEndPoint.swift */; };
+		F2396D432846B8770084DF79 /* RocketEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D422846B8770084DF79 /* RocketEndpoint.swift */; };
 		F2396D452846BADD0084DF79 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D442846BADD0084DF79 /* Rocket.swift */; };
-		F2396D472847A9770084DF79 /* LaunchpadEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D462847A9770084DF79 /* LaunchpadEndPoint.swift */; };
-		F2396D492847A9960084DF79 /* LandpadEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D482847A9960084DF79 /* LandpadEndPoint.swift */; };
+		F2396D472847A9770084DF79 /* LaunchpadEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D462847A9770084DF79 /* LaunchpadEndpoint.swift */; };
+		F2396D492847A9960084DF79 /* LandpadEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D482847A9960084DF79 /* LandpadEndpoint.swift */; };
 		F2396D4B2847A9A10084DF79 /* Launchpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D4A2847A9A00084DF79 /* Launchpad.swift */; };
 		F2396D4D2847A9A90084DF79 /* Landpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D4C2847A9A90084DF79 /* Landpad.swift */; };
 		F2396D4F2847A9C40084DF79 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D4E2847A9C40084DF79 /* Core.swift */; };
 		F2396D512847AA120084DF79 /* Capsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D502847AA120084DF79 /* Capsule.swift */; };
 		F2396D532847AA1C0084DF79 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D522847AA1C0084DF79 /* Payload.swift */; };
-		F2396D552847AB010084DF79 /* CoreEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D542847AB010084DF79 /* CoreEndPoint.swift */; };
-		F2396D572847AB090084DF79 /* CapsuleEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D562847AB090084DF79 /* CapsuleEndPoint.swift */; };
-		F2396D592847AB170084DF79 /* PayloadEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D582847AB170084DF79 /* PayloadEndPoint.swift */; };
+		F2396D552847AB010084DF79 /* CoreEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D542847AB010084DF79 /* CoreEndpoint.swift */; };
+		F2396D572847AB090084DF79 /* CapsuleEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D562847AB090084DF79 /* CapsuleEndpoint.swift */; };
+		F2396D592847AB170084DF79 /* PayloadEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D582847AB170084DF79 /* PayloadEndpoint.swift */; };
 		F2396D5B2848DE550084DF79 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D5A2848DE550084DF79 /* NetworkLogger.swift */; };
 		F254D44D2857876F0009A2A0 /* HeadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D44C2857876F0009A2A0 /* HeadingLabel.swift */; };
 		F254D44F28578BFA0009A2A0 /* SubheadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D44E28578BFA0009A2A0 /* SubheadingLabel.swift */; };
@@ -83,6 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F2051656285D3BC000584F11 /* LaunchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchEndpoint.swift; sourceTree = "<group>"; };
 		F2396D262844060E0084DF79 /* LaunchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailViewController.swift; sourceTree = "<group>"; };
 		F2396D2E284552720084DF79 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		F2396D30284552DB0084DF79 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -93,19 +94,18 @@
 		F2396D3A284558220084DF79 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		F2396D3C284558F20084DF79 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F2396D3E28455C170084DF79 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		F2396D402845639A0084DF79 /* LaunchEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchEndPoint.swift; sourceTree = "<group>"; };
-		F2396D422846B8770084DF79 /* RocketEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketEndPoint.swift; sourceTree = "<group>"; };
+		F2396D422846B8770084DF79 /* RocketEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketEndpoint.swift; sourceTree = "<group>"; };
 		F2396D442846BADD0084DF79 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
-		F2396D462847A9770084DF79 /* LaunchpadEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadEndPoint.swift; sourceTree = "<group>"; };
-		F2396D482847A9960084DF79 /* LandpadEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandpadEndPoint.swift; sourceTree = "<group>"; };
+		F2396D462847A9770084DF79 /* LaunchpadEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadEndpoint.swift; sourceTree = "<group>"; };
+		F2396D482847A9960084DF79 /* LandpadEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandpadEndpoint.swift; sourceTree = "<group>"; };
 		F2396D4A2847A9A00084DF79 /* Launchpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launchpad.swift; sourceTree = "<group>"; };
 		F2396D4C2847A9A90084DF79 /* Landpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landpad.swift; sourceTree = "<group>"; };
 		F2396D4E2847A9C40084DF79 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		F2396D502847AA120084DF79 /* Capsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capsule.swift; sourceTree = "<group>"; };
 		F2396D522847AA1C0084DF79 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
-		F2396D542847AB010084DF79 /* CoreEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreEndPoint.swift; sourceTree = "<group>"; };
-		F2396D562847AB090084DF79 /* CapsuleEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleEndPoint.swift; sourceTree = "<group>"; };
-		F2396D582847AB170084DF79 /* PayloadEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadEndPoint.swift; sourceTree = "<group>"; };
+		F2396D542847AB010084DF79 /* CoreEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreEndpoint.swift; sourceTree = "<group>"; };
+		F2396D562847AB090084DF79 /* CapsuleEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleEndpoint.swift; sourceTree = "<group>"; };
+		F2396D582847AB170084DF79 /* PayloadEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadEndpoint.swift; sourceTree = "<group>"; };
 		F2396D5A2848DE550084DF79 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		F254D44C2857876F0009A2A0 /* HeadingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingLabel.swift; sourceTree = "<group>"; };
 		F254D44E28578BFA0009A2A0 /* SubheadingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubheadingLabel.swift; sourceTree = "<group>"; };
@@ -215,13 +215,13 @@
 		F2396D2D2845524C0084DF79 /* Endpoint */ = {
 			isa = PBXGroup;
 			children = (
-				F2396D402845639A0084DF79 /* LaunchEndPoint.swift */,
-				F2396D422846B8770084DF79 /* RocketEndPoint.swift */,
-				F2396D462847A9770084DF79 /* LaunchpadEndPoint.swift */,
-				F2396D482847A9960084DF79 /* LandpadEndPoint.swift */,
-				F2396D542847AB010084DF79 /* CoreEndPoint.swift */,
-				F2396D562847AB090084DF79 /* CapsuleEndPoint.swift */,
-				F2396D582847AB170084DF79 /* PayloadEndPoint.swift */,
+				F2396D422846B8770084DF79 /* RocketEndpoint.swift */,
+				F2396D462847A9770084DF79 /* LaunchpadEndpoint.swift */,
+				F2396D482847A9960084DF79 /* LandpadEndpoint.swift */,
+				F2396D542847AB010084DF79 /* CoreEndpoint.swift */,
+				F2396D562847AB090084DF79 /* CapsuleEndpoint.swift */,
+				F2396D582847AB170084DF79 /* PayloadEndpoint.swift */,
+				F2051656285D3BC000584F11 /* LaunchEndpoint.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -558,20 +558,20 @@
 				F254D45728579E8B0009A2A0 /* LaunchSectionStackView.swift in Sources */,
 				F2F234442850079A00CAB70C /* UIImageView+Extensions.swift in Sources */,
 				F2396D3B284558220084DF79 /* NetworkRouter.swift in Sources */,
-				F2396D492847A9960084DF79 /* LandpadEndPoint.swift in Sources */,
-				F2396D572847AB090084DF79 /* CapsuleEndPoint.swift in Sources */,
+				F2396D492847A9960084DF79 /* LandpadEndpoint.swift in Sources */,
+				F2396D572847AB090084DF79 /* CapsuleEndpoint.swift in Sources */,
 				F2E2EC4628592EC500AF06CC /* LaunchTableDataSource.swift in Sources */,
 				F2F234502853899C00CAB70C /* Date+Extensions.swift in Sources */,
 				F2396D452846BADD0084DF79 /* Rocket.swift in Sources */,
-				F2396D432846B8770084DF79 /* RocketEndPoint.swift in Sources */,
+				F2396D432846B8770084DF79 /* RocketEndpoint.swift in Sources */,
 				F2396D2F284552720084DF79 /* EndPointType.swift in Sources */,
 				F254D44D2857876F0009A2A0 /* HeadingLabel.swift in Sources */,
 				F254D45E2857C9660009A2A0 /* DataManager.swift in Sources */,
 				F2F093B027EE2BBF005CCD09 /* UIView+Extensions.swift in Sources */,
 				F2F2346128563A2900CAB70C /* LaunchTableSecondaryCell.swift in Sources */,
-				F2396D472847A9770084DF79 /* LaunchpadEndPoint.swift in Sources */,
+				F2396D472847A9770084DF79 /* LaunchpadEndpoint.swift in Sources */,
 				F2F0937E27EE2818005CCD09 /* SceneDelegate.swift in Sources */,
-				F2396D552847AB010084DF79 /* CoreEndPoint.swift in Sources */,
+				F2396D552847AB010084DF79 /* CoreEndpoint.swift in Sources */,
 				F2396D512847AA120084DF79 /* Capsule.swift in Sources */,
 				F2396D272844060E0084DF79 /* LaunchDetailViewController.swift in Sources */,
 				F2E2EC482859327D00AF06CC /* FullLaunch.swift in Sources */,
@@ -587,12 +587,12 @@
 				F2396D372845559A0084DF79 /* URLParameterEncoder.swift in Sources */,
 				F2396D332845531C0084DF79 /* HTTPTask.swift in Sources */,
 				F2396D5B2848DE550084DF79 /* NetworkLogger.swift in Sources */,
-				F2396D592847AB170084DF79 /* PayloadEndPoint.swift in Sources */,
+				F2396D592847AB170084DF79 /* PayloadEndpoint.swift in Sources */,
 				F254D4642857E19F0009A2A0 /* AccentSubheadingView.swift in Sources */,
 				F2396D532847AA1C0084DF79 /* Payload.swift in Sources */,
-				F2396D412845639A0084DF79 /* LaunchEndPoint.swift in Sources */,
 				F254D45128578DDB0009A2A0 /* BodyLabel.swift in Sources */,
 				F2F093B627EE2F8B005CCD09 /* Launch.swift in Sources */,
+				F2051657285D3BC000584F11 /* LaunchEndpoint.swift in Sources */,
 				F2396D31284552DB0084DF79 /* HTTPMethod.swift in Sources */,
 				F2F2345B2854D21D00CAB70C /* UILabel+Extensions.swift in Sources */,
 				F2396D39284557100084DF79 /* JSONParameterEncoder.swift in Sources */,
