@@ -7,6 +7,8 @@
 
 import Foundation
 
+let PRINT_ERROR = false
+
 enum NetworkResponse:String {
     case success
     case authenticationError = "You need to be authenticated first."
@@ -70,7 +72,9 @@ struct NetworkManager {
                         let apiResponse = try JSONDecoder().decode([Launch].self, from: responseData)
                         completion(apiResponse, nil)
                     } catch {
-                        print(error)
+                        if PRINT_ERROR {
+                            print(error)
+                        }
                         completion(nil, NetworkResponse.unableToDecode.rawValue)
                     }
                 case .failure(let networkFailureError):
@@ -103,7 +107,9 @@ struct NetworkManager {
                         let apiResponse = try JSONDecoder().decode(Launch.self, from: responseData)
                         completion(apiResponse, nil)
                     } catch {
-                        print(error)
+                        if PRINT_ERROR {
+                            print(error)
+                        }
                         completion(nil, NetworkResponse.unableToDecode.rawValue)
                     }
                 case .failure(let networkFailureError):
@@ -138,7 +144,9 @@ struct NetworkManager {
                         let apiResponse = try JSONDecoder().decode([Rocket].self, from: responseData)
                         completion(apiResponse, nil)
                     } catch {
-                        print(error)
+                        if PRINT_ERROR {
+                            print(error)
+                        }
                         completion(nil, NetworkResponse.unableToDecode.rawValue)
                     }
                 case .failure(let networkFailureError):
@@ -173,7 +181,9 @@ struct NetworkManager {
                         let apiResponse = try JSONDecoder().decode([Launchpad].self, from: responseData)
                         completion(apiResponse, nil)
                     } catch {
-                        print(error)
+                        if PRINT_ERROR {
+                            print(error)
+                        }
                         completion(nil, NetworkResponse.unableToDecode.rawValue)
                     }
                 case .failure(let networkFailureError):
@@ -208,7 +218,9 @@ struct NetworkManager {
                         let apiResponse = try JSONDecoder().decode([Landpad].self, from: responseData)
                         completion(apiResponse, nil)
                     } catch {
-                        print(error)
+                        if PRINT_ERROR {
+                            print(error)
+                        }
                         completion(nil, NetworkResponse.unableToDecode.rawValue)
                     }
                 case .failure(let networkFailureError):
@@ -243,7 +255,9 @@ struct NetworkManager {
                         let apiResponse = try JSONDecoder().decode([Core].self, from: responseData)
                         completion(apiResponse, nil)
                     } catch {
-                        print(error)
+                        if PRINT_ERROR {
+                            print(error)
+                        }
                         completion(nil, NetworkResponse.unableToDecode.rawValue)
                     }
                 case .failure(let networkFailureError):
@@ -278,7 +292,9 @@ struct NetworkManager {
                         let apiResponse = try JSONDecoder().decode([Capsule].self, from: responseData)
                         completion(apiResponse, nil)
                     } catch {
-                        print(error)
+                        if PRINT_ERROR {
+                            print(error)
+                        }
                         completion(nil, NetworkResponse.unableToDecode.rawValue)
                     }
                 case .failure(let networkFailureError):
@@ -313,7 +329,9 @@ struct NetworkManager {
                         let apiResponse = try JSONDecoder().decode([Payload].self, from: responseData)
                         completion(apiResponse, nil)
                     } catch {
-                        print(error)
+                        if PRINT_ERROR {
+                            print(error)
+                        }
                         completion(nil, NetworkResponse.unableToDecode.rawValue)
                     }
                 case .failure(let networkFailureError):

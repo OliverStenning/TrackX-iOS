@@ -1,5 +1,5 @@
 //
-//  LaunchListSecondaryCell.swift
+//  LaunchTableSecondaryCell.swift
 //  TrackX
 //
 //  Created by Oliver Stenning on 25/03/2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LaunchListSecondaryCell: UITableViewCell {
+class LaunchTableSecondaryCell: UITableViewCell {
     
     let container: UIView = {
         let view = UIView()

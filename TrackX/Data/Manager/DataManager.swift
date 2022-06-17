@@ -9,7 +9,7 @@ import Foundation
 
 class DataManager {
     
-    weak var delegate: LaunchDataManagerDelegate?
+    weak var launchDelegate: LaunchDataManagerDelegate?
     
     private var launches: [String: Launch] = [:]
     private var rockets: [String: Rocket] = [:]
@@ -19,12 +19,19 @@ class DataManager {
     private var capsules: [String: Capsule] = [:]
     private var payloads: [String: Payload] = [:]
     
+    private var error: String? = nil
+    
     func fetchData() {
         let networkManager = NetworkManager()
         let networkGroup = DispatchGroup()
     
         networkGroup.enter()
         networkManager.getLaunches() { launchArray, error in
+            guard error == nil else {
+                self.error = error
+                networkGroup.leave()
+                return
+            }
             guard let launchArray = launchArray else {
                 networkGroup.leave()
                 return
@@ -41,6 +48,11 @@ class DataManager {
         
         networkGroup.enter()
         networkManager.getRockets { rocketArray, error in
+            guard error == nil else {
+                self.error = error
+                networkGroup.leave()
+                return
+            }
             rocketArray?.forEach() { rocket in
                 self.rockets[rocket.id] = rocket
             }
@@ -49,6 +61,11 @@ class DataManager {
         
         networkGroup.enter()
         networkManager.getLaunchpads() { launchpadArray, error in
+            guard error == nil else {
+                self.error = error
+                networkGroup.leave()
+                return
+            }
             launchpadArray?.forEach() { launchpad in
                 self.launchpads[launchpad.id] = launchpad
             }
@@ -57,6 +74,11 @@ class DataManager {
         
         networkGroup.enter()
         networkManager.getLandpads() { landpadArray, error in
+            guard error == nil else {
+                self.error = error
+                networkGroup.leave()
+                return
+            }
             landpadArray?.forEach() { landpad in
                 self.landpads[landpad.id] = landpad
             }
@@ -65,6 +87,11 @@ class DataManager {
 
         networkGroup.enter()
         networkManager.getPayloads() { payloadArray, error in
+            guard error == nil else {
+                self.error = error
+                networkGroup.leave()
+                return
+            }
             payloadArray?.forEach() { payload in
                 self.payloads[payload.id] = payload
             }
@@ -73,6 +100,11 @@ class DataManager {
         
         networkGroup.enter()
         networkManager.getCores() { coreArray, error in
+            guard error == nil else {
+                self.error = error
+                networkGroup.leave()
+                return
+            }
             coreArray?.forEach() { core in
                 self.cores[core.id] = core
             }
@@ -80,8 +112,12 @@ class DataManager {
         }
         
         networkGroup.notify(queue: .main) {
+            guard let delegate = self.launchDelegate else { return }
             
-            guard let delegate = self.delegate else { return }
+            if let error = self.error {
+                delegate.launchDataManager(self, dataFailedToUpDate: error)
+                return
+            }
             
             // Create dictionary of full launches
             var fullLaunches: [String: FullLaunch] = [:]
@@ -113,18 +149,15 @@ class DataManager {
                 $0.dateUnix < $1.dateUnix
             }
             
-            var previous = self.splitLaunchesIntoSections(launches: previousLaunches)
-            previous.sectionNames[0] = "Latest"
+            let previous = self.splitLaunchesIntoSections(launches: previousLaunches)
             let previousLaunchTableData = LaunchTableData(sections: previous.sectionNames, launchIds: previous.sectionedIds, fullLaunches: fullLaunches)
             delegate.launchDataManager(self, previousLaunchesUpdate: previousLaunchTableData)
             
-            var upcoming = self.splitLaunchesIntoSections(launches: upcomingLaunches)
-            upcoming.sectionNames[0] = "Next"
+            let upcoming = self.splitLaunchesIntoSections(launches: upcomingLaunches)
             let upcomingLaunchTableData = LaunchTableData(sections: upcoming.sectionNames, launchIds: upcoming.sectionedIds, fullLaunches: fullLaunches)
             delegate.launchDataManager(self, upcomingLaunchesUpdate: upcomingLaunchTableData)
             
-            var all = self.splitLaunchesIntoSections(launches: allLaunches)
-            all.sectionNames[0] = "First"
+            let all = self.splitLaunchesIntoSections(launches: allLaunches)
             let allLaunchTableData = LaunchTableData(sections: all.sectionNames, launchIds: all.sectionedIds, fullLaunches: fullLaunches)
             delegate.launchDataManager(self, allLaunchesUpdate: allLaunchTableData)
             
@@ -226,15 +259,10 @@ class DataManager {
     
 }
 
-struct LaunchTableData {
-    let sections: [String]
-    let launchIds: [[String]]
-    let fullLaunches: [String: FullLaunch]
-}
-
 protocol LaunchDataManagerDelegate: AnyObject {
     func launchDataManager(_ manager: DataManager, previousLaunchesUpdate: LaunchTableData)
     func launchDataManager(_ manager: DataManager, upcomingLaunchesUpdate: LaunchTableData)
     func launchDataManager(_ manager: DataManager, allLaunchesUpdate: LaunchTableData)
     func launchDataManager(_ manager: DataManager, dataWasUpdated: Bool)
+    func launchDataManager(_ manager: DataManager, dataFailedToUpDate: String)
 }

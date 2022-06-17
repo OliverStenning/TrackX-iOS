@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LaunchListSectionHeader: UIView {
+class LaunchTableSectionHeader: UIView {
     
     fileprivate let nameLabel = HeadingLabel()
     

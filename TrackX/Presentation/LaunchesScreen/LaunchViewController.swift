@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftUI
 
 class LaunchViewController: UIViewController {
     
@@ -35,8 +34,8 @@ class LaunchViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.backgroundColor = UIColor(named: "BackgroundColor")
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-        tableView.register(LaunchListPrimaryCell.self, forCellReuseIdentifier: LaunchCells.primaryLaunchCell)
-        tableView.register(LaunchListSecondaryCell.self, forCellReuseIdentifier: LaunchCells.secondaryLaunchCell)
+        tableView.register(LaunchTablePrimaryCell.self, forCellReuseIdentifier: LaunchCells.launchCellPrimary)
+        tableView.register(LaunchTableSecondaryCell.self, forCellReuseIdentifier: LaunchCells.launchCellSecondary)
         tableView.contentInsetAdjustmentBehavior = .never
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -48,8 +47,6 @@ class LaunchViewController: UIViewController {
         refreshControl.addTarget(nil, action: #selector(refreshLaunches(_:)), for: .valueChanged)
         return refreshControl
     }()
-    
-
     
     var previousDataSource: LaunchTableDataSource? = nil
     var upcomingDataSource: LaunchTableDataSource? = nil
@@ -63,7 +60,7 @@ class LaunchViewController: UIViewController {
         self.networkManager = networkManager
         super.init(nibName: nil, bundle: nil)
         
-        dataManager.delegate = self
+        dataManager.launchDelegate = self
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -153,7 +150,7 @@ extension LaunchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let dataSource = getCurrentTableSource() else { return nil }
-        return LaunchListSectionHeader(name: dataSource.section(at: section))
+        return LaunchTableSectionHeader(name: dataSource.section(at: section))
     }
     
 }
@@ -161,26 +158,28 @@ extension LaunchViewController: UITableViewDelegate {
 extension LaunchViewController: LaunchDataManagerDelegate {
     
     func launchDataManager(_ manager: DataManager, previousLaunchesUpdate: LaunchTableData) {
-        previousDataSource = LaunchTableDataSource(sections: previousLaunchesUpdate.sections,
-                                                   launchIds: previousLaunchesUpdate.launchIds,
-                                                   launches: previousLaunchesUpdate.fullLaunches)
+        previousDataSource = LaunchTableDataSource(launchType: .previous, launchTableData: previousLaunchesUpdate)
     }
     
     func launchDataManager(_ manager: DataManager, upcomingLaunchesUpdate: LaunchTableData) {
-        upcomingDataSource = LaunchTableDataSource(sections: upcomingLaunchesUpdate.sections,
-                                                   launchIds: upcomingLaunchesUpdate.launchIds,
-                                                   launches: upcomingLaunchesUpdate.fullLaunches)
+        upcomingDataSource = LaunchTableDataSource(launchType: .upcoming, launchTableData: upcomingLaunchesUpdate)
     }
     
     func launchDataManager(_ manager: DataManager, allLaunchesUpdate: LaunchTableData) {
-        allDataSource = LaunchTableDataSource(sections: allLaunchesUpdate.sections,
-                                              launchIds: allLaunchesUpdate.launchIds,
-                                              launches: allLaunchesUpdate.fullLaunches)
+        allDataSource = LaunchTableDataSource(launchType: .all, launchTableData: allLaunchesUpdate)
     }
     
     func launchDataManager(_ manager: DataManager, dataWasUpdated: Bool) {
         switchLaunchTable()
         launchTableView.reloadData()
+        launchRefreshControl.endRefreshing()
+    }
+    
+    func launchDataManager(_ manager: DataManager, dataFailedToUpDate: String) {
+        let ac = UIAlertController(title: "Network Issue", message: "Unable to connect to server. Check your network connection.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
+        present(ac, animated: true)
+        
         launchRefreshControl.endRefreshing()
     }
     

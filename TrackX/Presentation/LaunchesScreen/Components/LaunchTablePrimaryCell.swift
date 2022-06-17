@@ -1,5 +1,5 @@
 //
-//  LaunchListPrimaryCell.swift
+//  LaunchTablePrimaryCell.swift
 //  TrackX
 //
 //  Created by Oliver Stenning on 09/06/2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LaunchListPrimaryCell: UITableViewCell {
+class LaunchTablePrimaryCell: UITableViewCell {
     
     let container: UIView = {
         let view = UIView()
@@ -100,7 +100,7 @@ class LaunchListPrimaryCell: UITableViewCell {
         detailsLabel.text = "\(rocket?.name ?? "Missing") • \(launchpad?.name ?? "Missing")"
         dateLabel.text = "\(formatDate(from: launch.dateUtc))"
         
-//        print(launch.links?.flickr ?? "No links")
+        print(launch.links?.flickr ?? "No links")
         
         if let imageUrls = launch.links?.flickr?.original {
             if !imageUrls.isEmpty {
