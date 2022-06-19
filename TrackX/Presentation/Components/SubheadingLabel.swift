@@ -22,6 +22,7 @@ class SubheadingLabel: UILabel {
         self.font = UIFont(name: "Archivo-SemiBold", size: 22)
         self.textColor = UIColor(named: "TextColor")
         self.numberOfLines = 0
+        self.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }
     
     required init?(coder aDecoder: NSCoder) {

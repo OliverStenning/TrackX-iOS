@@ -37,7 +37,6 @@ class LaunchViewController: UIViewController {
         tableView.register(LaunchTablePrimaryCell.self, forCellReuseIdentifier: LaunchCells.launchCellPrimary)
         tableView.register(LaunchTableSecondaryCell.self, forCellReuseIdentifier: LaunchCells.launchCellSecondary)
         tableView.contentInsetAdjustmentBehavior = .never
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
@@ -96,19 +95,21 @@ class LaunchViewController: UIViewController {
     }
     
     func setupConstraints() {
-        searchBar.anchor(
-            top: view.layoutMarginsGuide.topAnchor,
-            leading: view.layoutMarginsGuide.leadingAnchor,
-            trailing: view.layoutMarginsGuide.trailingAnchor
-        )
-        
         launchTableControl.anchor(
             leading: view.layoutMarginsGuide.leadingAnchor,
             bottom: view.layoutMarginsGuide.bottomAnchor,
             trailing: view.layoutMarginsGuide.trailingAnchor,
-            padding: .init(top: 0, left: 16, bottom: 24, right: 16)
+            padding: .init(top: 0, left: 16, bottom: 16, right: 16)
         )
+        launchTableControl.anchorSize(height: 36)
         
+        searchBar.anchor(
+            top: view.layoutMarginsGuide.topAnchor,
+            leading: view.layoutMarginsGuide.leadingAnchor,
+            trailing: view.layoutMarginsGuide.trailingAnchor,
+            padding: .init(top: 0, left: -8, bottom: 0, right: -8)
+        )
+
         launchTableView.anchor(
             top: searchBar.bottomAnchor,
             leading: view.leadingAnchor,
@@ -129,8 +130,8 @@ class LaunchViewController: UIViewController {
 
     @objc func switchLaunchTable() {
         launchTableView.dataSource = getCurrentTableSource()
-        launchTableView.contentOffset = CGPoint.zero
         launchTableView.reloadData()
+        launchTableView.scrollToRow(at: .init(row: 0, section: 0), at: .top, animated: false)
     }
     
     @objc func refreshLaunches(_ sender: Any) {
@@ -171,7 +172,6 @@ extension LaunchViewController: LaunchDataManagerDelegate {
     
     func launchDataManager(_ manager: DataManager, dataWasUpdated: Bool) {
         switchLaunchTable()
-        launchTableView.reloadData()
         launchRefreshControl.endRefreshing()
     }
     

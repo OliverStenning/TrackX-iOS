@@ -62,9 +62,15 @@ class LaunchTableDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LaunchCells.launchCellSecondary, for: indexPath) as! LaunchTableSecondaryCell
-        cell.setFullLaunch(launches[launchIds[indexPath.section][indexPath.row]])
-        return cell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: LaunchCells.launchCellPrimary, for: indexPath) as! LaunchTablePrimaryCell
+            cell.setFullLaunch(launches[launchIds[indexPath.section][indexPath.row]])
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: LaunchCells.launchCellSecondary, for: indexPath) as! LaunchTableSecondaryCell
+            cell.setFullLaunch(launches[launchIds[indexPath.section][indexPath.row]])
+            return cell
+        }
     }
     
     func section(at index: Int) -> String {

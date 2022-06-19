@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		F2051657285D3BC000584F11 /* LaunchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2051656285D3BC000584F11 /* LaunchEndpoint.swift */; };
+		F215F5EC285E81BB006F67FC /* LaunchCellInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F5EB285E81BB006F67FC /* LaunchCellInfoView.swift */; };
+		F215F5EE285E85BC006F67FC /* LaunchCellNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F5ED285E85BC006F67FC /* LaunchCellNameView.swift */; };
+		F215F5F0285E8D9E006F67FC /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F5EF285E8D9E006F67FC /* StatusView.swift */; };
+		F215F5F2285F5646006F67FC /* LaunchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F5F1285F5646006F67FC /* LaunchTableCell.swift */; };
 		F2396D272844060E0084DF79 /* LaunchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D262844060E0084DF79 /* LaunchDetailViewController.swift */; };
 		F2396D2F284552720084DF79 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D2E284552720084DF79 /* EndPointType.swift */; };
 		F2396D31284552DB0084DF79 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D30284552DB0084DF79 /* HTTPMethod.swift */; };
@@ -83,6 +87,10 @@
 
 /* Begin PBXFileReference section */
 		F2051656285D3BC000584F11 /* LaunchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchEndpoint.swift; sourceTree = "<group>"; };
+		F215F5EB285E81BB006F67FC /* LaunchCellInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCellInfoView.swift; sourceTree = "<group>"; };
+		F215F5ED285E85BC006F67FC /* LaunchCellNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCellNameView.swift; sourceTree = "<group>"; };
+		F215F5EF285E8D9E006F67FC /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		F215F5F1285F5646006F67FC /* LaunchTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTableCell.swift; sourceTree = "<group>"; };
 		F2396D262844060E0084DF79 /* LaunchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailViewController.swift; sourceTree = "<group>"; };
 		F2396D2E284552720084DF79 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		F2396D30284552DB0084DF79 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -230,6 +238,9 @@
 				F2F2346028563A2900CAB70C /* LaunchTableSecondaryCell.swift */,
 				F2F234512853A6F100CAB70C /* LaunchTableSectionHeader.swift */,
 				F2E2EC4528592EC500AF06CC /* LaunchTableDataSource.swift */,
+				F215F5EB285E81BB006F67FC /* LaunchCellInfoView.swift */,
+				F215F5ED285E85BC006F67FC /* LaunchCellNameView.swift */,
+				F215F5F1285F5646006F67FC /* LaunchTableCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -395,6 +406,7 @@
 				F254D44E28578BFA0009A2A0 /* SubheadingLabel.swift */,
 				F254D45028578DDB0009A2A0 /* BodyLabel.swift */,
 				F254D4632857E19F0009A2A0 /* AccentSubheadingView.swift */,
+				F215F5EF285E8D9E006F67FC /* StatusView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -570,6 +582,7 @@
 				F2396D552847AB010084DF79 /* CoreEndpoint.swift in Sources */,
 				F2396D512847AA120084DF79 /* Capsule.swift in Sources */,
 				F2396D272844060E0084DF79 /* LaunchDetailViewController.swift in Sources */,
+				F215F5F0285E8D9E006F67FC /* StatusView.swift in Sources */,
 				F2E2EC482859327D00AF06CC /* FullLaunch.swift in Sources */,
 				F2396D4D2847A9A90084DF79 /* Landpad.swift in Sources */,
 				F254D4592857A19B0009A2A0 /* LaunchpadSectionStackView.swift in Sources */,
@@ -583,9 +596,12 @@
 				F2396D372845559A0084DF79 /* URLParameterEncoder.swift in Sources */,
 				F2396D332845531C0084DF79 /* HTTPTask.swift in Sources */,
 				F2396D5B2848DE550084DF79 /* NetworkLogger.swift in Sources */,
+				F215F5EC285E81BB006F67FC /* LaunchCellInfoView.swift in Sources */,
 				F2396D592847AB170084DF79 /* PayloadEndpoint.swift in Sources */,
 				F254D4642857E19F0009A2A0 /* AccentSubheadingView.swift in Sources */,
 				F2396D532847AA1C0084DF79 /* Payload.swift in Sources */,
+				F215F5F2285F5646006F67FC /* LaunchTableCell.swift in Sources */,
+				F215F5EE285E85BC006F67FC /* LaunchCellNameView.swift in Sources */,
 				F254D45128578DDB0009A2A0 /* BodyLabel.swift in Sources */,
 				F2F093B627EE2F8B005CCD09 /* Launch.swift in Sources */,
 				F2051657285D3BC000584F11 /* LaunchEndpoint.swift in Sources */,

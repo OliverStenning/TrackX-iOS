@@ -28,19 +28,7 @@ class LaunchSectionStackView: UIStackView {
         return label
     }()
     
-    private let statusView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .systemGreen
-        view.layer.cornerRadius = 14
-        return view
-    }()
-    
-    private let statusLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "Archivo-SemiBold", size: 16)
-        label.textColor = UIColor(named: "BackgroundColor")
-        return label
-    }()
+    private let statusView = StatusView()
     
     private let spacerView: UIView = {
         let view = UIView()
@@ -87,20 +75,10 @@ class LaunchSectionStackView: UIStackView {
         dateStatusStack.addArrangedSubview(statusView)
         dateStatusStack.addArrangedSubview(spacerView)
         
-        statusView.addSubview(statusLabel)
     }
     
     private func setupConstraints() {
-        statusView.anchorSize(height: 28)
         statusView.anchorYCenter(to: dateLabel)
-        
-        statusLabel.anchor(
-            top: statusView.topAnchor,
-            leading: statusView.leadingAnchor,
-            bottom: statusView.bottomAnchor,
-            trailing: statusView.trailingAnchor,
-            padding: .init(top: 0, left: 16, bottom: 0, right: 16)
-        )
         
         setCustomSpacing(16, after: dateStatusStack)
         setCustomSpacing(16, after: descriptionLabel)
@@ -120,17 +98,11 @@ class LaunchSectionStackView: UIStackView {
         }
         
         if launch?.upcoming ?? false {
-            statusView.backgroundColor = UIColor(named: "AccentColor")
-            statusLabel.text = "Scheduled"
-            statusLabel.textColor = UIColor(named: "BackgroundColor")
+            statusView.setStatus(.scheduled)
         } else if launch?.success ?? false {
-            statusView.backgroundColor = .systemGreen
-            statusLabel.text = "Success"
-            statusLabel.textColor = UIColor(named: "BackgroundColor")
+            statusView.setStatus(.success)
         } else {
-            statusView.backgroundColor = .systemRed
-            statusLabel.text = "Failed"
-            statusLabel.textColor = UIColor(named: "BackgroundColor")
+            statusView.setStatus(.failed)
         }
     }
     

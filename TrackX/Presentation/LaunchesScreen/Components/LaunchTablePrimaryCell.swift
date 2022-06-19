@@ -7,35 +7,29 @@
 
 import UIKit
 
-class LaunchTablePrimaryCell: UITableViewCell {
+class LaunchTablePrimaryCell: LaunchTableCell {
     
-    let container: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 12
-        view.clipsToBounds = true
-        return view
-    }()
-    
-    let backgroundImage: UIImageView = {
+    //MARK: - Views
+    private let backgroundImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
-    let backgroundGradient: UIView = {
+    private let backgroundGradient: UIView = {
         let view = GradientView()
-        view.bottomColor = .black
+        view.bottomColor = UIColor(named: "SecondaryBackgroundColor") ?? .black
+        view.locations = [-1.0, 1.0]
         return view
     }()
     
-    let nameLabel = SubheadingLabel()
-    let detailsLabel = BodyLabel()
-    let dateLabel = BodyLabel()
+    private let nameView = LaunchCellNameView()
+    private let infoView = LaunchCellInfoView()
     
-    var launch: Launch?
-    var rocket: Rocket?
-    var launchpad: Launchpad?
+    //MARK: - Properties
+    private var fullLaunch: FullLaunch? = nil
     
+    //MARK: - Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
@@ -46,95 +40,54 @@ class LaunchTablePrimaryCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Setup Functions
+    func setFullLaunch(_ fullLaunch: FullLaunch?) {
+        self.fullLaunch = fullLaunch
+        nameView.setFullLaunch(fullLaunch)
+        infoView.setFullLaunch(fullLaunch)
+        updateViews()
+    }
+    
     func setupViews() {
         backgroundColor = .clear
         selectionStyle = .none
         
-        contentView.addSubview(container)
         container.addSubview(backgroundImage)
         container.addSubview(backgroundGradient)
-        container.addSubview(nameLabel)
-        container.addSubview(detailsLabel)
-        container.addSubview(dateLabel)
+        container.addSubview(nameView)
+        container.addSubview(infoView)
     }
     
     func setupConstaints() {
-        container.anchor(
-            to: contentView,
-            padding: .init(top: 0, left: 16, bottom: 0, right: 16)
-        )
-        container.heightAnchor.constraint(equalToConstant: 200).isActive = true
+
+        container.anchorSize(height: 200)
         
         backgroundImage.anchor(to: container)
         
         backgroundGradient.anchor(to: container)
         
-        nameLabel.anchor(
+        nameView.anchor(
+            top: container.topAnchor,
             leading: container.leadingAnchor,
-            bottom: detailsLabel.topAnchor,
-            trailing: container.trailingAnchor,
-            padding: .init(top: 0, left: 16, bottom: 0, right: 16)
+            trailing: container.trailingAnchor
         )
         
-        detailsLabel.anchor(
-            leading: container.leadingAnchor,
-            bottom: dateLabel.topAnchor,
-            trailing: container.trailingAnchor,
-            padding: .init(top: 0, left: 16, bottom: 0, right: 16)
-        )
-        
-        dateLabel.anchor(
+        infoView.anchor(
             leading: container.leadingAnchor,
             bottom: container.bottomAnchor,
-            trailing: container.trailingAnchor,
-            padding: .init(top: 0, left: 16, bottom: 16, right: 16)
+            trailing: container.trailingAnchor
         )
-    }
-    
-    func set(launch: Launch, rocket: Rocket?, launchpad: Launchpad?) {
-        self.launch = launch
-        self.rocket = rocket
-        self.launchpad = launchpad
-        
-        nameLabel.text = launch.name
-        detailsLabel.text = "\(rocket?.name ?? "Missing") • \(launchpad?.name ?? "Missing")"
-        dateLabel.text = "\(formatDate(from: launch.dateUtc))"
-        
-        print(launch.links?.flickr ?? "No links")
-        
-        if let imageUrls = launch.links?.flickr?.original {
-            if !imageUrls.isEmpty {
-                backgroundImage.downloaded(from: imageUrls[0])
-            } else {
-                backgroundImage.image = UIImage(named: "placeholder_image")
-//                backgroundImage.downloaded(from: "https://live.staticflickr.com/65535/51676939646_1a12780e54_o.jpg")
-            }
-
-        }
         
     }
     
-    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        if highlighted {
-            UIView.animate(
-                withDuration: 0.2,
-                delay: 0,
-                options: .curveEaseInOut,
-                animations: {
-                    self.container.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
-                },
-                completion: nil
-            )
+    //MARK: - Update Functions
+    func updateViews() {
+        guard let imageUrls = fullLaunch?.launch.links?.flickr?.original else { return }
+        if !imageUrls.isEmpty {
+            backgroundImage.downloaded(from: imageUrls[0])
         } else {
-            UIView.animate(
-                withDuration: 0.2,
-                delay: 0,
-                options: .curveEaseInOut,
-                animations: {
-                    self.container.transform = CGAffineTransform.identity
-                },
-                completion: nil
-            )
+            backgroundImage.image = UIImage(named: "placeholder_image")
+            backgroundImage.downloaded(from: "https://live.staticflickr.com/65535/51676939646_1a12780e54_o.jpg")
         }
     }
     
