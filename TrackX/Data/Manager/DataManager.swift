@@ -179,15 +179,15 @@ class DataManager {
         let longFormatter = DateFormatter()
         longFormatter.dateFormat = "MMMM yyyy"
         
-        sectionNames.append("")
-        LaunchIds.append([launches[0].id])
+//        sectionNames.append("")
+//        LaunchIds.append([launches[0].id])
         
-        for x in 1..<launches.count {
+        for x in 0..<launches.count {
             let launchDate = Date(timeIntervalSince1970: TimeInterval(launches[x].dateUnix))
             var rangeExists: Bool = false
             for y in 0..<sectionIntervals.count {
                 if sectionIntervals[y].contains(launchDate) {
-                    LaunchIds[y+1].append(launches[x].id)
+                    LaunchIds[y].append(launches[x].id)
                     rangeExists = true
                 }
             }

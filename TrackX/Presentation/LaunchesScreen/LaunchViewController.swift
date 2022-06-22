@@ -84,6 +84,9 @@ class LaunchViewController: UIViewController {
         view.backgroundColor = UIColor(named: "BackgroundColor")
         title = "Launches"
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.up.arrow.down"), style: .plain, target: self, action: #selector(toggleAscending))
+        
+        
         launchTableView.delegate = self
         
         view.addSubview(searchBar)
@@ -103,15 +106,16 @@ class LaunchViewController: UIViewController {
         )
         launchTableControl.anchorSize(height: 36)
         
-        searchBar.anchor(
-            top: view.layoutMarginsGuide.topAnchor,
-            leading: view.layoutMarginsGuide.leadingAnchor,
-            trailing: view.layoutMarginsGuide.trailingAnchor,
-            padding: .init(top: 0, left: -8, bottom: 0, right: -8)
-        )
+        // Disable search bar
+//        searchBar.anchor(
+//            top: view.layoutMarginsGuide.topAnchor,
+//            leading: view.layoutMarginsGuide.leadingAnchor,
+//            trailing: view.layoutMarginsGuide.trailingAnchor,
+//            padding: .init(top: 0, left: -8, bottom: 0, right: -8)
+//        )
 
         launchTableView.anchor(
-            top: searchBar.bottomAnchor,
+            top: view.layoutMarginsGuide.topAnchor,
             leading: view.leadingAnchor,
             bottom: view.layoutMarginsGuide.bottomAnchor,
             trailing: view.trailingAnchor,
@@ -129,13 +133,22 @@ class LaunchViewController: UIViewController {
     }
 
     @objc func switchLaunchTable() {
-        launchTableView.dataSource = getCurrentTableSource()
-        launchTableView.reloadData()
-        launchTableView.scrollToRow(at: .init(row: 0, section: 0), at: .top, animated: false)
+        let dataSource = getCurrentTableSource()
+        launchTableView.dataSource = dataSource
+        if dataSource != nil {
+            launchTableView.reloadData()
+            launchTableView.scrollToRow(at: .init(row: 0, section: 0), at: .top, animated: false)
+        }
     }
     
     @objc func refreshLaunches(_ sender: Any) {
         dataManager.fetchData()
+    }
+    
+    @objc func toggleAscending() {
+        let tableSource = getCurrentTableSource()
+        tableSource?.toggleOrder()
+        launchTableView.reloadData()
     }
 }
 

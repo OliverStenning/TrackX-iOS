@@ -24,6 +24,10 @@ enum LaunchType {
     case all
 }
 
+/*
+ -
+ */
+
 class LaunchTableDataSource: NSObject, UITableViewDataSource {
     
     var sections: [String]
@@ -37,7 +41,15 @@ class LaunchTableDataSource: NSObject, UITableViewDataSource {
         self.launchIds = launchTableData.launchIds
         self.launches = launchTableData.fullLaunches
         super.init()
-        self.updateFirstSectionName()
+        //self.updateFirstSectionName()
+    }
+    
+    func toggleOrder() {
+        sections.reverse()
+        launchIds.reverse()
+        for x in 0..<launchIds.count {
+            launchIds[x].reverse()
+        }
     }
     
     private func updateFirstSectionName() {
@@ -62,7 +74,7 @@ class LaunchTableDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
+        if indexPath.section == 0 && indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: LaunchCells.launchCellPrimary, for: indexPath) as! LaunchTablePrimaryCell
             cell.setFullLaunch(launches[launchIds[indexPath.section][indexPath.row]])
             return cell
