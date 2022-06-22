@@ -10,7 +10,7 @@ import UIKit
 class LaunchSectionStackView: UIStackView {
     
     //MARK: - Views
-    private let nameLabel = HeadingLabel()
+    private let nameLabel = AccentHeadingView()
     
     private let dateStatusStack: UIStackView = {
         let stackView = UIStackView()
@@ -54,11 +54,6 @@ class LaunchSectionStackView: UIStackView {
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    convenience init(launch: Launch?) {
-        self.init(frame: .zero)
-        self.launch = launch
     }
     
     //MARK: - Setup Functions

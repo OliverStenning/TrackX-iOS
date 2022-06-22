@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class LaunchDetailViewController: UIViewController {
     
@@ -15,8 +16,6 @@ class LaunchDetailViewController: UIViewController {
     
     private let headerImage: UIImageView = {
         let imageView = UIImageView()
-        let image = UIImage(named: "placeholder_image")
-        imageView.image = image
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView
@@ -36,11 +35,21 @@ class LaunchDetailViewController: UIViewController {
     private let launchSectionStackView = LaunchSectionStackView()
     private let rocketSectionStackView = RocketSectionStackView()
     private let launchpadSectionStackView = LaunchpadSectionStaclView()
+    private let coresSectionStackView = CoresSectionStackView()
+    private let payloadsSectionStackView = PayloadsSectionStackView()
+    private let capsuleSectionStackView = CapsuleSectionStackView()
+    
+    private var cancellable: AnyCancellable?
+    private var animator: UIViewPropertyAnimator?
+    
+    //MARK: - Properties
+    private var fullLaunch: FullLaunch? = nil
     
     //MARK: - Initializers
     convenience init(fullLaunch: FullLaunch) {
         self.init()
         
+        self.fullLaunch = fullLaunch
         launchSectionStackView.launch = fullLaunch.launch
         rocketSectionStackView.rocket = fullLaunch.rocket
         launchpadSectionStackView.launchpad = fullLaunch.launchpad
@@ -50,6 +59,7 @@ class LaunchDetailViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         setupConstraints()
+        updateViews()
     }
     
     //MARK: - Setup Functions
@@ -64,6 +74,9 @@ class LaunchDetailViewController: UIViewController {
         infoStack.addArrangedSubview(launchSectionStackView)
         infoStack.addArrangedSubview(rocketSectionStackView)
         infoStack.addArrangedSubview(launchpadSectionStackView)
+        infoStack.addArrangedSubview(coresSectionStackView)
+        infoStack.addArrangedSubview(payloadsSectionStackView)
+        infoStack.addArrangedSubview(capsuleSectionStackView)
     }
     
     private func setupConstraints() {
@@ -101,5 +114,35 @@ class LaunchDetailViewController: UIViewController {
         infoStack.setCustomSpacing(sectionSpacing, after: launchSectionStackView)
         infoStack.setCustomSpacing(sectionSpacing, after: rocketSectionStackView)
         infoStack.setCustomSpacing(sectionSpacing, after: launchpadSectionStackView)
+        infoStack.setCustomSpacing(sectionSpacing, after: coresSectionStackView)
+        infoStack.setCustomSpacing(sectionSpacing, after: payloadsSectionStackView)
+        infoStack.setCustomSpacing(sectionSpacing, after: capsuleSectionStackView)
     }
+    
+    func updateViews() {
+        if let imageUrl = fullLaunch?.getLaunchImageUrl() {
+            cancellable = loadImage(for: imageUrl).sink { [unowned self] image in self.showImage(image: image)}
+        } else {
+            showImage(image: UIImage(named: "placeholder_image"))
+        }
+    }
+    
+    func showImage(image: UIImage?) {
+        headerImage.alpha = 0.0
+        animator?.stopAnimation(false)
+        headerImage.image = image
+        animator = UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, options: .curveLinear, animations: {
+            self.headerImage.alpha = 1.0
+        })
+    }
+    
+    func loadImage(for url: String) -> AnyPublisher<UIImage?, Never> {
+        return Just(url)
+            .flatMap({ url -> AnyPublisher<UIImage?, Never> in
+                let url = URL(string: url)!
+                return ImageLoader.shared.loadImage(from: url)
+            })
+            .eraseToAnyPublisher()
+    }
+    
 }

@@ -36,7 +36,6 @@ func formatDate(from inputDate: String, as dateFormat: DateFormat = DateFormat.s
     if let date = dateFormatterStart.date(from: inputDate) {
         return dateFormatterEnd.string(from: date)
     } else {
-        print(inputDate)
         return "Bad date"
     }
 }

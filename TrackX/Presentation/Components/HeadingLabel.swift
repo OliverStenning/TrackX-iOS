@@ -9,14 +9,7 @@ import UIKit
 
 class HeadingLabel: UILabel {
     
-    var name: String {
-        didSet {
-            self.text = name
-        }
-    }
-    
     init(text: String = "") {
-        self.name = text
         super.init(frame: .zero)
         self.text = text
         self.font = UIFont(name: "Archivo-SemiBold", size: 30)

@@ -57,7 +57,7 @@ class LaunchCellNameView: UIView {
     //MARK: - Update Functions
     func updateViews() {
         if let fullLaunch = fullLaunch {
-            nameLabel.name = fullLaunch.launch.name
+            nameLabel.text = fullLaunch.launch.name
             
             if fullLaunch.launch.upcoming {
                 statusView.setStatus(.scheduled)

@@ -27,6 +27,19 @@ class FullLaunch {
         self.coreLandpads = coreLandpads
     }
     
-    
+    func getLaunchImageUrl() -> String? {
+        if launch.dateUnix < 1420070400 { // Unix time of Jan 1st 2016
+            return nil
+        }
+        if let flickr = launch.links?.flickr?.original {
+            if !flickr.isEmpty {
+                return flickr[0]
+            }
+        }
+        if let youtubeID = launch.links?.youtubeId {
+            return "https://img.youtube.com/vi/\(youtubeID)/maxresdefault.jpg"
+        }
+        return nil
+    }
     
 }

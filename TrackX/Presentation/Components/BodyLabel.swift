@@ -9,11 +9,6 @@ import UIKit
 
 class BodyLabel: UILabel {
     
-    var name: String {
-        didSet {
-            self.text = name
-        }
-    }
     var expanded: Bool = false {
         didSet {
             self.numberOfLines = expanded ? 0 : lineCount
@@ -31,7 +26,6 @@ class BodyLabel: UILabel {
     let lineCount: Int
     
     init(text: String = "", lineCount: Int = 4, bold: Bool = false) {
-        self.name = text
         self.lineCount = lineCount
         self.bold = false
         super.init(frame: .zero)

@@ -33,11 +33,6 @@ class LaunchpadSectionStaclView: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(launchpad: Launchpad?) {
-        self.init(frame: .zero)
-        self.launchpad = launchpad
-    }
-    
     //MARK: - Setup Functions
     private func setupViews() {
         axis = .vertical

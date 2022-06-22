@@ -151,7 +151,7 @@ extension LaunchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let dataSource = getCurrentTableSource() else { return nil }
-        return LaunchTableSectionHeader(name: dataSource.section(at: section))
+        return LaunchTableSectionHeader(text: dataSource.section(at: section))
     }
     
 }

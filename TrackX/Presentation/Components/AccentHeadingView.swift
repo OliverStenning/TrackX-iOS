@@ -2,26 +2,26 @@
 //  AccentHeadingView.swift
 //  TrackX
 //
-//  Created by Oliver Stenning on 13/06/2022.
+//  Created by Oliver Stenning on 21/06/2022.
 //
 
 import UIKit
 
-class AccentSubheadingView: UIView {
+class AccentHeadingView: UIView {
     
     //MARK: - Views
     private let capsule: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(named: "AccentColor")
-        view.layer.cornerRadius = 2
+        view.layer.cornerRadius = 3
         return view
     }()
     
-    private let subheading = SubheadingLabel()
+    private let heading = HeadingLabel()
     
     var text: String {
         didSet {
-            subheading.text = text
+            heading.text = text
         }
     }
     
@@ -38,18 +38,18 @@ class AccentSubheadingView: UIView {
     
     private func setupViews() {
         addSubview(capsule)
-        addSubview(subheading)
+        addSubview(heading)
     }
     
     private func setupConstraints() {
-        capsule.anchorSize(width: 4)
+        capsule.anchorSize(width: 6)
         capsule.anchor(
             top: topAnchor,
             leading: leadingAnchor,
             bottom: bottomAnchor
         )
         
-        subheading.anchor(
+        heading.anchor(
             top: topAnchor,
             leading: capsule.trailingAnchor,
             bottom: bottomAnchor,

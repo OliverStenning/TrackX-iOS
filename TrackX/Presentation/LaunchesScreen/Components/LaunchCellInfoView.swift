@@ -87,22 +87,22 @@ class LaunchCellInfoView: UIView {
     //MARK: - Update Functions
     func updateViews() {
         if let fullLaunch = fullLaunch {
-            rocketLabel.name = fullLaunch.rocket?.name ?? "Unknown"
-            dateLabel.name = "\(formatDate(from: fullLaunch.launch.dateUtc, as: .shortDate))"
-            timeLabel.name = "\(formatDate(from: fullLaunch.launch.dateUtc, as: .time))"
+            rocketLabel.text = fullLaunch.rocket?.name ?? "Unknown"
+            dateLabel.text = "\(formatDate(from: fullLaunch.launch.dateUtc, as: .shortDate))"
+            timeLabel.text = "\(formatDate(from: fullLaunch.launch.dateUtc, as: .time))"
             
             if fullLaunch.cores?.isEmpty == false {
-                coreLabel.name = fullLaunch.cores?[0].serial ?? "Unknown"
+                coreLabel.text = fullLaunch.cores?[0].serial ?? "Unknown"
             } else {
-                coreLabel.name = "Unknown"
+                coreLabel.text = "Unknown"
             }
             
-            launchpadLabel.name = fullLaunch.launchpad?.name ?? "Unknown"
+            launchpadLabel.text = fullLaunch.launchpad?.name ?? "Unknown"
             
             if fullLaunch.coreLandpads?.isEmpty == false {
-                landpadLabel.name = fullLaunch.coreLandpads?[0].name ?? "Unknown"
+                landpadLabel.text = fullLaunch.coreLandpads?[0].name ?? "Unknown"
             } else {
-                landpadLabel.name = "Unknown"
+                landpadLabel.text = "Unknown"
             }
         }
     }

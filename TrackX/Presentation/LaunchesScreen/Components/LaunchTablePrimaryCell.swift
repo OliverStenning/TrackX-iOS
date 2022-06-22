@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class LaunchTablePrimaryCell: LaunchTableCell {
     
@@ -29,6 +30,9 @@ class LaunchTablePrimaryCell: LaunchTableCell {
     //MARK: - Properties
     private var fullLaunch: FullLaunch? = nil
     
+    private var cancellable: AnyCancellable?
+    private var animator: UIViewPropertyAnimator?
+    
     //MARK: - Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -38,6 +42,14 @@ class LaunchTablePrimaryCell: LaunchTableCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        backgroundImage.image = nil
+        backgroundImage.alpha = 0.0
+        animator?.stopAnimation(true)
+        cancellable?.cancel()
     }
     
     //MARK: - Setup Functions
@@ -82,13 +94,28 @@ class LaunchTablePrimaryCell: LaunchTableCell {
     
     //MARK: - Update Functions
     func updateViews() {
-        guard let imageUrls = fullLaunch?.launch.links?.flickr?.original else { return }
-        if !imageUrls.isEmpty {
-            backgroundImage.downloaded(from: imageUrls[0])
+        if let imageUrl = fullLaunch?.getLaunchImageUrl() {
+            cancellable = loadImage(for: imageUrl).sink { [unowned self] image in self.showImage(image: image)}
         } else {
-            backgroundImage.image = UIImage(named: "placeholder_image")
-            backgroundImage.downloaded(from: "https://live.staticflickr.com/65535/51676939646_1a12780e54_o.jpg")
+            showImage(image: UIImage(named: "placeholder_image"))
         }
     }
     
+    func showImage(image: UIImage?) {
+        backgroundImage.alpha = 0.0
+        animator?.stopAnimation(false)
+        backgroundImage.image = image
+        animator = UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, options: .curveLinear, animations: {
+            self.backgroundImage.alpha = 1.0
+        })
+    }
+    
+    func loadImage(for url: String) -> AnyPublisher<UIImage?, Never> {
+        return Just(url)
+            .flatMap({ url -> AnyPublisher<UIImage?, Never> in
+                let url = URL(string: url)!
+                return ImageLoader.shared.loadImage(from: url)
+            })
+            .eraseToAnyPublisher()
+    }
 }

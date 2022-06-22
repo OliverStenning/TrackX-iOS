@@ -52,11 +52,6 @@ class RocketSectionStackView: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(rocket: Rocket?) {
-        self.init(frame: .zero)
-        self.rocket = rocket
-    }
-    
     //MARK: - Setup Functions
     private func setupViews() {
         axis = .vertical

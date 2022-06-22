@@ -11,9 +11,9 @@ class LaunchTableSectionHeader: UIView {
     
     fileprivate let nameLabel = HeadingLabel()
     
-    var name = "" {
+    var text = "" {
         didSet {
-            nameLabel.name = name
+            nameLabel.text = text
         }
     }
     
@@ -21,10 +21,10 @@ class LaunchTableSectionHeader: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(name: String) {
+    init(text: String) {
         super.init(frame: .zero)
-        self.name = name
-        nameLabel.text = name
+        self.text = text
+        nameLabel.text = text
         
         setupViews()
         setupConstraints()
