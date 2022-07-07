@@ -25,7 +25,11 @@ class StatusView: UIView {
     }()
     
     //MARK: - Properties
-    private var status: StatusType = .success
+    var status: StatusType = .success {
+        didSet {
+            updateViews()
+        }
+    }
     
     //MARK: - Initializers
     required init?(coder aDecoder: NSCoder) {
@@ -34,23 +38,18 @@ class StatusView: UIView {
     
     init() {
         super.init(frame: .zero)
-        setupViews()
-        setupConstraints()
+        configureViews()
+        configureConstraints()
     }
     
-    //MARK: - Setup Function
-    func setStatus(_ status: StatusType) {
-        self.status = status
-        updateViews()
-    }
-    
-    private func setupViews() {
+    //MARK: - Configuration Functions
+    private func configureViews() {
         addSubview(statusLabel)
         backgroundColor = .systemGreen
         layer.cornerRadius = 6
     }
     
-    private func setupConstraints() {
+    private func configureConstraints() {
         statusLabel.anchor(
             to: self,
             padding: .init(top: 4, left: 16, bottom: 4, right: 16)

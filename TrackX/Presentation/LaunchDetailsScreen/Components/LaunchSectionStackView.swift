@@ -48,16 +48,16 @@ class LaunchSectionStackView: UIStackView {
     //MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupViews()
-        setupConstraints()
+        configureViews()
+        configureConstraints()
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Setup Functions
-    private func setupViews() {
+    //MARK: - Configuration Functions
+    private func configureViews() {
         axis = .vertical
         distribution = .fill
         spacing = 8
@@ -72,7 +72,7 @@ class LaunchSectionStackView: UIStackView {
         
     }
     
-    private func setupConstraints() {
+    private func configureConstraints() {
         statusView.anchorYCenter(to: dateLabel)
         
         setCustomSpacing(16, after: dateStatusStack)
@@ -93,11 +93,11 @@ class LaunchSectionStackView: UIStackView {
         }
         
         if launch?.upcoming ?? false {
-            statusView.setStatus(.scheduled)
+            statusView.status = .scheduled
         } else if launch?.success ?? false {
-            statusView.setStatus(.success)
+            statusView.status = .success
         } else {
-            statusView.setStatus(.failed)
+            statusView.status = .failed
         }
     }
     

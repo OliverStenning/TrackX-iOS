@@ -57,13 +57,13 @@ class LaunchDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
-        setupConstraints()
+        configureViews()
+        configureConstraints()
         updateViews()
     }
     
-    //MARK: - Setup Functions
-    private func setupViews() {
+    //MARK: - Configuration Functions
+    private func configureViews() {
         title = "Launch Info"
         view.backgroundColor = UIColor(named: "SecondaryBackgroundColor")
         
@@ -79,7 +79,7 @@ class LaunchDetailViewController: UIViewController {
         infoStack.addArrangedSubview(capsuleSectionStackView)
     }
     
-    private func setupConstraints() {
+    private func configureConstraints() {
         scrollView.anchor(
             top: view.layoutMarginsGuide.topAnchor,
             leading: view.leadingAnchor,
@@ -119,6 +119,7 @@ class LaunchDetailViewController: UIViewController {
         infoStack.setCustomSpacing(sectionSpacing, after: capsuleSectionStackView)
     }
     
+    //MARK: - Update Functions
     func updateViews() {
         if let imageUrl = fullLaunch?.getLaunchImageUrl() {
             cancellable = loadImage(for: imageUrl).sink { [unowned self] image in self.showImage(image: image)}

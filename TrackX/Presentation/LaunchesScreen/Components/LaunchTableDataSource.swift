@@ -24,10 +24,6 @@ enum LaunchType {
     case all
 }
 
-/*
- -
- */
-
 class LaunchTableDataSource: NSObject, UITableViewDataSource {
     
     var sections: [String]
@@ -76,11 +72,11 @@ class LaunchTableDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 && indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: LaunchCells.launchCellPrimary, for: indexPath) as! LaunchTablePrimaryCell
-            cell.setFullLaunch(launches[launchIds[indexPath.section][indexPath.row]])
+            cell.configure(with: launches[launchIds[indexPath.section][indexPath.row]])
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: LaunchCells.launchCellSecondary, for: indexPath) as! LaunchTableSecondaryCell
-            cell.setFullLaunch(launches[launchIds[indexPath.section][indexPath.row]])
+            cell.configure(with: launches[launchIds[indexPath.section][indexPath.row]])
             return cell
         }
     }

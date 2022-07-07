@@ -19,6 +19,7 @@
 		F215F5FF2863480A006F67FC /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F5FE2863480A006F67FC /* UIImage+Extensions.swift */; };
 		F215F60428634955006F67FC /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F60328634955006F67FC /* ImageCache.swift */; };
 		F215F60628634C7D006F67FC /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F60528634C7D006F67FC /* ImageLoader.swift */; };
+		F215F60828651CB6006F67FC /* CoreCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F60728651CB6006F67FC /* CoreCellView.swift */; };
 		F2396D272844060E0084DF79 /* LaunchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D262844060E0084DF79 /* LaunchDetailViewController.swift */; };
 		F2396D2F284552720084DF79 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D2E284552720084DF79 /* EndPointType.swift */; };
 		F2396D31284552DB0084DF79 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D30284552DB0084DF79 /* HTTPMethod.swift */; };
@@ -105,6 +106,7 @@
 		F215F5FE2863480A006F67FC /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		F215F60328634955006F67FC /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		F215F60528634C7D006F67FC /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		F215F60728651CB6006F67FC /* CoreCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreCellView.swift; sourceTree = "<group>"; };
 		F2396D262844060E0084DF79 /* LaunchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailViewController.swift; sourceTree = "<group>"; };
 		F2396D2E284552720084DF79 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		F2396D30284552DB0084DF79 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 				F254D45628579E8B0009A2A0 /* LaunchSectionStackView.swift */,
 				F215F5F5285F590E006F67FC /* PayloadsSectionStackView.swift */,
 				F254D454285792160009A2A0 /* RocketSectionStackView.swift */,
+				F215F60728651CB6006F67FC /* CoreCellView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				F215F5F0285E8D9E006F67FC /* StatusView.swift in Sources */,
 				F2E2EC482859327D00AF06CC /* FullLaunch.swift in Sources */,
 				F215F60428634955006F67FC /* ImageCache.swift in Sources */,
+				F215F60828651CB6006F67FC /* CoreCellView.swift in Sources */,
 				F2396D4D2847A9A90084DF79 /* Landpad.swift in Sources */,
 				F254D4592857A19B0009A2A0 /* LaunchpadSectionStackView.swift in Sources */,
 				F2396D4F2847A9C40084DF79 /* Core.swift in Sources */,

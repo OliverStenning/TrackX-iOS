@@ -25,16 +25,16 @@ class LaunchpadSectionStaclView: UIStackView {
     //MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupViews()
-        setupConstraints()
+        configureViews()
+        configureConstraints()
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Setup Functions
-    private func setupViews() {
+    //MARK: - Configuration Functions
+    private func configureViews() {
         axis = .vertical
         distribution = .fill
         spacing = 16
@@ -45,7 +45,7 @@ class LaunchpadSectionStaclView: UIStackView {
         addArrangedSubview(regionView)
     }
     
-    private func setupConstraints() {
+    private func configureConstraints() {
 
     }
     

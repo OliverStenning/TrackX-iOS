@@ -53,17 +53,17 @@ class LaunchCellInfoView: UIView {
     
     init() {
         super.init(frame: .zero)
-        setupViews()
-        setupConstraints()
+        configureViews()
+        configureConstraints()
     }
     
-    //MARK: - Setup Functions
-    func setFullLaunch(_ fullLaunch: FullLaunch?) {
+    //MARK: - Configuration Functions
+    func configure(with fullLaunch: FullLaunch?) {
         self.fullLaunch = fullLaunch
         updateViews()
     }
     
-    private func setupViews() {
+    private func configureViews() {
         addSubview(containerStack)
         containerStack.addArrangedSubview(leftStack)
         containerStack.addArrangedSubview(rightStack)
@@ -77,7 +77,7 @@ class LaunchCellInfoView: UIView {
         rightStack.addArrangedSubview(landpadLabel)
     }
     
-    private func setupConstraints() {
+    private func configureConstraints() {
         containerStack.anchor(
             to: self,
             padding: .init(top: 12, left: 16, bottom: 16, right: 16)

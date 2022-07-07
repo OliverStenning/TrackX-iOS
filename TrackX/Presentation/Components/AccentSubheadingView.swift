@@ -19,29 +19,32 @@ class AccentSubheadingView: UIView {
     
     private let subheading = SubheadingLabel()
     
+    //MARK: - Properties
     var text: String {
         didSet {
             subheading.text = text
         }
     }
     
+    //MARK: - Initializers
     init(text: String = "") {
         self.text = text
         super.init(frame: .zero)
-        setupViews()
-        setupConstraints()
+        configureViews()
+        configureConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupViews() {
+    //MARK: - Configuration Functions
+    private func configureViews() {
         addSubview(capsule)
         addSubview(subheading)
     }
     
-    private func setupConstraints() {
+    private func configureConstraints() {
         capsule.anchorSize(width: 4)
         capsule.anchor(
             top: topAnchor,

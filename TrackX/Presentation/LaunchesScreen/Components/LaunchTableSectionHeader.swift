@@ -9,14 +9,17 @@ import UIKit
 
 class LaunchTableSectionHeader: UIView {
     
-    fileprivate let nameLabel = HeadingLabel()
+    //MARK: - Views
+    private let nameLabel = HeadingLabel()
     
+    //MARK: - Properties
     var text = "" {
         didSet {
             nameLabel.text = text
         }
     }
     
+    //MARK: - Initializers
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -26,17 +29,18 @@ class LaunchTableSectionHeader: UIView {
         self.text = text
         nameLabel.text = text
         
-        setupViews()
-        setupConstraints()
+        configureViews()
+        configureConstraints()
         
     }
     
-    fileprivate func setupViews() {
+    //MARK: - Configuration Functions
+    private func configureViews() {
         backgroundColor = UIColor(named: "BackgroundColor")
         addSubview(nameLabel)
     }
     
-    fileprivate func setupConstraints() {
+    private func configureConstraints() {
         nameLabel.anchor(to: self, padding: .init(top: 16, left: 24, bottom: 8, right: 24))
     }
     

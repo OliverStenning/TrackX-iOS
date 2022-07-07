@@ -16,8 +16,8 @@ class RocketSectionStackView: UIStackView {
 
     private let detailsStack: UIStackView = {
         let stackView = UIStackView()
-        stackView.axis = NSLayoutConstraint.Axis.horizontal
-        stackView.distribution = UIStackView.Distribution.fillEqually
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
         return stackView
     }()
     private let successRateView = NameValueView(name: "Success")
@@ -26,8 +26,8 @@ class RocketSectionStackView: UIStackView {
     
     private let measuresStack: UIStackView = {
         let stackView = UIStackView()
-        stackView.axis = NSLayoutConstraint.Axis.horizontal
-        stackView.distribution = UIStackView.Distribution.fillEqually
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
         return stackView
     }()
     private let massView = NameValueView(name: "Mass")
@@ -44,16 +44,16 @@ class RocketSectionStackView: UIStackView {
     //MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupViews()
-        setupConstraints()
+        configureViews()
+        configureConstraints()
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Setup Functions
-    private func setupViews() {
+    //MARK: - Configuration Functions
+    private func configureViews() {
         axis = .vertical
         distribution = .fill
         spacing = 16
@@ -73,7 +73,7 @@ class RocketSectionStackView: UIStackView {
         measuresStack.addArrangedSubview(diameterView)
     }
     
-    private func setupConstraints() {
+    private func configureConstraints() {
         detailsStack.anchorWidth(to: self)
         measuresStack.anchorWidth(to: self)
     }
@@ -102,13 +102,13 @@ class RocketSectionStackView: UIStackView {
         }
         
         massView.value = "\((rocket?.mass?.kg ?? 0) / 1000)t"
-        massView.value2 = "\((rocket?.mass?.lb ?? 0) / 1000)k lbs"
+        massView.alternate = "\((rocket?.mass?.lb ?? 0) / 1000)k lbs"
 
         heightView.value = "\(rocket?.height?.meters ?? 0)m"
-        heightView.value2 = "\(rocket?.height?.feet ?? 0)ft"
+        heightView.alternate = "\(rocket?.height?.feet ?? 0)ft"
 
         diameterView.value = "\(rocket?.diameter?.meters ?? 0)m"
-        diameterView.value2 = "\(rocket?.diameter?.feet ?? 0)ft"
+        diameterView.alternate = "\(rocket?.diameter?.feet ?? 0)ft"
     }
     
 }

@@ -23,22 +23,22 @@ class LaunchCellNameView: UIView {
     
     init() {
         super.init(frame: .zero)
-        setupViews()
-        setupConstraints()
+        configureViews()
+        configureConstraints()
     }
     
-    //MARK: - Setup Function
-    func setFullLaunch(_ fullLaunch: FullLaunch?) {
+    //MARK: - Configuration Functions
+    func configure(with fullLaunch: FullLaunch?) {
         self.fullLaunch = fullLaunch
         updateViews()
     }
     
-    private func setupViews() {
+    private func configureViews() {
         addSubview(nameLabel)
         addSubview(statusView)
     }
     
-    private func setupConstraints() {
+    private func configureConstraints() {
         nameLabel.anchor(
             top: topAnchor,
             leading: leadingAnchor,
@@ -60,11 +60,11 @@ class LaunchCellNameView: UIView {
             nameLabel.text = fullLaunch.launch.name
             
             if fullLaunch.launch.upcoming {
-                statusView.setStatus(.scheduled)
+                statusView.status = .scheduled
             } else if fullLaunch.launch.success ?? false {
-                statusView.setStatus(.success)
+                statusView.status = .success
             } else {
-                statusView.setStatus(.failed)
+                statusView.status = .failed
             }
         }
     }

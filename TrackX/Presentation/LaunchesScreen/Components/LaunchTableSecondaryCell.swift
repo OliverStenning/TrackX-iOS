@@ -16,8 +16,8 @@ class LaunchTableSecondaryCell: LaunchTableCell {
     //MARK: - Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupViews()
-        setupConstraints()
+        configureViews()
+        configureConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -25,12 +25,12 @@ class LaunchTableSecondaryCell: LaunchTableCell {
     }
     
     //MARK: - Setup Functions
-    func setFullLaunch(_ fullLaunch: FullLaunch?) {
-        nameView.setFullLaunch(fullLaunch)
-        infoView.setFullLaunch(fullLaunch)
+    func configure(with fullLaunch: FullLaunch?) {
+        nameView.configure(with: fullLaunch)
+        infoView.configure(with: fullLaunch)
     }
     
-    private func setupViews() {
+    private func configureViews() {
         backgroundColor = .clear
         selectionStyle = .none
         container.backgroundColor = UIColor(named: "SecondaryBackgroundColor")
@@ -39,7 +39,7 @@ class LaunchTableSecondaryCell: LaunchTableCell {
         container.addSubview(infoView)
     }
     
-    private func setupConstraints() {
+    private func configureConstraints() {
         nameView.anchor(
             top: container.topAnchor,
             leading: container.leadingAnchor,

@@ -31,7 +31,7 @@ final class NameValueView: UIView {
         return label
     }()
     
-    private let value2Label: UILabel = {
+    private let alternateLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "RubikRoman-Regular", size: 15)
         label.textColor = UIColor(named: "TextColor")
@@ -50,20 +50,20 @@ final class NameValueView: UIView {
             valueLabel.text = value
         }
     }
-    var value2: String? = nil {
+    var alternate: String? = nil {
         didSet {
-            if let value2String = value2 {
-                value2Label.text = value2String
-                value2Label.isHidden = false
+            if let alternateString = alternate {
+                alternateLabel.text = alternateString
+                alternateLabel.isHidden = false
             } else {
-                value2Label.isHidden = true
+                alternateLabel.isHidden = true
             }
         }
     }
     var expanded: Bool = false {
         didSet {
             valueLabel.numberOfLines = expanded ? 0 : lineCount
-            value2Label.numberOfLines = expanded ? 0 : lineCount
+            alternateLabel.numberOfLines = expanded ? 0 : lineCount
         }
     }
     let lineCount: Int
@@ -78,19 +78,19 @@ final class NameValueView: UIView {
         self.lineCount = lineCount
         nameLabel.text = name
         super.init(frame: .zero)
-        setupViews()
-        setupConstraints()
+        configureViews()
+        configureConstraints()
     }
     
-    //MARK: - Setup Functions
-    private func setupViews() {
+    //MARK: - Configuration Functions
+    private func configureViews() {
         addSubview(infoStack)
         infoStack.addArrangedSubview(nameLabel)
         infoStack.addArrangedSubview(valueLabel)
-        infoStack.addArrangedSubview(value2Label)
+        infoStack.addArrangedSubview(alternateLabel)
         
         valueLabel.numberOfLines = lineCount
-        value2Label.numberOfLines = lineCount
+        alternateLabel.numberOfLines = lineCount
         
         self.isUserInteractionEnabled = true
         
@@ -100,7 +100,7 @@ final class NameValueView: UIView {
         addGestureRecognizer(gesture)
     }
     
-    private func setupConstraints() {
+    private func configureConstraints() {
         infoStack.anchor(to: self)
     }
     

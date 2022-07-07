@@ -37,7 +37,7 @@ class FullLaunch {
             }
         }
         if let youtubeID = launch.links?.youtubeId {
-            return "https://img.youtube.com/vi/\(youtubeID)/maxresdefault.jpg"
+            return "https://i3.ytimg.com/vi/\(youtubeID)/maxresdefault.jpg"
         }
         return nil
     }

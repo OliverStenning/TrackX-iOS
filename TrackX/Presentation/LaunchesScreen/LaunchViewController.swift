@@ -9,6 +9,7 @@ import UIKit
 
 class LaunchViewController: UIViewController {
     
+    //MARK: - Views
     let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.searchBarStyle = .minimal
@@ -47,6 +48,7 @@ class LaunchViewController: UIViewController {
         return refreshControl
     }()
     
+    //MARK: - Properties
     var previousDataSource: LaunchTableDataSource? = nil
     var upcomingDataSource: LaunchTableDataSource? = nil
     var allDataSource: LaunchTableDataSource? = nil
@@ -54,6 +56,7 @@ class LaunchViewController: UIViewController {
     var networkManager: NetworkManager!
     var dataManager: DataManager
     
+    //MARK: - Initializers
     init(networkManager: NetworkManager) {
         self.dataManager = DataManager()
         self.networkManager = networkManager
@@ -66,10 +69,11 @@ class LaunchViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
-        setupConstraints()
+        configureViews()
+        configureConstraints()
         dataManager.fetchData()
     }
     
@@ -80,7 +84,8 @@ class LaunchViewController: UIViewController {
         }
     }
     
-    func setupViews() {
+    //MARK: - Configuration Functions
+    func configureViews() {
         view.backgroundColor = UIColor(named: "BackgroundColor")
         title = "Launches"
         
@@ -97,7 +102,7 @@ class LaunchViewController: UIViewController {
         launchRefreshControl.beginRefreshing()
     }
     
-    func setupConstraints() {
+    func configureConstraints() {
         launchTableControl.anchor(
             leading: view.layoutMarginsGuide.leadingAnchor,
             bottom: view.layoutMarginsGuide.bottomAnchor,
@@ -152,6 +157,7 @@ class LaunchViewController: UIViewController {
     }
 }
 
+//MARK: - Launch Table View Delegate
 extension LaunchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -169,6 +175,7 @@ extension LaunchViewController: UITableViewDelegate {
     
 }
 
+//MARK: - Launch Data Manager Delegate
 extension LaunchViewController: LaunchDataManagerDelegate {
     
     func launchDataManager(_ manager: DataManager, previousLaunchesUpdate: LaunchTableData) {

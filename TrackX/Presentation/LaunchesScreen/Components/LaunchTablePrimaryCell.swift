@@ -36,14 +36,15 @@ class LaunchTablePrimaryCell: LaunchTableCell {
     //MARK: - Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupViews()
-        setupConstaints()
+        configureViews()
+        configureConstaints()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Lifecycle Functions
     override func prepareForReuse() {
         super.prepareForReuse()
         backgroundImage.image = nil
@@ -52,15 +53,15 @@ class LaunchTablePrimaryCell: LaunchTableCell {
         cancellable?.cancel()
     }
     
-    //MARK: - Setup Functions
-    func setFullLaunch(_ fullLaunch: FullLaunch?) {
+    //MARK: - Configuration Functions
+    func configure(with fullLaunch: FullLaunch?) {
         self.fullLaunch = fullLaunch
-        nameView.setFullLaunch(fullLaunch)
-        infoView.setFullLaunch(fullLaunch)
+        nameView.configure(with: fullLaunch)
+        infoView.configure(with: fullLaunch)
         updateViews()
     }
     
-    func setupViews() {
+    func configureViews() {
         backgroundColor = .clear
         selectionStyle = .none
         
@@ -70,7 +71,7 @@ class LaunchTablePrimaryCell: LaunchTableCell {
         container.addSubview(infoView)
     }
     
-    func setupConstaints() {
+    func configureConstaints() {
 
         container.anchorSize(height: 200)
         
