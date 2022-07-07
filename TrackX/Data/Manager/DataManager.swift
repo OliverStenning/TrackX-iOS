@@ -140,7 +140,7 @@ class DataManager {
             
             // Sort arrays chronologically
             previousLaunches.sort {
-                $0.dateUnix > $1.dateUnix
+                $0.dateUnix < $1.dateUnix
             }
             upcomingLaunches.sort {
                 $0.dateUnix < $1.dateUnix

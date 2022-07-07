@@ -26,70 +26,104 @@ enum LaunchType {
 
 class LaunchTableDataSource: NSObject, UITableViewDataSource {
     
-    var sections: [String]
-    var launchIds: [[String]]
+    var ascendingSections: [String]
+    var ascendingLaunchIds: [[String]]
+    
+    var descendingSections: [String]
+    var descendingLaunchIds: [[String]]
+    
     var launches: [String: FullLaunch]
     var launchType: LaunchType
+    var ascending: Bool
     
-    init(launchType: LaunchType, launchTableData: LaunchTableData) {
+    init(launchType: LaunchType, launchTableData: LaunchTableData, ascending: Bool) {
         self.launchType = launchType
-        self.sections = launchTableData.sections
-        self.launchIds = launchTableData.launchIds
         self.launches = launchTableData.fullLaunches
+        
+        self.ascendingSections = launchTableData.sections
+        self.descendingSections = launchTableData.sections.reversed()
+        
+        self.ascendingLaunchIds = launchTableData.launchIds
+        self.descendingLaunchIds = launchTableData.launchIds.reversed()
+        
+        self.ascending = ascending
         super.init()
-        //self.updateFirstSectionName()
+        self.updateFirstSectionNames()
     }
     
-    func toggleOrder() {
-        sections.reverse()
-        launchIds.reverse()
-        for x in 0..<launchIds.count {
-            launchIds[x].reverse()
-        }
+    private func updateFirstSectionNames() {
+        updateAscendingFirstSectionName()
+        updateDescendingFirstSectionName()
     }
     
-    private func updateFirstSectionName() {
-        if !sections.isEmpty {
-            switch launchType {
-                case .previous:
-                    sections[0] = "Latest"
-                case .upcoming:
-                    sections[0] = "Next"
-                case .all:
-                    sections[0] = "First"
+    private func updateAscendingFirstSectionName() {
+        let newAscendingSectionName: String = getFirstSectionName(sectionAscending: true)
+        if !ascendingLaunchIds.isEmpty {
+            if ascendingLaunchIds[0].count == 1 {
+                ascendingSections[0] = newAscendingSectionName
+            } else {
+                let newFirstLaunchId = ascendingLaunchIds[0][0]
+                ascendingLaunchIds[0].removeFirst()
+                ascendingLaunchIds.insert([newFirstLaunchId], at: 0)
+                ascendingSections.insert(newAscendingSectionName, at: 0)
             }
         }
     }
     
+    private func updateDescendingFirstSectionName() {
+        let newDescendingSectionName: String = getFirstSectionName(sectionAscending: false)
+        if !descendingLaunchIds.isEmpty {
+            if descendingLaunchIds[0].count == 1 {
+                descendingSections[0] = newDescendingSectionName
+            } else {
+                let newFirstLaunchId = descendingLaunchIds[0][0]
+                descendingLaunchIds[0].removeFirst()
+                descendingLaunchIds.insert([newFirstLaunchId], at: 0)
+                descendingSections.insert(newDescendingSectionName, at: 0)
+            }
+        }
+    }
+    
+    private func getFirstSectionName(sectionAscending: Bool) -> String {
+        switch launchType {
+            case .previous:
+                return sectionAscending ? "First" : "Latest"
+            case .upcoming:
+                return sectionAscending ? "Next" : "Last Scheduled"
+            case .all:
+                return sectionAscending ? "First" : "Last Scheduled"
+        }
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return ascending ? ascendingSections.count : descendingSections.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return launchIds[section].count
+        return ascending ? ascendingLaunchIds[section].count : descendingLaunchIds[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 && indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: LaunchCells.launchCellPrimary, for: indexPath) as! LaunchTablePrimaryCell
-            cell.configure(with: launches[launchIds[indexPath.section][indexPath.row]])
+            cell.configure(with: launches[ascending ? ascendingLaunchIds[indexPath.section][indexPath.row] : descendingLaunchIds[indexPath.section][indexPath.row]])
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: LaunchCells.launchCellSecondary, for: indexPath) as! LaunchTableSecondaryCell
-            cell.configure(with: launches[launchIds[indexPath.section][indexPath.row]])
+            cell.configure(with: launches[ascending ? ascendingLaunchIds[indexPath.section][indexPath.row] : descendingLaunchIds[indexPath.section][indexPath.row]])
             return cell
         }
     }
     
     func section(at index: Int) -> String {
-        return sections[index]
+        return ascending ? ascendingSections[index] : descendingSections[index]
     }
     
     func launchId(section: Int, row: Int) -> String {
-        return launchIds[section][row]
+        return ascending ? ascendingLaunchIds[section][row] : descendingLaunchIds[section][row]
     }
     
     func launch(section: Int, row: Int) -> FullLaunch? {
-        return launches[launchId(section: section, row: row)]
+        return ascending ? launches[launchId(section: section, row: row)] : launches[launchId(section: section, row: row)]
     }
 }

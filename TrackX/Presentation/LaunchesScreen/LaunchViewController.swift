@@ -152,7 +152,7 @@ class LaunchViewController: UIViewController {
     
     @objc func toggleAscending() {
         let tableSource = getCurrentTableSource()
-        tableSource?.toggleOrder()
+        tableSource?.ascending.toggle()
         launchTableView.reloadData()
     }
 }
@@ -179,15 +179,15 @@ extension LaunchViewController: UITableViewDelegate {
 extension LaunchViewController: LaunchDataManagerDelegate {
     
     func launchDataManager(_ manager: DataManager, previousLaunchesUpdate: LaunchTableData) {
-        previousDataSource = LaunchTableDataSource(launchType: .previous, launchTableData: previousLaunchesUpdate)
+        previousDataSource = LaunchTableDataSource(launchType: .previous, launchTableData: previousLaunchesUpdate, ascending: false)
     }
     
     func launchDataManager(_ manager: DataManager, upcomingLaunchesUpdate: LaunchTableData) {
-        upcomingDataSource = LaunchTableDataSource(launchType: .upcoming, launchTableData: upcomingLaunchesUpdate)
+        upcomingDataSource = LaunchTableDataSource(launchType: .upcoming, launchTableData: upcomingLaunchesUpdate, ascending: true)
     }
     
     func launchDataManager(_ manager: DataManager, allLaunchesUpdate: LaunchTableData) {
-        allDataSource = LaunchTableDataSource(launchType: .all, launchTableData: allLaunchesUpdate)
+        allDataSource = LaunchTableDataSource(launchType: .all, launchTableData: allLaunchesUpdate, ascending: true)
     }
     
     func launchDataManager(_ manager: DataManager, dataWasUpdated: Bool) {
