@@ -10,7 +10,7 @@ import UIKit
 class CoresSectionStackView: UIStackView {
     
     //MARK: - Views
-    private let sectionLabel = SubheadingLabel(text: "Booster Cores")
+    private let sectionLabel = HeadingLabel(text: "Booster Cores", size: .h3)
     
     //MARK: - Initializers
     override init(frame: CGRect) {

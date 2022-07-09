@@ -10,7 +10,7 @@ import UIKit
 class LaunchCellNameView: UIView {
     
     //MARK: - Views
-    private let nameLabel = AccentSubheadingView()
+    private let nameLabel = AccentHeadingView(size: .h3, capsuleSize: 4)
     private let statusView = StatusView()
     
     //MARK: - Properties

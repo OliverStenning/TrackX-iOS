@@ -10,7 +10,7 @@ import UIKit
 class LaunchSectionStackView: UIStackView {
     
     //MARK: - Views
-    private let nameLabel = AccentHeadingView()
+    private let nameLabel = AccentHeadingView(size: .h1)
     
     private let dateStatusStack: UIStackView = {
         let stackView = UIStackView()

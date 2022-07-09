@@ -43,13 +43,11 @@
 		F2396D592847AB170084DF79 /* PayloadEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D582847AB170084DF79 /* PayloadEndpoint.swift */; };
 		F2396D5B2848DE550084DF79 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D5A2848DE550084DF79 /* NetworkLogger.swift */; };
 		F254D44D2857876F0009A2A0 /* HeadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D44C2857876F0009A2A0 /* HeadingLabel.swift */; };
-		F254D44F28578BFA0009A2A0 /* SubheadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D44E28578BFA0009A2A0 /* SubheadingLabel.swift */; };
 		F254D45128578DDB0009A2A0 /* BodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D45028578DDB0009A2A0 /* BodyLabel.swift */; };
 		F254D455285792160009A2A0 /* RocketSectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D454285792160009A2A0 /* RocketSectionStackView.swift */; };
 		F254D45728579E8B0009A2A0 /* LaunchSectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D45628579E8B0009A2A0 /* LaunchSectionStackView.swift */; };
 		F254D4592857A19B0009A2A0 /* LaunchpadSectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D4582857A19B0009A2A0 /* LaunchpadSectionStackView.swift */; };
 		F254D45E2857C9660009A2A0 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D45D2857C9660009A2A0 /* DataManager.swift */; };
-		F254D4642857E19F0009A2A0 /* AccentSubheadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D4632857E19F0009A2A0 /* AccentSubheadingView.swift */; };
 		F2E2EC4628592EC500AF06CC /* LaunchTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2EC4528592EC500AF06CC /* LaunchTableDataSource.swift */; };
 		F2E2EC482859327D00AF06CC /* FullLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2EC472859327D00AF06CC /* FullLaunch.swift */; };
 		F2F0937C27EE2818005CCD09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0937B27EE2818005CCD09 /* AppDelegate.swift */; };
@@ -130,13 +128,11 @@
 		F2396D582847AB170084DF79 /* PayloadEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadEndpoint.swift; sourceTree = "<group>"; };
 		F2396D5A2848DE550084DF79 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		F254D44C2857876F0009A2A0 /* HeadingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingLabel.swift; sourceTree = "<group>"; };
-		F254D44E28578BFA0009A2A0 /* SubheadingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubheadingLabel.swift; sourceTree = "<group>"; };
 		F254D45028578DDB0009A2A0 /* BodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyLabel.swift; sourceTree = "<group>"; };
 		F254D454285792160009A2A0 /* RocketSectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketSectionStackView.swift; sourceTree = "<group>"; };
 		F254D45628579E8B0009A2A0 /* LaunchSectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSectionStackView.swift; sourceTree = "<group>"; };
 		F254D4582857A19B0009A2A0 /* LaunchpadSectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadSectionStackView.swift; sourceTree = "<group>"; };
 		F254D45D2857C9660009A2A0 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		F254D4632857E19F0009A2A0 /* AccentSubheadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentSubheadingView.swift; sourceTree = "<group>"; };
 		F2E2EC4528592EC500AF06CC /* LaunchTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTableDataSource.swift; sourceTree = "<group>"; };
 		F2E2EC472859327D00AF06CC /* FullLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullLaunch.swift; sourceTree = "<group>"; };
 		F2F0937827EE2818005CCD09 /* TrackX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -458,9 +454,7 @@
 				F2F2343D284FF6AA00CAB70C /* NameValueView.swift */,
 				F2F2345E285636EB00CAB70C /* GradientView.swift */,
 				F254D44C2857876F0009A2A0 /* HeadingLabel.swift */,
-				F254D44E28578BFA0009A2A0 /* SubheadingLabel.swift */,
 				F254D45028578DDB0009A2A0 /* BodyLabel.swift */,
-				F254D4632857E19F0009A2A0 /* AccentSubheadingView.swift */,
 				F215F5EF285E8D9E006F67FC /* StatusView.swift */,
 				F215F5F928624644006F67FC /* AccentHeadingView.swift */,
 			);
@@ -616,7 +610,6 @@
 			files = (
 				F2F0938027EE2818005CCD09 /* LaunchViewController.swift in Sources */,
 				F2396D4B2847A9A10084DF79 /* Launchpad.swift in Sources */,
-				F254D44F28578BFA0009A2A0 /* SubheadingLabel.swift in Sources */,
 				F2F0937C27EE2818005CCD09 /* AppDelegate.swift in Sources */,
 				F2F2343B284D6A6500CAB70C /* StringFormatting.swift in Sources */,
 				F2F2344E2852968200CAB70C /* LaunchTablePrimaryCell.swift in Sources */,
@@ -661,7 +654,6 @@
 				F2396D5B2848DE550084DF79 /* NetworkLogger.swift in Sources */,
 				F215F5EC285E81BB006F67FC /* LaunchCellInfoView.swift in Sources */,
 				F2396D592847AB170084DF79 /* PayloadEndpoint.swift in Sources */,
-				F254D4642857E19F0009A2A0 /* AccentSubheadingView.swift in Sources */,
 				F2396D532847AA1C0084DF79 /* Payload.swift in Sources */,
 				F215F5F2285F5646006F67FC /* LaunchTableCell.swift in Sources */,
 				F215F5EE285E85BC006F67FC /* LaunchCellNameView.swift in Sources */,

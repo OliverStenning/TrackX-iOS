@@ -13,11 +13,11 @@ class AccentHeadingView: UIView {
     private let capsule: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(named: "AccentColor")
-        view.layer.cornerRadius = 3
+        
         return view
     }()
     
-    private let heading = HeadingLabel()
+    private var heading: HeadingLabel
     
     //MARK: - Properties
     var text: String {
@@ -27,11 +27,13 @@ class AccentHeadingView: UIView {
     }
     
     //MARK: - Initializers
-    init(text: String = "") {
+    init(text: String = "", size: HeadingSize = .h1, capsuleSize: CGFloat = 6) {
         self.text = text
+        self.heading = HeadingLabel(size: size)
+        self.capsule.layer.cornerRadius = (capsuleSize / 2)
         super.init(frame: .zero)
         configureViews()
-        configureConstraints()
+        configureConstraints(capsuleSize: capsuleSize)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -44,8 +46,8 @@ class AccentHeadingView: UIView {
         addSubview(heading)
     }
     
-    private func configureConstraints() {
-        capsule.anchorSize(width: 6)
+    private func configureConstraints(capsuleSize: CGFloat) {
+        capsule.anchorSize(width: capsuleSize)
         capsule.anchor(
             top: topAnchor,
             leading: leadingAnchor,

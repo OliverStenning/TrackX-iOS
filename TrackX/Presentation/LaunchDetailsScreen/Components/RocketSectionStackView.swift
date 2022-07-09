@@ -10,7 +10,7 @@ import UIKit
 class RocketSectionStackView: UIStackView {
     
     //MARK: - Views
-    private let sectionLabel = SubheadingLabel(text: "Launch Vehicle")
+    private let sectionLabel = HeadingLabel(text: "Launch Vehicle", size: .h3)
     private let nameLabel = NameValueView(name: "Name")
     private let descriptionLabel = NameValueView(name: "Description")
 

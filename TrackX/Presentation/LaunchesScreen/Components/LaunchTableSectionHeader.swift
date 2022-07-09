@@ -10,7 +10,7 @@ import UIKit
 class LaunchTableSectionHeader: UIView {
     
     //MARK: - Views
-    private let nameLabel = HeadingLabel()
+    private let nameLabel = HeadingLabel(size: .h1)
     
     //MARK: - Properties
     var text = "" {
