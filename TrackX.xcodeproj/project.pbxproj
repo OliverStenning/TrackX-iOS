@@ -20,6 +20,10 @@
 		F215F60428634955006F67FC /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F60328634955006F67FC /* ImageCache.swift */; };
 		F215F60628634C7D006F67FC /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F60528634C7D006F67FC /* ImageLoader.swift */; };
 		F215F60828651CB6006F67FC /* CoreCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F60728651CB6006F67FC /* CoreCellView.swift */; };
+		F215F60A287B7C42006F67FC /* LocationsSectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F609287B7C42006F67FC /* LocationsSectionStackView.swift */; };
+		F215F60C287B7DCC006F67FC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F60B287B7DCC006F67FC /* Location.swift */; };
+		F215F60E287B84AB006F67FC /* MKMapView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F60D287B84AB006F67FC /* MKMapView+Extensions.swift */; };
+		F215F610287B8EAC006F67FC /* CLLocationCoordinate2D+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F60F287B8EAC006F67FC /* CLLocationCoordinate2D+Extensions.swift */; };
 		F2396D272844060E0084DF79 /* LaunchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D262844060E0084DF79 /* LaunchDetailViewController.swift */; };
 		F2396D2F284552720084DF79 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D2E284552720084DF79 /* EndPointType.swift */; };
 		F2396D31284552DB0084DF79 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D30284552DB0084DF79 /* HTTPMethod.swift */; };
@@ -105,6 +109,10 @@
 		F215F60328634955006F67FC /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		F215F60528634C7D006F67FC /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		F215F60728651CB6006F67FC /* CoreCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreCellView.swift; sourceTree = "<group>"; };
+		F215F609287B7C42006F67FC /* LocationsSectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsSectionStackView.swift; sourceTree = "<group>"; };
+		F215F60B287B7DCC006F67FC /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		F215F60D287B84AB006F67FC /* MKMapView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Extensions.swift"; sourceTree = "<group>"; };
+		F215F60F287B8EAC006F67FC /* CLLocationCoordinate2D+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extensions.swift"; sourceTree = "<group>"; };
 		F2396D262844060E0084DF79 /* LaunchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailViewController.swift; sourceTree = "<group>"; };
 		F2396D2E284552720084DF79 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		F2396D30284552DB0084DF79 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -203,6 +211,7 @@
 				F2F2345A2854D21D00CAB70C /* UILabel+Extensions.swift */,
 				F2F234432850079A00CAB70C /* UIImageView+Extensions.swift */,
 				F2F093AF27EE2BBF005CCD09 /* UIView+Extensions.swift */,
+				F215F60D287B84AB006F67FC /* MKMapView+Extensions.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -212,6 +221,7 @@
 			children = (
 				F2F2344F2853899C00CAB70C /* Date+Extensions.swift */,
 				F215F5FE2863480A006F67FC /* UIImage+Extensions.swift */,
+				F215F60F287B8EAC006F67FC /* CLLocationCoordinate2D+Extensions.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -323,6 +333,7 @@
 				F215F5F5285F590E006F67FC /* PayloadsSectionStackView.swift */,
 				F254D454285792160009A2A0 /* RocketSectionStackView.swift */,
 				F215F60728651CB6006F67FC /* CoreCellView.swift */,
+				F215F609287B7C42006F67FC /* LocationsSectionStackView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -435,6 +446,7 @@
 				F2396D4A2847A9A00084DF79 /* Launchpad.swift */,
 				F2396D522847AA1C0084DF79 /* Payload.swift */,
 				F2396D442846BADD0084DF79 /* Rocket.swift */,
+				F215F60B287B7DCC006F67FC /* Location.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -626,6 +638,7 @@
 				F215F5F8285F5970006F67FC /* CapsuleSectionStackView.swift in Sources */,
 				F254D44D2857876F0009A2A0 /* HeadingLabel.swift in Sources */,
 				F254D45E2857C9660009A2A0 /* DataManager.swift in Sources */,
+				F215F60A287B7C42006F67FC /* LocationsSectionStackView.swift in Sources */,
 				F2F093B027EE2BBF005CCD09 /* UIView+Extensions.swift in Sources */,
 				F2F2346128563A2900CAB70C /* LaunchTableSecondaryCell.swift in Sources */,
 				F215F60628634C7D006F67FC /* ImageLoader.swift in Sources */,
@@ -652,6 +665,7 @@
 				F2396D372845559A0084DF79 /* URLParameterEncoder.swift in Sources */,
 				F2396D332845531C0084DF79 /* HTTPTask.swift in Sources */,
 				F2396D5B2848DE550084DF79 /* NetworkLogger.swift in Sources */,
+				F215F60E287B84AB006F67FC /* MKMapView+Extensions.swift in Sources */,
 				F215F5EC285E81BB006F67FC /* LaunchCellInfoView.swift in Sources */,
 				F2396D592847AB170084DF79 /* PayloadEndpoint.swift in Sources */,
 				F2396D532847AA1C0084DF79 /* Payload.swift in Sources */,
@@ -662,8 +676,10 @@
 				F2051657285D3BC000584F11 /* LaunchEndpoint.swift in Sources */,
 				F2396D31284552DB0084DF79 /* HTTPMethod.swift in Sources */,
 				F215F5F4285F5877006F67FC /* CoresSectionStackView.swift in Sources */,
+				F215F610287B8EAC006F67FC /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				F2F2345B2854D21D00CAB70C /* UILabel+Extensions.swift in Sources */,
 				F2396D39284557100084DF79 /* JSONParameterEncoder.swift in Sources */,
+				F215F60C287B7DCC006F67FC /* Location.swift in Sources */,
 				F254D455285792160009A2A0 /* RocketSectionStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

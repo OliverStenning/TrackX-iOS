@@ -10,7 +10,7 @@ import UIKit
 class LaunchpadSectionStaclView: UIStackView {
     
     //MARK: - Views
-    private let sectionLabel = HeadingLabel(text: "Launchpad", size: .h3)
+    private let sectionLabel = HeadingLabel(text: "Launchpad", size: .h2)
     private let nameView = NameValueView(name: "Name")
     private let fullNameView = NameValueView(name: "Full Name")
     private let regionView = NameValueView(name: "Region")

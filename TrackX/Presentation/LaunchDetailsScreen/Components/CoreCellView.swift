@@ -10,18 +10,20 @@ import UIKit
 class CoreCellView: UIStackView {
     
     //MARK: - Views
-    private let nameStack: UIStackView = {
+    private let serialLabel = AccentHeadingView(size: .h4, capsuleSize: 4)
+
+    private let landingStack: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         return stackView
     }()
-    private let serialView = NameValueView(name: "Serial")
-    private let blockView = NameValueView(name: "Block")
+    private let landingTypeView = NameValueView(name: "Landing")
+    private let landpadView = NameValueView(name: "Landpad")
     
-    private let lastUpdateView = NameValueView(name: "Last Update")
+    private let lastUpdateLabel = NameValueView(name: "Last Update")
     
-    private let infoStack: UIStackView = {
+    private let historyStack: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
@@ -29,20 +31,22 @@ class CoreCellView: UIStackView {
     }()
     private let statusView = NameValueView(name: "Status")
     private let reusesView = NameValueView(name: "Reuses")
-    
-    private let landingsStack: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-        return stackView
-    }()
-    private let launchSiteView = NameValueView(name: "Launchsite")
-    private let droneshipView = NameValueView(name: "Droneship")
+    private let blockView = NameValueView(name: "Block")
 
     //MARK: - Properies
     var core: Core? = nil {
         didSet {
-            
+            updateCoreViews()
+        }
+    }
+    var launchCore: LaunchCore? = nil {
+        didSet {
+            updateLaunchCoreViews()
+        }
+    }
+    var landpad: Landpad? = nil {
+        didSet {
+            updateLandpadViews()
         }
     }
     
@@ -58,27 +62,48 @@ class CoreCellView: UIStackView {
     }
     
     //MARK: - Configuration Functions
+    func configureWith(core: Core?, launchCore: LaunchCore?, landpad: Landpad?) {
+        self.core = core
+        self.launchCore = launchCore
+        self.landpad = landpad
+    }
+    
     private func configureViews() {
         axis = .vertical
         distribution = .fill
         spacing = 16
         
-        addArrangedSubview(nameStack)
-        addArrangedSubview(lastUpdateView)
-        addArrangedSubview(infoStack)
-        addArrangedSubview(landingsStack)
+        addArrangedSubview(serialLabel)
+        addArrangedSubview(landingStack)
+        addArrangedSubview(lastUpdateLabel)
+        addArrangedSubview(historyStack)
         
-        nameStack.addArrangedSubview(serialView)
-        nameStack.addArrangedSubview(blockView)
+        landingStack.addArrangedSubview(landingTypeView)
+        landingStack.addArrangedSubview(landpadView)
         
-        infoStack.addArrangedSubview(statusView)
-        infoStack.addArrangedSubview(reusesView)
-        
-        landingsStack.addArrangedSubview(launchSiteView)
-        landingsStack.addArrangedSubview(droneshipView)
+        historyStack.addArrangedSubview(statusView)
+        historyStack.addArrangedSubview(reusesView)
+        historyStack.addArrangedSubview(blockView)
     }
     
     private func configureConstraints() {
         
+    }
+    
+    //MARK: - Update Functions
+    private func updateCoreViews() {
+        serialLabel.text = core?.serial ?? "Unknown"
+        lastUpdateLabel.value = core?.lastUpdate ?? "Unkown"
+        statusView.value = core?.status.capitalized ?? "Uknown"
+        reusesView.value = "\(core?.reuseCount.description ?? "Unknown")"
+        blockView.value = "\(core?.block?.description ?? "Unknown")"
+    }
+    
+    private func updateLaunchCoreViews() {
+        landingTypeView.value = launchCore?.landingType ?? "Unknown"
+    }
+    
+    private func updateLandpadViews() {
+        landpadView.value = landpad?.name ?? "Unknown"
     }
 }

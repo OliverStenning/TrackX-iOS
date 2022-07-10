@@ -10,7 +10,7 @@ import UIKit
 class CapsuleSectionStackView: UIStackView {
     
     //MARK: - Views
-    private let sectionLabel = HeadingLabel(text: "Capsule", size: .h3)
+    private let sectionLabel = HeadingLabel(text: "Capsule", size: .h2)
 
     //MARK: - Properties
     

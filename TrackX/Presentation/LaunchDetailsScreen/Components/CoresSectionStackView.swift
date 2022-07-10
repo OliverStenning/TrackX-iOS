@@ -10,7 +10,8 @@ import UIKit
 class CoresSectionStackView: UIStackView {
     
     //MARK: - Views
-    private let sectionLabel = HeadingLabel(text: "Booster Cores", size: .h3)
+    private let sectionLabel = HeadingLabel(text: "Booster Cores", size: .h2)
+    private var coreStacks: [UIStackView] = []
     
     //MARK: - Initializers
     override init(frame: CGRect) {
@@ -24,10 +25,25 @@ class CoresSectionStackView: UIStackView {
     }
     
     //MARK: - Configuration Functions
+    func configureWith(cores: [Core?]?, launchCores: [LaunchCore?]?, landpads: [Landpad?]?) {
+        if let cores = cores {
+            if let launchCores = launchCores {
+                if let landpads = landpads {
+                    for x in 0 ..< cores.count {
+                        let coreCell = CoreCellView()
+                        coreCell.configureWith(core: cores[x], launchCore: launchCores[x], landpad: landpads[x])
+                        coreStacks.append(coreCell)
+                        addArrangedSubview(coreCell)
+                    }
+                }
+            }
+        }
+    }
+    
     private func configureViews() {
         axis = .vertical
         distribution = .fill
-        spacing = 16
+        spacing = 32
         
         addArrangedSubview(sectionLabel)
     }

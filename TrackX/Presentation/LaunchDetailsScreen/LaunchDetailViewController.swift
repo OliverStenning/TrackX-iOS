@@ -38,12 +38,15 @@ class LaunchDetailViewController: UIViewController {
     private let coresSectionStackView = CoresSectionStackView()
     private let payloadsSectionStackView = PayloadsSectionStackView()
     private let capsuleSectionStackView = CapsuleSectionStackView()
+    private let locationsSectionStackView = LocationsSectionStackView()
     
     private var cancellable: AnyCancellable?
     private var animator: UIViewPropertyAnimator?
     
     //MARK: - Properties
     private var fullLaunch: FullLaunch? = nil
+    private var showCores: Bool = true
+    private var showLocations: Bool = true
     
     //MARK: - Initializers
     convenience init(fullLaunch: FullLaunch) {
@@ -53,6 +56,26 @@ class LaunchDetailViewController: UIViewController {
         launchSectionStackView.launch = fullLaunch.launch
         rocketSectionStackView.rocket = fullLaunch.rocket
         launchpadSectionStackView.launchpad = fullLaunch.launchpad
+        
+        if fullLaunch.cores?.count == fullLaunch.launch.cores?.count && fullLaunch.cores?.count == fullLaunch.coreLandpads?.count {
+            showCores = true
+            coresSectionStackView.configureWith(cores: fullLaunch.cores, launchCores: fullLaunch.launch.cores, landpads: fullLaunch.coreLandpads)
+        } else {
+            showCores = false
+        }
+        
+//        if let launchpad = fullLaunch.launchpad, let landpads = fullLaunch.coreLandpads {
+//            locationsSectionStackView.configureWith(launchpad: launchpad, landpads: landpads)
+//        }
+  
+        if let launchpad = fullLaunch.launchpad {
+            showLocations = true
+            locationsSectionStackView.configureWith(launchpad: launchpad)
+        } else {
+            showLocations = false
+        }
+        
+        
     }
     
     override func viewDidLoad() {
@@ -74,9 +97,14 @@ class LaunchDetailViewController: UIViewController {
         infoStack.addArrangedSubview(launchSectionStackView)
         infoStack.addArrangedSubview(rocketSectionStackView)
         infoStack.addArrangedSubview(launchpadSectionStackView)
-        infoStack.addArrangedSubview(coresSectionStackView)
-        infoStack.addArrangedSubview(payloadsSectionStackView)
-        infoStack.addArrangedSubview(capsuleSectionStackView)
+        if showCores {
+            infoStack.addArrangedSubview(coresSectionStackView)
+        }
+        if showLocations {
+            infoStack.addArrangedSubview(locationsSectionStackView)
+        }
+        
+
     }
     
     private func configureConstraints() {

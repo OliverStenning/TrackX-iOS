@@ -10,7 +10,7 @@ import UIKit
 class PayloadsSectionStackView: UIStackView {
     
     //MARK: - Views
-    private let sectionLabel = HeadingLabel(text: "Payloads", size: .h3)
+    private let sectionLabel = HeadingLabel(text: "Payloads", size: .h2)
     
     //MARK: - Properties
     
