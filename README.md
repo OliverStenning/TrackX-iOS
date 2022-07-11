@@ -8,6 +8,6 @@ TrackX is a native iOS app built in Swift for viewing SpaceX launch information 
 - Map with relevant location annotations using MapKit
 
 ## How it Looks...
-|                                           |                                     |                                                     |
+| Launch List                               | Launch Details                      | More Launch Details                                 |
 |-------------------------------------------|-------------------------------------|-----------------------------------------------------|
 | ![main list](Screenshots/Main%20List.png) | ![details](Screenshots/Details.png) | ![second details](Screenshots/Second%20Details.png) |
