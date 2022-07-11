@@ -41,7 +41,7 @@ class LaunchTableSectionHeader: UIView {
     }
     
     private func configureConstraints() {
-        nameLabel.anchor(to: self, padding: .init(top: 16, left: 24, bottom: 8, right: 24))
+        nameLabel.anchor(to: self, padding: .init(top: 0, left: 24, bottom: 0, right: 24))
     }
     
 }
