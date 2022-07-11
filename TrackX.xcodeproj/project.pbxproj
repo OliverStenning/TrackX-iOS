@@ -24,6 +24,8 @@
 		F215F60C287B7DCC006F67FC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F60B287B7DCC006F67FC /* Location.swift */; };
 		F215F60E287B84AB006F67FC /* MKMapView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F60D287B84AB006F67FC /* MKMapView+Extensions.swift */; };
 		F215F610287B8EAC006F67FC /* CLLocationCoordinate2D+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F60F287B8EAC006F67FC /* CLLocationCoordinate2D+Extensions.swift */; };
+		F215F612287C3835006F67FC /* LinksSectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F611287C3835006F67FC /* LinksSectionStackView.swift */; };
+		F215F614287C39F8006F67FC /* LinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F613287C39F8006F67FC /* LinkLabel.swift */; };
 		F2396D272844060E0084DF79 /* LaunchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D262844060E0084DF79 /* LaunchDetailViewController.swift */; };
 		F2396D2F284552720084DF79 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D2E284552720084DF79 /* EndPointType.swift */; };
 		F2396D31284552DB0084DF79 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D30284552DB0084DF79 /* HTTPMethod.swift */; };
@@ -113,6 +115,8 @@
 		F215F60B287B7DCC006F67FC /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		F215F60D287B84AB006F67FC /* MKMapView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Extensions.swift"; sourceTree = "<group>"; };
 		F215F60F287B8EAC006F67FC /* CLLocationCoordinate2D+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extensions.swift"; sourceTree = "<group>"; };
+		F215F611287C3835006F67FC /* LinksSectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksSectionStackView.swift; sourceTree = "<group>"; };
+		F215F613287C39F8006F67FC /* LinkLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkLabel.swift; sourceTree = "<group>"; };
 		F2396D262844060E0084DF79 /* LaunchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailViewController.swift; sourceTree = "<group>"; };
 		F2396D2E284552720084DF79 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		F2396D30284552DB0084DF79 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -334,6 +338,7 @@
 				F254D454285792160009A2A0 /* RocketSectionStackView.swift */,
 				F215F60728651CB6006F67FC /* CoreCellView.swift */,
 				F215F609287B7C42006F67FC /* LocationsSectionStackView.swift */,
+				F215F611287C3835006F67FC /* LinksSectionStackView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -469,6 +474,7 @@
 				F254D45028578DDB0009A2A0 /* BodyLabel.swift */,
 				F215F5EF285E8D9E006F67FC /* StatusView.swift */,
 				F215F5F928624644006F67FC /* AccentHeadingView.swift */,
+				F215F613287C39F8006F67FC /* LinkLabel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -635,6 +641,7 @@
 				F2396D452846BADD0084DF79 /* Rocket.swift in Sources */,
 				F2396D432846B8770084DF79 /* RocketEndpoint.swift in Sources */,
 				F2396D2F284552720084DF79 /* EndPointType.swift in Sources */,
+				F215F612287C3835006F67FC /* LinksSectionStackView.swift in Sources */,
 				F215F5F8285F5970006F67FC /* CapsuleSectionStackView.swift in Sources */,
 				F254D44D2857876F0009A2A0 /* HeadingLabel.swift in Sources */,
 				F254D45E2857C9660009A2A0 /* DataManager.swift in Sources */,
@@ -658,6 +665,7 @@
 				F2396D35284553E00084DF79 /* ParameterEncoding.swift in Sources */,
 				F2396D3D284558F20084DF79 /* Router.swift in Sources */,
 				F2F2343E284FF6AA00CAB70C /* NameValueView.swift in Sources */,
+				F215F614287C39F8006F67FC /* LinkLabel.swift in Sources */,
 				F2F2345F285636EB00CAB70C /* GradientView.swift in Sources */,
 				F2396D3F28455C170084DF79 /* NetworkManager.swift in Sources */,
 				F215F5F6285F590E006F67FC /* PayloadsSectionStackView.swift in Sources */,

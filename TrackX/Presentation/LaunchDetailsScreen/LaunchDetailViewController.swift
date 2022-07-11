@@ -39,6 +39,7 @@ class LaunchDetailViewController: UIViewController {
     private let payloadsSectionStackView = PayloadsSectionStackView()
     private let capsuleSectionStackView = CapsuleSectionStackView()
     private let locationsSectionStackView = LocationsSectionStackView()
+    private let linksSectionStackView = LinksSectionStackView()
     
     private var cancellable: AnyCancellable?
     private var animator: UIViewPropertyAnimator?
@@ -47,6 +48,7 @@ class LaunchDetailViewController: UIViewController {
     private var fullLaunch: FullLaunch? = nil
     private var showCores: Bool = true
     private var showLocations: Bool = true
+    private var showLinks: Bool = true
     
     //MARK: - Initializers
     convenience init(fullLaunch: FullLaunch) {
@@ -63,10 +65,6 @@ class LaunchDetailViewController: UIViewController {
         } else {
             showCores = false
         }
-        
-//        if let launchpad = fullLaunch.launchpad, let landpads = fullLaunch.coreLandpads {
-//            locationsSectionStackView.configureWith(launchpad: launchpad, landpads: landpads)
-//        }
   
         if let launchpad = fullLaunch.launchpad {
             showLocations = true
@@ -75,7 +73,12 @@ class LaunchDetailViewController: UIViewController {
             showLocations = false
         }
         
-        
+        if let links = fullLaunch.launch.links {
+            showLinks = true
+            linksSectionStackView.configureWith(links: links)
+        } else {
+            showLinks = false
+        }
     }
     
     override func viewDidLoad() {
@@ -103,8 +106,9 @@ class LaunchDetailViewController: UIViewController {
         if showLocations {
             infoStack.addArrangedSubview(locationsSectionStackView)
         }
-        
-
+        if showLinks {
+            infoStack.addArrangedSubview(linksSectionStackView)
+        }
     }
     
     private func configureConstraints() {
@@ -145,6 +149,7 @@ class LaunchDetailViewController: UIViewController {
         infoStack.setCustomSpacing(sectionSpacing, after: coresSectionStackView)
         infoStack.setCustomSpacing(sectionSpacing, after: payloadsSectionStackView)
         infoStack.setCustomSpacing(sectionSpacing, after: capsuleSectionStackView)
+        infoStack.setCustomSpacing(sectionSpacing, after: locationsSectionStackView)
     }
     
     //MARK: - Update Functions
