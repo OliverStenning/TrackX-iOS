@@ -124,7 +124,12 @@ class DataManager {
     //MARK: - Data Fetch Completion
     func fetchCompletionHandler() {
         guard let delegate = self.launchDelegate else { return }
-        
+
+        /*
+         Only populate tableview with data if all network requests return successfully.
+         This could be made less strict, but edge cases based on which combination of data is
+         returned may cause UI issues. For now simpler to keep strict.
+         */
         if let error = self.error {
             delegate.launchDataManager(self, dataFailedToUpDate: error)
             return
@@ -158,7 +163,6 @@ class DataManager {
         delegate.launchDataManager(self, upcomingLaunchesUpdate: createTableData(launches: upcomingLaunches, fullLaunches: fullLaunches))
         delegate.launchDataManager(self, allLaunchesUpdate: createTableData(launches: allLaunches, fullLaunches: fullLaunches))
         delegate.launchDataManager(self, dataWasUpdated: true)
-        
     }
     
     //MARK: - Data Manipulation Functions
