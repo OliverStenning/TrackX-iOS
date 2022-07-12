@@ -1,4 +1,4 @@
-# TrackX-iOS
+# TrackX for iOS
 <img src="Screenshots/App%20Icon.png" align="right"
      alt="TrackX Icon" width="120" height="120">
 
