@@ -1,4 +1,7 @@
 # TrackX-iOS
+<img src="Screenshots/App%20Icon.png" align="right"
+     alt="TrackX Icon" width="120" height="120">
+
 TrackX is a native iOS app built in Swift for viewing SpaceX launch information using [SpaceX-API](https://github.com/r-spacex/SpaceX-API). It provides a list of all previous and upcoming SpaceX launches, with details about each one, including: launch vehicle, launch site, landing pad, locations and more.
 
 ## Features:
