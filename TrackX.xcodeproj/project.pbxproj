@@ -399,6 +399,7 @@
 				F254D45C2857C9560009A2A0 /* Data */,
 				F2396D28284552270084DF79 /* Networking */,
 				F2F093AD27EE2870005CCD09 /* Presentation */,
+				F2F093AE27EE2B9C005CCD09 /* Utilities */,
 			);
 			path = TrackX;
 			sourceTree = "<group>";
@@ -448,7 +449,6 @@
 				F254D4612857CB1E0009A2A0 /* LaunchDetailsScreen */,
 				F2F093B727EE34B5005CCD09 /* LaunchesScreen */,
 				F2F0938627EE2819005CCD09 /* LaunchScreen.storyboard */,
-				F2F093AE27EE2B9C005CCD09 /* Utilities */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
