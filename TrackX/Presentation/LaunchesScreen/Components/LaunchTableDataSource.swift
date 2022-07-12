@@ -45,6 +45,9 @@ class LaunchTableDataSource: NSObject, UITableViewDataSource {
         
         self.ascendingLaunchIds = launchTableData.launchIds
         self.descendingLaunchIds = launchTableData.launchIds.reversed()
+        for x in 0 ..< descendingLaunchIds.count {
+            descendingLaunchIds[x].reverse()
+        }
         
         self.ascending = ascending
         super.init()

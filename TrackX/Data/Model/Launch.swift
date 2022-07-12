@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Launch: Codable {
+struct Launch: Codable, Id {
     let id: String
     let flightNumber: Int
     let name: String

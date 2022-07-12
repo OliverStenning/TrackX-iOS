@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Landpad: Codable {
+struct Landpad: Codable, Id {
     let id: String
     let name: String?
     let fullName: String?

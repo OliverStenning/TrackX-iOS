@@ -16,7 +16,7 @@ final class ImageLoader {
     private let cache: ImageCacheType
     private lazy var backgroundQueue: OperationQueue = {
         let queue = OperationQueue()
-        queue.maxConcurrentOperationCount = 5
+        queue.maxConcurrentOperationCount = ImageCacheConstants.maxConcurrentImageLoading
         return queue
     }()
     

@@ -8,7 +8,6 @@
 import Foundation
 
 class FullLaunch {
-
     let launch: Launch
     let rocket: Rocket?
     let launchpad: Launchpad?
@@ -28,7 +27,7 @@ class FullLaunch {
     }
     
     func getLaunchImageUrl() -> String? {
-        if launch.dateUnix < 1420070400 { // Unix time of Jan 1st 2016
+        if launch.dateUnix < LaunchConstants.networkImageStartTimeUnix { 
             return nil
         }
         if let flickr = launch.links?.flickr?.original {

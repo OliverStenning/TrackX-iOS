@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Core: Codable {
+struct Core: Codable, Id {
     let id: String
     let serial: String
     let block: Int?

@@ -9,8 +9,12 @@ import Foundation
 
 class DataManager {
     
+    //MARK: - Utility Properties
     weak var launchDelegate: LaunchDataManagerDelegate?
+    private var networkManager: NetworkManager
+    private var error: String? = nil
     
+    //MARK: - Data Properties
     private var launches: [String: Launch] = [:]
     private var rockets: [String: Rocket] = [:]
     private var launchpads: [String: Launchpad] = [:]
@@ -19,12 +23,27 @@ class DataManager {
     private var capsules: [String: Capsule] = [:]
     private var payloads: [String: Payload] = [:]
     
-    private var error: String? = nil
+    //MARK: - Initializers
+    init(networkManager: NetworkManager) {
+        self.networkManager = networkManager
+    }
     
+    //MARK: - Data Functions
     func fetchData() {
-        let networkManager = NetworkManager()
         let networkGroup = DispatchGroup()
     
+        setLaunches(networkGroup: networkGroup)
+        setRockets(networkGroup: networkGroup)
+        setLaunchpads(networkGroup: networkGroup)
+        setLandpads(networkGroup: networkGroup)
+        setPayloads(networkGroup: networkGroup)
+        setCores(networkGroup: networkGroup)
+        
+        networkGroup.notify(queue: .main, execute: fetchCompletionHandler)
+    }
+    
+    //MARK: - Data Setters
+    func setLaunches(networkGroup: DispatchGroup) {
         networkGroup.enter()
         networkManager.getLaunches() { launchArray, error in
             guard error == nil else {
@@ -32,20 +51,12 @@ class DataManager {
                 networkGroup.leave()
                 return
             }
-            guard let launchArray = launchArray else {
-                networkGroup.leave()
-                return
-            }
-
-            let sortedLaunchArray = launchArray.sorted {
-                $0.dateUnix > $1.dateUnix
-            }
-            sortedLaunchArray.forEach { launch in
-                self.launches[launch.id] = launch
-            }
+            self.launches = moveToDictionary(launchArray)
             networkGroup.leave()
         }
-        
+    }
+    
+    func setRockets(networkGroup: DispatchGroup) {
         networkGroup.enter()
         networkManager.getRockets { rocketArray, error in
             guard error == nil else {
@@ -53,12 +64,12 @@ class DataManager {
                 networkGroup.leave()
                 return
             }
-            rocketArray?.forEach() { rocket in
-                self.rockets[rocket.id] = rocket
-            }
+            self.rockets = moveToDictionary(rocketArray)
             networkGroup.leave()
         }
-        
+    }
+    
+    func setLaunchpads(networkGroup: DispatchGroup) {
         networkGroup.enter()
         networkManager.getLaunchpads() { launchpadArray, error in
             guard error == nil else {
@@ -66,12 +77,12 @@ class DataManager {
                 networkGroup.leave()
                 return
             }
-            launchpadArray?.forEach() { launchpad in
-                self.launchpads[launchpad.id] = launchpad
-            }
+            self.launchpads = moveToDictionary(launchpadArray)
             networkGroup.leave()
         }
-        
+    }
+    
+    func setLandpads(networkGroup: DispatchGroup) {
         networkGroup.enter()
         networkManager.getLandpads() { landpadArray, error in
             guard error == nil else {
@@ -79,12 +90,12 @@ class DataManager {
                 networkGroup.leave()
                 return
             }
-            landpadArray?.forEach() { landpad in
-                self.landpads[landpad.id] = landpad
-            }
+            self.landpads = moveToDictionary(landpadArray)
             networkGroup.leave()
         }
-
+    }
+    
+    func setPayloads(networkGroup: DispatchGroup) {
         networkGroup.enter()
         networkManager.getPayloads() { payloadArray, error in
             guard error == nil else {
@@ -92,12 +103,12 @@ class DataManager {
                 networkGroup.leave()
                 return
             }
-            payloadArray?.forEach() { payload in
-                self.payloads[payload.id] = payload
-            }
+            self.payloads = moveToDictionary(payloadArray)
             networkGroup.leave()
         }
-        
+    }
+    
+    func setCores(networkGroup: DispatchGroup) {
         networkGroup.enter()
         networkManager.getCores() { coreArray, error in
             guard error == nil else {
@@ -105,65 +116,55 @@ class DataManager {
                 networkGroup.leave()
                 return
             }
-            coreArray?.forEach() { core in
-                self.cores[core.id] = core
-            }
+            self.cores = moveToDictionary(coreArray)
             networkGroup.leave()
         }
+    }
+    
+    //MARK: - Data Fetch Completion
+    func fetchCompletionHandler() {
+        guard let delegate = self.launchDelegate else { return }
         
-        networkGroup.notify(queue: .main) {
-            guard let delegate = self.launchDelegate else { return }
-            
-            if let error = self.error {
-                delegate.launchDataManager(self, dataFailedToUpDate: error)
-                return
-            }
-            
-            // Create dictionary of full launches
-            var fullLaunches: [String: FullLaunch] = [:]
-            for (key, launch) in self.launches {
-                fullLaunches[key] = self.createFullLaunch(from: launch)
-            }
-            
-            var previousLaunches: [Launch] = []
-            var upcomingLaunches: [Launch] = []
-            var allLaunches: [Launch]
-            
-            for (_, launch) in self.launches {
-                if launch.upcoming {
-                    upcomingLaunches.append(launch)
-                } else {
-                    previousLaunches.append(launch)
-                }
-            }
-            allLaunches = previousLaunches + upcomingLaunches
-            
-            // Sort arrays chronologically
-            previousLaunches.sort {
-                $0.dateUnix < $1.dateUnix
-            }
-            upcomingLaunches.sort {
-                $0.dateUnix < $1.dateUnix
-            }
-            allLaunches.sort {
-                $0.dateUnix < $1.dateUnix
-            }
-            
-            let previous = self.splitLaunchesIntoSections(launches: previousLaunches)
-            let previousLaunchTableData = LaunchTableData(sections: previous.sectionNames, launchIds: previous.sectionedIds, fullLaunches: fullLaunches)
-            delegate.launchDataManager(self, previousLaunchesUpdate: previousLaunchTableData)
-            
-            let upcoming = self.splitLaunchesIntoSections(launches: upcomingLaunches)
-            let upcomingLaunchTableData = LaunchTableData(sections: upcoming.sectionNames, launchIds: upcoming.sectionedIds, fullLaunches: fullLaunches)
-            delegate.launchDataManager(self, upcomingLaunchesUpdate: upcomingLaunchTableData)
-            
-            let all = self.splitLaunchesIntoSections(launches: allLaunches)
-            let allLaunchTableData = LaunchTableData(sections: all.sectionNames, launchIds: all.sectionedIds, fullLaunches: fullLaunches)
-            delegate.launchDataManager(self, allLaunchesUpdate: allLaunchTableData)
-            
-            delegate.launchDataManager(self, dataWasUpdated: true)
-            
+        if let error = self.error {
+            delegate.launchDataManager(self, dataFailedToUpDate: error)
+            return
         }
+        
+        // Create dictionary of full launches
+        var fullLaunches: [String: FullLaunch] = [:]
+        for (key, launch) in self.launches {
+            fullLaunches[key] = self.createFullLaunch(from: launch)
+        }
+        
+        var previousLaunches: [Launch] = []
+        var upcomingLaunches: [Launch] = []
+        var allLaunches: [Launch]
+        
+        for (_, launch) in self.launches {
+            if launch.upcoming {
+                upcomingLaunches.append(launch)
+            } else {
+                previousLaunches.append(launch)
+            }
+        }
+        allLaunches = previousLaunches + upcomingLaunches
+        
+        // Sort arrays chronologically
+        previousLaunches.sort(by: unixTimeSort(x:y:))
+        upcomingLaunches.sort(by: unixTimeSort(x:y:))
+        allLaunches.sort(by: unixTimeSort(x:y:))
+        
+        delegate.launchDataManager(self, previousLaunchesUpdate: createTableData(launches: previousLaunches, fullLaunches: fullLaunches))
+        delegate.launchDataManager(self, upcomingLaunchesUpdate: createTableData(launches: upcomingLaunches, fullLaunches: fullLaunches))
+        delegate.launchDataManager(self, allLaunchesUpdate: createTableData(launches: allLaunches, fullLaunches: fullLaunches))
+        delegate.launchDataManager(self, dataWasUpdated: true)
+        
+    }
+    
+    //MARK: - Data Manipulation Functions
+    func createTableData(launches: [Launch], fullLaunches: [String: FullLaunch]) -> LaunchTableData {
+        let splitted = self.splitLaunchesIntoSections(launches: launches)
+        return LaunchTableData(sections: splitted.sectionNames, launchIds: splitted.sectionedIds, fullLaunches: fullLaunches)
     }
     
     func splitLaunchesIntoSections(launches: [Launch]) -> (sectionNames: [String], sectionedIds: [[String]]) {
@@ -178,9 +179,6 @@ class DataManager {
         
         let longFormatter = DateFormatter()
         longFormatter.dateFormat = "MMMM yyyy"
-        
-//        sectionNames.append("")
-//        LaunchIds.append([launches[0].id])
         
         for x in 0..<launches.count {
             let launchDate = Date(timeIntervalSince1970: TimeInterval(launches[x].dateUnix))

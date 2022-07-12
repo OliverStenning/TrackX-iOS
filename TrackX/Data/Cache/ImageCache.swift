@@ -39,7 +39,10 @@ public final class ImageCache: ImageCacheType {
         let countLimit: Int
         let memoryLimit: Int
         
-        static let defaultConfig = Config(countLimit: 100, memoryLimit: 1024 * 1024 * 100) // 100MB
+        static let defaultConfig = Config(
+            countLimit: ImageCacheConstants.countLimit,
+            memoryLimit: ImageCacheConstants.memoryLimit
+        )
     }
     
     init(config: Config = Config.defaultConfig) {
@@ -55,7 +58,11 @@ public final class ImageCache: ImageCacheType {
         
         if let image = imageCache.object(forKey: url as AnyObject) as? UIImage {
             let decodedImage = image.decodedImage()
-            decodedImageCache.setObject(image as AnyObject, forKey: url as AnyObject, cost: decodedImage.diskSize)
+            decodedImageCache.setObject(
+                image as AnyObject,
+                forKey: url as AnyObject,
+                cost: decodedImage.diskSize
+            )
             return decodedImage
         }
         
@@ -68,7 +75,11 @@ public final class ImageCache: ImageCacheType {
         
         lock.lock(); defer { lock.unlock() }
         imageCache.setObject(decodedImage, forKey: url as AnyObject)
-        decodedImageCache.setObject(image as AnyObject, forKey: url as AnyObject, cost: decodedImage.diskSize)
+        decodedImageCache.setObject(
+            image as AnyObject,
+            forKey: url as AnyObject,
+            cost: decodedImage.diskSize
+        )
     }
     
     func removeImage(for url: URL) {

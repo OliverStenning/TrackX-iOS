@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Payload: Codable {
+struct Payload: Codable, Id {
     let id: String
     let name: String?
     let type: String?

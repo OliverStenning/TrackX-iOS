@@ -58,8 +58,8 @@ class LaunchViewController: UIViewController {
     
     //MARK: - Initializers
     init(networkManager: NetworkManager) {
-        self.dataManager = DataManager()
         self.networkManager = networkManager
+        self.dataManager = DataManager(networkManager: networkManager)
         super.init(nibName: nil, bundle: nil)
         
         dataManager.launchDelegate = self
