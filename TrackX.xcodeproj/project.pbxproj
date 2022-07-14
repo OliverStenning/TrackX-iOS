@@ -31,6 +31,22 @@
 		F215F627287C895B006F67FC /* Second Details.png in Resources */ = {isa = PBXBuildFile; fileRef = F215F624287C895B006F67FC /* Second Details.png */; };
 		F215F629287E0BC8006F67FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F628287E0BC8006F67FC /* Constants.swift */; };
 		F215F62D287E1C1F006F67FC /* Arrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F62C287E1C1F006F67FC /* Arrays.swift */; };
+		F230AF53287E44ED00FF7769 /* LaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF52287E44ED00FF7769 /* LaunchTests.swift */; };
+		F230AF56287E47CF00FF7769 /* launch.json in Resources */ = {isa = PBXBuildFile; fileRef = F230AF55287E47CF00FF7769 /* launch.json */; };
+		F230AF62287F919F00FF7769 /* rocket.json in Resources */ = {isa = PBXBuildFile; fileRef = F230AF61287F919F00FF7769 /* rocket.json */; };
+		F230AF64287F91A500FF7769 /* payload.json in Resources */ = {isa = PBXBuildFile; fileRef = F230AF63287F91A500FF7769 /* payload.json */; };
+		F230AF66287F91AB00FF7769 /* launchpad.json in Resources */ = {isa = PBXBuildFile; fileRef = F230AF65287F91AB00FF7769 /* launchpad.json */; };
+		F230AF68287F91B200FF7769 /* landpad.json in Resources */ = {isa = PBXBuildFile; fileRef = F230AF67287F91B200FF7769 /* landpad.json */; };
+		F230AF6A287F91B800FF7769 /* core.json in Resources */ = {isa = PBXBuildFile; fileRef = F230AF69287F91B800FF7769 /* core.json */; };
+		F230AF6C287F91BE00FF7769 /* capsule.json in Resources */ = {isa = PBXBuildFile; fileRef = F230AF6B287F91BE00FF7769 /* capsule.json */; };
+		F230AF6E287F91D800FF7769 /* CapsuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF6D287F91D800FF7769 /* CapsuleTests.swift */; };
+		F230AF70287F91FD00FF7769 /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF6F287F91FD00FF7769 /* CoreTests.swift */; };
+		F230AF72287F923000FF7769 /* LandpadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF71287F923000FF7769 /* LandpadTests.swift */; };
+		F230AF74287F925D00FF7769 /* LaunchpadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF73287F925D00FF7769 /* LaunchpadTests.swift */; };
+		F230AF76287F929A00FF7769 /* PayloadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF75287F929A00FF7769 /* PayloadTests.swift */; };
+		F230AF78287F92D200FF7769 /* RocketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF77287F92D200FF7769 /* RocketTests.swift */; };
+		F230AF7B287F9AE600FF7769 /* FullLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF7A287F9AE600FF7769 /* FullLaunchTests.swift */; };
+		F230AF7E287FA08700FF7769 /* TestDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF7D287FA08700FF7769 /* TestDataLoader.swift */; };
 		F2396D272844060E0084DF79 /* LaunchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D262844060E0084DF79 /* LaunchDetailViewController.swift */; };
 		F2396D2F284552720084DF79 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D2E284552720084DF79 /* EndPointType.swift */; };
 		F2396D31284552DB0084DF79 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D30284552DB0084DF79 /* HTTPMethod.swift */; };
@@ -66,9 +82,6 @@
 		F2F0938027EE2818005CCD09 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0937F27EE2818005CCD09 /* LaunchViewController.swift */; };
 		F2F0938527EE2819005CCD09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F0938427EE2819005CCD09 /* Assets.xcassets */; };
 		F2F0938827EE2819005CCD09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2F0938627EE2819005CCD09 /* LaunchScreen.storyboard */; };
-		F2F0939327EE2819005CCD09 /* TrackXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0939227EE2819005CCD09 /* TrackXTests.swift */; };
-		F2F0939D27EE2819005CCD09 /* TrackXUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0939C27EE2819005CCD09 /* TrackXUITests.swift */; };
-		F2F0939F27EE2819005CCD09 /* TrackXUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0939E27EE2819005CCD09 /* TrackXUITestsLaunchTests.swift */; };
 		F2F093B027EE2BBF005CCD09 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F093AF27EE2BBF005CCD09 /* UIView+Extensions.swift */; };
 		F2F093B627EE2F8B005CCD09 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F093B527EE2F8B005CCD09 /* Launch.swift */; };
 		F2F2343B284D6A6500CAB70C /* StringFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2343A284D6A6500CAB70C /* StringFormatting.swift */; };
@@ -87,13 +100,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		F2F0938F27EE2819005CCD09 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F2F0937027EE2817005CCD09 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F2F0937727EE2818005CCD09;
-			remoteInfo = TrackX;
-		};
-		F2F0939927EE2819005CCD09 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F2F0937027EE2817005CCD09 /* Project object */;
 			proxyType = 1;
@@ -127,6 +133,22 @@
 		F215F624287C895B006F67FC /* Second Details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Second Details.png"; sourceTree = "<group>"; };
 		F215F628287E0BC8006F67FC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F215F62C287E1C1F006F67FC /* Arrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrays.swift; sourceTree = "<group>"; };
+		F230AF52287E44ED00FF7769 /* LaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTests.swift; sourceTree = "<group>"; };
+		F230AF55287E47CF00FF7769 /* launch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = launch.json; sourceTree = "<group>"; };
+		F230AF61287F919F00FF7769 /* rocket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rocket.json; sourceTree = "<group>"; };
+		F230AF63287F91A500FF7769 /* payload.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = payload.json; sourceTree = "<group>"; };
+		F230AF65287F91AB00FF7769 /* launchpad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = launchpad.json; sourceTree = "<group>"; };
+		F230AF67287F91B200FF7769 /* landpad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = landpad.json; sourceTree = "<group>"; };
+		F230AF69287F91B800FF7769 /* core.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = core.json; sourceTree = "<group>"; };
+		F230AF6B287F91BE00FF7769 /* capsule.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = capsule.json; sourceTree = "<group>"; };
+		F230AF6D287F91D800FF7769 /* CapsuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleTests.swift; sourceTree = "<group>"; };
+		F230AF6F287F91FD00FF7769 /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
+		F230AF71287F923000FF7769 /* LandpadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandpadTests.swift; sourceTree = "<group>"; };
+		F230AF73287F925D00FF7769 /* LaunchpadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadTests.swift; sourceTree = "<group>"; };
+		F230AF75287F929A00FF7769 /* PayloadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadTests.swift; sourceTree = "<group>"; };
+		F230AF77287F92D200FF7769 /* RocketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketTests.swift; sourceTree = "<group>"; };
+		F230AF7A287F9AE600FF7769 /* FullLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullLaunchTests.swift; sourceTree = "<group>"; };
+		F230AF7D287FA08700FF7769 /* TestDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataLoader.swift; sourceTree = "<group>"; };
 		F2396D262844060E0084DF79 /* LaunchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailViewController.swift; sourceTree = "<group>"; };
 		F2396D2E284552720084DF79 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		F2396D30284552DB0084DF79 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -165,10 +187,6 @@
 		F2F0938727EE2819005CCD09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2F0938927EE2819005CCD09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2F0938E27EE2819005CCD09 /* TrackXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2F0939227EE2819005CCD09 /* TrackXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackXTests.swift; sourceTree = "<group>"; };
-		F2F0939827EE2819005CCD09 /* TrackXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2F0939C27EE2819005CCD09 /* TrackXUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackXUITests.swift; sourceTree = "<group>"; };
-		F2F0939E27EE2819005CCD09 /* TrackXUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackXUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F2F093AF27EE2BBF005CCD09 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		F2F093B527EE2F8B005CCD09 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		F2F2343A284D6A6500CAB70C /* StringFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatting.swift; sourceTree = "<group>"; };
@@ -194,13 +212,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F2F0938B27EE2819005CCD09 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F2F0939527EE2819005CCD09 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -257,6 +268,44 @@
 				F215F624287C895B006F67FC /* Second Details.png */,
 			);
 			path = Screenshots;
+			sourceTree = "<group>";
+		};
+		F230AF58287F8EDD00FF7769 /* ModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				F230AF6D287F91D800FF7769 /* CapsuleTests.swift */,
+				F230AF6F287F91FD00FF7769 /* CoreTests.swift */,
+				F230AF7A287F9AE600FF7769 /* FullLaunchTests.swift */,
+				F230AF71287F923000FF7769 /* LandpadTests.swift */,
+				F230AF73287F925D00FF7769 /* LaunchpadTests.swift */,
+				F230AF52287E44ED00FF7769 /* LaunchTests.swift */,
+				F230AF75287F929A00FF7769 /* PayloadTests.swift */,
+				F230AF77287F92D200FF7769 /* RocketTests.swift */,
+				F230AF79287F9A6A00FF7769 /* TestData */,
+			);
+			path = ModelTests;
+			sourceTree = "<group>";
+		};
+		F230AF59287F8EE800FF7769 /* UtilitiesTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UtilitiesTests;
+			sourceTree = "<group>";
+		};
+		F230AF79287F9A6A00FF7769 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				F230AF7D287FA08700FF7769 /* TestDataLoader.swift */,
+				F230AF69287F91B800FF7769 /* core.json */,
+				F230AF6B287F91BE00FF7769 /* capsule.json */,
+				F230AF67287F91B200FF7769 /* landpad.json */,
+				F230AF55287E47CF00FF7769 /* launch.json */,
+				F230AF65287F91AB00FF7769 /* launchpad.json */,
+				F230AF63287F91A500FF7769 /* payload.json */,
+				F230AF61287F919F00FF7769 /* rocket.json */,
+			);
+			path = TestData;
 			sourceTree = "<group>";
 		};
 		F2396D28284552270084DF79 /* Networking */ = {
@@ -378,7 +427,6 @@
 				F2F0937927EE2818005CCD09 /* Products */,
 				F2F0937A27EE2818005CCD09 /* TrackX */,
 				F2F0939127EE2819005CCD09 /* TrackXTests */,
-				F2F0939B27EE2819005CCD09 /* TrackXUITests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -387,7 +435,6 @@
 			children = (
 				F2F0937827EE2818005CCD09 /* TrackX.app */,
 				F2F0938E27EE2819005CCD09 /* TrackXTests.xctest */,
-				F2F0939827EE2819005CCD09 /* TrackXUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -407,18 +454,10 @@
 		F2F0939127EE2819005CCD09 /* TrackXTests */ = {
 			isa = PBXGroup;
 			children = (
-				F2F0939227EE2819005CCD09 /* TrackXTests.swift */,
+				F230AF58287F8EDD00FF7769 /* ModelTests */,
+				F230AF59287F8EE800FF7769 /* UtilitiesTests */,
 			);
 			path = TrackXTests;
-			sourceTree = "<group>";
-		};
-		F2F0939B27EE2819005CCD09 /* TrackXUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F2F0939C27EE2819005CCD09 /* TrackXUITests.swift */,
-				F2F0939E27EE2819005CCD09 /* TrackXUITestsLaunchTests.swift */,
-			);
-			path = TrackXUITests;
 			sourceTree = "<group>";
 		};
 		F2F093AB27EE2829005CCD09 /* Application */ = {
@@ -472,9 +511,9 @@
 				F2396D4C2847A9A90084DF79 /* Landpad.swift */,
 				F2F093B527EE2F8B005CCD09 /* Launch.swift */,
 				F2396D4A2847A9A00084DF79 /* Launchpad.swift */,
+				F215F60B287B7DCC006F67FC /* Location.swift */,
 				F2396D522847AA1C0084DF79 /* Payload.swift */,
 				F2396D442846BADD0084DF79 /* Rocket.swift */,
-				F215F60B287B7DCC006F67FC /* Location.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -552,24 +591,6 @@
 			productReference = F2F0938E27EE2819005CCD09 /* TrackXTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F2F0939727EE2819005CCD09 /* TrackXUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F2F093A827EE2819005CCD09 /* Build configuration list for PBXNativeTarget "TrackXUITests" */;
-			buildPhases = (
-				F2F0939427EE2819005CCD09 /* Sources */,
-				F2F0939527EE2819005CCD09 /* Frameworks */,
-				F2F0939627EE2819005CCD09 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F2F0939A27EE2819005CCD09 /* PBXTargetDependency */,
-			);
-			name = TrackXUITests;
-			productName = TrackXUITests;
-			productReference = F2F0939827EE2819005CCD09 /* TrackXUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -584,10 +605,6 @@
 						CreatedOnToolsVersion = 13.3;
 					};
 					F2F0938D27EE2819005CCD09 = {
-						CreatedOnToolsVersion = 13.3;
-						TestTargetID = F2F0937727EE2818005CCD09;
-					};
-					F2F0939727EE2819005CCD09 = {
 						CreatedOnToolsVersion = 13.3;
 						TestTargetID = F2F0937727EE2818005CCD09;
 					};
@@ -610,7 +627,6 @@
 			targets = (
 				F2F0937727EE2818005CCD09 /* TrackX */,
 				F2F0938D27EE2819005CCD09 /* TrackXTests */,
-				F2F0939727EE2819005CCD09 /* TrackXUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -635,13 +651,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F2F0939627EE2819005CCD09 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				F230AF6C287F91BE00FF7769 /* capsule.json in Resources */,
+				F230AF6A287F91B800FF7769 /* core.json in Resources */,
+				F230AF64287F91A500FF7769 /* payload.json in Resources */,
+				F230AF56287E47CF00FF7769 /* launch.json in Resources */,
+				F230AF68287F91B200FF7769 /* landpad.json in Resources */,
+				F230AF66287F91AB00FF7769 /* launchpad.json in Resources */,
+				F230AF62287F919F00FF7769 /* rocket.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,16 +740,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2F0939327EE2819005CCD09 /* TrackXTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F2F0939427EE2819005CCD09 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F2F0939D27EE2819005CCD09 /* TrackXUITests.swift in Sources */,
-				F2F0939F27EE2819005CCD09 /* TrackXUITestsLaunchTests.swift in Sources */,
+				F230AF7E287FA08700FF7769 /* TestDataLoader.swift in Sources */,
+				F230AF74287F925D00FF7769 /* LaunchpadTests.swift in Sources */,
+				F230AF7B287F9AE600FF7769 /* FullLaunchTests.swift in Sources */,
+				F230AF53287E44ED00FF7769 /* LaunchTests.swift in Sources */,
+				F230AF6E287F91D800FF7769 /* CapsuleTests.swift in Sources */,
+				F230AF70287F91FD00FF7769 /* CoreTests.swift in Sources */,
+				F230AF72287F923000FF7769 /* LandpadTests.swift in Sources */,
+				F230AF76287F929A00FF7769 /* PayloadTests.swift in Sources */,
+				F230AF78287F92D200FF7769 /* RocketTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,11 +759,6 @@
 			isa = PBXTargetDependency;
 			target = F2F0937727EE2818005CCD09 /* TrackX */;
 			targetProxy = F2F0938F27EE2819005CCD09 /* PBXContainerItemProxy */;
-		};
-		F2F0939A27EE2819005CCD09 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F2F0937727EE2818005CCD09 /* TrackX */;
-			targetProxy = F2F0939927EE2819005CCD09 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -976,42 +986,6 @@
 			};
 			name = Release;
 		};
-		F2F093A927EE2819005CCD09 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 36LYYU944F;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = co.stenning.TrackXUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TrackX;
-			};
-			name = Debug;
-		};
-		F2F093AA27EE2819005CCD09 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 36LYYU944F;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = co.stenning.TrackXUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TrackX;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1038,15 +1012,6 @@
 			buildConfigurations = (
 				F2F093A627EE2819005CCD09 /* Debug */,
 				F2F093A727EE2819005CCD09 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F2F093A827EE2819005CCD09 /* Build configuration list for PBXNativeTarget "TrackXUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F2F093A927EE2819005CCD09 /* Debug */,
-				F2F093AA27EE2819005CCD09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
