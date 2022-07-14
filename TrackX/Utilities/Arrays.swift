@@ -11,14 +11,18 @@ protocol Id {
     var id: String { get }
 }
 
-func moveToDictionary<T: Id>(_ array: [T]?) -> [String: T] {
-    var dictionary: [String: T] = [:]
-    array?.forEach() { item in
-        dictionary[item.id] = item
+struct Arrays {
+    
+    static func arrayToDictionary<T: Id>(_ array: [T]) -> [String: T] {
+        var dictionary: [String: T] = [:]
+        array.forEach() { item in
+            dictionary[item.id] = item
+        }
+        return dictionary
     }
-    return dictionary
-}
-
-func unixTimeSort(x: Launch, y: Launch) -> Bool {
-    return x.dateUnix < y.dateUnix
+    
+    static func unixTimeSort(x: Launch, y: Launch) -> Bool {
+        return x.dateUnix < y.dateUnix
+    }
+    
 }

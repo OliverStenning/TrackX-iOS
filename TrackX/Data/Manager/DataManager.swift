@@ -15,17 +15,28 @@ class DataManager {
     private var error: String? = nil
     
     //MARK: - Data Properties
-    private var launches: [String: Launch] = [:]
-    private var rockets: [String: Rocket] = [:]
-    private var launchpads: [String: Launchpad] = [:]
-    private var landpads: [String: Landpad] = [:]
-    private var cores: [String: Core] = [:]
     private var capsules: [String: Capsule] = [:]
+    private var cores: [String: Core] = [:]
+    private var landpads: [String: Landpad] = [:]
+    private var launches: [String: Launch] = [:]
+    private var launchpads: [String: Launchpad] = [:]
     private var payloads: [String: Payload] = [:]
+    private var rockets: [String: Rocket] = [:]
     
     //MARK: - Initializers
     init(networkManager: NetworkManager) {
         self.networkManager = networkManager
+    }
+    
+    init(networkManager: NetworkManager, capsules: [String: Capsule], cores: [String: Core], landpads: [String: Landpad], launches: [String: Launch], launchpads: [String: Launchpad], payloads: [String: Payload], rockets: [String: Rocket]) {
+        self.networkManager = networkManager
+        self.capsules = capsules
+        self.cores = cores
+        self.landpads = landpads
+        self.launches = launches
+        self.launchpads = launchpads
+        self.payloads = payloads
+        self.rockets = rockets
     }
     
     //MARK: - Data Functions
@@ -46,12 +57,12 @@ class DataManager {
     func setLaunches(networkGroup: DispatchGroup) {
         networkGroup.enter()
         networkManager.getLaunches() { launchArray, error in
-            guard error == nil else {
+            guard error == nil, let launchArray = launchArray else {
                 self.error = error
                 networkGroup.leave()
                 return
             }
-            self.launches = moveToDictionary(launchArray)
+            self.launches = Arrays.arrayToDictionary(launchArray)
             networkGroup.leave()
         }
     }
@@ -59,12 +70,12 @@ class DataManager {
     func setRockets(networkGroup: DispatchGroup) {
         networkGroup.enter()
         networkManager.getRockets { rocketArray, error in
-            guard error == nil else {
+            guard error == nil, let rocketArray = rocketArray else {
                 self.error = error
                 networkGroup.leave()
                 return
             }
-            self.rockets = moveToDictionary(rocketArray)
+            self.rockets = Arrays.arrayToDictionary(rocketArray)
             networkGroup.leave()
         }
     }
@@ -72,12 +83,12 @@ class DataManager {
     func setLaunchpads(networkGroup: DispatchGroup) {
         networkGroup.enter()
         networkManager.getLaunchpads() { launchpadArray, error in
-            guard error == nil else {
+            guard error == nil, let launchpadArray = launchpadArray else {
                 self.error = error
                 networkGroup.leave()
                 return
             }
-            self.launchpads = moveToDictionary(launchpadArray)
+            self.launchpads = Arrays.arrayToDictionary(launchpadArray)
             networkGroup.leave()
         }
     }
@@ -85,12 +96,12 @@ class DataManager {
     func setLandpads(networkGroup: DispatchGroup) {
         networkGroup.enter()
         networkManager.getLandpads() { landpadArray, error in
-            guard error == nil else {
+            guard error == nil, let landpadArray = landpadArray else {
                 self.error = error
                 networkGroup.leave()
                 return
             }
-            self.landpads = moveToDictionary(landpadArray)
+            self.landpads = Arrays.arrayToDictionary(landpadArray)
             networkGroup.leave()
         }
     }
@@ -98,12 +109,12 @@ class DataManager {
     func setPayloads(networkGroup: DispatchGroup) {
         networkGroup.enter()
         networkManager.getPayloads() { payloadArray, error in
-            guard error == nil else {
+            guard error == nil, let payloadArray = payloadArray else {
                 self.error = error
                 networkGroup.leave()
                 return
             }
-            self.payloads = moveToDictionary(payloadArray)
+            self.payloads = Arrays.arrayToDictionary(payloadArray)
             networkGroup.leave()
         }
     }
@@ -111,12 +122,12 @@ class DataManager {
     func setCores(networkGroup: DispatchGroup) {
         networkGroup.enter()
         networkManager.getCores() { coreArray, error in
-            guard error == nil else {
+            guard error == nil, let coreArray = coreArray else {
                 self.error = error
                 networkGroup.leave()
                 return
             }
-            self.cores = moveToDictionary(coreArray)
+            self.cores = Arrays.arrayToDictionary(coreArray)
             networkGroup.leave()
         }
     }
@@ -155,9 +166,9 @@ class DataManager {
         allLaunches = previousLaunches + upcomingLaunches
         
         // Sort arrays chronologically
-        previousLaunches.sort(by: unixTimeSort(x:y:))
-        upcomingLaunches.sort(by: unixTimeSort(x:y:))
-        allLaunches.sort(by: unixTimeSort(x:y:))
+        previousLaunches.sort(by: Arrays.unixTimeSort(x:y:))
+        upcomingLaunches.sort(by: Arrays.unixTimeSort(x:y:))
+        allLaunches.sort(by: Arrays.unixTimeSort(x:y:))
         
         delegate.launchDataManager(self, previousLaunchesUpdate: createTableData(launches: previousLaunches, fullLaunches: fullLaunches))
         delegate.launchDataManager(self, upcomingLaunchesUpdate: createTableData(launches: upcomingLaunches, fullLaunches: fullLaunches))
@@ -254,7 +265,7 @@ class DataManager {
             capsules: capsules.isEmpty ? nil : capsules,
             payloads: payloads.isEmpty ? nil : payloads,
             cores: cores.isEmpty ? nil : cores,
-            coreLandpads: coreLandpads
+            coreLandpads: coreLandpads.isEmpty ? nil : coreLandpads
         )
         return fullLaunch
     }

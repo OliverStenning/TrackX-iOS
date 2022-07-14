@@ -75,6 +75,13 @@
 		F254D45728579E8B0009A2A0 /* LaunchSectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D45628579E8B0009A2A0 /* LaunchSectionStackView.swift */; };
 		F254D4592857A19B0009A2A0 /* LaunchpadSectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D4582857A19B0009A2A0 /* LaunchpadSectionStackView.swift */; };
 		F254D45E2857C9660009A2A0 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D45D2857C9660009A2A0 /* DataManager.swift */; };
+		F2D0F2202880BF52004BC16D /* allLaunches.json in Resources */ = {isa = PBXBuildFile; fileRef = F2D0F2192880BF52004BC16D /* allLaunches.json */; };
+		F2D0F2212880BF52004BC16D /* allLaunchpads.json in Resources */ = {isa = PBXBuildFile; fileRef = F2D0F21A2880BF52004BC16D /* allLaunchpads.json */; };
+		F2D0F2222880BF53004BC16D /* allLandpads.json in Resources */ = {isa = PBXBuildFile; fileRef = F2D0F21B2880BF52004BC16D /* allLandpads.json */; };
+		F2D0F2232880BF53004BC16D /* allRockets.json in Resources */ = {isa = PBXBuildFile; fileRef = F2D0F21C2880BF52004BC16D /* allRockets.json */; };
+		F2D0F2242880BF53004BC16D /* allCapsules.json in Resources */ = {isa = PBXBuildFile; fileRef = F2D0F21D2880BF52004BC16D /* allCapsules.json */; };
+		F2D0F2252880BF53004BC16D /* allPayloads.json in Resources */ = {isa = PBXBuildFile; fileRef = F2D0F21E2880BF52004BC16D /* allPayloads.json */; };
+		F2D0F2262880BF53004BC16D /* allCores.json in Resources */ = {isa = PBXBuildFile; fileRef = F2D0F21F2880BF52004BC16D /* allCores.json */; };
 		F2E2EC4628592EC500AF06CC /* LaunchTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2EC4528592EC500AF06CC /* LaunchTableDataSource.swift */; };
 		F2E2EC482859327D00AF06CC /* FullLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2EC472859327D00AF06CC /* FullLaunch.swift */; };
 		F2F0937C27EE2818005CCD09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0937B27EE2818005CCD09 /* AppDelegate.swift */; };
@@ -177,6 +184,13 @@
 		F254D45628579E8B0009A2A0 /* LaunchSectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSectionStackView.swift; sourceTree = "<group>"; };
 		F254D4582857A19B0009A2A0 /* LaunchpadSectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadSectionStackView.swift; sourceTree = "<group>"; };
 		F254D45D2857C9660009A2A0 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		F2D0F2192880BF52004BC16D /* allLaunches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allLaunches.json; sourceTree = "<group>"; };
+		F2D0F21A2880BF52004BC16D /* allLaunchpads.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allLaunchpads.json; sourceTree = "<group>"; };
+		F2D0F21B2880BF52004BC16D /* allLandpads.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allLandpads.json; sourceTree = "<group>"; };
+		F2D0F21C2880BF52004BC16D /* allRockets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allRockets.json; sourceTree = "<group>"; };
+		F2D0F21D2880BF52004BC16D /* allCapsules.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allCapsules.json; sourceTree = "<group>"; };
+		F2D0F21E2880BF52004BC16D /* allPayloads.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allPayloads.json; sourceTree = "<group>"; };
+		F2D0F21F2880BF52004BC16D /* allCores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allCores.json; sourceTree = "<group>"; };
 		F2E2EC4528592EC500AF06CC /* LaunchTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTableDataSource.swift; sourceTree = "<group>"; };
 		F2E2EC472859327D00AF06CC /* FullLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullLaunch.swift; sourceTree = "<group>"; };
 		F2F0937827EE2818005CCD09 /* TrackX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -297,8 +311,15 @@
 			isa = PBXGroup;
 			children = (
 				F230AF7D287FA08700FF7769 /* TestDataLoader.swift */,
-				F230AF69287F91B800FF7769 /* core.json */,
+				F2D0F21D2880BF52004BC16D /* allCapsules.json */,
+				F2D0F21F2880BF52004BC16D /* allCores.json */,
+				F2D0F21B2880BF52004BC16D /* allLandpads.json */,
+				F2D0F2192880BF52004BC16D /* allLaunches.json */,
+				F2D0F21A2880BF52004BC16D /* allLaunchpads.json */,
+				F2D0F21E2880BF52004BC16D /* allPayloads.json */,
+				F2D0F21C2880BF52004BC16D /* allRockets.json */,
 				F230AF6B287F91BE00FF7769 /* capsule.json */,
+				F230AF69287F91B800FF7769 /* core.json */,
 				F230AF67287F91B200FF7769 /* landpad.json */,
 				F230AF55287E47CF00FF7769 /* launch.json */,
 				F230AF65287F91AB00FF7769 /* launchpad.json */,
@@ -653,9 +674,16 @@
 			files = (
 				F230AF6C287F91BE00FF7769 /* capsule.json in Resources */,
 				F230AF6A287F91B800FF7769 /* core.json in Resources */,
+				F2D0F2232880BF53004BC16D /* allRockets.json in Resources */,
 				F230AF64287F91A500FF7769 /* payload.json in Resources */,
 				F230AF56287E47CF00FF7769 /* launch.json in Resources */,
+				F2D0F2242880BF53004BC16D /* allCapsules.json in Resources */,
+				F2D0F2252880BF53004BC16D /* allPayloads.json in Resources */,
+				F2D0F2222880BF53004BC16D /* allLandpads.json in Resources */,
+				F2D0F2262880BF53004BC16D /* allCores.json in Resources */,
+				F2D0F2202880BF52004BC16D /* allLaunches.json in Resources */,
 				F230AF68287F91B200FF7769 /* landpad.json in Resources */,
+				F2D0F2212880BF52004BC16D /* allLaunchpads.json in Resources */,
 				F230AF66287F91AB00FF7769 /* launchpad.json in Resources */,
 				F230AF62287F919F00FF7769 /* rocket.json in Resources */,
 			);

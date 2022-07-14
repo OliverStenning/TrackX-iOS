@@ -8,8 +8,8 @@
 import UIKit
 
 class LaunchViewController: UIViewController {
-    
-    //MARK: - Views
+    // MARK: - Views
+
     let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.searchBarStyle = .minimal
@@ -48,15 +48,17 @@ class LaunchViewController: UIViewController {
         return refreshControl
     }()
     
-    //MARK: - Properties
-    var previousDataSource: LaunchTableDataSource? = nil
-    var upcomingDataSource: LaunchTableDataSource? = nil
-    var allDataSource: LaunchTableDataSource? = nil
+    // MARK: - Properties
+
+    var previousDataSource: LaunchTableDataSource?
+    var upcomingDataSource: LaunchTableDataSource?
+    var allDataSource: LaunchTableDataSource?
     
     var networkManager: NetworkManager!
     var dataManager: DataManager
     
-    //MARK: - Initializers
+    // MARK: - Initializers
+
     init(networkManager: NetworkManager) {
         self.networkManager = networkManager
         self.dataManager = DataManager(networkManager: networkManager)
@@ -65,11 +67,13 @@ class LaunchViewController: UIViewController {
         dataManager.launchDelegate = self
     }
     
+    @available(*, unavailable)
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Lifecycle Functions
+    // MARK: - Lifecycle Functions
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -79,18 +83,18 @@ class LaunchViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let index = self.launchTableView.indexPathForSelectedRow{
-            self.launchTableView.deselectRow(at: index, animated: true)
+        if let index = launchTableView.indexPathForSelectedRow {
+            launchTableView.deselectRow(at: index, animated: true)
         }
     }
     
-    //MARK: - Configuration Functions
+    // MARK: - Configuration Functions
+
     func configureViews() {
         view.backgroundColor = UIColor(named: "BackgroundColor")
         title = "Launches"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.up.arrow.down"), style: .plain, target: self, action: #selector(toggleAscending))
-        
         
         launchTableView.delegate = self
         
@@ -112,12 +116,12 @@ class LaunchViewController: UIViewController {
         launchTableControl.anchorSize(height: 36)
         
         // Disable search bar
-//        searchBar.anchor(
-//            top: view.layoutMarginsGuide.topAnchor,
-//            leading: view.layoutMarginsGuide.leadingAnchor,
-//            trailing: view.layoutMarginsGuide.trailingAnchor,
-//            padding: .init(top: 0, left: -8, bottom: 0, right: -8)
-//        )
+//       searchBar.anchor(
+//           top: view.layoutMarginsGuide.topAnchor,
+//           leading: view.layoutMarginsGuide.leadingAnchor,
+//           trailing: view.layoutMarginsGuide.trailingAnchor,
+//           padding: .init(top: 0, left: -8, bottom: 0, right: -8)
+//       )
 
         launchTableView.anchor(
             top: view.layoutMarginsGuide.topAnchor,
@@ -157,10 +161,10 @@ class LaunchViewController: UIViewController {
     }
 }
 
-//MARK: - Launch Table View Delegate
+// MARK: - Launch Table View Delegate
+
 extension LaunchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         guard let dataSource = getCurrentTableSource() else { return }
         guard let fullLaunch = dataSource.launch(section: indexPath.section, row: indexPath.row) else { return }
         
@@ -172,12 +176,11 @@ extension LaunchViewController: UITableViewDelegate {
         guard let dataSource = getCurrentTableSource() else { return nil }
         return LaunchTableSectionHeader(text: dataSource.section(at: section))
     }
-    
 }
 
-//MARK: - Launch Data Manager Delegate
+// MARK: - Launch Data Manager Delegate
+
 extension LaunchViewController: LaunchDataManagerDelegate {
-    
     func launchDataManager(_ manager: DataManager, previousLaunchesUpdate: LaunchTableData) {
         previousDataSource = LaunchTableDataSource(launchType: .previous, launchTableData: previousLaunchesUpdate, ascending: false)
     }
@@ -202,5 +205,4 @@ extension LaunchViewController: LaunchDataManagerDelegate {
         
         launchRefreshControl.endRefreshing()
     }
-    
 }
