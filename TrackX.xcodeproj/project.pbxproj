@@ -75,6 +75,7 @@
 		F254D45728579E8B0009A2A0 /* LaunchSectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D45628579E8B0009A2A0 /* LaunchSectionStackView.swift */; };
 		F254D4592857A19B0009A2A0 /* LaunchpadSectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D4582857A19B0009A2A0 /* LaunchpadSectionStackView.swift */; };
 		F254D45E2857C9660009A2A0 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D45D2857C9660009A2A0 /* DataManager.swift */; };
+		F26CBE872880E6F700D2DFDC /* StringFormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26CBE862880E6F700D2DFDC /* StringFormattingTests.swift */; };
 		F2D0F2202880BF52004BC16D /* allLaunches.json in Resources */ = {isa = PBXBuildFile; fileRef = F2D0F2192880BF52004BC16D /* allLaunches.json */; };
 		F2D0F2212880BF52004BC16D /* allLaunchpads.json in Resources */ = {isa = PBXBuildFile; fileRef = F2D0F21A2880BF52004BC16D /* allLaunchpads.json */; };
 		F2D0F2222880BF53004BC16D /* allLandpads.json in Resources */ = {isa = PBXBuildFile; fileRef = F2D0F21B2880BF52004BC16D /* allLandpads.json */; };
@@ -184,6 +185,7 @@
 		F254D45628579E8B0009A2A0 /* LaunchSectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSectionStackView.swift; sourceTree = "<group>"; };
 		F254D4582857A19B0009A2A0 /* LaunchpadSectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadSectionStackView.swift; sourceTree = "<group>"; };
 		F254D45D2857C9660009A2A0 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		F26CBE862880E6F700D2DFDC /* StringFormattingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormattingTests.swift; sourceTree = "<group>"; };
 		F2D0F2192880BF52004BC16D /* allLaunches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allLaunches.json; sourceTree = "<group>"; };
 		F2D0F21A2880BF52004BC16D /* allLaunchpads.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allLaunchpads.json; sourceTree = "<group>"; };
 		F2D0F21B2880BF52004BC16D /* allLandpads.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allLandpads.json; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 		F230AF59287F8EE800FF7769 /* UtilitiesTests */ = {
 			isa = PBXGroup;
 			children = (
+				F26CBE862880E6F700D2DFDC /* StringFormattingTests.swift */,
 			);
 			path = UtilitiesTests;
 			sourceTree = "<group>";
@@ -781,6 +784,7 @@
 				F230AF7B287F9AE600FF7769 /* DataManagerTests.swift in Sources */,
 				F230AF53287E44ED00FF7769 /* LaunchTests.swift in Sources */,
 				F230AF6E287F91D800FF7769 /* CapsuleTests.swift in Sources */,
+				F26CBE872880E6F700D2DFDC /* StringFormattingTests.swift in Sources */,
 				F230AF70287F91FD00FF7769 /* CoreTests.swift in Sources */,
 				F230AF72287F923000FF7769 /* LandpadTests.swift in Sources */,
 				F230AF76287F929A00FF7769 /* PayloadTests.swift in Sources */,

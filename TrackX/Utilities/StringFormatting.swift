@@ -15,11 +15,15 @@ enum DateFormat {
     case time
 }
 
-func formatDate(from inputDate: String, as dateFormat: DateFormat = DateFormat.shortDateAndTime) -> String {
+func formatDate(from inputDate: String, as dateFormat: DateFormat = DateFormat.shortDateAndTime, timeZone: String? = nil) -> String {
     let dateFormatterStart = ISO8601DateFormatter()
     dateFormatterStart.formatOptions.insert(.withFractionalSeconds)
     
     let dateFormatterEnd = DateFormatter()
+    if let timeZone = timeZone {
+        dateFormatterEnd.timeZone = TimeZone(abbreviation: timeZone)
+    }
+    
     switch dateFormat {
         case .shortDate:
             dateFormatterEnd.dateFormat = "d MMM yyyy"
@@ -28,7 +32,7 @@ func formatDate(from inputDate: String, as dateFormat: DateFormat = DateFormat.s
         case .shortDateAndTime:
             dateFormatterEnd.dateFormat = "d MMM yyyy, h:mm a"
         case .longDateAndTime:
-            dateFormatterEnd.dateFormat = "d MMM yyyy, h:mm a"
+            dateFormatterEnd.dateFormat = "d MMMM yyyy, h:mm a"
         case .time:
             dateFormatterEnd.dateFormat = "h:mm a"
     }
