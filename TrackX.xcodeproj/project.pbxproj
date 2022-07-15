@@ -45,7 +45,7 @@
 		F230AF74287F925D00FF7769 /* LaunchpadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF73287F925D00FF7769 /* LaunchpadTests.swift */; };
 		F230AF76287F929A00FF7769 /* PayloadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF75287F929A00FF7769 /* PayloadTests.swift */; };
 		F230AF78287F92D200FF7769 /* RocketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF77287F92D200FF7769 /* RocketTests.swift */; };
-		F230AF7B287F9AE600FF7769 /* FullLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF7A287F9AE600FF7769 /* FullLaunchTests.swift */; };
+		F230AF7B287F9AE600FF7769 /* DataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF7A287F9AE600FF7769 /* DataManagerTests.swift */; };
 		F230AF7E287FA08700FF7769 /* TestDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF7D287FA08700FF7769 /* TestDataLoader.swift */; };
 		F2396D272844060E0084DF79 /* LaunchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D262844060E0084DF79 /* LaunchDetailViewController.swift */; };
 		F2396D2F284552720084DF79 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D2E284552720084DF79 /* EndPointType.swift */; };
@@ -154,7 +154,7 @@
 		F230AF73287F925D00FF7769 /* LaunchpadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadTests.swift; sourceTree = "<group>"; };
 		F230AF75287F929A00FF7769 /* PayloadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadTests.swift; sourceTree = "<group>"; };
 		F230AF77287F92D200FF7769 /* RocketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketTests.swift; sourceTree = "<group>"; };
-		F230AF7A287F9AE600FF7769 /* FullLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullLaunchTests.swift; sourceTree = "<group>"; };
+		F230AF7A287F9AE600FF7769 /* DataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerTests.swift; sourceTree = "<group>"; };
 		F230AF7D287FA08700FF7769 /* TestDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataLoader.swift; sourceTree = "<group>"; };
 		F2396D262844060E0084DF79 /* LaunchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailViewController.swift; sourceTree = "<group>"; };
 		F2396D2E284552720084DF79 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
@@ -289,7 +289,6 @@
 			children = (
 				F230AF6D287F91D800FF7769 /* CapsuleTests.swift */,
 				F230AF6F287F91FD00FF7769 /* CoreTests.swift */,
-				F230AF7A287F9AE600FF7769 /* FullLaunchTests.swift */,
 				F230AF71287F923000FF7769 /* LandpadTests.swift */,
 				F230AF73287F925D00FF7769 /* LaunchpadTests.swift */,
 				F230AF52287E44ED00FF7769 /* LaunchTests.swift */,
@@ -433,6 +432,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		F26CBE852880E66D00D2DFDC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F230AF7A287F9AE600FF7769 /* DataManagerTests.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		F2E2EC4B285CF06C00AF06CC /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,6 +482,7 @@
 		F2F0939127EE2819005CCD09 /* TrackXTests */ = {
 			isa = PBXGroup;
 			children = (
+				F26CBE852880E66D00D2DFDC /* Data */,
 				F230AF58287F8EDD00FF7769 /* ModelTests */,
 				F230AF59287F8EE800FF7769 /* UtilitiesTests */,
 			);
@@ -770,7 +778,7 @@
 			files = (
 				F230AF7E287FA08700FF7769 /* TestDataLoader.swift in Sources */,
 				F230AF74287F925D00FF7769 /* LaunchpadTests.swift in Sources */,
-				F230AF7B287F9AE600FF7769 /* FullLaunchTests.swift in Sources */,
+				F230AF7B287F9AE600FF7769 /* DataManagerTests.swift in Sources */,
 				F230AF53287E44ED00FF7769 /* LaunchTests.swift in Sources */,
 				F230AF6E287F91D800FF7769 /* CapsuleTests.swift in Sources */,
 				F230AF70287F91FD00FF7769 /* CoreTests.swift in Sources */,

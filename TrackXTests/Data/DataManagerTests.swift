@@ -1,5 +1,5 @@
 //
-//  FullLaunchTests.swift
+//  DataManagerTests.swift
 //  TrackXTests
 //
 //  Created by Oliver Stenning on 14/07/2022.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import TrackX
 
-class FullLaunchTests: XCTestCase {
+class DataManagerTests: XCTestCase {
     
     var capsules: [String: Capsule]?
     var cores: [String: Core]?
@@ -19,8 +19,7 @@ class FullLaunchTests: XCTestCase {
     var rockets: [String: Rocket]?
     
     override func setUpWithError() throws {
-        super.setUp()
-        
+
         let dataLoader = TestDataLoader()
         
         let capsulesArray = try XCTUnwrap(dataLoader.getTestObjectFromJson([Capsule].self, name: "allCapsules"))
