@@ -74,7 +74,7 @@
 		F254D455285792160009A2A0 /* RocketSectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D454285792160009A2A0 /* RocketSectionStackView.swift */; };
 		F254D45728579E8B0009A2A0 /* LaunchSectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D45628579E8B0009A2A0 /* LaunchSectionStackView.swift */; };
 		F254D4592857A19B0009A2A0 /* LaunchpadSectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D4582857A19B0009A2A0 /* LaunchpadSectionStackView.swift */; };
-		F254D45E2857C9660009A2A0 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D45D2857C9660009A2A0 /* DataManager.swift */; };
+		F254D45E2857C9660009A2A0 /* LaunchProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D45D2857C9660009A2A0 /* LaunchProvider.swift */; };
 		F26CBE872880E6F700D2DFDC /* StringFormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26CBE862880E6F700D2DFDC /* StringFormattingTests.swift */; };
 		F2D0F2202880BF52004BC16D /* allLaunches.json in Resources */ = {isa = PBXBuildFile; fileRef = F2D0F2192880BF52004BC16D /* allLaunches.json */; };
 		F2D0F2212880BF52004BC16D /* allLaunchpads.json in Resources */ = {isa = PBXBuildFile; fileRef = F2D0F21A2880BF52004BC16D /* allLaunchpads.json */; };
@@ -184,7 +184,7 @@
 		F254D454285792160009A2A0 /* RocketSectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketSectionStackView.swift; sourceTree = "<group>"; };
 		F254D45628579E8B0009A2A0 /* LaunchSectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSectionStackView.swift; sourceTree = "<group>"; };
 		F254D4582857A19B0009A2A0 /* LaunchpadSectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadSectionStackView.swift; sourceTree = "<group>"; };
-		F254D45D2857C9660009A2A0 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		F254D45D2857C9660009A2A0 /* LaunchProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchProvider.swift; sourceTree = "<group>"; };
 		F26CBE862880E6F700D2DFDC /* StringFormattingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormattingTests.swift; sourceTree = "<group>"; };
 		F2D0F2192880BF52004BC16D /* allLaunches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allLaunches.json; sourceTree = "<group>"; };
 		F2D0F21A2880BF52004BC16D /* allLaunchpads.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allLaunchpads.json; sourceTree = "<group>"; };
@@ -446,7 +446,7 @@
 		F2E2EC4B285CF06C00AF06CC /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				F254D45D2857C9660009A2A0 /* DataManager.swift */,
+				F254D45D2857C9660009A2A0 /* LaunchProvider.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -725,7 +725,7 @@
 				F215F612287C3835006F67FC /* LinksSectionStackView.swift in Sources */,
 				F215F5F8285F5970006F67FC /* CapsuleSectionStackView.swift in Sources */,
 				F254D44D2857876F0009A2A0 /* HeadingLabel.swift in Sources */,
-				F254D45E2857C9660009A2A0 /* DataManager.swift in Sources */,
+				F254D45E2857C9660009A2A0 /* LaunchProvider.swift in Sources */,
 				F215F60A287B7C42006F67FC /* LocationsSectionStackView.swift in Sources */,
 				F2F093B027EE2BBF005CCD09 /* UIView+Extensions.swift in Sources */,
 				F2F2346128563A2900CAB70C /* LaunchTableSecondaryCell.swift in Sources */,

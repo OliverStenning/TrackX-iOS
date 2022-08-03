@@ -8,8 +8,8 @@
 import UIKit
 
 class LaunchViewController: UIViewController {
+    
     // MARK: - Views
-
     let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.searchBarStyle = .minimal
@@ -49,22 +49,20 @@ class LaunchViewController: UIViewController {
     }()
     
     // MARK: - Properties
-
     var previousDataSource: LaunchTableDataSource?
     var upcomingDataSource: LaunchTableDataSource?
     var allDataSource: LaunchTableDataSource?
     
     var networkManager: NetworkManager!
-    var dataManager: DataManager
+    var launchProvider: LaunchProvider
     
     // MARK: - Initializers
-
     init(networkManager: NetworkManager) {
         self.networkManager = networkManager
-        self.dataManager = DataManager(networkManager: networkManager)
+        self.launchProvider = LaunchProvider(networkManager: networkManager)
         super.init(nibName: nil, bundle: nil)
         
-        dataManager.launchDelegate = self
+        launchProvider.launchProviderDelegate = self
     }
     
     @available(*, unavailable)
@@ -73,12 +71,11 @@ class LaunchViewController: UIViewController {
     }
     
     // MARK: - Lifecycle Functions
-
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
         configureConstraints()
-        dataManager.fetchData()
+        launchProvider.fetchData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,7 +86,6 @@ class LaunchViewController: UIViewController {
     }
     
     // MARK: - Configuration Functions
-
     func configureViews() {
         view.backgroundColor = UIColor(named: "BackgroundColor")
         title = "Launches"
@@ -151,7 +147,7 @@ class LaunchViewController: UIViewController {
     }
     
     @objc func refreshLaunches(_ sender: Any) {
-        dataManager.fetchData()
+        launchProvider.fetchData()
     }
     
     @objc func toggleAscending() {
@@ -162,7 +158,6 @@ class LaunchViewController: UIViewController {
 }
 
 // MARK: - Launch Table View Delegate
-
 extension LaunchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let dataSource = getCurrentTableSource() else { return }
@@ -178,27 +173,26 @@ extension LaunchViewController: UITableViewDelegate {
     }
 }
 
-// MARK: - Launch Data Manager Delegate
-
-extension LaunchViewController: LaunchDataManagerDelegate {
-    func launchDataManager(_ manager: DataManager, previousLaunchesUpdate: LaunchTableData) {
+// MARK: - Launch Provider Delegate
+extension LaunchViewController: LaunchProviderDelegate {
+    func launchProvider(_ provider: LaunchProvider, previousLaunchesUpdate: LaunchTableData) {
         previousDataSource = LaunchTableDataSource(launchType: .previous, launchTableData: previousLaunchesUpdate, ascending: false)
     }
     
-    func launchDataManager(_ manager: DataManager, upcomingLaunchesUpdate: LaunchTableData) {
+    func launchProvider(_ provider: LaunchProvider, upcomingLaunchesUpdate: LaunchTableData) {
         upcomingDataSource = LaunchTableDataSource(launchType: .upcoming, launchTableData: upcomingLaunchesUpdate, ascending: true)
     }
     
-    func launchDataManager(_ manager: DataManager, allLaunchesUpdate: LaunchTableData) {
+    func launchProvider(_ provider: LaunchProvider, allLaunchesUpdate: LaunchTableData) {
         allDataSource = LaunchTableDataSource(launchType: .all, launchTableData: allLaunchesUpdate, ascending: true)
     }
     
-    func launchDataManager(_ manager: DataManager, dataWasUpdated: Bool) {
+    func launchProvider(_ provider: LaunchProvider, dataWasUpdated: Bool) {
         switchLaunchTable()
         launchRefreshControl.endRefreshing()
     }
     
-    func launchDataManager(_ manager: DataManager, dataFailedToUpDate: String) {
+    func launchProvider(_ provider: LaunchProvider, dataFailedToUpDate: String) {
         let ac = UIAlertController(title: "Network Issue", message: "Unable to connect to server. Check your network connection.", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
         present(ac, animated: true)

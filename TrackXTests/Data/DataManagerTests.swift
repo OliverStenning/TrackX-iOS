@@ -46,7 +46,7 @@ class DataManagerTests: XCTestCase {
     
     func testBuildingFullLaunch() throws {
         // Given
-        let dataManager = try DataManager(
+        let dataManager = try LaunchProvider(
             networkManager: NetworkManager(),
             capsules: XCTUnwrap(capsules),
             cores: XCTUnwrap(cores),

@@ -1,5 +1,5 @@
 //
-//  DataManager.swift
+//  LaunchProvider.swift
 //  TrackX
 //
 //  Created by Oliver Stenning on 13/06/2022.
@@ -7,10 +7,10 @@
 
 import Foundation
 
-class DataManager {
+class LaunchProvider {
     
     //MARK: - Utility Properties
-    weak var launchDelegate: LaunchDataManagerDelegate?
+    weak var launchProviderDelegate: LaunchProviderDelegate?
     private var networkManager: NetworkManager
     private var error: String? = nil
     
@@ -134,7 +134,7 @@ class DataManager {
     
     //MARK: - Data Fetch Completion
     func fetchCompletionHandler() {
-        guard let delegate = self.launchDelegate else { return }
+        guard let delegate = self.launchProviderDelegate else { return }
 
         /*
          Only populate tableview with data if all network requests return successfully.
@@ -142,7 +142,7 @@ class DataManager {
          returned may cause UI issues. For now simpler to keep strict.
          */
         if let error = self.error {
-            delegate.launchDataManager(self, dataFailedToUpDate: error)
+            delegate.launchProvider(self, dataFailedToUpDate: error)
             return
         }
         
@@ -170,10 +170,10 @@ class DataManager {
         upcomingLaunches.sort(by: Arrays.unixTimeSort(x:y:))
         allLaunches.sort(by: Arrays.unixTimeSort(x:y:))
         
-        delegate.launchDataManager(self, previousLaunchesUpdate: createTableData(launches: previousLaunches, fullLaunches: fullLaunches))
-        delegate.launchDataManager(self, upcomingLaunchesUpdate: createTableData(launches: upcomingLaunches, fullLaunches: fullLaunches))
-        delegate.launchDataManager(self, allLaunchesUpdate: createTableData(launches: allLaunches, fullLaunches: fullLaunches))
-        delegate.launchDataManager(self, dataWasUpdated: true)
+        delegate.launchProvider(self, previousLaunchesUpdate: createTableData(launches: previousLaunches, fullLaunches: fullLaunches))
+        delegate.launchProvider(self, upcomingLaunchesUpdate: createTableData(launches: upcomingLaunches, fullLaunches: fullLaunches))
+        delegate.launchProvider(self, allLaunchesUpdate: createTableData(launches: allLaunches, fullLaunches: fullLaunches))
+        delegate.launchProvider(self, dataWasUpdated: true)
     }
     
     //MARK: - Data Manipulation Functions
@@ -272,10 +272,10 @@ class DataManager {
     
 }
 
-protocol LaunchDataManagerDelegate: AnyObject {
-    func launchDataManager(_ manager: DataManager, previousLaunchesUpdate: LaunchTableData)
-    func launchDataManager(_ manager: DataManager, upcomingLaunchesUpdate: LaunchTableData)
-    func launchDataManager(_ manager: DataManager, allLaunchesUpdate: LaunchTableData)
-    func launchDataManager(_ manager: DataManager, dataWasUpdated: Bool)
-    func launchDataManager(_ manager: DataManager, dataFailedToUpDate: String)
+protocol LaunchProviderDelegate: AnyObject {
+    func launchProvider(_ provider: LaunchProvider, previousLaunchesUpdate: LaunchTableData)
+    func launchProvider(_ provider: LaunchProvider, upcomingLaunchesUpdate: LaunchTableData)
+    func launchProvider(_ provider: LaunchProvider, allLaunchesUpdate: LaunchTableData)
+    func launchProvider(_ provider: LaunchProvider, dataWasUpdated: Bool)
+    func launchProvider(_ provider: LaunchProvider, dataFailedToUpDate: String)
 }
