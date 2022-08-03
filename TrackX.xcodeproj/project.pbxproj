@@ -404,7 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				F215F600286348E8006F67FC /* Cache */,
-				F2E2EC4B285CF06C00AF06CC /* Manager */,
+				F2E2EC4B285CF06C00AF06CC /* Providers */,
 				F2F093B327EE2F77005CCD09 /* Model */,
 			);
 			path = Data;
@@ -443,12 +443,12 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		F2E2EC4B285CF06C00AF06CC /* Manager */ = {
+		F2E2EC4B285CF06C00AF06CC /* Providers */ = {
 			isa = PBXGroup;
 			children = (
 				F254D45D2857C9660009A2A0 /* LaunchProvider.swift */,
 			);
-			path = Manager;
+			path = Providers;
 			sourceTree = "<group>";
 		};
 		F2F0936F27EE2817005CCD09 = {
