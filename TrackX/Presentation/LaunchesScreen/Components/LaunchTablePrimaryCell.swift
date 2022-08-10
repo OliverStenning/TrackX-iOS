@@ -19,7 +19,7 @@ class LaunchTablePrimaryCell: LaunchTableCell {
     
     private let backgroundGradient: UIView = {
         let view = GradientView()
-        view.bottomColor = UIColor(named: "SecondaryBackgroundColor") ?? .black
+        view.bottomColor = R.color.secondaryBackgroundColor() ?? .black
         view.locations = [-1.0, 1.0]
         return view
     }()
@@ -98,7 +98,7 @@ class LaunchTablePrimaryCell: LaunchTableCell {
         if let imageUrl = fullLaunch?.getLaunchImageUrl() {
             cancellable = loadImage(for: imageUrl).sink { [unowned self] image in self.showImage(image: image)}
         } else {
-            showImage(image: UIImage(named: "placeholder_image"))
+            showImage(image: R.image.placeholderImage())
         }
     }
     

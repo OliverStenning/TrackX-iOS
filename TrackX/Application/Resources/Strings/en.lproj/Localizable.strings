@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  TrackX
+
+  Created by Oliver Stenning on 10/08/2022.
+  
+*/
+
+"Launches" = "Launches";
+"Search launches" = "Search launches";
+"Previous" = "Previous";
+"Upcoming" = "Upcoming";
+"All" = "All";
+
+"Network Issue" = "Network Issue";
+"Unable to connect" = "Unable to connect to server. Check your network connection.";
+"Dismiss" = "Dismiss";

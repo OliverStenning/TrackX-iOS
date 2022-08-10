@@ -36,7 +36,7 @@ class LaunchTableSectionHeader: UIView {
     
     //MARK: - Configuration Functions
     private func configureViews() {
-        backgroundColor = UIColor(named: "BackgroundColor")
+        backgroundColor = R.color.backgroundColor()
         addSubview(nameLabel)
     }
     

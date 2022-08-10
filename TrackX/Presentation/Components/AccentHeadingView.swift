@@ -12,7 +12,7 @@ class AccentHeadingView: UIView {
     //MARK: - Views
     private let capsule: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(named: "AccentColor")
+        view.backgroundColor = R.color.accentColor()
         
         return view
     }()

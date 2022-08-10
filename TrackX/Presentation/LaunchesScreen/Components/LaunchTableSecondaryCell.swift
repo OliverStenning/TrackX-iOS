@@ -33,7 +33,7 @@ class LaunchTableSecondaryCell: LaunchTableCell {
     private func configureViews() {
         backgroundColor = .clear
         selectionStyle = .none
-        container.backgroundColor = UIColor(named: "SecondaryBackgroundColor")
+        container.backgroundColor = R.color.secondaryBackgroundColor()
         
         container.addSubview(nameView)
         container.addSubview(infoView)

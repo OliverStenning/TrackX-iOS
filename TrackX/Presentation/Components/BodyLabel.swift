@@ -17,9 +17,9 @@ class BodyLabel: UILabel {
     var bold: Bool {
         didSet {
             if bold {
-                font = UIFont(name: "RubikRoman-Medium", size: 15)
+                font = R.font.rubikMedium(size: 15)
             } else {
-                font = UIFont(name: "RubikRoman-Regular", size: 15)
+                font = R.font.rubikRegular(size: 15)
             }
         }
     }
@@ -32,7 +32,7 @@ class BodyLabel: UILabel {
         
         self.text = text
         
-        textColor = UIColor(named: "TextColor")
+        textColor = R.color.textColor()
         numberOfLines = lineCount
         isUserInteractionEnabled = true
         

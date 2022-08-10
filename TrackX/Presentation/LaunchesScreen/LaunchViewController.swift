@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SFSafeSymbols
 
 class LaunchViewController: UIViewController {
     
@@ -13,19 +14,23 @@ class LaunchViewController: UIViewController {
     let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.searchBarStyle = .minimal
-        searchBar.placeholder = "Search launches"
-        searchBar.searchTextField.font = UIFont(name: "ArchivoRoman-Medium", size: 16)
+        searchBar.placeholder = R.string.localizable.searchLaunches()
+        searchBar.searchTextField.font = R.font.archivoMedium(size: 16)
         return searchBar
     }()
     
     let launchTableControl: UISegmentedControl = {
-        let segmentedControl = UISegmentedControl(items: ["Previous", "Upcoming", "All"])
+        let segmentedControl = UISegmentedControl(items: [
+            R.string.localizable.previous(),
+            R.string.localizable.upcoming(),
+            R.string.localizable.all()
+        ])
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(nil, action: #selector(switchLaunchTable), for: .valueChanged)
-        segmentedControl.selectedSegmentTintColor = UIColor(named: "AccentColor")
+        segmentedControl.selectedSegmentTintColor = R.color.accentColor()
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemGray], for: .normal)
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
-        segmentedControl.backgroundColor = UIColor(named: "SecondaryBackgroundColor")
+        segmentedControl.backgroundColor = R.color.secondaryBackgroundColor()
         return segmentedControl
     }()
     
@@ -33,7 +38,7 @@ class LaunchViewController: UIViewController {
         let tableView = UITableView(frame: CGRect.zero, style: .grouped)
         tableView.estimatedRowHeight = 150
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.backgroundColor = UIColor(named: "BackgroundColor")
+        tableView.backgroundColor = R.color.backgroundColor()
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.register(LaunchTablePrimaryCell.self, forCellReuseIdentifier: LaunchCells.launchCellPrimary)
         tableView.register(LaunchTableSecondaryCell.self, forCellReuseIdentifier: LaunchCells.launchCellSecondary)
@@ -43,7 +48,7 @@ class LaunchViewController: UIViewController {
     
     let launchRefreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = UIColor(named: "AccentColor")
+        refreshControl.tintColor = R.color.accentColor()
         refreshControl.addTarget(nil, action: #selector(refreshLaunches(_:)), for: .valueChanged)
         return refreshControl
     }()
@@ -87,10 +92,10 @@ class LaunchViewController: UIViewController {
     
     // MARK: - Configuration Functions
     func configureViews() {
-        view.backgroundColor = UIColor(named: "BackgroundColor")
-        title = "Launches"
+        view.backgroundColor = R.color.backgroundColor()
+        title = R.string.localizable.launches()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.up.arrow.down"), style: .plain, target: self, action: #selector(toggleAscending))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemSymbol: .arrowUpArrowDown), style: .plain, target: self, action: #selector(toggleAscending))
         
         launchTableView.delegate = self
         
@@ -193,8 +198,12 @@ extension LaunchViewController: LaunchProviderDelegate {
     }
     
     func launchProvider(_ provider: LaunchProvider, dataFailedToUpDate: String) {
-        let ac = UIAlertController(title: "Network Issue", message: "Unable to connect to server. Check your network connection.", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
+        let ac = UIAlertController(
+            title: R.string.localizable.networkIssue(),
+            message: R.string.localizable.unableToConnect(),
+            preferredStyle: .alert
+        )
+        ac.addAction(UIAlertAction(title: R.string.localizable.dismiss(), style: .cancel))
         present(ac, animated: true)
         
         launchRefreshControl.endRefreshing()

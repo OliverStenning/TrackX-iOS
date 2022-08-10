@@ -72,6 +72,24 @@
 		F2396D592847AB170084DF79 /* PayloadEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D582847AB170084DF79 /* PayloadEndpoint.swift */; };
 		F2396D5B2848DE550084DF79 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D5A2848DE550084DF79 /* NetworkLogger.swift */; };
 		F23BAD8F28A4361500BCFC8F /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23BAD8E28A4361500BCFC8F /* R.generated.swift */; };
+		F23BADA728A4412F00BCFC8F /* Archivo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BAD9528A4412E00BCFC8F /* Archivo-Bold.ttf */; };
+		F23BADAC28A4412F00BCFC8F /* Archivo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BAD9A28A4412E00BCFC8F /* Archivo-SemiBold.ttf */; };
+		F23BADAD28A4412F00BCFC8F /* Archivo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BAD9B28A4412E00BCFC8F /* Archivo-Regular.ttf */; };
+		F23BADAE28A4412F00BCFC8F /* Archivo-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BAD9C28A4412E00BCFC8F /* Archivo-ExtraBold.ttf */; };
+		F23BADAF28A4412F00BCFC8F /* Archivo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BAD9D28A4412F00BCFC8F /* Archivo-Light.ttf */; };
+		F23BADB228A4412F00BCFC8F /* Archivo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BADA028A4412F00BCFC8F /* Archivo-ExtraLight.ttf */; };
+		F23BADB428A4412F00BCFC8F /* Archivo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BADA228A4412F00BCFC8F /* Archivo-Medium.ttf */; };
+		F23BADB528A4412F00BCFC8F /* Archivo-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BADA328A4412F00BCFC8F /* Archivo-Thin.ttf */; };
+		F23BADB628A4412F00BCFC8F /* Archivo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BADA428A4412F00BCFC8F /* Archivo-Black.ttf */; };
+		F23BADC028A4420000BCFC8F /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BADB928A441FF00BCFC8F /* Rubik-Black.ttf */; };
+		F23BADC128A4420000BCFC8F /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BADBA28A441FF00BCFC8F /* Rubik-Regular.ttf */; };
+		F23BADC228A4420000BCFC8F /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BADBB28A4420000BCFC8F /* Rubik-Medium.ttf */; };
+		F23BADC328A4420000BCFC8F /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BADBC28A4420000BCFC8F /* Rubik-Bold.ttf */; };
+		F23BADC428A4420000BCFC8F /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BADBD28A4420000BCFC8F /* Rubik-Light.ttf */; };
+		F23BADC528A4420000BCFC8F /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BADBE28A4420000BCFC8F /* Rubik-SemiBold.ttf */; };
+		F23BADC628A4420000BCFC8F /* Rubik-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BADBF28A4420000BCFC8F /* Rubik-ExtraBold.ttf */; };
+		F23BADCC28A452A100BCFC8F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F23BADCE28A452A100BCFC8F /* Localizable.strings */; };
+		F23BADD428A4569E00BCFC8F /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = F23BADD328A4569E00BCFC8F /* SFSafeSymbols */; };
 		F254D44D2857876F0009A2A0 /* HeadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D44C2857876F0009A2A0 /* HeadingLabel.swift */; };
 		F254D45128578DDB0009A2A0 /* BodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D45028578DDB0009A2A0 /* BodyLabel.swift */; };
 		F254D455285792160009A2A0 /* RocketSectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D454285792160009A2A0 /* RocketSectionStackView.swift */; };
@@ -88,7 +106,6 @@
 		F2D0F2262880BF53004BC16D /* allCores.json in Resources */ = {isa = PBXBuildFile; fileRef = F2D0F21F2880BF52004BC16D /* allCores.json */; };
 		F2E2EC4628592EC500AF06CC /* LaunchTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2EC4528592EC500AF06CC /* LaunchTableDataSource.swift */; };
 		F2E2EC482859327D00AF06CC /* FullLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2EC472859327D00AF06CC /* FullLaunch.swift */; };
-		F2E63E2D289B1D5C005C6E8B /* ShareTechMono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2E63E2C289B1D5C005C6E8B /* ShareTechMono.ttf */; };
 		F2F0937C27EE2818005CCD09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0937B27EE2818005CCD09 /* AppDelegate.swift */; };
 		F2F0937E27EE2818005CCD09 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0937D27EE2818005CCD09 /* SceneDelegate.swift */; };
 		F2F0938027EE2818005CCD09 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0937F27EE2818005CCD09 /* LaunchViewController.swift */; };
@@ -102,10 +119,7 @@
 		F2F2344E2852968200CAB70C /* LaunchTablePrimaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2344D2852968200CAB70C /* LaunchTablePrimaryCell.swift */; };
 		F2F234502853899C00CAB70C /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2344F2853899C00CAB70C /* Date+Extensions.swift */; };
 		F2F234522853A6F100CAB70C /* LaunchTableSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F234512853A6F100CAB70C /* LaunchTableSectionHeader.swift */; };
-		F2F234582853ED4300CAB70C /* Archivo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2F234562853E66800CAB70C /* Archivo.ttf */; };
-		F2F234592853ED4500CAB70C /* Archivo-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2F234572853E6AB00CAB70C /* Archivo-Italic.ttf */; };
 		F2F2345B2854D21D00CAB70C /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2345A2854D21D00CAB70C /* UILabel+Extensions.swift */; };
-		F2F2345D28554FAC00CAB70C /* Rubik.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2F2345C28554FAC00CAB70C /* Rubik.ttf */; };
 		F2F2345F285636EB00CAB70C /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2345E285636EB00CAB70C /* GradientView.swift */; };
 		F2F2346128563A2900CAB70C /* LaunchTableSecondaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2346028563A2900CAB70C /* LaunchTableSecondaryCell.swift */; };
 /* End PBXBuildFile section */
@@ -205,6 +219,23 @@
 		F2396D582847AB170084DF79 /* PayloadEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadEndpoint.swift; sourceTree = "<group>"; };
 		F2396D5A2848DE550084DF79 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		F23BAD8E28A4361500BCFC8F /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		F23BAD9528A4412E00BCFC8F /* Archivo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archivo-Bold.ttf"; sourceTree = "<group>"; };
+		F23BAD9A28A4412E00BCFC8F /* Archivo-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archivo-SemiBold.ttf"; sourceTree = "<group>"; };
+		F23BAD9B28A4412E00BCFC8F /* Archivo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archivo-Regular.ttf"; sourceTree = "<group>"; };
+		F23BAD9C28A4412E00BCFC8F /* Archivo-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archivo-ExtraBold.ttf"; sourceTree = "<group>"; };
+		F23BAD9D28A4412F00BCFC8F /* Archivo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archivo-Light.ttf"; sourceTree = "<group>"; };
+		F23BADA028A4412F00BCFC8F /* Archivo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archivo-ExtraLight.ttf"; sourceTree = "<group>"; };
+		F23BADA228A4412F00BCFC8F /* Archivo-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archivo-Medium.ttf"; sourceTree = "<group>"; };
+		F23BADA328A4412F00BCFC8F /* Archivo-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archivo-Thin.ttf"; sourceTree = "<group>"; };
+		F23BADA428A4412F00BCFC8F /* Archivo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archivo-Black.ttf"; sourceTree = "<group>"; };
+		F23BADB928A441FF00BCFC8F /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
+		F23BADBA28A441FF00BCFC8F /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		F23BADBB28A4420000BCFC8F /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		F23BADBC28A4420000BCFC8F /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		F23BADBD28A4420000BCFC8F /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
+		F23BADBE28A4420000BCFC8F /* Rubik-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBold.ttf"; sourceTree = "<group>"; };
+		F23BADBF28A4420000BCFC8F /* Rubik-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-ExtraBold.ttf"; sourceTree = "<group>"; };
+		F23BADCD28A452A100BCFC8F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F254D44C2857876F0009A2A0 /* HeadingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingLabel.swift; sourceTree = "<group>"; };
 		F254D45028578DDB0009A2A0 /* BodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyLabel.swift; sourceTree = "<group>"; };
 		F254D454285792160009A2A0 /* RocketSectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketSectionStackView.swift; sourceTree = "<group>"; };
@@ -223,7 +254,6 @@
 		F2E2EC472859327D00AF06CC /* FullLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullLaunch.swift; sourceTree = "<group>"; };
 		F2E63E0D289B0E7F005C6E8B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F2E63E0F289B0E7F005C6E8B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		F2E63E2C289B1D5C005C6E8B /* ShareTechMono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ShareTechMono.ttf; sourceTree = "<group>"; };
 		F2F0937827EE2818005CCD09 /* TrackX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F0937B27EE2818005CCD09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2F0937D27EE2818005CCD09 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -240,10 +270,7 @@
 		F2F2344D2852968200CAB70C /* LaunchTablePrimaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTablePrimaryCell.swift; sourceTree = "<group>"; };
 		F2F2344F2853899C00CAB70C /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		F2F234512853A6F100CAB70C /* LaunchTableSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTableSectionHeader.swift; sourceTree = "<group>"; };
-		F2F234562853E66800CAB70C /* Archivo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Archivo.ttf; sourceTree = "<group>"; };
-		F2F234572853E6AB00CAB70C /* Archivo-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archivo-Italic.ttf"; sourceTree = "<group>"; };
 		F2F2345A2854D21D00CAB70C /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
-		F2F2345C28554FAC00CAB70C /* Rubik.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rubik.ttf; sourceTree = "<group>"; };
 		F2F2345E285636EB00CAB70C /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		F2F2346028563A2900CAB70C /* LaunchTableSecondaryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchTableSecondaryCell.swift; sourceTree = "<group>"; };
 		FBB9AA3694B4D9DD890A8EAE /* Pods-TrackX CountdownExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackX CountdownExtension.debug.xcconfig"; path = "Target Support Files/Pods-TrackX CountdownExtension/Pods-TrackX CountdownExtension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -254,6 +281,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F23BADD428A4569E00BCFC8F /* SFSafeSymbols in Frameworks */,
 				4F9E869B2E5A2ADC14BC0A74 /* Pods_TrackX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +459,44 @@
 			path = Endpoint;
 			sourceTree = "<group>";
 		};
+		F23BAD9328A4410600BCFC8F /* Archivo */ = {
+			isa = PBXGroup;
+			children = (
+				F23BADA428A4412F00BCFC8F /* Archivo-Black.ttf */,
+				F23BAD9528A4412E00BCFC8F /* Archivo-Bold.ttf */,
+				F23BAD9C28A4412E00BCFC8F /* Archivo-ExtraBold.ttf */,
+				F23BADA028A4412F00BCFC8F /* Archivo-ExtraLight.ttf */,
+				F23BAD9D28A4412F00BCFC8F /* Archivo-Light.ttf */,
+				F23BADA228A4412F00BCFC8F /* Archivo-Medium.ttf */,
+				F23BAD9B28A4412E00BCFC8F /* Archivo-Regular.ttf */,
+				F23BAD9A28A4412E00BCFC8F /* Archivo-SemiBold.ttf */,
+				F23BADA328A4412F00BCFC8F /* Archivo-Thin.ttf */,
+			);
+			path = Archivo;
+			sourceTree = "<group>";
+		};
+		F23BAD9428A4410F00BCFC8F /* Rubik */ = {
+			isa = PBXGroup;
+			children = (
+				F23BADB928A441FF00BCFC8F /* Rubik-Black.ttf */,
+				F23BADBC28A4420000BCFC8F /* Rubik-Bold.ttf */,
+				F23BADBF28A4420000BCFC8F /* Rubik-ExtraBold.ttf */,
+				F23BADBD28A4420000BCFC8F /* Rubik-Light.ttf */,
+				F23BADBB28A4420000BCFC8F /* Rubik-Medium.ttf */,
+				F23BADBA28A441FF00BCFC8F /* Rubik-Regular.ttf */,
+				F23BADBE28A4420000BCFC8F /* Rubik-SemiBold.ttf */,
+			);
+			path = Rubik;
+			sourceTree = "<group>";
+		};
+		F23BADC728A450C000BCFC8F /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				F23BADCE28A452A100BCFC8F /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 		F254D452285790720009A2A0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -564,10 +630,11 @@
 		F2F093AC27EE2833005CCD09 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F23BAD8E28A4361500BCFC8F /* R.generated.swift */,
-				F2F234552853E66000CAB70C /* Fonts */,
-				F2F0938427EE2819005CCD09 /* Assets.xcassets */,
 				F2F0938927EE2819005CCD09 /* Info.plist */,
+				F23BAD8E28A4361500BCFC8F /* R.generated.swift */,
+				F2F0938427EE2819005CCD09 /* Assets.xcassets */,
+				F2F234552853E66000CAB70C /* Fonts */,
+				F23BADC728A450C000BCFC8F /* Strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -636,10 +703,8 @@
 		F2F234552853E66000CAB70C /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				F2E63E2C289B1D5C005C6E8B /* ShareTechMono.ttf */,
-				F2F2345C28554FAC00CAB70C /* Rubik.ttf */,
-				F2F234562853E66800CAB70C /* Archivo.ttf */,
-				F2F234572853E6AB00CAB70C /* Archivo-Italic.ttf */,
+				F23BAD9428A4410F00BCFC8F /* Rubik */,
+				F23BAD9328A4410600BCFC8F /* Archivo */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -664,6 +729,9 @@
 			dependencies = (
 			);
 			name = TrackX;
+			packageProductDependencies = (
+				F23BADD328A4569E00BCFC8F /* SFSafeSymbols */,
+			);
 			productName = TrackX;
 			productReference = F2F0937827EE2818005CCD09 /* TrackX.app */;
 			productType = "com.apple.product-type.application";
@@ -715,6 +783,9 @@
 				Base,
 			);
 			mainGroup = F2F0936F27EE2817005CCD09;
+			packageReferences = (
+				F23BADD228A4569E00BCFC8F /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+			);
 			productRefGroup = F2F0937927EE2818005CCD09 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -730,15 +801,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2E63E2D289B1D5C005C6E8B /* ShareTechMono.ttf in Resources */,
+				F23BADB428A4412F00BCFC8F /* Archivo-Medium.ttf in Resources */,
+				F23BADC328A4420000BCFC8F /* Rubik-Bold.ttf in Resources */,
+				F23BADCC28A452A100BCFC8F /* Localizable.strings in Resources */,
 				F215F626287C895B006F67FC /* Details.png in Resources */,
 				F2F0938827EE2819005CCD09 /* LaunchScreen.storyboard in Resources */,
-				F2F234592853ED4500CAB70C /* Archivo-Italic.ttf in Resources */,
+				F23BADC028A4420000BCFC8F /* Rubik-Black.ttf in Resources */,
+				F23BADB528A4412F00BCFC8F /* Archivo-Thin.ttf in Resources */,
 				F2F0938527EE2819005CCD09 /* Assets.xcassets in Resources */,
+				F23BADC528A4420000BCFC8F /* Rubik-SemiBold.ttf in Resources */,
+				F23BADC428A4420000BCFC8F /* Rubik-Light.ttf in Resources */,
 				F215F625287C895B006F67FC /* Main List.png in Resources */,
-				F2F2345D28554FAC00CAB70C /* Rubik.ttf in Resources */,
-				F2F234582853ED4300CAB70C /* Archivo.ttf in Resources */,
+				F23BADC228A4420000BCFC8F /* Rubik-Medium.ttf in Resources */,
+				F23BADAD28A4412F00BCFC8F /* Archivo-Regular.ttf in Resources */,
+				F23BADA728A4412F00BCFC8F /* Archivo-Bold.ttf in Resources */,
+				F23BADC128A4420000BCFC8F /* Rubik-Regular.ttf in Resources */,
+				F23BADAE28A4412F00BCFC8F /* Archivo-ExtraBold.ttf in Resources */,
+				F23BADAF28A4412F00BCFC8F /* Archivo-Light.ttf in Resources */,
+				F23BADAC28A4412F00BCFC8F /* Archivo-SemiBold.ttf in Resources */,
+				F23BADB628A4412F00BCFC8F /* Archivo-Black.ttf in Resources */,
 				F215F627287C895B006F67FC /* Second Details.png in Resources */,
+				F23BADC628A4420000BCFC8F /* Rubik-ExtraBold.ttf in Resources */,
+				F23BADB228A4412F00BCFC8F /* Archivo-ExtraLight.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -950,6 +1034,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		F23BADCE28A452A100BCFC8F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F23BADCD28A452A100BCFC8F /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		F2F0938627EE2819005CCD09 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1210,6 +1302,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F23BADD228A4569E00BCFC8F /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols.git";
+			requirement = {
+				branch = stable;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F23BADD328A4569E00BCFC8F /* SFSafeSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F23BADD228A4569E00BCFC8F /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			productName = SFSafeSymbols;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F2F0937027EE2817005CCD09 /* Project object */;
 }

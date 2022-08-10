@@ -9,7 +9,7 @@ import UIKit
 
 class GradientView: UIView {
     var topColor: UIColor = UIColor.clear
-    var bottomColor: UIColor = UIColor(named: "SecondaryBackgroundColor") ?? UIColor.clear
+    var bottomColor: UIColor = R.color.secondaryBackgroundColor() ?? UIColor.clear
     var locations: [NSNumber] = [0.0, 1.0]
     
     override class var layerClass: AnyClass {
