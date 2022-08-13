@@ -18,7 +18,7 @@ class LaunchViewController: UIViewController {
         searchBar.searchTextField.font = R.font.archivoMedium(size: 16)
         return searchBar
     }()
-    
+
     let launchTableControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: [
             R.string.localizable.previous(),
@@ -93,18 +93,30 @@ class LaunchViewController: UIViewController {
     // MARK: - Configuration Functions
     func configureViews() {
         view.backgroundColor = R.color.backgroundColor()
-        title = R.string.localizable.launches()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemSymbol: .arrowUpArrowDown), style: .plain, target: self, action: #selector(toggleAscending))
+        let titleContainer = UIView()
+        let titleImage = R.image.title()
+        let titleImageView = UIImageView(image: titleImage)
+        titleContainer.addSubview(titleImageView)
+        titleImageView.anchorSize(height: 30, width: 100)
+        titleImageView.anchor(to: titleContainer, padding: .init(top: 0, left: 0, bottom: 8, right: 0))
+        titleImageView.contentMode = .scaleAspectFit
+        self.navigationItem.titleView = titleContainer
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemSymbol: .arrowUpArrowDown),
+            style: .plain,
+            target: self,
+            action: #selector(toggleAscending)
+        )
+    
         launchTableView.delegate = self
         
         view.addSubview(searchBar)
         view.addSubview(launchTableView)
         view.addSubview(launchTableControl)
         launchTableView.refreshControl = launchRefreshControl
-        
-        launchRefreshControl.beginRefreshing()
+
     }
     
     func configureConstraints() {
