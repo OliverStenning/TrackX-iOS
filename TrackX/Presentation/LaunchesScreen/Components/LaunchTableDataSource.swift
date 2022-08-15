@@ -19,8 +19,8 @@ struct LaunchTableData {
 }
 
 enum LaunchType {
-    case previous
-    case upcoming
+    case scheduled
+    case recent
     case all
 }
 
@@ -89,9 +89,9 @@ class LaunchTableDataSource: NSObject, UITableViewDataSource {
     
     private func getFirstSectionName(sectionAscending: Bool) -> String {
         switch launchType {
-            case .previous:
+            case .recent:
                 return sectionAscending ? "First" : "Latest"
-            case .upcoming:
+            case .scheduled:
                 return sectionAscending ? "Next" : "Last Scheduled"
             case .all:
                 return sectionAscending ? "First" : "Last Scheduled"

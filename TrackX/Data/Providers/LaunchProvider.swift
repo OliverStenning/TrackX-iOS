@@ -11,8 +11,13 @@ class LaunchProvider {
     
     //MARK: - Utility Properties
     weak var launchProviderDelegate: LaunchProviderDelegate?
+    
     private var networkManager: NetworkManager
     private var error: String? = nil
+    
+    weak var nextLaunchDelegate: NextLaunchDelegate?
+    weak var scheduledLaunchesDelegate: ScheduledLaunchesDelegate?
+    weak var recentLaunchesDelegate: RecentLaunchesDelegate?
     
     //MARK: - Data Properties
     private var capsules: [String: Capsule] = [:]
@@ -40,7 +45,23 @@ class LaunchProvider {
     }
     
     //MARK: - Data Functions
-    func fetchData() {
+    func fetchNextLaunch() {
+        fetchData(completion: fetchNextLaunchCompletion)
+    }
+    
+    func fetchScheduledLaunches() {
+        fetchData(completion: fetchScheduledLaunchesCompletion)
+    }
+    
+    func fetchRecentLaunches() {
+        fetchData(completion: fetchRecentLaunchesCompletion)
+    }
+    
+    func fetchLaunchListData() {
+        fetchData(completion: fetchLaunchListCompletionHandler)
+    }
+    
+    private func fetchData(completion: @escaping () -> Void) {
         let networkGroup = DispatchGroup()
     
         setLaunches(networkGroup: networkGroup)
@@ -50,11 +71,11 @@ class LaunchProvider {
         setPayloads(networkGroup: networkGroup)
         setCores(networkGroup: networkGroup)
         
-        networkGroup.notify(queue: .main, execute: fetchCompletionHandler)
+        networkGroup.notify(queue: .main, execute: completion)
     }
     
     //MARK: - Data Setters
-    func setLaunches(networkGroup: DispatchGroup) {
+    private func setLaunches(networkGroup: DispatchGroup) {
         networkGroup.enter()
         networkManager.getLaunches() { launchArray, error in
             guard error == nil, let launchArray = launchArray else {
@@ -67,7 +88,7 @@ class LaunchProvider {
         }
     }
     
-    func setRockets(networkGroup: DispatchGroup) {
+    private func setRockets(networkGroup: DispatchGroup) {
         networkGroup.enter()
         networkManager.getRockets { rocketArray, error in
             guard error == nil, let rocketArray = rocketArray else {
@@ -80,7 +101,7 @@ class LaunchProvider {
         }
     }
     
-    func setLaunchpads(networkGroup: DispatchGroup) {
+    private func setLaunchpads(networkGroup: DispatchGroup) {
         networkGroup.enter()
         networkManager.getLaunchpads() { launchpadArray, error in
             guard error == nil, let launchpadArray = launchpadArray else {
@@ -93,7 +114,7 @@ class LaunchProvider {
         }
     }
     
-    func setLandpads(networkGroup: DispatchGroup) {
+    private func setLandpads(networkGroup: DispatchGroup) {
         networkGroup.enter()
         networkManager.getLandpads() { landpadArray, error in
             guard error == nil, let landpadArray = landpadArray else {
@@ -106,7 +127,7 @@ class LaunchProvider {
         }
     }
     
-    func setPayloads(networkGroup: DispatchGroup) {
+    private func setPayloads(networkGroup: DispatchGroup) {
         networkGroup.enter()
         networkManager.getPayloads() { payloadArray, error in
             guard error == nil, let payloadArray = payloadArray else {
@@ -119,7 +140,7 @@ class LaunchProvider {
         }
     }
     
-    func setCores(networkGroup: DispatchGroup) {
+    private func setCores(networkGroup: DispatchGroup) {
         networkGroup.enter()
         networkManager.getCores() { coreArray, error in
             guard error == nil, let coreArray = coreArray else {
@@ -133,7 +154,79 @@ class LaunchProvider {
     }
     
     //MARK: - Data Fetch Completion
-    func fetchCompletionHandler() {
+    private func fetchNextLaunchCompletion() {
+        guard let delegate = self.nextLaunchDelegate else { return }
+        if let _ = self.error {
+            return
+        }
+        
+        var upcomingLaunches: [Launch] = []
+        
+        for (_, launch) in self.launches {
+            if launch.upcoming {
+                upcomingLaunches.append(launch)
+            }
+        }
+        
+        // Sort arrays chronologically
+        upcomingLaunches.sort(by: Arrays.unixTimeSort(x:y:))
+        
+        if !upcomingLaunches.isEmpty {
+            delegate.launchProvider(self, nextLaunchUpdate: self.createFullLaunch(from: upcomingLaunches[2]))
+        }
+    }
+    
+    private func fetchScheduledLaunchesCompletion() {
+        guard let delegate = self.scheduledLaunchesDelegate else { return }
+        if let _ = error {
+            return
+        }
+        
+        var scheduledLaunches: [Launch] = []
+
+        for (_, launch) in self.launches {
+            if launch.upcoming {
+                scheduledLaunches.append(launch)
+            }
+        }
+        
+        // Sort arrays chronologically
+        scheduledLaunches.sort(by: Arrays.unixTimeSort(x:y:))
+        
+        var scheduledFullLaunches: [FullLaunch] = []
+        for launch in scheduledLaunches {
+            scheduledFullLaunches.append(self.createFullLaunch(from: launch))
+        }
+        
+        delegate.launchProvider(self, launchesUpdated: scheduledFullLaunches)
+    }
+    
+    private func fetchRecentLaunchesCompletion() {
+        guard let delegate = self.recentLaunchesDelegate else { return }
+        if let _ = error {
+            return
+        }
+        
+        var recentLaunches: [Launch] = []
+        
+        for (_, launch) in self.launches {
+            if !launch.upcoming {
+                recentLaunches.append(launch)
+            }
+        }
+        
+        recentLaunches.sort(by: Arrays.unixTimeSort(x:y:))
+        recentLaunches.reverse()
+        
+        var recentFullLaunches: [FullLaunch] = []
+        for launch in recentLaunches {
+            recentFullLaunches.append(self.createFullLaunch(from: launch))
+        }
+        
+        delegate.launchProvider(self, launchesUpdated: recentFullLaunches)
+    }
+    
+    private func fetchLaunchListCompletionHandler() {
         guard let delegate = self.launchProviderDelegate else { return }
 
         /*
@@ -177,12 +270,12 @@ class LaunchProvider {
     }
     
     //MARK: - Data Manipulation Functions
-    func createTableData(launches: [Launch], fullLaunches: [String: FullLaunch]) -> LaunchTableData {
+    private func createTableData(launches: [Launch], fullLaunches: [String: FullLaunch]) -> LaunchTableData {
         let splitted = self.splitLaunchesIntoSections(launches: launches)
         return LaunchTableData(sections: splitted.sectionNames, launchIds: splitted.sectionedIds, fullLaunches: fullLaunches)
     }
     
-    func splitLaunchesIntoSections(launches: [Launch]) -> (sectionNames: [String], sectionedIds: [[String]]) {
+    private func splitLaunchesIntoSections(launches: [Launch]) -> (sectionNames: [String], sectionedIds: [[String]]) {
         var sectionNames: [String] = []
         var sectionIntervals: [DateInterval] = []
         var LaunchIds: [[String]] = []
@@ -224,7 +317,7 @@ class LaunchProvider {
         return (sectionNames, LaunchIds)
     }
 
-    func createFullLaunch(from launch: Launch) -> FullLaunch {
+    private func createFullLaunch(from launch: Launch) -> FullLaunch {
         
         let rocket = rockets[launch.rocket ?? ""]
         let launchpad = launchpads[launch.launchpad ?? ""]
@@ -270,6 +363,18 @@ class LaunchProvider {
         return fullLaunch
     }
     
+}
+
+protocol NextLaunchDelegate: AnyObject {
+    func launchProvider(_ provider: LaunchProvider, nextLaunchUpdate: FullLaunch)
+}
+
+protocol ScheduledLaunchesDelegate: AnyObject {
+    func launchProvider(_ provider: LaunchProvider, launchesUpdated: [FullLaunch])
+}
+
+protocol RecentLaunchesDelegate: AnyObject {
+    func launchProvider(_ provider: LaunchProvider, launchesUpdated: [FullLaunch])
 }
 
 protocol LaunchProviderDelegate: AnyObject {

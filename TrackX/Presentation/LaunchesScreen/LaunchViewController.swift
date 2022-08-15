@@ -80,7 +80,7 @@ class LaunchViewController: UIViewController {
         super.viewDidLoad()
         configureViews()
         configureConstraints()
-        launchProvider.fetchData()
+        launchProvider.fetchLaunchListData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -164,7 +164,7 @@ class LaunchViewController: UIViewController {
     }
     
     @objc func refreshLaunches(_ sender: Any) {
-        launchProvider.fetchData()
+        launchProvider.fetchLaunchListData()
     }
     
     @objc func toggleAscending() {
@@ -193,11 +193,11 @@ extension LaunchViewController: UITableViewDelegate {
 // MARK: - Launch Provider Delegate
 extension LaunchViewController: LaunchProviderDelegate {
     func launchProvider(_ provider: LaunchProvider, previousLaunchesUpdate: LaunchTableData) {
-        previousDataSource = LaunchTableDataSource(launchType: .previous, launchTableData: previousLaunchesUpdate, ascending: false)
+        previousDataSource = LaunchTableDataSource(launchType: .recent, launchTableData: previousLaunchesUpdate, ascending: false)
     }
     
     func launchProvider(_ provider: LaunchProvider, upcomingLaunchesUpdate: LaunchTableData) {
-        upcomingDataSource = LaunchTableDataSource(launchType: .upcoming, launchTableData: upcomingLaunchesUpdate, ascending: true)
+        upcomingDataSource = LaunchTableDataSource(launchType: .scheduled, launchTableData: upcomingLaunchesUpdate, ascending: true)
     }
     
     func launchProvider(_ provider: LaunchProvider, allLaunchesUpdate: LaunchTableData) {

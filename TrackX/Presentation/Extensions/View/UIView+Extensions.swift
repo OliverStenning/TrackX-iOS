@@ -65,9 +65,9 @@ extension UIView {
         heightAnchor.constraint(equalTo: anchorView.heightAnchor, multiplier: multiplier).isActive = true
     }
     
-    func anchorWidth(to anchorView: UIView, multiplier: CGFloat = 1.0) {
+    func anchorWidth(to anchorView: UIView, multiplier: CGFloat = 1.0, constant: CGFloat = 0) {
         translatesAutoresizingMaskIntoConstraints = false
-        widthAnchor.constraint(equalTo: anchorView.widthAnchor, multiplier: multiplier).isActive = true
+        widthAnchor.constraint(equalTo: anchorView.widthAnchor, multiplier: multiplier, constant: constant).isActive = true
     }
     
     func anchorYCenter(to anchorView: UIView) {

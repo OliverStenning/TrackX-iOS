@@ -16,8 +16,8 @@ enum DateFormat {
 }
 
 func formatDate(from inputDate: String, as dateFormat: DateFormat = DateFormat.shortDateAndTime, timeZone: String? = nil) -> String {
-    let dateFormatterStart = ISO8601DateFormatter()
-    dateFormatterStart.formatOptions.insert(.withFractionalSeconds)
+//    let dateFormatterStart = ISO8601DateFormatter()
+//    dateFormatterStart.formatOptions.insert(.withFractionalSeconds)
     
     let dateFormatterEnd = DateFormatter()
     if let timeZone = timeZone {
@@ -37,7 +37,7 @@ func formatDate(from inputDate: String, as dateFormat: DateFormat = DateFormat.s
             dateFormatterEnd.dateFormat = "h:mm a"
     }
     
-    if let date = dateFormatterStart.date(from: inputDate) {
+    if let date = Dates.dateFromISO8601(inputDate) {
         return dateFormatterEnd.string(from: date)
     } else {
         return "Bad date"

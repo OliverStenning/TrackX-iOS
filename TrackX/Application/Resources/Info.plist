@@ -20,6 +20,10 @@
 		<string>Rubik-Medium.ttf</string>
 		<string>Rubik-Regular.ttf</string>
 		<string>Rubik-SemiBold.ttf</string>
+		<string>ShareTech-Regular.ttf</string>
+		<string>Lato-Regular.ttf</string>
+		<string>Lato-Bold.ttf</string>
+		<string>Lato-Black.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

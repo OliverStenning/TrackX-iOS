@@ -18,9 +18,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
+//        let navController = UINavigationController(rootViewController: ExploreViewController(networkManager: NetworkManager()))
+//        navController.navigationBar.isHidden = true
+        
         let navController = UINavigationController(rootViewController: LaunchViewController(networkManager: NetworkManager()))
         // Required to set status bar color to white
         navController.navigationBar.barStyle = .black
+
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene

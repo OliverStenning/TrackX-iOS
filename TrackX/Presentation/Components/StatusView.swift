@@ -65,15 +65,15 @@ class StatusView: UIView {
             case .success:
                 backgroundColor = .systemGreen
                 statusLabel.text = "Success"
-                statusLabel.textColor = R.color.secondaryBackgroundColor()
+                statusLabel.textColor = R.color.backgroundColor()
             case .failed:
                 backgroundColor = .systemRed
                 statusLabel.text = "Failed"
-                statusLabel.textColor = R.color.secondaryBackgroundColor()
+                statusLabel.textColor = R.color.backgroundColor()
             case .scheduled:
                 backgroundColor = R.color.accentColor()
                 statusLabel.text = "Scheduled"
-                statusLabel.textColor = R.color.secondaryBackgroundColor()
+                statusLabel.textColor = R.color.backgroundColor()
                 
         }
     }
