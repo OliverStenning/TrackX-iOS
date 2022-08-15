@@ -10,7 +10,11 @@ import UIKit
 class ExploreViewController: UIViewController {
     
     // MARK: - Views
-    private let scrollView = UIScrollView()
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.showsVerticalScrollIndicator = false
+        return scrollView
+    }()
     
     private let stackView: UIStackView = {
         let stackView = UIStackView()
@@ -34,6 +38,8 @@ class ExploreViewController: UIViewController {
     private let scheduledLaunchesSection: ScheduledLaunchesSectionView
     private let recentLaunchesSection: RecentLaunchesSectionView
     private let rocketsCard = RocketsSectionView()
+    private let aboutSection = AboutSectionView()
+    private let settingsSection = SettingsSectionView()
     
     // MARK: - Properties
     let networkManager: NetworkManager
@@ -76,6 +82,8 @@ class ExploreViewController: UIViewController {
         stackView.addArrangedSubview(scheduledLaunchesSection)
         stackView.addArrangedSubview(recentLaunchesSection)
 //        stackView.addArrangedSubview(rocketsCard)
+        stackView.addArrangedSubview(aboutSection)
+        stackView.addArrangedSubview(settingsSection)
     }
     
     func configureConstraints() {
@@ -105,16 +113,9 @@ class ExploreViewController: UIViewController {
             trailing: titleContainer.trailingAnchor,
             padding: .init(top: 0, left: padding, bottom: 0, right: padding)
         )
-        
-        nextLaunchSection.anchorWidth(to: stackView)
-        
-        scheduledLaunchesSection.anchorWidth(to: stackView)
-        scheduledLaunchesSection.anchorSize(height: 180)
-        
-        recentLaunchesSection.anchorWidth(to: stackView)
-        recentLaunchesSection.anchorSize(height: 240)
-        
-//        rocketsCard.anchorWidth(to: stackView)
-//        rocketsCard.anchorSize(height: 400)
+
+        let stackSpacing: CGFloat = 12
+        stackView.setCustomSpacing(stackSpacing, after: aboutSection)
+        stackView.setCustomSpacing(stackSpacing, after: settingsSection)
     }
 }

@@ -21,6 +21,8 @@
 		F20D7CBF28A9671A0002B5FE /* ScheduledLaunchCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D7CBE28A9671A0002B5FE /* ScheduledLaunchCollectionCell.swift */; };
 		F20D7CC128A9692D0002B5FE /* LaunchCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D7CC028A9692D0002B5FE /* LaunchCollectionDataSource.swift */; };
 		F20D7CC928A9AEEA0002B5FE /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D7CC828A9AEEA0002B5FE /* UICollectionView+Extensions.swift */; };
+		F20D7CCC28AAE7300002B5FE /* SettingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D7CCB28AAE7300002B5FE /* SettingsSectionView.swift */; };
+		F20D7CCE28AAEAA90002B5FE /* AboutSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D7CCD28AAEAA90002B5FE /* AboutSectionView.swift */; };
 		F215F5EC285E81BB006F67FC /* LaunchCellInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F5EB285E81BB006F67FC /* LaunchCellInfoView.swift */; };
 		F215F5EE285E85BC006F67FC /* LaunchCellNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F5ED285E85BC006F67FC /* LaunchCellNameView.swift */; };
 		F215F5F0285E8D9E006F67FC /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F5EF285E8D9E006F67FC /* StatusView.swift */; };
@@ -185,6 +187,8 @@
 		F20D7CBE28A9671A0002B5FE /* ScheduledLaunchCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledLaunchCollectionCell.swift; sourceTree = "<group>"; };
 		F20D7CC028A9692D0002B5FE /* LaunchCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCollectionDataSource.swift; sourceTree = "<group>"; };
 		F20D7CC828A9AEEA0002B5FE /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		F20D7CCB28AAE7300002B5FE /* SettingsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSectionView.swift; sourceTree = "<group>"; };
+		F20D7CCD28AAEAA90002B5FE /* AboutSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSectionView.swift; sourceTree = "<group>"; };
 		F215F5EB285E81BB006F67FC /* LaunchCellInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCellInfoView.swift; sourceTree = "<group>"; };
 		F215F5ED285E85BC006F67FC /* LaunchCellNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCellNameView.swift; sourceTree = "<group>"; };
 		F215F5EF285E8D9E006F67FC /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
@@ -379,6 +383,8 @@
 				F2AC1A6328A818520007F688 /* ScheduledLaunchesSectionView.swift */,
 				F2AC1A6528A818720007F688 /* RecentLaunchesSectionView.swift */,
 				F2AC1A6728A8189B0007F688 /* RocketsSectionView.swift */,
+				F20D7CCB28AAE7300002B5FE /* SettingsSectionView.swift */,
+				F20D7CCD28AAEAA90002B5FE /* AboutSectionView.swift */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -1067,6 +1073,7 @@
 				F2396D272844060E0084DF79 /* LaunchDetailViewController.swift in Sources */,
 				F215F5F0285E8D9E006F67FC /* StatusView.swift in Sources */,
 				F2E2EC482859327D00AF06CC /* FullLaunch.swift in Sources */,
+				F20D7CCE28AAEAA90002B5FE /* AboutSectionView.swift in Sources */,
 				F215F60428634955006F67FC /* ImageCache.swift in Sources */,
 				F215F60828651CB6006F67FC /* CoreCellView.swift in Sources */,
 				F2396D4D2847A9A90084DF79 /* Landpad.swift in Sources */,
@@ -1101,6 +1108,7 @@
 				F254D45128578DDB0009A2A0 /* BodyLabel.swift in Sources */,
 				F2F093B627EE2F8B005CCD09 /* Launch.swift in Sources */,
 				F2051657285D3BC000584F11 /* LaunchEndpoint.swift in Sources */,
+				F20D7CCC28AAE7300002B5FE /* SettingsSectionView.swift in Sources */,
 				F2396D31284552DB0084DF79 /* HTTPMethod.swift in Sources */,
 				F215F5F4285F5877006F67FC /* CoresSectionStackView.swift in Sources */,
 				F2AC1A6228A812020007F688 /* NextLaunchSectionView.swift in Sources */,

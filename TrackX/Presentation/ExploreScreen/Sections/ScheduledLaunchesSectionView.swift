@@ -66,6 +66,8 @@ class ScheduledLaunchesSectionView: UIView {
     private func configureConstraints() {
         let margin: CGFloat = 16
         
+        self.anchorSize(height: 180)
+        
         titleLabel.anchor(
             top: self.topAnchor,
             leading: self.leadingAnchor,
