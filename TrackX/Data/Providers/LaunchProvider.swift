@@ -161,7 +161,6 @@ class LaunchProvider {
         }
         
         var upcomingLaunches: [Launch] = []
-        
         for (_, launch) in self.launches {
             if launch.upcoming {
                 upcomingLaunches.append(launch)
@@ -170,9 +169,12 @@ class LaunchProvider {
         
         // Sort arrays chronologically
         upcomingLaunches.sort(by: Arrays.unixTimeSort(x:y:))
-        
-        if !upcomingLaunches.isEmpty {
-            delegate.launchProvider(self, nextLaunchUpdate: self.createFullLaunch(from: upcomingLaunches[2]))
+
+        for launch in upcomingLaunches {
+            if launch.dateUnix > Int(Date().timeIntervalSince1970) {
+                delegate.launchProvider(self, nextLaunchUpdate: self.createFullLaunch(from: launch))
+                return
+            }
         }
     }
     
