@@ -53,21 +53,21 @@ class SettingsSectionView: UIView {
         cardView.layer.cornerRadius = 16
         cardView.layer.masksToBounds = true
         
-        self.isUserInteractionEnabled = true
+        isUserInteractionEnabled = true
         let gesture = UITapGestureRecognizer(target: self, action: #selector(pressSettings))
         gesture.numberOfTapsRequired = 1
-        self.addGestureRecognizer(gesture)
+        addGestureRecognizer(gesture)
     }
     
     private func configureConstraints() {
         let margin: CGFloat = 16
         let padding: CGFloat = 16
-        
+
         cardView.anchor(
-            top: self.topAnchor,
-            leading: self.leadingAnchor,
-            bottom: self.bottomAnchor,
-            trailing: self.trailingAnchor,
+            top: topAnchor,
+            leading: leadingAnchor,
+            bottom: bottomAnchor,
+            trailing: trailingAnchor,
             padding: .init(top: 0, left: margin, bottom: 0, right: margin)
         )
         
@@ -77,7 +77,7 @@ class SettingsSectionView: UIView {
             bottom: cardView.bottomAnchor,
             padding: .init(top: padding, left: padding * 1.5, bottom: padding, right: 0)
         )
-        
+
         settingsIcon.anchor(
             top: cardView.topAnchor,
             bottom: cardView.bottomAnchor,
@@ -85,10 +85,10 @@ class SettingsSectionView: UIView {
             padding: .init(top: padding, left: padding, bottom: padding, right: padding * 1.5)
         )
     }
-    
+
     //MARK: - Interaction Functions
     @objc private func pressSettings() {
         //TODO: add settings view
-        self.springAnimate()
+        springAnimate()
     }
 }

@@ -74,22 +74,22 @@ class RecentLaunchesSectionView: UIView {
         self.anchorSize(height: 240)
         
         titleLabel.anchor(
-            top: self.topAnchor,
-            leading: self.leadingAnchor,
+            top: topAnchor,
+            leading: leadingAnchor,
             padding: .init(top: margin, left: margin, bottom: 0, right: 0)
         )
         
         showAllButton.anchorYCenter(to: titleLabel)
         showAllButton.anchor(
-            trailing: self.trailingAnchor,
+            trailing: trailingAnchor,
             padding: .init(top: 0, left: 0, bottom: 0, right: margin)
         )
         
         launchCollectionView.anchor(
             top: titleLabel.bottomAnchor,
-            leading: self.leadingAnchor,
-            bottom: self.bottomAnchor,
-            trailing: self.trailingAnchor,
+            leading: leadingAnchor,
+            bottom: bottomAnchor,
+            trailing: trailingAnchor,
             padding: .init(top: 12, left: 0, bottom: 0, right: 0)
         )
     }
@@ -97,6 +97,7 @@ class RecentLaunchesSectionView: UIView {
     //MARK: - Interaction Functions
     @objc private func pressShowAll() {
         print("Pressed show all")
+        
     }
 }
 
@@ -112,10 +113,10 @@ extension RecentLaunchesSectionView: RecentLaunchesDelegate {
 
 extension RecentLaunchesSectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: frame.width - 40, height: launchCollectionView.frame.height)
+        CGSize(width: frame.width - 40, height: launchCollectionView.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: 0, left: 16, bottom: 0, right: 16)
+        .init(top: 0, left: 16, bottom: 0, right: 16)
     }
 }

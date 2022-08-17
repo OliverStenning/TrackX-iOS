@@ -44,7 +44,7 @@ class ScheduledLaunchesSectionView: UIView {
     init(launchProvider: LaunchProvider) {
         self.launchProvider = launchProvider
         super.init(frame: .zero)
-        addviews()
+        addViews()
         configureViews()
         configureConstraints()
         
@@ -57,7 +57,7 @@ class ScheduledLaunchesSectionView: UIView {
     }
     
     //MARK: - Configuration Functions
-    private func addviews() {
+    private func addViews() {
         addSubview(titleLabel)
         addSubview(showAllButton)
         addSubview(launchCollectionView)
@@ -74,22 +74,22 @@ class ScheduledLaunchesSectionView: UIView {
         self.anchorSize(height: 180)
         
         titleLabel.anchor(
-            top: self.topAnchor,
-            leading: self.leadingAnchor,
+            top: topAnchor,
+            leading: leadingAnchor,
             padding: .init(top: margin, left: margin, bottom: 0, right: 0)
         )
         
         showAllButton.anchor(
-            trailing: self.trailingAnchor,
+            trailing: trailingAnchor,
             padding: .init(top: 0, left: 0, bottom: 0, right: margin)
         )
         showAllButton.anchorYCenter(to: titleLabel)
         
         launchCollectionView.anchor(
             top: titleLabel.bottomAnchor,
-            leading: self.leadingAnchor,
-            bottom: self.bottomAnchor,
-            trailing: self.trailingAnchor,
+            leading: leadingAnchor,
+            bottom: bottomAnchor,
+            trailing: trailingAnchor,
             padding: .init(top: 12, left: 0, bottom: 0, right: 0)
         )
     }
@@ -113,10 +113,10 @@ extension ScheduledLaunchesSectionView: ScheduledLaunchesDelegate {
 
 extension ScheduledLaunchesSectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: frame.width - 40, height: launchCollectionView.frame.height)
+        CGSize(width: frame.width - 40, height: launchCollectionView.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: 0, left: 16, bottom: 0, right: 16)
+        .init(top: 0, left: 16, bottom: 0, right: 16)
     }
 }

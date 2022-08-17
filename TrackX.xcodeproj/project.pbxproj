@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14409EDE2B013933FB3402CB /* NextLaunchSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14409D5914DC09F6760ABD13 /* NextLaunchSectionView.swift */; };
 		4F9E869B2E5A2ADC14BC0A74 /* Pods_TrackX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB7735E37A99AE4377C4967 /* Pods_TrackX.framework */; };
 		591BC3B73DD32C5F68ACB29D /* Pods_TrackXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40F68E63F353C4472816601 /* Pods_TrackXTests.framework */; };
 		F2051657285D3BC000584F11 /* LaunchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2051656285D3BC000584F11 /* LaunchEndpoint.swift */; };
@@ -115,7 +116,6 @@
 		F254D45E2857C9660009A2A0 /* LaunchProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D45D2857C9660009A2A0 /* LaunchProvider.swift */; };
 		F26CBE872880E6F700D2DFDC /* StringFormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26CBE862880E6F700D2DFDC /* StringFormattingTests.swift */; };
 		F2AC1A5C28A80CD90007F688 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC1A5B28A80CD90007F688 /* ExploreViewController.swift */; };
-		F2AC1A6228A812020007F688 /* NextLaunchSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC1A6128A812020007F688 /* NextLaunchSectionView.swift */; };
 		F2AC1A6428A818520007F688 /* ScheduledLaunchesSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC1A6328A818520007F688 /* ScheduledLaunchesSectionView.swift */; };
 		F2AC1A6628A818720007F688 /* RecentLaunchesSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC1A6528A818720007F688 /* RecentLaunchesSectionView.swift */; };
 		F2AC1A6828A8189B0007F688 /* RocketsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC1A6728A8189B0007F688 /* RocketsSectionView.swift */; };
@@ -172,6 +172,7 @@
 
 /* Begin PBXFileReference section */
 		093E2BD26BC9C32C178E0C5B /* Pods-TrackX CountdownExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackX CountdownExtension.release.xcconfig"; path = "Target Support Files/Pods-TrackX CountdownExtension/Pods-TrackX CountdownExtension.release.xcconfig"; sourceTree = "<group>"; };
+		14409D5914DC09F6760ABD13 /* NextLaunchSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextLaunchSectionView.swift; sourceTree = "<group>"; };
 		4719AFCAC3DC93D4E00FD535 /* Pods-TrackX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackX.debug.xcconfig"; path = "Target Support Files/Pods-TrackX/Pods-TrackX.debug.xcconfig"; sourceTree = "<group>"; };
 		55BECBF55560EC464392D443 /* Pods-TrackXTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackXTests.release.xcconfig"; path = "Target Support Files/Pods-TrackXTests/Pods-TrackXTests.release.xcconfig"; sourceTree = "<group>"; };
 		60EE7B0CC467C0220CDD1648 /* Pods-TrackX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackX.release.xcconfig"; path = "Target Support Files/Pods-TrackX/Pods-TrackX.release.xcconfig"; sourceTree = "<group>"; };
@@ -284,7 +285,6 @@
 		F254D45D2857C9660009A2A0 /* LaunchProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchProvider.swift; sourceTree = "<group>"; };
 		F26CBE862880E6F700D2DFDC /* StringFormattingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormattingTests.swift; sourceTree = "<group>"; };
 		F2AC1A5B28A80CD90007F688 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
-		F2AC1A6128A812020007F688 /* NextLaunchSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLaunchSectionView.swift; sourceTree = "<group>"; };
 		F2AC1A6328A818520007F688 /* ScheduledLaunchesSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledLaunchesSectionView.swift; sourceTree = "<group>"; };
 		F2AC1A6528A818720007F688 /* RecentLaunchesSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentLaunchesSectionView.swift; sourceTree = "<group>"; };
 		F2AC1A6728A8189B0007F688 /* RocketsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsSectionView.swift; sourceTree = "<group>"; };
@@ -387,7 +387,6 @@
 		F20D7CC328A96E210002B5FE /* Sections */ = {
 			isa = PBXGroup;
 			children = (
-				F2AC1A6128A812020007F688 /* NextLaunchSectionView.swift */,
 				F20D7CCF28AAEE820002B5FE /* PhotoReelSectionView.swift */,
 				F2AC1A6328A818520007F688 /* ScheduledLaunchesSectionView.swift */,
 				F2AC1A6528A818720007F688 /* RecentLaunchesSectionView.swift */,
@@ -403,6 +402,7 @@
 			children = (
 				F20D7CD228AAEFC20002B5FE /* PhotoCollectionDataSource.swift */,
 				F20D7CD428AAEFDA0002B5FE /* PhotoCollectionCell.swift */,
+				14409D5914DC09F6760ABD13 /* NextLaunchSectionView.swift */,
 			);
 			path = PhotoCollectionView;
 			sourceTree = "<group>";
@@ -1142,7 +1142,6 @@
 				F20D7CCC28AAE7300002B5FE /* SettingsSectionView.swift in Sources */,
 				F2396D31284552DB0084DF79 /* HTTPMethod.swift in Sources */,
 				F215F5F4285F5877006F67FC /* CoresSectionStackView.swift in Sources */,
-				F2AC1A6228A812020007F688 /* NextLaunchSectionView.swift in Sources */,
 				F215F610287B8EAC006F67FC /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				F20D7CC128A9692D0002B5FE /* LaunchCollectionDataSource.swift in Sources */,
 				F2F2345B2854D21D00CAB70C /* UILabel+Extensions.swift in Sources */,
@@ -1151,6 +1150,7 @@
 				F215F60C287B7DCC006F67FC /* Location.swift in Sources */,
 				F20D7CBD28A966FD0002B5FE /* RecentLaunchCollectionCell.swift in Sources */,
 				F254D455285792160009A2A0 /* RocketSectionStackView.swift in Sources */,
+				14409EDE2B013933FB3402CB /* NextLaunchSectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

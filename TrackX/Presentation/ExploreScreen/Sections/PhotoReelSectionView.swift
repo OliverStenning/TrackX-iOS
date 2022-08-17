@@ -35,7 +35,7 @@ class PhotoReelSectionView: UIView {
     //MARK: - Initializers
     init() {
         super.init(frame: .zero)
-        addviews()
+        addViews()
         configureViews()
         configureConstraints()
     }
@@ -45,7 +45,7 @@ class PhotoReelSectionView: UIView {
     }
 
     //MARK: - Configuration Functions
-    private func addviews() {
+    private func addViews() {
         addSubview(titleLabel)
         addSubview(photoCollectionView)
     }
@@ -60,17 +60,17 @@ class PhotoReelSectionView: UIView {
         let margin: CGFloat = 16
 
         titleLabel.anchor(
-            top: self.topAnchor,
-            leading: self.leadingAnchor,
+            top: topAnchor,
+            leading: leadingAnchor,
             padding: .init(top: margin, left: margin, bottom: 0, right: 0)
         )
 
         photoCollectionView.anchorSize(height: collectionHeight)
         photoCollectionView.anchor(
             top: titleLabel.bottomAnchor,
-            leading: self.leadingAnchor,
-            bottom: self.bottomAnchor,
-            trailing: self.trailingAnchor,
+            leading: leadingAnchor,
+            bottom: bottomAnchor,
+            trailing: trailingAnchor,
             padding: .init(top: 12, left: 0, bottom: 0, right: 0)
         )
     }

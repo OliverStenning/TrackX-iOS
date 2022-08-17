@@ -124,3 +124,9 @@ class ExploreViewController: UIViewController {
         footerSection.anchorSize(height: margin)
     }
 }
+
+extension ExploreViewController: NextLaunchSectionViewDelegate {
+    func nextLaunchSectionView(_ sectionView: NextLaunchSectionView, launchSelected: FullLaunch) {
+
+    }
+}

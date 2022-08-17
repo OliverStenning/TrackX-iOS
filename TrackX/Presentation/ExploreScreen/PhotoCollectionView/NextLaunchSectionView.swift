@@ -45,6 +45,7 @@ class NextLaunchSectionView: UIView {
             updateInformation()
         }
     }
+    var nextLaunchSectionViewDelegate: NextLaunchSectionViewDelegate?
     
     //MARK: - Initializers
     init(launchProvider: LaunchProvider) {
@@ -141,7 +142,10 @@ class NextLaunchSectionView: UIView {
     
     //MARK: - Interaction Functions
     @objc private func pressNextLaunch() {
-        cardView.springAnimate()
+        if let delegate = nextLaunchSectionViewDelegate, let fullLaunch = fullLaunch {
+            cardView.springAnimate()
+            delegate.nextLaunchSectionView(self, launchSelected: fullLaunch)
+        }
     }
 }
 
@@ -152,3 +156,7 @@ extension NextLaunchSectionView: NextLaunchDelegate {
     }
 }
 
+//MARK: - Next Launch Delegate
+protocol NextLaunchSectionViewDelegate {
+    func nextLaunchSectionView(_ sectionView: NextLaunchSectionView, launchSelected: FullLaunch)
+}

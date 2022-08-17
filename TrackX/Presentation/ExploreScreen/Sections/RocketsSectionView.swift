@@ -49,15 +49,15 @@ class RocketsSectionView: UIView {
     
     private func configureConstraints() {
         titleLabel.anchor(
-            top: self.topAnchor,
-            leading: self.leadingAnchor
+            top: topAnchor,
+            leading: leadingAnchor
         )
         
         card.anchor(
             top: titleLabel.bottomAnchor,
-            leading: self.leadingAnchor,
-            bottom: self.bottomAnchor,
-            trailing: self.trailingAnchor,
+            leading: leadingAnchor,
+            bottom: bottomAnchor,
+            trailing: trailingAnchor,
             padding: .init(top: 16, left: 0, bottom: 0, right: 0)
         )
     }
