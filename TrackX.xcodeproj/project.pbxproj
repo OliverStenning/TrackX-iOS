@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14409EDE2B013933FB3402CB /* NextLaunchSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14409D5914DC09F6760ABD13 /* NextLaunchSectionView.swift */; };
+		14409ED1B895ECA8C135E83F /* NextLaunchSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14409D396F8773A2E0919CC0 /* NextLaunchSectionView.swift */; };
 		4F9E869B2E5A2ADC14BC0A74 /* Pods_TrackX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB7735E37A99AE4377C4967 /* Pods_TrackX.framework */; };
 		591BC3B73DD32C5F68ACB29D /* Pods_TrackXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40F68E63F353C4472816601 /* Pods_TrackXTests.framework */; };
 		F2051657285D3BC000584F11 /* LaunchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2051656285D3BC000584F11 /* LaunchEndpoint.swift */; };
@@ -172,7 +172,7 @@
 
 /* Begin PBXFileReference section */
 		093E2BD26BC9C32C178E0C5B /* Pods-TrackX CountdownExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackX CountdownExtension.release.xcconfig"; path = "Target Support Files/Pods-TrackX CountdownExtension/Pods-TrackX CountdownExtension.release.xcconfig"; sourceTree = "<group>"; };
-		14409D5914DC09F6760ABD13 /* NextLaunchSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextLaunchSectionView.swift; sourceTree = "<group>"; };
+		14409D396F8773A2E0919CC0 /* NextLaunchSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextLaunchSectionView.swift; sourceTree = "<group>"; };
 		4719AFCAC3DC93D4E00FD535 /* Pods-TrackX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackX.debug.xcconfig"; path = "Target Support Files/Pods-TrackX/Pods-TrackX.debug.xcconfig"; sourceTree = "<group>"; };
 		55BECBF55560EC464392D443 /* Pods-TrackXTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackXTests.release.xcconfig"; path = "Target Support Files/Pods-TrackXTests/Pods-TrackXTests.release.xcconfig"; sourceTree = "<group>"; };
 		60EE7B0CC467C0220CDD1648 /* Pods-TrackX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackX.release.xcconfig"; path = "Target Support Files/Pods-TrackX/Pods-TrackX.release.xcconfig"; sourceTree = "<group>"; };
@@ -393,6 +393,7 @@
 				F2AC1A6728A8189B0007F688 /* RocketsSectionView.swift */,
 				F20D7CCD28AAEAA90002B5FE /* AboutSectionView.swift */,
 				F20D7CCB28AAE7300002B5FE /* SettingsSectionView.swift */,
+				14409D396F8773A2E0919CC0 /* NextLaunchSectionView.swift */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -402,7 +403,6 @@
 			children = (
 				F20D7CD228AAEFC20002B5FE /* PhotoCollectionDataSource.swift */,
 				F20D7CD428AAEFDA0002B5FE /* PhotoCollectionCell.swift */,
-				14409D5914DC09F6760ABD13 /* NextLaunchSectionView.swift */,
 			);
 			path = PhotoCollectionView;
 			sourceTree = "<group>";
@@ -1150,7 +1150,7 @@
 				F215F60C287B7DCC006F67FC /* Location.swift in Sources */,
 				F20D7CBD28A966FD0002B5FE /* RecentLaunchCollectionCell.swift in Sources */,
 				F254D455285792160009A2A0 /* RocketSectionStackView.swift in Sources */,
-				14409EDE2B013933FB3402CB /* NextLaunchSectionView.swift in Sources */,
+				14409ED1B895ECA8C135E83F /* NextLaunchSectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

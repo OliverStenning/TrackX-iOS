@@ -18,8 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let navController = UINavigationController(rootViewController: ExploreViewController(networkManager: NetworkManager()))
-        navController.navigationBar.isHidden = true
-        
+
 //        let navController = UINavigationController(rootViewController: LaunchViewController(networkManager: NetworkManager()))
 //        // Required to set status bar color to white
 //        navController.navigationBar.barStyle = .black

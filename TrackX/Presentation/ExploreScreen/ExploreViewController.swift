@@ -71,7 +71,17 @@ class ExploreViewController: UIViewController {
         configureViews()
         configureConstraints()
     }
-    
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
     // MARK: - Configuration Functions
     private func addViews() {
         view.addSubview(scrollView)
@@ -91,6 +101,11 @@ class ExploreViewController: UIViewController {
     private func configureViews() {
         view.backgroundColor = R.color.backgroundColor()
         rocketsCard.isHidden = true
+
+        // Interaction delegates
+        nextLaunchSection.delegate = self
+        scheduledLaunchesSection.delegate = self
+        recentLaunchesSection.delegate = self
     }
     
     private func configureConstraints() {
@@ -123,10 +138,36 @@ class ExploreViewController: UIViewController {
         
         footerSection.anchorSize(height: margin)
     }
+
+    private func showLaunchDetailView(with fullLaunch: FullLaunch) {
+        let launchDetailVC = LaunchDetailViewController(fullLaunch: fullLaunch)
+        navigationController?.pushViewController(launchDetailVC, animated: true)
+    }
 }
 
-extension ExploreViewController: NextLaunchSectionViewDelegate {
-    func nextLaunchSectionView(_ sectionView: NextLaunchSectionView, launchSelected: FullLaunch) {
+extension ExploreViewController: NextLaunchSectionDelegate {
+    func nextLaunchSection(_ sectionView: NextLaunchSectionView, launchSelected: FullLaunch) {
+        print("Pressed launch: \(launchSelected.launch.name)")
+        showLaunchDetailView(with: launchSelected)
+    }
+}
 
+extension ExploreViewController: ScheduledLaunchesSectionDelegate {
+    func scheduledLaunchesSection(_ sectionView: ScheduledLaunchesSectionView, launchSelected: FullLaunch) {
+        print("Pressed launch: \(launchSelected.launch.name)")
+        showLaunchDetailView(with: launchSelected)
+    }
+    func scheduledLaunchesSection(_ sectionView: ScheduledLaunchesSectionView, allLaunchesSelected: [FullLaunch]) {
+        print("Pressed show all scheduled launches")
+    }
+}
+
+extension ExploreViewController: RecentLaunchesSectionDelegate {
+    func recentLaunchesSection(_ recentLaunchesSection: RecentLaunchesSectionView, launchSelected: FullLaunch) {
+        print("Pressed launch: \(launchSelected.launch.name)")
+        showLaunchDetailView(with: launchSelected)
+    }
+    func recentLaunchesSection(_ recentLaunchesSection: RecentLaunchesSectionView, showAllLaunches: [FullLaunch]) {
+        print("Pressed show all recent launches")
     }
 }

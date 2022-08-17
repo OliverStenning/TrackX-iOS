@@ -23,7 +23,7 @@ class LaunchCollectionDataSource: NSObject, UICollectionViewDataSource {
     let launchType: CollectionLaunchType
     var launches: [FullLaunch]
     
-    //MARK: - Initialziers
+    //MARK: - Initializers
     init(launchType: CollectionLaunchType, launches: [FullLaunch]) {
         self.launchType = launchType
         self.launches = launches
@@ -45,5 +45,11 @@ class LaunchCollectionDataSource: NSObject, UICollectionViewDataSource {
                 cell.configure(with: launches[indexPath.item])
                 return cell
         }
+    }
+}
+
+extension LaunchCollectionDataSource: UICollectionViewDelegate {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Test datasource")
     }
 }

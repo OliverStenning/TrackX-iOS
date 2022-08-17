@@ -39,6 +39,8 @@ class ScheduledLaunchesSectionView: UIView {
     //MARK: - Properties
     private let launchProvider: LaunchProvider
     private var scheduledDataSource: LaunchCollectionDataSource?
+    var delegate: ScheduledLaunchesSectionDelegate?
+    var launchCollectionViewDelegate: UICollectionViewDelegate?
     
     //MARK: - Initializers
     init(launchProvider: LaunchProvider) {
@@ -47,7 +49,8 @@ class ScheduledLaunchesSectionView: UIView {
         addViews()
         configureViews()
         configureConstraints()
-        
+
+        launchCollectionViewDelegate = self
         launchProvider.scheduledLaunchesDelegate = self
         launchProvider.fetchScheduledLaunches()
     }
@@ -64,7 +67,7 @@ class ScheduledLaunchesSectionView: UIView {
     }
     
     private func configureViews() {
-        launchCollectionView.delegate = self
+        launchCollectionView.delegate = launchCollectionViewDelegate
         showAllButton.addTarget(self, action: #selector(pressShowAll), for: .touchUpInside)
     }
     
@@ -96,27 +99,46 @@ class ScheduledLaunchesSectionView: UIView {
 
     //MARK: - Interaction Functions
     @objc private func pressShowAll() {
-        print("Pressed show all")
+        if let delegate = delegate, let dataSource = scheduledDataSource {
+            delegate.scheduledLaunchesSection(self, allLaunchesSelected: dataSource.launches)
+        }
     }
     
 }
 
+//MARK: - Launch Provider Delegate
 extension ScheduledLaunchesSectionView: ScheduledLaunchesDelegate {
     func launchProvider(_ provider: LaunchProvider, launchesUpdated: [FullLaunch]) {
         scheduledDataSource = LaunchCollectionDataSource(launchType: .scheduled, launches: launchesUpdated)
         launchCollectionView.dataSource = scheduledDataSource
+        launchCollectionView.delegate = self
         if launchCollectionView.dataSource != nil {
             launchCollectionView.reloadData()
         }
     }
 }
 
+//MARK: - CollectionView Delegate
+extension ScheduledLaunchesSectionView: UICollectionViewDelegate {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let delegate = delegate, let dataSource = scheduledDataSource {
+            delegate.scheduledLaunchesSection(self, launchSelected: dataSource.launches[indexPath.item])
+        }
+    }
+}
+
+//MARK: - CollectionView Layout Delegate
 extension ScheduledLaunchesSectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: frame.width - 40, height: launchCollectionView.frame.height)
+        return CGSize(width: frame.width - 40, height: launchCollectionView.frame.height)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         .init(top: 0, left: 16, bottom: 0, right: 16)
     }
+}
+
+protocol ScheduledLaunchesSectionDelegate {
+    func scheduledLaunchesSection(_ section: ScheduledLaunchesSectionView, launchSelected: FullLaunch)
+    func scheduledLaunchesSection(_ section: ScheduledLaunchesSectionView, allLaunchesSelected: [FullLaunch])
 }

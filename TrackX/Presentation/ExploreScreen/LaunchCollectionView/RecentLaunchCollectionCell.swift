@@ -76,9 +76,11 @@ class RecentLaunchCollectionCell: UICollectionViewCell {
     }
     
     func configureViews() {
+        isUserInteractionEnabled = true
         cardView.isUserInteractionEnabled = true
         let gesture = UITapGestureRecognizer(target: self, action: #selector(pressLaunch))
         gesture.numberOfTapsRequired = 1
+        gesture.cancelsTouchesInView = false
         cardView.addGestureRecognizer(gesture)
         
         cardView.backgroundColor = R.color.secondaryBackgroundColor()
