@@ -11,6 +11,7 @@ import Combine
 class RecentLaunchCollectionCell: UICollectionViewCell {
     
     //MARK: - Views
+    private let cardView = UIView()
     private let backgroundImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -41,6 +42,7 @@ class RecentLaunchCollectionCell: UICollectionViewCell {
     //MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
+        addViews()
         configureViews()
         configureConstaints()
     }
@@ -59,44 +61,54 @@ class RecentLaunchCollectionCell: UICollectionViewCell {
     }
     
     //MARK: - Configuration Functions
+    private func addViews() {
+        contentView.addSubview(cardView)
+        cardView.addSubview(backgroundImage)
+        cardView.addSubview(backgroundGradient)
+        cardView.addSubview(nameLabel)
+        cardView.addSubview(statusView)
+        cardView.addSubview(infoView)
+    }
+    
     func configure(with fullLaunch: FullLaunch?) {
         self.fullLaunch = fullLaunch
         infoView.configure(with: fullLaunch)
     }
     
     func configureViews() {
-        contentView.backgroundColor = R.color.secondaryBackgroundColor()
-        contentView.layer.cornerRadius = 16
-        contentView.layer.masksToBounds = true
+        cardView.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(pressLaunch))
+        gesture.numberOfTapsRequired = 1
+        cardView.addGestureRecognizer(gesture)
         
-        contentView.addSubview(backgroundImage)
-        contentView.addSubview(backgroundGradient)
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(statusView)
-        contentView.addSubview(infoView)
+        cardView.backgroundColor = R.color.secondaryBackgroundColor()
+        cardView.layer.cornerRadius = 16
+        cardView.layer.masksToBounds = true
     }
     
     func configureConstaints() {
-        backgroundImage.anchor(to: contentView)
-        backgroundGradient.anchor(to: contentView)
+        cardView.anchor(to: contentView)
+        
+        backgroundImage.anchor(to: cardView)
+        backgroundGradient.anchor(to: cardView)
         
         nameLabel.anchor(
-            leading: contentView.leadingAnchor,
+            leading: cardView.leadingAnchor,
             bottom: infoView.topAnchor,
-            trailing: contentView.trailingAnchor,
+            trailing: cardView.trailingAnchor,
             padding: .init(top: 0, left: 16, bottom: 0, right: 16)
         )
         
         statusView.anchor(
-            top: contentView.topAnchor,
-            trailing: contentView.trailingAnchor,
+            top: cardView.topAnchor,
+            trailing: cardView.trailingAnchor,
             padding: .init(top: 16, left: 0, bottom: 0, right: 16)
         )
         
         infoView.anchor(
-            leading: contentView.leadingAnchor,
-            bottom: contentView.bottomAnchor,
-            trailing: contentView.trailingAnchor
+            leading: cardView.leadingAnchor,
+            bottom: cardView.bottomAnchor,
+            trailing: cardView.trailingAnchor
         )
     }
     
@@ -108,7 +120,7 @@ class RecentLaunchCollectionCell: UICollectionViewCell {
             if let imageUrl = fullLaunch.getLaunchImageUrl() {
                 cancellable = loadImage(for: imageUrl).sink { [unowned self] image in self.showImage(image: image)}
             } else {
-                showImage(image: R.image.placeholderImage())
+                showImage(image: R.image.placeholder())
             }
             
             if fullLaunch.launch.upcoming {
@@ -120,7 +132,7 @@ class RecentLaunchCollectionCell: UICollectionViewCell {
             }
         }
     }
-    
+
     func showImage(image: UIImage?) {
         backgroundImage.alpha = 0.0
         animator?.stopAnimation(false)
@@ -137,6 +149,11 @@ class RecentLaunchCollectionCell: UICollectionViewCell {
                 return ImageLoader.shared.loadImage(from: url)
             })
             .eraseToAnyPublisher()
+    }
+    
+    //MARK: - Interaction Functions
+    @objc private func pressLaunch() {
+        self.springAnimate()
     }
     
 }

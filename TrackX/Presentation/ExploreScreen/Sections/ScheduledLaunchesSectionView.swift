@@ -10,23 +10,23 @@ import UIKit
 class ScheduledLaunchesSectionView: UIView {
     
     //MARK: - Views
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Scheduled"
+        label.text = R.string.localizable.scheduled()
         label.textColor = R.color.textColor()
         label.font = R.font.archivoSemiBold(size: 22)
         return label
     }()
     
-    let showAllButton: UILabel = {
-        let label = UILabel()
-        label.text = "Show all"
-        label.textColor = R.color.secondaryTextColor()
-        label.font = R.font.rubikMedium(size: 16)
-        return label
+    private let showAllButton: UIButton = {
+        let button = UIButton()
+        button.setTitle(R.string.localizable.showAll(), for: .normal)
+        button.setTitleColor(R.color.accentColor(), for: .normal)
+        button.titleLabel?.font = R.font.rubikMedium(size: 16)
+        return button
     }()
     
-    let launchCollectionView: UICollectionView = {
+    private let launchCollectionView: UICollectionView = {
         let collectionViewLayout = UICollectionViewFlowLayout()
         collectionViewLayout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
@@ -37,13 +37,14 @@ class ScheduledLaunchesSectionView: UIView {
     }()
     
     //MARK: - Properties
-    let launchProvider: LaunchProvider
-    var scheduledDataSource: LaunchCollectionDataSource?
+    private let launchProvider: LaunchProvider
+    private var scheduledDataSource: LaunchCollectionDataSource?
     
     //MARK: - Initializers
     init(launchProvider: LaunchProvider) {
         self.launchProvider = launchProvider
         super.init(frame: .zero)
+        addviews()
         configureViews()
         configureConstraints()
         
@@ -56,11 +57,15 @@ class ScheduledLaunchesSectionView: UIView {
     }
     
     //MARK: - Configuration Functions
-    private func configureViews() {
+    private func addviews() {
         addSubview(titleLabel)
         addSubview(showAllButton)
         addSubview(launchCollectionView)
+    }
+    
+    private func configureViews() {
         launchCollectionView.delegate = self
+        showAllButton.addTarget(self, action: #selector(pressShowAll), for: .touchUpInside)
     }
     
     private func configureConstraints() {
@@ -71,7 +76,7 @@ class ScheduledLaunchesSectionView: UIView {
         titleLabel.anchor(
             top: self.topAnchor,
             leading: self.leadingAnchor,
-            padding: .init(top: 0, left: margin, bottom: 0, right: 0)
+            padding: .init(top: margin, left: margin, bottom: 0, right: 0)
         )
         
         showAllButton.anchor(
@@ -89,6 +94,11 @@ class ScheduledLaunchesSectionView: UIView {
         )
     }
 
+    //MARK: - Interaction Functions
+    @objc private func pressShowAll() {
+        print("Pressed show all")
+    }
+    
 }
 
 extension ScheduledLaunchesSectionView: ScheduledLaunchesDelegate {
@@ -97,7 +107,6 @@ extension ScheduledLaunchesSectionView: ScheduledLaunchesDelegate {
         launchCollectionView.dataSource = scheduledDataSource
         if launchCollectionView.dataSource != nil {
             launchCollectionView.reloadData()
-            print(launchCollectionView.collectionViewLayout.collectionViewContentSize)
         }
     }
 }
@@ -108,18 +117,6 @@ extension ScheduledLaunchesSectionView: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: 0, left: 12, bottom: 0, right: 12)
+        return .init(top: 0, left: 16, bottom: 0, right: 16)
     }
 }
-
-//extension ScheduledLaunchesSectionView: UIScrollViewDelegate {
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        self.launchCollectionView.scrollToNearestVisibleCollectionViewCell()
-//    }
-//
-//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//        if !decelerate {
-//            self.launchCollectionView.scrollToNearestVisibleCollectionViewCell()
-//        }
-//    }
-//}

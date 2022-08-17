@@ -20,7 +20,7 @@ class ExploreViewController: UIViewController {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fill
-        stackView.spacing = 24
+        stackView.spacing = 12
         return stackView
     }()
     
@@ -35,15 +35,17 @@ class ExploreViewController: UIViewController {
     }()
     
     private let nextLaunchSection: NextLaunchSectionView
+    private let photoReelSection = PhotoReelSectionView()
     private let scheduledLaunchesSection: ScheduledLaunchesSectionView
     private let recentLaunchesSection: RecentLaunchesSectionView
     private let rocketsCard = RocketsSectionView()
     private let aboutSection = AboutSectionView()
     private let settingsSection = SettingsSectionView()
+    private let footerSection = UIView()
     
     // MARK: - Properties
-    let networkManager: NetworkManager
-    let launchProvider: LaunchProvider
+    private let networkManager: NetworkManager
+    private let launchProvider: LaunchProvider
     
     // MARK: - Initializers
     init(networkManager: NetworkManager) {
@@ -53,7 +55,6 @@ class ExploreViewController: UIViewController {
         self.nextLaunchSection = NextLaunchSectionView(launchProvider: self.launchProvider)
         self.scheduledLaunchesSection = ScheduledLaunchesSectionView(launchProvider: self.launchProvider)
         self.recentLaunchesSection = RecentLaunchesSectionView(launchProvider: self.launchProvider)
-        
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -66,28 +67,34 @@ class ExploreViewController: UIViewController {
     // MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        addViews()
         configureViews()
         configureConstraints()
     }
     
     // MARK: - Configuration Functions
-    func configureViews() {
-        view.backgroundColor = R.color.backgroundColor()
-        
+    private func addViews() {
         view.addSubview(scrollView)
         scrollView.addSubview(stackView)
         stackView.addArrangedSubview(titleContainer)
-        titleContainer.addSubview(titleView)
         stackView.addArrangedSubview(nextLaunchSection)
+        stackView.addArrangedSubview(photoReelSection)
         stackView.addArrangedSubview(scheduledLaunchesSection)
         stackView.addArrangedSubview(recentLaunchesSection)
-//        stackView.addArrangedSubview(rocketsCard)
+        stackView.addArrangedSubview(rocketsCard)
         stackView.addArrangedSubview(aboutSection)
         stackView.addArrangedSubview(settingsSection)
+        stackView.addArrangedSubview(footerSection)
+        titleContainer.addSubview(titleView)
     }
     
-    func configureConstraints() {
-        let padding: CGFloat = 16
+    private func configureViews() {
+        view.backgroundColor = R.color.backgroundColor()
+        rocketsCard.isHidden = true
+    }
+    
+    private func configureConstraints() {
+        let margin: CGFloat = 16
         
         scrollView.anchor(
             top: view.layoutMarginsGuide.topAnchor,
@@ -103,7 +110,7 @@ class ExploreViewController: UIViewController {
             leading: scrollView.leadingAnchor,
             bottom: scrollView.bottomAnchor,
             trailing: scrollView.trailingAnchor,
-            padding: .init(top: 32, left: 0, bottom: 0, right: 0)
+            padding: .init(top: margin * 2, left: 0, bottom: 0, right: 0)
         )
         
         titleView.anchor(
@@ -111,11 +118,9 @@ class ExploreViewController: UIViewController {
             leading: titleContainer.leadingAnchor,
             bottom: titleContainer.bottomAnchor,
             trailing: titleContainer.trailingAnchor,
-            padding: .init(top: 0, left: padding, bottom: 0, right: padding)
+            padding: .init(top: 0, left: margin, bottom: 0, right: margin)
         )
-
-        let stackSpacing: CGFloat = 12
-        stackView.setCustomSpacing(stackSpacing, after: aboutSection)
-        stackView.setCustomSpacing(stackSpacing, after: settingsSection)
+        
+        footerSection.anchorSize(height: margin)
     }
 }

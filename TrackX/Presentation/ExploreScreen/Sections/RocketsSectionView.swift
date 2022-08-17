@@ -10,15 +10,15 @@ import UIKit
 class RocketsSectionView: UIView {
     
     //MARK: - Views
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Rockets"
+        label.text = R.string.localizable.rockets()
         label.textColor = R.color.textColor()
         label.font = R.font.archivoSemiBold(size: 20)
         return label
     }()
     
-    let card = UIView()
+    private let card = UIView()
     
     //MARK: - Properties
 
@@ -26,6 +26,7 @@ class RocketsSectionView: UIView {
     //MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
+        addViews()
         configureViews()
         configureConstraints()
     }
@@ -35,13 +36,15 @@ class RocketsSectionView: UIView {
     }
     
     //MARK: - Configuration Functions
+    private func addViews() {
+        addSubview(titleLabel)
+        addSubview(card)
+    }
+    
     private func configureViews() {
         card.backgroundColor = R.color.secondaryBackgroundColor()
         card.layer.cornerRadius = 16
         card.layer.masksToBounds = true
-        
-        addSubview(titleLabel)
-        addSubview(card)
     }
     
     private func configureConstraints() {

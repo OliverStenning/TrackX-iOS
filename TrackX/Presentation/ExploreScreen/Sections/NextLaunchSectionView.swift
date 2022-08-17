@@ -10,7 +10,7 @@ import UIKit
 class NextLaunchSectionView: UIView {
     
     //MARK: - Views
-    private let card = UIView()
+    private let cardView = UIView()
     
     private let containerStack: UIStackView = {
         let stackView = UIStackView()
@@ -21,40 +21,36 @@ class NextLaunchSectionView: UIView {
     
     private let infoContainer = UIView()
     private let launchLabel = AccentHeadingView(size: .h4)
+    
     private let rocketLabel: UILabel = {
         let label = UILabel()
         label.font = R.font.archivoBold(size: 14)
         label.textColor = R.color.secondaryTextColor()
         return label
     }()
+    
     private let launchpadLabel: UILabel = {
         let label = UILabel()
         label.font = R.font.archivoBold(size: 14)
         label.textColor = R.color.secondaryTextColor()
         return label
     }()
+    
     private let countdownView = CountdownView()
     
     //MARK: - Properties
-    let launchProvider: LaunchProvider
-    
-    var fullLaunch: FullLaunch? {
+    private let launchProvider: LaunchProvider
+    private var fullLaunch: FullLaunch? {
         didSet {
             updateInformation()
         }
     }
     
-    var highlighted: Bool = false {
-        didSet {
-            animateHighlighted()
-        }
-    }
-    var animating: Bool = false
-    
     //MARK: - Initializers
     init(launchProvider: LaunchProvider) {
         self.launchProvider = launchProvider
         super.init(frame: .zero)
+        addViews()
         configureViews()
         configureConstraints()
 
@@ -66,13 +62,9 @@ class NextLaunchSectionView: UIView {
     }
     
     //MARK: - Configuration Functions
-    private func configureViews() {
-        card.backgroundColor = R.color.secondaryBackgroundColor()
-        card.layer.cornerRadius = 16
-        card.layer.masksToBounds = true
-        
-        addSubview(card)
-        card.addSubview(containerStack)
+    private func addViews() {
+        addSubview(cardView)
+        cardView.addSubview(containerStack)
         
         containerStack.addArrangedSubview(infoContainer)
         containerStack.addArrangedSubview(countdownView)
@@ -80,7 +72,17 @@ class NextLaunchSectionView: UIView {
         infoContainer.addSubview(launchLabel)
         infoContainer.addSubview(rocketLabel)
         infoContainer.addSubview(launchpadLabel)
+    }
+    
+    private func configureViews() {
+        cardView.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(pressNextLaunch))
+        gesture.numberOfTapsRequired = 1
+        cardView.addGestureRecognizer(gesture)
         
+        cardView.backgroundColor = R.color.secondaryBackgroundColor()
+        cardView.layer.cornerRadius = 16
+        cardView.layer.masksToBounds = true
         self.isUserInteractionEnabled = true
         self.launchProvider.nextLaunchDelegate = self
     }
@@ -89,19 +91,19 @@ class NextLaunchSectionView: UIView {
         let margin: CGFloat = 16
         let padding: CGFloat = 16
         
-        card.anchor(
+        cardView.anchor(
             top: self.topAnchor,
             leading: self.leadingAnchor,
             bottom: self.bottomAnchor,
             trailing: self.trailingAnchor,
-            padding: .init(top: 0, left: margin, bottom: 0, right: margin)
+            padding: .init(top: margin, left: margin, bottom: 0, right: margin)
         )
         
         containerStack.anchor(
-            top: card.topAnchor,
-            leading: card.leadingAnchor,
-            bottom: card.bottomAnchor,
-            trailing: card.trailingAnchor,
+            top: cardView.topAnchor,
+            leading: cardView.leadingAnchor,
+            bottom: cardView.bottomAnchor,
+            trailing: cardView.trailingAnchor,
             padding: .init(top: padding, left: padding, bottom: padding, right: padding)
         )
         
@@ -124,68 +126,22 @@ class NextLaunchSectionView: UIView {
             bottom: infoContainer.bottomAnchor,
             padding: .init(top: padding / 4, left: 0, bottom: 0, right: 0)
         )
-    
     }
     
     //MARK: - Update Functions
     private func updateInformation() {
         if let fullLaunch = fullLaunch {
             launchLabel.text = fullLaunch.launch.name
-            rocketLabel.text = fullLaunch.rocket?.name ?? "Unknown"
-            launchpadLabel.text = fullLaunch.launchpad?.name ?? "Unknown"
+            rocketLabel.text = fullLaunch.rocket?.name ?? R.string.localizable.unknown()
+            launchpadLabel.text = fullLaunch.launchpad?.name ?? R.string.localizable.unknown()
             
             countdownView.launchDate = Dates.dateFromISO8601(fullLaunch.launch.dateUtc)
         }
-
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        highlighted = true
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        highlighted = false
-        //TODO: show next launch view
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        highlighted = false
-    }
-    
-    func animateHighlighted() {
-        if highlighted {
-            animating = true
-            pressViewAnimation { _ in
-                if !self.highlighted {
-                    self.releaseViewAnimation()
-                }
-                self.animating = false
-            }
-        } else {
-            if !animating {
-                releaseViewAnimation()
-            }
-        }
-    }
-    
-    private func pressViewAnimation(completion: ((Bool) -> Void)?) {
-        UIView.animate(
-            withDuration: 0.05,
-            delay: 0,
-            options: .curveEaseInOut,
-            animations: { self.transform = CGAffineTransform(scaleX: 0.975, y: 0.975) },
-            completion: completion
-        )
-    }
-    
-    private func releaseViewAnimation() {
-        UIView.animate(
-            withDuration: 0.05,
-            delay: 0,
-            options: .curveEaseInOut,
-            animations: { self.transform = CGAffineTransform.identity },
-            completion: nil
-        )
+    //MARK: - Interaction Functions
+    @objc private func pressNextLaunch() {
+        cardView.springAnimate()
     }
 }
 

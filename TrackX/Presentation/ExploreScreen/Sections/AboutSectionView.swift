@@ -10,11 +10,11 @@ import UIKit
 class AboutSectionView: UIView {
     
     //MARK: - Views
-    private let card = UIView()
+    private let cardView = UIView()
     
     private let aboutLabel: UILabel = {
         let label = UILabel()
-        label.text = "About"
+        label.text = R.string.localizable.about()
         label.font = R.font.archivoMedium(size: 20)
         label.textColor = R.color.textColor()
         return label
@@ -22,25 +22,16 @@ class AboutSectionView: UIView {
     
     private let aboutIcon: UIImageView = {
         let image = UIImage(systemSymbol: .infoCircleFill)
-        
         let imageView = UIImageView(image: image)
         imageView.tintColor = R.color.textColor()
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
-    //MARK: - Properties
-
-    var highlighted: Bool = false {
-        didSet {
-            animateHighlighted()
-        }
-    }
-    var animating: Bool = false
-    
     //MARK: - Initializers
     init() {
         super.init(frame: .zero)
+        addViews()
         configureViews()
         configureConstraints()
     }
@@ -50,23 +41,28 @@ class AboutSectionView: UIView {
     }
     
     //MARK: - Configuration Functions
+    private func addViews() {
+        addSubview(cardView)
+        cardView.addSubview(aboutLabel)
+        cardView.addSubview(aboutIcon)
+    }
+    
     private func configureViews() {
+        cardView.backgroundColor = R.color.secondaryBackgroundColor()
+        cardView.layer.cornerRadius = 16
+        cardView.layer.masksToBounds = true
+        
         self.isUserInteractionEnabled = true
-        
-        card.backgroundColor = R.color.secondaryBackgroundColor()
-        card.layer.cornerRadius = 16
-        card.layer.masksToBounds = true
-        
-        addSubview(card)
-        addSubview(aboutLabel)
-        addSubview(aboutIcon)
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(pressAbout))
+        gesture.numberOfTapsRequired = 1
+        self.addGestureRecognizer(gesture)
     }
     
     private func configureConstraints() {
         let margin: CGFloat = 16
         let padding: CGFloat = 16
         
-        card.anchor(
+        cardView.anchor(
             top: self.topAnchor,
             leading: self.leadingAnchor,
             bottom: self.bottomAnchor,
@@ -75,72 +71,23 @@ class AboutSectionView: UIView {
         )
         
         aboutLabel.anchor(
-            top: card.topAnchor,
-            leading: card.leadingAnchor,
-            bottom: card.bottomAnchor,
+            top: cardView.topAnchor,
+            leading: cardView.leadingAnchor,
+            bottom: cardView.bottomAnchor,
             padding: .init(top: padding, left: padding * 1.5, bottom: padding, right: 0)
         )
         
         aboutIcon.anchor(
-            top: card.topAnchor,
-            bottom: card.bottomAnchor,
-            trailing: card.trailingAnchor,
+            top: cardView.topAnchor,
+            bottom: cardView.bottomAnchor,
+            trailing: cardView.trailingAnchor,
             padding: .init(top: padding, left: padding, bottom: padding, right: padding * 1.5)
         )
     
     }
     
-    //MARK: - Update Functions
-    private func updateInformation() {
-        
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        highlighted = true
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        highlighted = false
-        //TODO: show next launch view
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        highlighted = false
-    }
-    
-    func animateHighlighted() {
-        if highlighted {
-            animating = true
-            pressViewAnimation { _ in
-                if !self.highlighted {
-                    self.releaseViewAnimation()
-                }
-                self.animating = false
-            }
-        } else {
-            if !animating {
-                releaseViewAnimation()
-            }
-        }
-    }
-    
-    private func pressViewAnimation(completion: ((Bool) -> Void)?) {
-        UIView.animate(
-            withDuration: 0.05,
-            delay: 0,
-            options: .curveEaseInOut,
-            animations: { self.transform = CGAffineTransform(scaleX: 0.975, y: 0.975) },
-            completion: completion
-        )
-    }
-    
-    private func releaseViewAnimation() {
-        UIView.animate(
-            withDuration: 0.05,
-            delay: 0,
-            options: .curveEaseInOut,
-            animations: { self.transform = CGAffineTransform.identity },
-            completion: nil
-        )
+    //MARK: - Interaction Functions
+    @objc private func pressAbout() {
+        self.springAnimate()
     }
 }

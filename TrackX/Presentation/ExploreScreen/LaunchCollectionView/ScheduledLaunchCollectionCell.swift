@@ -10,6 +10,7 @@ import UIKit
 class ScheduledLaunchCollectionCell: UICollectionViewCell {
     
     //MARK: - Views
+    private let cardView = UIView()
     private let nameLabel = AccentHeadingView(size: .h3, capsuleSize: 6)
     private let infoView = LaunchCellInfoView()
     
@@ -19,10 +20,11 @@ class ScheduledLaunchCollectionCell: UICollectionViewCell {
             updateViews()
         }
     }
-    
+
     //MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
+        addViews()
         configureViews()
         configureConstaints()
     }
@@ -32,40 +34,55 @@ class ScheduledLaunchCollectionCell: UICollectionViewCell {
     }
     
     //MARK: - Configuration Functions
+    func addViews() {
+        contentView.addSubview(cardView)
+        cardView.addSubview(nameLabel)
+        cardView.addSubview(infoView)
+    }
+    
     func configure(with fullLaunch: FullLaunch?) {
         self.fullLaunch = fullLaunch
         infoView.configure(with: fullLaunch)
     }
     
-    func configureViews() {
-        contentView.backgroundColor = R.color.secondaryBackgroundColor()
-        contentView.layer.cornerRadius = 16
-        contentView.layer.masksToBounds = true
+    private func configureViews() {
+        cardView.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(pressLaunch))
+        gesture.numberOfTapsRequired = 1
+        cardView.addGestureRecognizer(gesture)
         
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(infoView)
+        cardView.backgroundColor = R.color.secondaryBackgroundColor()
+        cardView.layer.cornerRadius = 16
+        cardView.layer.masksToBounds = true
     }
     
-    func configureConstaints() {
+    private func configureConstaints() {
+        cardView.anchor(to: contentView)
+        
         nameLabel.anchor(
-            top: contentView.topAnchor,
-            leading: contentView.leadingAnchor,
-            trailing: contentView.trailingAnchor,
+            top: cardView.topAnchor,
+            leading: cardView.leadingAnchor,
+            trailing: cardView.trailingAnchor,
             padding: .init(top: 16, left: 16, bottom: 0, right: 16)
         )
         
         infoView.anchor(
             top: nameLabel.bottomAnchor,
-            leading: contentView.leadingAnchor,
-            bottom: contentView.bottomAnchor,
-            trailing: contentView.trailingAnchor
+            leading: cardView.leadingAnchor,
+            bottom: cardView.bottomAnchor,
+            trailing: cardView.trailingAnchor
         )
     }
     
     //MARK: - Update Functions
-    func updateViews() {
+    private func updateViews() {
         if let fullLaunch = fullLaunch {
             nameLabel.text = fullLaunch.launch.name
         }
+    }
+    
+    //MARK: - Interaction Functions
+    @objc private func pressLaunch() {
+        cardView.springAnimate()
     }
 }

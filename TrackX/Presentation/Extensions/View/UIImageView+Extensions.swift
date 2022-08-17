@@ -42,7 +42,7 @@ extension UIImageView {
     }
     
     func imageFromFullLaunch(fullLaunch: FullLaunch?) {
-        let placeholder = R.image.placeholderImage()
+        let placeholder = R.image.placeholder()
         if let flickr = fullLaunch?.launch.links?.flickr?.original {
             if !flickr.isEmpty {
                 imageFromURL(flickr[0], placeHolder: placeholder)

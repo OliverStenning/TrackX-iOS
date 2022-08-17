@@ -157,7 +157,7 @@ class LaunchDetailViewController: UIViewController {
         if let imageUrl = fullLaunch?.getLaunchImageUrl() {
             cancellable = loadImage(for: imageUrl).sink { [unowned self] image in self.showImage(image: image)}
         } else {
-            showImage(image: R.image.placeholderImage())
+            showImage(image: R.image.placeholder())
         }
     }
     

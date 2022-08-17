@@ -23,6 +23,10 @@
 		F20D7CC928A9AEEA0002B5FE /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D7CC828A9AEEA0002B5FE /* UICollectionView+Extensions.swift */; };
 		F20D7CCC28AAE7300002B5FE /* SettingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D7CCB28AAE7300002B5FE /* SettingsSectionView.swift */; };
 		F20D7CCE28AAEAA90002B5FE /* AboutSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D7CCD28AAEAA90002B5FE /* AboutSectionView.swift */; };
+		F20D7CD028AAEE820002B5FE /* PhotoReelSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D7CCF28AAEE820002B5FE /* PhotoReelSectionView.swift */; };
+		F20D7CD328AAEFC20002B5FE /* PhotoCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D7CD228AAEFC20002B5FE /* PhotoCollectionDataSource.swift */; };
+		F20D7CD528AAEFDA0002B5FE /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D7CD428AAEFDA0002B5FE /* PhotoCollectionCell.swift */; };
+		F20D7CDA28AC64A10002B5FE /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D7CD928AC64A10002B5FE /* UIView+Animations.swift */; };
 		F215F5EC285E81BB006F67FC /* LaunchCellInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F5EB285E81BB006F67FC /* LaunchCellInfoView.swift */; };
 		F215F5EE285E85BC006F67FC /* LaunchCellNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F5ED285E85BC006F67FC /* LaunchCellNameView.swift */; };
 		F215F5F0285E8D9E006F67FC /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F5EF285E8D9E006F67FC /* StatusView.swift */; };
@@ -189,6 +193,10 @@
 		F20D7CC828A9AEEA0002B5FE /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		F20D7CCB28AAE7300002B5FE /* SettingsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSectionView.swift; sourceTree = "<group>"; };
 		F20D7CCD28AAEAA90002B5FE /* AboutSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSectionView.swift; sourceTree = "<group>"; };
+		F20D7CCF28AAEE820002B5FE /* PhotoReelSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoReelSectionView.swift; sourceTree = "<group>"; };
+		F20D7CD228AAEFC20002B5FE /* PhotoCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionDataSource.swift; sourceTree = "<group>"; };
+		F20D7CD428AAEFDA0002B5FE /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
+		F20D7CD928AC64A10002B5FE /* UIView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
 		F215F5EB285E81BB006F67FC /* LaunchCellInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCellInfoView.swift; sourceTree = "<group>"; };
 		F215F5ED285E85BC006F67FC /* LaunchCellNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCellNameView.swift; sourceTree = "<group>"; };
 		F215F5EF285E8D9E006F67FC /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
@@ -380,13 +388,31 @@
 			isa = PBXGroup;
 			children = (
 				F2AC1A6128A812020007F688 /* NextLaunchSectionView.swift */,
+				F20D7CCF28AAEE820002B5FE /* PhotoReelSectionView.swift */,
 				F2AC1A6328A818520007F688 /* ScheduledLaunchesSectionView.swift */,
 				F2AC1A6528A818720007F688 /* RecentLaunchesSectionView.swift */,
 				F2AC1A6728A8189B0007F688 /* RocketsSectionView.swift */,
-				F20D7CCB28AAE7300002B5FE /* SettingsSectionView.swift */,
 				F20D7CCD28AAEAA90002B5FE /* AboutSectionView.swift */,
+				F20D7CCB28AAE7300002B5FE /* SettingsSectionView.swift */,
 			);
 			path = Sections;
+			sourceTree = "<group>";
+		};
+		F20D7CD128AAEFA20002B5FE /* PhotoCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				F20D7CD228AAEFC20002B5FE /* PhotoCollectionDataSource.swift */,
+				F20D7CD428AAEFDA0002B5FE /* PhotoCollectionCell.swift */,
+			);
+			path = PhotoCollectionView;
+			sourceTree = "<group>";
+		};
+		F20D7CD828AC64940002B5FE /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				F20D7CD928AC64A10002B5FE /* UIView+Animations.swift */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		F215F5FB286347B9006F67FC /* Extensions */ = {
@@ -640,6 +666,7 @@
 			children = (
 				F2AC1A5B28A80CD90007F688 /* ExploreViewController.swift */,
 				F20D7CC328A96E210002B5FE /* Sections */,
+				F20D7CD128AAEFA20002B5FE /* PhotoCollectionView */,
 				F20D7CC228A96E0B0002B5FE /* LaunchCollectionView */,
 			);
 			path = ExploreScreen;
@@ -733,6 +760,7 @@
 		F2F093AD27EE2870005CCD09 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F20D7CD828AC64940002B5FE /* Animations */,
 				F2AC1A5A28A80CA80007F688 /* ExploreScreen */,
 				F215F5FB286347B9006F67FC /* Extensions */,
 				F2F2343C284FF68A00CAB70C /* Components */,
@@ -1040,9 +1068,11 @@
 			files = (
 				F2F0938027EE2818005CCD09 /* LaunchViewController.swift in Sources */,
 				F2396D4B2847A9A10084DF79 /* Launchpad.swift in Sources */,
+				F20D7CD328AAEFC20002B5FE /* PhotoCollectionDataSource.swift in Sources */,
 				F2F0937C27EE2818005CCD09 /* AppDelegate.swift in Sources */,
 				F2F2343B284D6A6500CAB70C /* StringFormatting.swift in Sources */,
 				F2F2344E2852968200CAB70C /* LaunchTablePrimaryCell.swift in Sources */,
+				F20D7CD528AAEFDA0002B5FE /* PhotoCollectionCell.swift in Sources */,
 				F254D45728579E8B0009A2A0 /* LaunchSectionStackView.swift in Sources */,
 				F20D7CBB28A915460002B5FE /* Dates.swift in Sources */,
 				F215F5FA28624644006F67FC /* AccentHeadingView.swift in Sources */,
@@ -1089,6 +1119,7 @@
 				F2F2345F285636EB00CAB70C /* GradientView.swift in Sources */,
 				F2396D3F28455C170084DF79 /* NetworkManager.swift in Sources */,
 				F215F5F6285F590E006F67FC /* PayloadsSectionStackView.swift in Sources */,
+				F20D7CD028AAEE820002B5FE /* PhotoReelSectionView.swift in Sources */,
 				F2F234522853A6F100CAB70C /* LaunchTableSectionHeader.swift in Sources */,
 				F2396D372845559A0084DF79 /* URLParameterEncoder.swift in Sources */,
 				F20D7CB728A85FD10002B5FE /* CountdownNumberView.swift in Sources */,
@@ -1115,6 +1146,7 @@
 				F215F610287B8EAC006F67FC /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				F20D7CC128A9692D0002B5FE /* LaunchCollectionDataSource.swift in Sources */,
 				F2F2345B2854D21D00CAB70C /* UILabel+Extensions.swift in Sources */,
+				F20D7CDA28AC64A10002B5FE /* UIView+Animations.swift in Sources */,
 				F2396D39284557100084DF79 /* JSONParameterEncoder.swift in Sources */,
 				F215F60C287B7DCC006F67FC /* Location.swift in Sources */,
 				F20D7CBD28A966FD0002B5FE /* RecentLaunchCollectionCell.swift in Sources */,

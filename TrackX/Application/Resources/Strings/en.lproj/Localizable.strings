@@ -15,3 +15,17 @@
 "Network Issue" = "Network Issue";
 "Unable to connect" = "Unable to connect to server. Check your network connection.";
 "Dismiss" = "Dismiss";
+
+
+// Section titles
+"Explore" = "Explore";
+"Latest Photos" = "Latest Photos";
+"Scheduled" = "Scheduled";
+"Recent" = "Recent";
+"Rockets" = "Rockets";
+"About" = "About";
+"Settings" = "Settings";
+
+"Show all" = "Show all";
+
+"Unknown" = "Unknown";
