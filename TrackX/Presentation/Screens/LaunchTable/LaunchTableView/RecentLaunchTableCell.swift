@@ -73,7 +73,7 @@ class RecentLaunchTableCell: LaunchTableCell {
     
     func configureConstaints() {
 
-        container.anchorSize(height: 200)
+//        container.anchorSize(height: 200)
         
         backgroundImage.anchor(to: container)
         

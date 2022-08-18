@@ -25,16 +25,11 @@ class RecentLaunchCollectionCell: UICollectionViewCell {
         return view
     }()
     
-    private let nameLabel = AccentHeadingView(size: .h3, capsuleSize: 6)
-    private let statusView = StatusView()
+    private let nameView = LaunchCellNameView()
     private let infoView = LaunchCellInfoView()
     
     //MARK: - Properties
-    private var fullLaunch: FullLaunch? {
-        didSet {
-            updateViews()
-        }
-    }
+    private var fullLaunch: FullLaunch? = nil
     
     private var cancellable: AnyCancellable?
     private var animator: UIViewPropertyAnimator?
@@ -65,14 +60,15 @@ class RecentLaunchCollectionCell: UICollectionViewCell {
         contentView.addSubview(cardView)
         cardView.addSubview(backgroundImage)
         cardView.addSubview(backgroundGradient)
-        cardView.addSubview(nameLabel)
-        cardView.addSubview(statusView)
+        cardView.addSubview(nameView)
         cardView.addSubview(infoView)
     }
     
     func configure(with fullLaunch: FullLaunch?) {
         self.fullLaunch = fullLaunch
+        nameView.configure(with: fullLaunch)
         infoView.configure(with: fullLaunch)
+        updateViews()
     }
     
     func configureViews() {
@@ -94,17 +90,10 @@ class RecentLaunchCollectionCell: UICollectionViewCell {
         backgroundImage.anchor(to: cardView)
         backgroundGradient.anchor(to: cardView)
         
-        nameLabel.anchor(
-            leading: cardView.leadingAnchor,
-            bottom: infoView.topAnchor,
-            trailing: cardView.trailingAnchor,
-            padding: .init(top: 0, left: 16, bottom: 0, right: 16)
-        )
-        
-        statusView.anchor(
+        nameView.anchor(
             top: cardView.topAnchor,
-            trailing: cardView.trailingAnchor,
-            padding: .init(top: 16, left: 0, bottom: 0, right: 16)
+            leading: cardView.leadingAnchor,
+            trailing: cardView.trailingAnchor
         )
         
         infoView.anchor(
@@ -116,22 +105,10 @@ class RecentLaunchCollectionCell: UICollectionViewCell {
     
     //MARK: - Update Functions
     func updateViews() {
-        if let fullLaunch = fullLaunch {
-            nameLabel.text = fullLaunch.launch.name
-            
-            if let imageUrl = fullLaunch.getLaunchImageUrl() {
-                cancellable = loadImage(for: imageUrl).sink { [unowned self] image in self.showImage(image: image)}
-            } else {
-                showImage(image: R.image.placeholder())
-            }
-            
-            if fullLaunch.launch.upcoming {
-                statusView.status = .scheduled
-            } else if fullLaunch.launch.success ?? false {
-                statusView.status = .success
-            } else {
-                statusView.status = .failed
-            }
+        if let imageUrl = fullLaunch?.getLaunchImageUrl() {
+            cancellable = loadImage(for: imageUrl).sink { [unowned self] image in self.showImage(image: image)}
+        } else {
+            showImage(image: R.image.placeholder())
         }
     }
 
