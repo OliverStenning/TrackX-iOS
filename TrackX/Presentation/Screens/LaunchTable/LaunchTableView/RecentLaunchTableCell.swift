@@ -72,11 +72,9 @@ class RecentLaunchTableCell: LaunchTableCell {
     }
     
     func configureConstaints() {
-
-//        container.anchorSize(height: 200)
+        container.anchorSize(height: 200)
         
         backgroundImage.anchor(to: container)
-        
         backgroundGradient.anchor(to: container)
         
         nameView.anchor(
@@ -90,7 +88,6 @@ class RecentLaunchTableCell: LaunchTableCell {
             bottom: container.bottomAnchor,
             trailing: container.trailingAnchor
         )
-        
     }
     
     //MARK: - Update Functions
