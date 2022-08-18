@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LaunchTableSecondaryCell: LaunchTableCell {
+class ScheduledLaunchTableCell: LaunchTableCell {
     
     //MARK: - Views
     private let nameView = LaunchCellNameView()

@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class LaunchTablePrimaryCell: LaunchTableCell {
+class RecentLaunchTableCell: LaunchTableCell {
     
     //MARK: - Views
     private let backgroundImage: UIImageView = {

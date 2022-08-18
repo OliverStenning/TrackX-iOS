@@ -8,8 +8,8 @@
 import UIKit
 
 struct LaunchCells {
-    static let launchCellPrimary = "LaunchCellPrimary"
-    static let launchCellSecondary = "LaunchCellSecondary"
+    static let recent = "LaunchCellPrimary"
+    static let scheduled = "LaunchCellSecondary"
 }
 
 struct LaunchTableData {
@@ -107,12 +107,12 @@ class LaunchTableDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 && indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: LaunchCells.launchCellPrimary, for: indexPath) as! LaunchTablePrimaryCell
+        if launchType == .recent || launchType == .all {
+            let cell = tableView.dequeueReusableCell(withIdentifier: LaunchCells.recent, for: indexPath) as! RecentLaunchTableCell
             cell.configure(with: launches[ascending ? ascendingLaunchIds[indexPath.section][indexPath.row] : descendingLaunchIds[indexPath.section][indexPath.row]])
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: LaunchCells.launchCellSecondary, for: indexPath) as! LaunchTableSecondaryCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: LaunchCells.scheduled, for: indexPath) as! ScheduledLaunchTableCell
             cell.configure(with: launches[ascending ? ascendingLaunchIds[indexPath.section][indexPath.row] : descendingLaunchIds[indexPath.section][indexPath.row]])
             return cell
         }

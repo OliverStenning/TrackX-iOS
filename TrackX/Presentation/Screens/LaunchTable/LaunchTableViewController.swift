@@ -32,8 +32,9 @@ class LaunchTableViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.backgroundColor = R.color.backgroundColor()
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-        tableView.register(LaunchTablePrimaryCell.self, forCellReuseIdentifier: LaunchCells.launchCellPrimary)
-        tableView.register(LaunchTableSecondaryCell.self, forCellReuseIdentifier: LaunchCells.launchCellSecondary)
+        tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+        tableView.register(RecentLaunchTableCell.self, forCellReuseIdentifier: LaunchCells.recent)
+        tableView.register(ScheduledLaunchTableCell.self, forCellReuseIdentifier: LaunchCells.scheduled)
         tableView.contentInsetAdjustmentBehavior = .never
         return tableView
     }()

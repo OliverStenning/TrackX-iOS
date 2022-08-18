@@ -139,12 +139,12 @@
 		F2F2343B284D6A6500CAB70C /* StringFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2343A284D6A6500CAB70C /* StringFormatting.swift */; };
 		F2F2343E284FF6AA00CAB70C /* NameValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2343D284FF6AA00CAB70C /* NameValueView.swift */; };
 		F2F234442850079A00CAB70C /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F234432850079A00CAB70C /* UIImageView+Extensions.swift */; };
-		F2F2344E2852968200CAB70C /* LaunchTablePrimaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2344D2852968200CAB70C /* LaunchTablePrimaryCell.swift */; };
+		F2F2344E2852968200CAB70C /* RecentLaunchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2344D2852968200CAB70C /* RecentLaunchTableCell.swift */; };
 		F2F234502853899C00CAB70C /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2344F2853899C00CAB70C /* Date+Extensions.swift */; };
 		F2F234522853A6F100CAB70C /* LaunchTableSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F234512853A6F100CAB70C /* LaunchTableSectionHeader.swift */; };
 		F2F2345B2854D21D00CAB70C /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2345A2854D21D00CAB70C /* UILabel+Extensions.swift */; };
 		F2F2345F285636EB00CAB70C /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2345E285636EB00CAB70C /* GradientView.swift */; };
-		F2F2346128563A2900CAB70C /* LaunchTableSecondaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2346028563A2900CAB70C /* LaunchTableSecondaryCell.swift */; };
+		F2F2346128563A2900CAB70C /* ScheduledLaunchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2346028563A2900CAB70C /* ScheduledLaunchTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -312,12 +312,12 @@
 		F2F2343A284D6A6500CAB70C /* StringFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatting.swift; sourceTree = "<group>"; };
 		F2F2343D284FF6AA00CAB70C /* NameValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameValueView.swift; sourceTree = "<group>"; };
 		F2F234432850079A00CAB70C /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
-		F2F2344D2852968200CAB70C /* LaunchTablePrimaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTablePrimaryCell.swift; sourceTree = "<group>"; };
+		F2F2344D2852968200CAB70C /* RecentLaunchTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentLaunchTableCell.swift; sourceTree = "<group>"; };
 		F2F2344F2853899C00CAB70C /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		F2F234512853A6F100CAB70C /* LaunchTableSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTableSectionHeader.swift; sourceTree = "<group>"; };
 		F2F2345A2854D21D00CAB70C /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		F2F2345E285636EB00CAB70C /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		F2F2346028563A2900CAB70C /* LaunchTableSecondaryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchTableSecondaryCell.swift; sourceTree = "<group>"; };
+		F2F2346028563A2900CAB70C /* ScheduledLaunchTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduledLaunchTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -661,9 +661,9 @@
 		F25B2DD728AED7C3000B110F /* LaunchTableView */ = {
 			isa = PBXGroup;
 			children = (
-				F2F2344D2852968200CAB70C /* LaunchTablePrimaryCell.swift */,
+				F2F2344D2852968200CAB70C /* RecentLaunchTableCell.swift */,
+				F2F2346028563A2900CAB70C /* ScheduledLaunchTableCell.swift */,
 				F215F5F1285F5646006F67FC /* LaunchTableCell.swift */,
-				F2F2346028563A2900CAB70C /* LaunchTableSecondaryCell.swift */,
 				F2F234512853A6F100CAB70C /* LaunchTableSectionHeader.swift */,
 				F2E2EC4528592EC500AF06CC /* LaunchTableDataSource.swift */,
 			);
@@ -1090,7 +1090,7 @@
 				F20D7CD328AAEFC20002B5FE /* PhotoCollectionDataSource.swift in Sources */,
 				F2F0937C27EE2818005CCD09 /* AppDelegate.swift in Sources */,
 				F2F2343B284D6A6500CAB70C /* StringFormatting.swift in Sources */,
-				F2F2344E2852968200CAB70C /* LaunchTablePrimaryCell.swift in Sources */,
+				F2F2344E2852968200CAB70C /* RecentLaunchTableCell.swift in Sources */,
 				F20D7CD528AAEFDA0002B5FE /* PhotoCollectionCell.swift in Sources */,
 				F254D45728579E8B0009A2A0 /* LaunchSectionStackView.swift in Sources */,
 				F20D7CBB28A915460002B5FE /* Dates.swift in Sources */,
@@ -1113,7 +1113,7 @@
 				F215F60A287B7C42006F67FC /* LocationsSectionStackView.swift in Sources */,
 				F2AC1A6828A8189B0007F688 /* RocketsSectionView.swift in Sources */,
 				F2F093B027EE2BBF005CCD09 /* UIView+Extensions.swift in Sources */,
-				F2F2346128563A2900CAB70C /* LaunchTableSecondaryCell.swift in Sources */,
+				F2F2346128563A2900CAB70C /* ScheduledLaunchTableCell.swift in Sources */,
 				F215F60628634C7D006F67FC /* ImageLoader.swift in Sources */,
 				F2396D472847A9770084DF79 /* LaunchpadEndpoint.swift in Sources */,
 				F2F0937E27EE2818005CCD09 /* SceneDelegate.swift in Sources */,
