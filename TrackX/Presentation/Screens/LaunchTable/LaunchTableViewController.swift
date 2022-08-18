@@ -1,28 +1,20 @@
 //
-//  LaunchViewController.swift
+//  LaunchTableViewController.swift
 //  TrackX
 //
-//  Created by Oliver Stenning on 25/03/2022.
+//  Created by Oliver Stenning on 18/08/2022.
 //
 
 import UIKit
 import SFSafeSymbols
 
-class LaunchViewController: UIViewController {
+class LaunchTableViewController: UIViewController {
     
     // MARK: - Views
-    let searchBar: UISearchBar = {
-        let searchBar = UISearchBar()
-        searchBar.searchBarStyle = .minimal
-        searchBar.placeholder = R.string.localizable.searchLaunches()
-        searchBar.searchTextField.font = R.font.archivoMedium(size: 16)
-        return searchBar
-    }()
-
     let launchTableControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: [
-            R.string.localizable.previous(),
-            R.string.localizable.upcoming(),
+            R.string.localizable.scheduled(),
+            R.string.localizable.recent(),
             R.string.localizable.all()
         ])
         segmentedControl.selectedSegmentIndex = 0
@@ -46,28 +38,26 @@ class LaunchViewController: UIViewController {
         return tableView
     }()
     
-    let launchRefreshControl: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = R.color.accentColor()
-        refreshControl.addTarget(nil, action: #selector(refreshLaunches(_:)), for: .valueChanged)
-        return refreshControl
-    }()
-    
     // MARK: - Properties
-    var previousDataSource: LaunchTableDataSource?
-    var upcomingDataSource: LaunchTableDataSource?
+    var recentDataSource: LaunchTableDataSource?
+    var scheduledDataSource: LaunchTableDataSource?
     var allDataSource: LaunchTableDataSource?
     
-    var networkManager: NetworkManager!
     var launchProvider: LaunchProvider
     
     // MARK: - Initializers
-    init(networkManager: NetworkManager) {
-        self.networkManager = networkManager
-        self.launchProvider = LaunchProvider(networkManager: networkManager)
+    init(launchProvider: LaunchProvider, launchType: LaunchType) {
+        self.launchProvider = launchProvider
+        switch launchType {
+            case .scheduled:
+                launchTableControl.selectedSegmentIndex = 0
+            case .recent:
+                launchTableControl.selectedSegmentIndex = 1
+            case .all:
+                launchTableControl.selectedSegmentIndex = 2
+        }
         super.init(nibName: nil, bundle: nil)
-        
-        launchProvider.launchProviderDelegate = self
+        launchProvider.launchTableDelegate = self
     }
     
     @available(*, unavailable)
@@ -78,9 +68,10 @@ class LaunchViewController: UIViewController {
     // MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        addViews()
         configureViews()
         configureConstraints()
-        launchProvider.fetchLaunchListData()
+        launchProvider.fetchLaunchTableData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,17 +82,14 @@ class LaunchViewController: UIViewController {
     }
     
     // MARK: - Configuration Functions
+    private func addViews() {
+        view.addSubview(launchTableView)
+        view.addSubview(launchTableControl)
+    }
+    
     func configureViews() {
+        title = R.string.localizable.launches()
         view.backgroundColor = R.color.backgroundColor()
-        
-        let titleContainer = UIView()
-        let titleImage = R.image.title()
-        let titleImageView = UIImageView(image: titleImage)
-        titleContainer.addSubview(titleImageView)
-        titleImageView.anchorSize(height: 30, width: 100)
-        titleImageView.anchor(to: titleContainer, padding: .init(top: 0, left: 0, bottom: 8, right: 0))
-        titleImageView.contentMode = .scaleAspectFit
-        self.navigationItem.titleView = titleContainer
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(systemSymbol: .arrowUpArrowDown),
@@ -111,12 +99,6 @@ class LaunchViewController: UIViewController {
         )
     
         launchTableView.delegate = self
-        
-        view.addSubview(searchBar)
-        view.addSubview(launchTableView)
-        view.addSubview(launchTableControl)
-        launchTableView.refreshControl = launchRefreshControl
-
     }
     
     func configureConstraints() {
@@ -128,14 +110,6 @@ class LaunchViewController: UIViewController {
         )
         launchTableControl.anchorSize(height: 36)
         
-        // Disable search bar
-//       searchBar.anchor(
-//           top: view.layoutMarginsGuide.topAnchor,
-//           leading: view.layoutMarginsGuide.leadingAnchor,
-//           trailing: view.layoutMarginsGuide.trailingAnchor,
-//           padding: .init(top: 0, left: -8, bottom: 0, right: -8)
-//       )
-
         launchTableView.anchor(
             top: view.layoutMarginsGuide.topAnchor,
             leading: view.leadingAnchor,
@@ -147,10 +121,10 @@ class LaunchViewController: UIViewController {
     
     func getCurrentTableSource() -> LaunchTableDataSource? {
         switch launchTableControl.selectedSegmentIndex {
-            case 0: return previousDataSource
-            case 1: return upcomingDataSource
+            case 0: return scheduledDataSource
+            case 1: return recentDataSource
             case 2: return allDataSource
-            default: return previousDataSource
+            default: return scheduledDataSource
         }
     }
 
@@ -163,10 +137,6 @@ class LaunchViewController: UIViewController {
         }
     }
     
-    @objc func refreshLaunches(_ sender: Any) {
-        launchProvider.fetchLaunchListData()
-    }
-    
     @objc func toggleAscending() {
         let tableSource = getCurrentTableSource()
         tableSource?.ascending.toggle()
@@ -175,7 +145,7 @@ class LaunchViewController: UIViewController {
 }
 
 // MARK: - Launch Table View Delegate
-extension LaunchViewController: UITableViewDelegate {
+extension LaunchTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let dataSource = getCurrentTableSource() else { return }
         guard let fullLaunch = dataSource.launch(section: indexPath.section, row: indexPath.row) else { return }
@@ -191,13 +161,13 @@ extension LaunchViewController: UITableViewDelegate {
 }
 
 // MARK: - Launch Provider Delegate
-extension LaunchViewController: LaunchProviderDelegate {
-    func launchProvider(_ provider: LaunchProvider, previousLaunchesUpdate: LaunchTableData) {
-        previousDataSource = LaunchTableDataSource(launchType: .recent, launchTableData: previousLaunchesUpdate, ascending: false)
+extension LaunchTableViewController: LaunchTableDelegate {
+    func launchProvider(_ provider: LaunchProvider, scheduledLaunchesUpdate: LaunchTableData) {
+        scheduledDataSource = LaunchTableDataSource(launchType: .scheduled, launchTableData: scheduledLaunchesUpdate, ascending: true)
     }
     
-    func launchProvider(_ provider: LaunchProvider, upcomingLaunchesUpdate: LaunchTableData) {
-        upcomingDataSource = LaunchTableDataSource(launchType: .scheduled, launchTableData: upcomingLaunchesUpdate, ascending: true)
+    func launchProvider(_ provider: LaunchProvider, recentLaunchesUpdate: LaunchTableData) {
+        recentDataSource = LaunchTableDataSource(launchType: .recent, launchTableData: recentLaunchesUpdate, ascending: false)
     }
     
     func launchProvider(_ provider: LaunchProvider, allLaunchesUpdate: LaunchTableData) {
@@ -206,7 +176,6 @@ extension LaunchViewController: LaunchProviderDelegate {
     
     func launchProvider(_ provider: LaunchProvider, dataWasUpdated: Bool) {
         switchLaunchTable()
-        launchRefreshControl.endRefreshing()
     }
     
     func launchProvider(_ provider: LaunchProvider, dataFailedToUpDate: String) {
@@ -217,7 +186,6 @@ extension LaunchViewController: LaunchProviderDelegate {
         )
         ac.addAction(UIAlertAction(title: R.string.localizable.dismiss(), style: .cancel))
         present(ac, animated: true)
-        
-        launchRefreshControl.endRefreshing()
     }
 }
+

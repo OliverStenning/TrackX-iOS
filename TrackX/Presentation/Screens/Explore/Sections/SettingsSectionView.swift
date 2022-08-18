@@ -1,27 +1,28 @@
 //
-//  AboutSectionView.swift
+//  SettingsSectionView.swift
 //  TrackX
 //
 //  Created by Oliver Stenning on 15/08/2022.
 //
 
 import UIKit
+import SFSafeSymbols
 
-class AboutSectionView: UIView {
+class SettingsSectionView: UIView {
     
     //MARK: - Views
     private let cardView = UIView()
     
-    private let aboutLabel: UILabel = {
+    private let settingsLabel: UILabel = {
         let label = UILabel()
-        label.text = R.string.localizable.about()
+        label.text = R.string.localizable.settings()
         label.font = R.font.archivoMedium(size: 20)
         label.textColor = R.color.textColor()
         return label
     }()
     
-    private let aboutIcon: UIImageView = {
-        let image = UIImage(systemSymbol: .infoCircleFill)
+    private let settingsIcon: UIImageView = {
+        let image = UIImage(systemSymbol: .gearshapeFill)
         let imageView = UIImageView(image: image)
         imageView.tintColor = R.color.textColor()
         imageView.contentMode = .scaleAspectFill
@@ -43,8 +44,8 @@ class AboutSectionView: UIView {
     //MARK: - Configuration Functions
     private func addViews() {
         addSubview(cardView)
-        cardView.addSubview(aboutLabel)
-        cardView.addSubview(aboutIcon)
+        addSubview(settingsLabel)
+        addSubview(settingsIcon)
     }
     
     private func configureViews() {
@@ -53,7 +54,7 @@ class AboutSectionView: UIView {
         cardView.layer.masksToBounds = true
         
         isUserInteractionEnabled = true
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(pressAbout))
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(pressSettings))
         gesture.numberOfTapsRequired = 1
         addGestureRecognizer(gesture)
     }
@@ -61,7 +62,7 @@ class AboutSectionView: UIView {
     private func configureConstraints() {
         let margin: CGFloat = 16
         let padding: CGFloat = 16
-        
+
         cardView.anchor(
             top: topAnchor,
             leading: leadingAnchor,
@@ -70,24 +71,24 @@ class AboutSectionView: UIView {
             padding: .init(top: 0, left: margin, bottom: 0, right: margin)
         )
         
-        aboutLabel.anchor(
+        settingsLabel.anchor(
             top: cardView.topAnchor,
             leading: cardView.leadingAnchor,
             bottom: cardView.bottomAnchor,
             padding: .init(top: padding, left: padding * 1.5, bottom: padding, right: 0)
         )
-        
-        aboutIcon.anchor(
+
+        settingsIcon.anchor(
             top: cardView.topAnchor,
             bottom: cardView.bottomAnchor,
             trailing: cardView.trailingAnchor,
             padding: .init(top: padding, left: padding, bottom: padding, right: padding * 1.5)
         )
-    
     }
-    
+
     //MARK: - Interaction Functions
-    @objc private func pressAbout() {
+    @objc private func pressSettings() {
+        //TODO: add settings view
         springAnimate()
     }
 }

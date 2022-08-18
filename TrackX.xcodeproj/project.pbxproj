@@ -89,7 +89,6 @@
 		F2396D572847AB090084DF79 /* CapsuleEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D562847AB090084DF79 /* CapsuleEndpoint.swift */; };
 		F2396D592847AB170084DF79 /* PayloadEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D582847AB170084DF79 /* PayloadEndpoint.swift */; };
 		F2396D5B2848DE550084DF79 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D5A2848DE550084DF79 /* NetworkLogger.swift */; };
-		F23BAD8F28A4361500BCFC8F /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23BAD8E28A4361500BCFC8F /* R.generated.swift */; };
 		F23BADA728A4412F00BCFC8F /* Archivo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BAD9528A4412E00BCFC8F /* Archivo-Bold.ttf */; };
 		F23BADAC28A4412F00BCFC8F /* Archivo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BAD9A28A4412E00BCFC8F /* Archivo-SemiBold.ttf */; };
 		F23BADAD28A4412F00BCFC8F /* Archivo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BAD9B28A4412E00BCFC8F /* Archivo-Regular.ttf */; };
@@ -114,6 +113,8 @@
 		F254D45728579E8B0009A2A0 /* LaunchSectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D45628579E8B0009A2A0 /* LaunchSectionStackView.swift */; };
 		F254D4592857A19B0009A2A0 /* LaunchpadSectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D4582857A19B0009A2A0 /* LaunchpadSectionStackView.swift */; };
 		F254D45E2857C9660009A2A0 /* LaunchProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D45D2857C9660009A2A0 /* LaunchProvider.swift */; };
+		F25B2DD528AED03D000B110F /* LaunchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B2DD428AED03D000B110F /* LaunchTableViewController.swift */; };
+		F25B2DDA28AEDBF3000B110F /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B2DD928AEDBF3000B110F /* R.generated.swift */; };
 		F26CBE872880E6F700D2DFDC /* StringFormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26CBE862880E6F700D2DFDC /* StringFormattingTests.swift */; };
 		F2AC1A5C28A80CD90007F688 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC1A5B28A80CD90007F688 /* ExploreViewController.swift */; };
 		F2AC1A6428A818520007F688 /* ScheduledLaunchesSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC1A6328A818520007F688 /* ScheduledLaunchesSectionView.swift */; };
@@ -131,7 +132,6 @@
 		F2E2EC482859327D00AF06CC /* FullLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2EC472859327D00AF06CC /* FullLaunch.swift */; };
 		F2F0937C27EE2818005CCD09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0937B27EE2818005CCD09 /* AppDelegate.swift */; };
 		F2F0937E27EE2818005CCD09 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0937D27EE2818005CCD09 /* SceneDelegate.swift */; };
-		F2F0938027EE2818005CCD09 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0937F27EE2818005CCD09 /* LaunchViewController.swift */; };
 		F2F0938527EE2819005CCD09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F0938427EE2819005CCD09 /* Assets.xcassets */; };
 		F2F0938827EE2819005CCD09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2F0938627EE2819005CCD09 /* LaunchScreen.storyboard */; };
 		F2F093B027EE2BBF005CCD09 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F093AF27EE2BBF005CCD09 /* UIView+Extensions.swift */; };
@@ -171,7 +171,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		093E2BD26BC9C32C178E0C5B /* Pods-TrackX CountdownExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackX CountdownExtension.release.xcconfig"; path = "Target Support Files/Pods-TrackX CountdownExtension/Pods-TrackX CountdownExtension.release.xcconfig"; sourceTree = "<group>"; };
 		14409D396F8773A2E0919CC0 /* NextLaunchSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextLaunchSectionView.swift; sourceTree = "<group>"; };
 		4719AFCAC3DC93D4E00FD535 /* Pods-TrackX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackX.debug.xcconfig"; path = "Target Support Files/Pods-TrackX/Pods-TrackX.debug.xcconfig"; sourceTree = "<group>"; };
 		55BECBF55560EC464392D443 /* Pods-TrackXTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackXTests.release.xcconfig"; path = "Target Support Files/Pods-TrackXTests/Pods-TrackXTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -259,7 +258,6 @@
 		F2396D562847AB090084DF79 /* CapsuleEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleEndpoint.swift; sourceTree = "<group>"; };
 		F2396D582847AB170084DF79 /* PayloadEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadEndpoint.swift; sourceTree = "<group>"; };
 		F2396D5A2848DE550084DF79 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
-		F23BAD8E28A4361500BCFC8F /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		F23BAD9528A4412E00BCFC8F /* Archivo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archivo-Bold.ttf"; sourceTree = "<group>"; };
 		F23BAD9A28A4412E00BCFC8F /* Archivo-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archivo-SemiBold.ttf"; sourceTree = "<group>"; };
 		F23BAD9B28A4412E00BCFC8F /* Archivo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archivo-Regular.ttf"; sourceTree = "<group>"; };
@@ -283,6 +281,8 @@
 		F254D45628579E8B0009A2A0 /* LaunchSectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSectionStackView.swift; sourceTree = "<group>"; };
 		F254D4582857A19B0009A2A0 /* LaunchpadSectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadSectionStackView.swift; sourceTree = "<group>"; };
 		F254D45D2857C9660009A2A0 /* LaunchProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchProvider.swift; sourceTree = "<group>"; };
+		F25B2DD428AED03D000B110F /* LaunchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTableViewController.swift; sourceTree = "<group>"; };
+		F25B2DD928AEDBF3000B110F /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		F26CBE862880E6F700D2DFDC /* StringFormattingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormattingTests.swift; sourceTree = "<group>"; };
 		F2AC1A5B28A80CD90007F688 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		F2AC1A6328A818520007F688 /* ScheduledLaunchesSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledLaunchesSectionView.swift; sourceTree = "<group>"; };
@@ -303,7 +303,6 @@
 		F2F0937827EE2818005CCD09 /* TrackX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F0937B27EE2818005CCD09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2F0937D27EE2818005CCD09 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F2F0937F27EE2818005CCD09 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		F2F0938427EE2819005CCD09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2F0938727EE2819005CCD09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2F0938927EE2819005CCD09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -319,7 +318,6 @@
 		F2F2345A2854D21D00CAB70C /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		F2F2345E285636EB00CAB70C /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		F2F2346028563A2900CAB70C /* LaunchTableSecondaryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchTableSecondaryCell.swift; sourceTree = "<group>"; };
-		FBB9AA3694B4D9DD890A8EAE /* Pods-TrackX CountdownExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackX CountdownExtension.debug.xcconfig"; path = "Target Support Files/Pods-TrackX CountdownExtension/Pods-TrackX CountdownExtension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,8 +346,6 @@
 			children = (
 				4719AFCAC3DC93D4E00FD535 /* Pods-TrackX.debug.xcconfig */,
 				60EE7B0CC467C0220CDD1648 /* Pods-TrackX.release.xcconfig */,
-				FBB9AA3694B4D9DD890A8EAE /* Pods-TrackX CountdownExtension.debug.xcconfig */,
-				093E2BD26BC9C32C178E0C5B /* Pods-TrackX CountdownExtension.release.xcconfig */,
 				750728B4507FC30962E611C4 /* Pods-TrackXTests.debug.xcconfig */,
 				55BECBF55560EC464392D443 /* Pods-TrackXTests.release.xcconfig */,
 			);
@@ -604,20 +600,6 @@
 			path = Strings;
 			sourceTree = "<group>";
 		};
-		F254D452285790720009A2A0 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				F2F2344D2852968200CAB70C /* LaunchTablePrimaryCell.swift */,
-				F2F2346028563A2900CAB70C /* LaunchTableSecondaryCell.swift */,
-				F2F234512853A6F100CAB70C /* LaunchTableSectionHeader.swift */,
-				F2E2EC4528592EC500AF06CC /* LaunchTableDataSource.swift */,
-				F215F5EB285E81BB006F67FC /* LaunchCellInfoView.swift */,
-				F215F5ED285E85BC006F67FC /* LaunchCellNameView.swift */,
-				F215F5F1285F5646006F67FC /* LaunchTableCell.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		F254D45C2857C9560009A2A0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -628,29 +610,79 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		F254D4612857CB1E0009A2A0 /* LaunchDetailsScreen */ = {
+		F254D4612857CB1E0009A2A0 /* LaunchDetails */ = {
 			isa = PBXGroup;
 			children = (
 				F2396D262844060E0084DF79 /* LaunchDetailViewController.swift */,
+				F25B2DD828AED86D000B110F /* Sections */,
 				F254D4622857CB2C0009A2A0 /* Components */,
 			);
-			path = LaunchDetailsScreen;
+			path = LaunchDetails;
 			sourceTree = "<group>";
 		};
 		F254D4622857CB2C0009A2A0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F215F60728651CB6006F67FC /* CoreCellView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F25B2DD228AECF6D000B110F /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				F2F0938627EE2819005CCD09 /* LaunchScreen.storyboard */,
+				F2AC1A5A28A80CA80007F688 /* Explore */,
+				F25B2DD328AED01C000B110F /* LaunchTable */,
+				F254D4612857CB1E0009A2A0 /* LaunchDetails */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		F25B2DD328AED01C000B110F /* LaunchTable */ = {
+			isa = PBXGroup;
+			children = (
+				F25B2DD428AED03D000B110F /* LaunchTableViewController.swift */,
+				F25B2DD728AED7C3000B110F /* LaunchTableView */,
+				F25B2DD628AED77F000B110F /* Components */,
+			);
+			path = LaunchTable;
+			sourceTree = "<group>";
+		};
+		F25B2DD628AED77F000B110F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F215F5EB285E81BB006F67FC /* LaunchCellInfoView.swift */,
+				F215F5ED285E85BC006F67FC /* LaunchCellNameView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F25B2DD728AED7C3000B110F /* LaunchTableView */ = {
+			isa = PBXGroup;
+			children = (
+				F2F2344D2852968200CAB70C /* LaunchTablePrimaryCell.swift */,
+				F215F5F1285F5646006F67FC /* LaunchTableCell.swift */,
+				F2F2346028563A2900CAB70C /* LaunchTableSecondaryCell.swift */,
+				F2F234512853A6F100CAB70C /* LaunchTableSectionHeader.swift */,
+				F2E2EC4528592EC500AF06CC /* LaunchTableDataSource.swift */,
+			);
+			path = LaunchTableView;
+			sourceTree = "<group>";
+		};
+		F25B2DD828AED86D000B110F /* Sections */ = {
 			isa = PBXGroup;
 			children = (
 				F215F5F7285F5970006F67FC /* CapsuleSectionStackView.swift */,
 				F215F5F3285F5877006F67FC /* CoresSectionStackView.swift */,
 				F254D4582857A19B0009A2A0 /* LaunchpadSectionStackView.swift */,
 				F254D45628579E8B0009A2A0 /* LaunchSectionStackView.swift */,
+				F215F611287C3835006F67FC /* LinksSectionStackView.swift */,
+				F215F609287B7C42006F67FC /* LocationsSectionStackView.swift */,
 				F215F5F5285F590E006F67FC /* PayloadsSectionStackView.swift */,
 				F254D454285792160009A2A0 /* RocketSectionStackView.swift */,
-				F215F60728651CB6006F67FC /* CoreCellView.swift */,
-				F215F609287B7C42006F67FC /* LocationsSectionStackView.swift */,
-				F215F611287C3835006F67FC /* LinksSectionStackView.swift */,
 			);
-			path = Components;
+			path = Sections;
 			sourceTree = "<group>";
 		};
 		F26CBE852880E66D00D2DFDC /* Data */ = {
@@ -661,7 +693,7 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		F2AC1A5A28A80CA80007F688 /* ExploreScreen */ = {
+		F2AC1A5A28A80CA80007F688 /* Explore */ = {
 			isa = PBXGroup;
 			children = (
 				F2AC1A5B28A80CD90007F688 /* ExploreViewController.swift */,
@@ -669,7 +701,7 @@
 				F20D7CD128AAEFA20002B5FE /* PhotoCollectionView */,
 				F20D7CC228A96E0B0002B5FE /* LaunchCollectionView */,
 			);
-			path = ExploreScreen;
+			path = Explore;
 			sourceTree = "<group>";
 		};
 		F2E2EC4B285CF06C00AF06CC /* Providers */ = {
@@ -695,11 +727,11 @@
 		F2F0936F27EE2817005CCD09 = {
 			isa = PBXGroup;
 			children = (
+				F2F0937A27EE2818005CCD09 /* TrackX */,
+				F2F0939127EE2819005CCD09 /* TrackXTests */,
 				F215F615287C865A006F67FC /* Screenshots */,
 				F2E63E0C289B0E7F005C6E8B /* Frameworks */,
 				F2F0937927EE2818005CCD09 /* Products */,
-				F2F0937A27EE2818005CCD09 /* TrackX */,
-				F2F0939127EE2819005CCD09 /* TrackXTests */,
 				AF8DEEEE8F947D9F39DFC1DA /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -720,6 +752,7 @@
 				F254D45C2857C9560009A2A0 /* Data */,
 				F2396D28284552270084DF79 /* Networking */,
 				F2F093AD27EE2870005CCD09 /* Presentation */,
+				F2F093AC27EE2833005CCD09 /* Resources */,
 				F2F093AE27EE2B9C005CCD09 /* Utilities */,
 			);
 			path = TrackX;
@@ -738,9 +771,9 @@
 		F2F093AB27EE2829005CCD09 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				F2F0938927EE2819005CCD09 /* Info.plist */,
 				F2F0937B27EE2818005CCD09 /* AppDelegate.swift */,
 				F2F0937D27EE2818005CCD09 /* SceneDelegate.swift */,
-				F2F093AC27EE2833005CCD09 /* Resources */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -748,8 +781,7 @@
 		F2F093AC27EE2833005CCD09 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F2F0938927EE2819005CCD09 /* Info.plist */,
-				F23BAD8E28A4361500BCFC8F /* R.generated.swift */,
+				F25B2DD928AEDBF3000B110F /* R.generated.swift */,
 				F2F0938427EE2819005CCD09 /* Assets.xcassets */,
 				F2F234552853E66000CAB70C /* Fonts */,
 				F23BADC728A450C000BCFC8F /* Strings */,
@@ -761,12 +793,9 @@
 			isa = PBXGroup;
 			children = (
 				F20D7CD828AC64940002B5FE /* Animations */,
-				F2AC1A5A28A80CA80007F688 /* ExploreScreen */,
-				F215F5FB286347B9006F67FC /* Extensions */,
 				F2F2343C284FF68A00CAB70C /* Components */,
-				F254D4612857CB1E0009A2A0 /* LaunchDetailsScreen */,
-				F2F093B727EE34B5005CCD09 /* LaunchesScreen */,
-				F2F0938627EE2819005CCD09 /* LaunchScreen.storyboard */,
+				F215F5FB286347B9006F67FC /* Extensions */,
+				F25B2DD228AECF6D000B110F /* Screens */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -796,15 +825,6 @@
 				F2396D442846BADD0084DF79 /* Rocket.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		F2F093B727EE34B5005CCD09 /* LaunchesScreen */ = {
-			isa = PBXGroup;
-			children = (
-				F2F0937F27EE2818005CCD09 /* LaunchViewController.swift */,
-				F254D452285790720009A2A0 /* Components */,
-			);
-			path = LaunchesScreen;
 			sourceTree = "<group>";
 		};
 		F2F2343C284FF68A00CAB70C /* Components */ = {
@@ -1053,11 +1073,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/TrackX/Application/Resources/R.generated.swift,
+				$SRCROOT/TrackX/Resources/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/TrackX/Application/Resources/R.generated.swift\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/TrackX/Resources/R.generated.swift\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1066,7 +1086,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2F0938027EE2818005CCD09 /* LaunchViewController.swift in Sources */,
 				F2396D4B2847A9A10084DF79 /* Launchpad.swift in Sources */,
 				F20D7CD328AAEFC20002B5FE /* PhotoCollectionDataSource.swift in Sources */,
 				F2F0937C27EE2818005CCD09 /* AppDelegate.swift in Sources */,
@@ -1109,6 +1128,7 @@
 				F2396D4D2847A9A90084DF79 /* Landpad.swift in Sources */,
 				F254D4592857A19B0009A2A0 /* LaunchpadSectionStackView.swift in Sources */,
 				F2AC1A6428A818520007F688 /* ScheduledLaunchesSectionView.swift in Sources */,
+				F25B2DDA28AEDBF3000B110F /* R.generated.swift in Sources */,
 				F2396D4F2847A9C40084DF79 /* Core.swift in Sources */,
 				F215F5FF2863480A006F67FC /* UIImage+Extensions.swift in Sources */,
 				F2396D35284553E00084DF79 /* ParameterEncoding.swift in Sources */,
@@ -1127,13 +1147,13 @@
 				F2396D332845531C0084DF79 /* HTTPTask.swift in Sources */,
 				F20D7CBF28A9671A0002B5FE /* ScheduledLaunchCollectionCell.swift in Sources */,
 				F2396D5B2848DE550084DF79 /* NetworkLogger.swift in Sources */,
+				F25B2DD528AED03D000B110F /* LaunchTableViewController.swift in Sources */,
 				F20D7CC928A9AEEA0002B5FE /* UICollectionView+Extensions.swift in Sources */,
 				F215F62D287E1C1F006F67FC /* Arrays.swift in Sources */,
 				F215F60E287B84AB006F67FC /* MKMapView+Extensions.swift in Sources */,
 				F215F5EC285E81BB006F67FC /* LaunchCellInfoView.swift in Sources */,
 				F2396D592847AB170084DF79 /* PayloadEndpoint.swift in Sources */,
 				F2396D532847AA1C0084DF79 /* Payload.swift in Sources */,
-				F23BAD8F28A4361500BCFC8F /* R.generated.swift in Sources */,
 				F215F5F2285F5646006F67FC /* LaunchTableCell.swift in Sources */,
 				F215F5EE285E85BC006F67FC /* LaunchCellNameView.swift in Sources */,
 				F254D45128578DDB0009A2A0 /* BodyLabel.swift in Sources */,
@@ -1326,7 +1346,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 36LYYU944F;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TrackX/Application/Resources/Info.plist;
+				INFOPLIST_FILE = TrackX/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1357,7 +1377,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 36LYYU944F;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TrackX/Application/Resources/Info.plist;
+				INFOPLIST_FILE = TrackX/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

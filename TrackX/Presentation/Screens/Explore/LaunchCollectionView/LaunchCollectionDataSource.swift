@@ -47,9 +47,3 @@ class LaunchCollectionDataSource: NSObject, UICollectionViewDataSource {
         }
     }
 }
-
-extension LaunchCollectionDataSource: UICollectionViewDelegate {
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Test datasource")
-    }
-}

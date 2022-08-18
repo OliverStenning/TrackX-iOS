@@ -6,26 +6,17 @@
   
 */
 
-"Launches" = "Launches";
-"Search launches" = "Search launches";
-"Previous" = "Previous";
-"Upcoming" = "Upcoming";
-"All" = "All";
-
-"Network Issue" = "Network Issue";
-"Unable to connect" = "Unable to connect to server. Check your network connection.";
-"Dismiss" = "Dismiss";
-
-
-// Section titles
 "Explore" = "Explore";
 "Latest Photos" = "Latest Photos";
 "Scheduled" = "Scheduled";
 "Recent" = "Recent";
+"All" = "All";
 "Rockets" = "Rockets";
 "About" = "About";
 "Settings" = "Settings";
-
 "Show all" = "Show all";
-
 "Unknown" = "Unknown";
+"Launches" = "Launches";
+"Network Issue" = "Network Issue";
+"Unable to connect" = "Unable to connect to server. Check your network connection.";
+"Dismiss" = "Dismiss";

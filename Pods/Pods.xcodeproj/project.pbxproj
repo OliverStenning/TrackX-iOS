@@ -33,18 +33,15 @@
 		3BD2824D2A244C6A2A28D54041CD971F /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359026B50A492293E841255D41FD6D95 /* ReuseIdentifierProtocol.swift */; };
 		3FF99FA666CEA41A2C5D17C05A106C15 /* NibResource+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C2DA649054F688A973AD3589DD5DE8 /* NibResource+UIKit.swift */; };
 		45D29014FD96DF5AA20FEC3A14D6A022 /* UIColor+ColorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798E4B9E98B7FDCAE5F93129E9F5C024 /* UIColor+ColorResource.swift */; };
-		51B5A5F5775D963B3B11315F87F94D50 /* Pods-TrackX-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D231CA3E8A59F3DC2DC48C05AC9DED9D /* Pods-TrackX-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		51B5A5F5775D963B3B11315F87F94D50 /* Pods-TrackX-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AB7750A4061C8E6565751F0AA459C98 /* Pods-TrackX-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60DE480E22296CAFC2D441EEFED72F91 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74FCA368F47F4F0D56D852C1347499 /* Identifier.swift */; };
 		7BB8B92C98C73E607C8625022F03CB37 /* UIStoryboard+StoryboardViewControllerResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395970DF425C4590FD08F19EB7F61D1 /* UIStoryboard+StoryboardViewControllerResource.swift */; };
-		7F69A12D133D20A8DFF16351AB82B2DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		81DFD38331DC4F02CE56BDF04EAA5C56 /* StoryboardResourceWithInitialController+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C56E8C29498CB495171C7420D188E1 /* StoryboardResourceWithInitialController+UIKit.swift */; };
 		829CF3468C4E5C1E44252907F8F11FB1 /* StoryboardSegueIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBED8377EE45F68E11C13F3A2A88BCC /* StoryboardSegueIdentifierProtocol.swift */; };
 		83232FD41782A799C87EFD572B2DC3A5 /* R.swift.Library-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B8376EE086E309C237050F0D9D7B9FA /* R.swift.Library-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8639546EC5A46C8EF31F5B6AA2107AA4 /* Pods-TrackX CountdownExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C0FC4A144AB575FD0B5C4CB71444588C /* Pods-TrackX CountdownExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		87D3454789DA18495270D92B02241037 /* Pods-TrackXTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 915030819C9D03D8179CF2CFE9EEA48E /* Pods-TrackXTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		87D3454789DA18495270D92B02241037 /* Pods-TrackXTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 279CC0F1079D2356B5814A20F6C3F5E5 /* Pods-TrackXTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8D363BDAE4D7FA319829A12298991BA8 /* StoryboardResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80AC4191A311EAD8CBD6DDBC79FE75B /* StoryboardResource.swift */; };
-		8E32C04ADB3F12FCE0E4652F9FA46280 /* Pods-TrackX CountdownExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF160B8CA82DFA345583BFB129EFA2C /* Pods-TrackX CountdownExtension-dummy.m */; };
-		97C62C66913AC7DEB575896A6DA45C37 /* Pods-TrackXTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 457AD0696C8EE14CBAEF96A2032E73BD /* Pods-TrackXTests-dummy.m */; };
+		97C62C66913AC7DEB575896A6DA45C37 /* Pods-TrackXTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B56A839EDCDE3BDF2AFECDA804013A /* Pods-TrackXTests-dummy.m */; };
 		9A0A2143288A38C3144C0B2C7A9F98BB /* NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFCEF9F2B71B9958F8905758676A784 /* NibResource.swift */; };
 		9C1C1EADFC9CBE6B0BE11D0D0C57B8C8 /* UINib+NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FBCBB18274ECCC1D000D7ED29FB3FA /* UINib+NibResource.swift */; };
 		9EF86A6EC39FD9E4990A9356EC2D0ECB /* UITableView+ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEC91FB7F54809CB11DD95480C41894 /* UITableView+ReuseIdentifierProtocol.swift */; };
@@ -53,7 +50,7 @@
 		A4851488D40ACEC9812F3C690C1BB342 /* StringResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5EA426CECB33D131CEF81304BCEC4D /* StringResource.swift */; };
 		A68A076F38D1C6E9D8CFFB83A7F3874F /* Validatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE1FC7B1CA80ECDD959B129C04D7D1C /* Validatable.swift */; };
 		BF3D8DF552E7EC41C1A3C0D8491CC5CD /* UICollectionView+ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BB4A7FD16D86EB28F8BA6B513CA942 /* UICollectionView+ReuseIdentifierProtocol.swift */; };
-		C199EF1EEF039F78BA15B9FF2E8DD453 /* Pods-TrackX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D90F0196E693215E79F4237BCF4369 /* Pods-TrackX-dummy.m */; };
+		C199EF1EEF039F78BA15B9FF2E8DD453 /* Pods-TrackX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C12F458B8FB79A5275B29A99B6637 /* Pods-TrackX-dummy.m */; };
 		C6E9D3B3DB7EA0E3ABEE1C309DD28CAA /* StoryboardViewControllerResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B17AF8E32DD91A859E2209A4D8EEC31 /* StoryboardViewControllerResource.swift */; };
 		CEAB08BE950C587FA1509F3DB70BF352 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		E7EDB3AA12481F80105C8690E40FB617 /* UIFont+FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0016D7341B5CFFFB3687FB1F60EC83 /* UIFont+FontResource.swift */; };
@@ -94,70 +91,61 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		001D9A2110974CB81049A087D0E35B10 /* Pods-TrackX CountdownExtension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TrackX CountdownExtension-acknowledgements.plist"; sourceTree = "<group>"; };
 		02EDC2FE50FFC8D6782869D766F499BF /* R.swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = R.swift.debug.xcconfig; sourceTree = "<group>"; };
 		03BBE5E81DE7FDED4672747867071AC6 /* R.swift.Library-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "R.swift.Library-prefix.pch"; sourceTree = "<group>"; };
-		076F9343ACF51E2B31FB3FD1939441F5 /* Pods-TrackX CountdownExtension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TrackX CountdownExtension-Info.plist"; sourceTree = "<group>"; };
 		0B8376EE086E309C237050F0D9D7B9FA /* R.swift.Library-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "R.swift.Library-umbrella.h"; sourceTree = "<group>"; };
 		0D0016D7341B5CFFFB3687FB1F60EC83 /* UIFont+FontResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIFont+FontResource.swift"; path = "Library/UIKit/UIFont+FontResource.swift"; sourceTree = "<group>"; };
 		0D7E774EC2A8181900C18E01BBEE4CCA /* ImageResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageResource.swift; path = Library/Core/ImageResource.swift; sourceTree = "<group>"; };
-		10B73107AD3F0FB9C799B1E3481F1D6F /* Pods-TrackXTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TrackXTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		19C56E8C29498CB495171C7420D188E1 /* StoryboardResourceWithInitialController+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StoryboardResourceWithInitialController+UIKit.swift"; path = "Library/UIKit/StoryboardResourceWithInitialController+UIKit.swift"; sourceTree = "<group>"; };
 		1A1448C060D93D059923AF8D11C926F0 /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TypedStoryboardSegueInfo+UIStoryboardSegue.swift"; path = "Library/UIKit/TypedStoryboardSegueInfo+UIStoryboardSegue.swift"; sourceTree = "<group>"; };
+		1DE7DFD953656C4E435F4EF148D66DCE /* Pods-TrackX-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TrackX-acknowledgements.plist"; sourceTree = "<group>"; };
 		1F6284DD23A9DC368E62ECB4B8737218 /* R.swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = R.swift.release.xcconfig; sourceTree = "<group>"; };
-		1FDA8414D1BB15991694840362E0CD9D /* Pods-TrackX-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TrackX-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2201BAB4AAC5A23270414968D3AA8A78 /* Pods-TrackX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TrackX.modulemap"; sourceTree = "<group>"; };
 		2797EEC41174DA737895B05CFC397649 /* UIViewController+NibResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+NibResource.swift"; path = "Library/UIKit/UIViewController+NibResource.swift"; sourceTree = "<group>"; };
+		279CC0F1079D2356B5814A20F6C3F5E5 /* Pods-TrackXTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TrackXTests-umbrella.h"; sourceTree = "<group>"; };
 		288405944639F2D499D397BEE4672EEB /* UIStoryboard+StoryboardResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIStoryboard+StoryboardResource.swift"; path = "Library/UIKit/UIStoryboard+StoryboardResource.swift"; sourceTree = "<group>"; };
-		295412733676AB6880D670E991560D6A /* Pods-TrackXTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TrackXTests.modulemap"; sourceTree = "<group>"; };
-		30C1B93FFFF11A74CF64D31BD7F35258 /* Pods-TrackX CountdownExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TrackX CountdownExtension.release.xcconfig"; sourceTree = "<group>"; };
+		296838AD222BE0628AAFF2E86E5CBA50 /* Pods-TrackXTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TrackXTests.release.xcconfig"; sourceTree = "<group>"; };
+		2B0C12F458B8FB79A5275B29A99B6637 /* Pods-TrackX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TrackX-dummy.m"; sourceTree = "<group>"; };
+		33B56A839EDCDE3BDF2AFECDA804013A /* Pods-TrackXTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TrackXTests-dummy.m"; sourceTree = "<group>"; };
 		359026B50A492293E841255D41FD6D95 /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReuseIdentifierProtocol.swift; path = Library/Core/ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
+		383619D2F78EE7292817A63BF4A4C423 /* Pods-TrackXTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TrackXTests.modulemap"; sourceTree = "<group>"; };
 		3B17AF8E32DD91A859E2209A4D8EEC31 /* StoryboardViewControllerResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardViewControllerResource.swift; path = Library/Core/StoryboardViewControllerResource.swift; sourceTree = "<group>"; };
-		3D302D25CAAFD8CA1DB3695BAEBAD5C9 /* Pods-TrackXTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TrackXTests.release.xcconfig"; sourceTree = "<group>"; };
 		4395970DF425C4590FD08F19EB7F61D1 /* UIStoryboard+StoryboardViewControllerResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIStoryboard+StoryboardViewControllerResource.swift"; path = "Library/UIKit/UIStoryboard+StoryboardViewControllerResource.swift"; sourceTree = "<group>"; };
-		457AD0696C8EE14CBAEF96A2032E73BD /* Pods-TrackXTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TrackXTests-dummy.m"; sourceTree = "<group>"; };
-		46526F5D276706CCCD90461CC1F0251D /* Pods-TrackXTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TrackXTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4D74FCA368F47F4F0D56D852C1347499 /* Identifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Identifier.swift; path = Library/Core/Identifier.swift; sourceTree = "<group>"; };
+		4F857F6FE3A977E53172D5F860453555 /* Pods-TrackX-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TrackX-frameworks.sh"; sourceTree = "<group>"; };
+		537EF8DEE40F9415F31D2758383FE74B /* Pods-TrackX-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TrackX-Info.plist"; sourceTree = "<group>"; };
+		53ACA08F26DB8D498BE255282AF8E98B /* Pods-TrackX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TrackX.debug.xcconfig"; sourceTree = "<group>"; };
 		5ADCB517ABE26F91718F55C0952598C0 /* FontResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontResource.swift; path = Library/Core/FontResource.swift; sourceTree = "<group>"; };
-		5FA05E567882EED69ED63D9680799B14 /* Pods-TrackX-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TrackX-Info.plist"; sourceTree = "<group>"; };
-		60A6668D982C4A9ACF57FE81BB43462E /* Pods-TrackX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TrackX.debug.xcconfig"; sourceTree = "<group>"; };
 		65AD01A16718408B69C9BDD9370FAC50 /* R.swift.Library.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = R.swift.Library.modulemap; sourceTree = "<group>"; };
+		6D10079A671531F90DB15111F39669D8 /* Pods-TrackX-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TrackX-acknowledgements.markdown"; sourceTree = "<group>"; };
 		6FE1FC7B1CA80ECDD959B129C04D7D1C /* Validatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validatable.swift; path = Library/Core/Validatable.swift; sourceTree = "<group>"; };
-		7005D5243455EC4142F24655B3FCF38E /* Pods-TrackX-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TrackX-acknowledgements.plist"; sourceTree = "<group>"; };
-		71B4785E0C422465515C26ED6EA7295C /* Pods-TrackX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TrackX.release.xcconfig"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		73FBCBB18274ECCC1D000D7ED29FB3FA /* UINib+NibResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINib+NibResource.swift"; path = "Library/UIKit/UINib+NibResource.swift"; sourceTree = "<group>"; };
-		7496FD98EBD0D8A86D00B866A63FD5F4 /* Pods-TrackX CountdownExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TrackX CountdownExtension.modulemap"; sourceTree = "<group>"; };
 		798E4B9E98B7FDCAE5F93129E9F5C024 /* UIColor+ColorResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+ColorResource.swift"; path = "Library/UIKit/UIColor+ColorResource.swift"; sourceTree = "<group>"; };
+		7AB7750A4061C8E6565751F0AA459C98 /* Pods-TrackX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TrackX-umbrella.h"; sourceTree = "<group>"; };
+		816B4150F90F15466934B67A901D11F0 /* Pods-TrackXTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TrackXTests-Info.plist"; sourceTree = "<group>"; };
+		84A723D519A7AF1321CC5F150E731341 /* Pods-TrackX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TrackX.release.xcconfig"; sourceTree = "<group>"; };
 		850D884CADB0215A0A027B1EA904981C /* ColorResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorResource.swift; path = Library/Core/ColorResource.swift; sourceTree = "<group>"; };
-		915030819C9D03D8179CF2CFE9EEA48E /* Pods-TrackXTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TrackXTests-umbrella.h"; sourceTree = "<group>"; };
 		94A77B91866E0913085A95828A431EC6 /* R.swift.Library.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = R.swift.Library.release.xcconfig; sourceTree = "<group>"; };
-		95D90F0196E693215E79F4237BCF4369 /* Pods-TrackX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TrackX-dummy.m"; sourceTree = "<group>"; };
 		9B5EA426CECB33D131CEF81304BCEC4D /* StringResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringResource.swift; path = Library/Core/StringResource.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A125D4CB20517CF4669C37D93A7F50D2 /* UIImage+ImageResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+ImageResource.swift"; path = "Library/UIKit/UIImage+ImageResource.swift"; sourceTree = "<group>"; };
-		A483C33189D9B7526D47539FA9B9E8F1 /* Pods-TrackX CountdownExtension */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TrackX CountdownExtension"; path = Pods_TrackX_CountdownExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A810716FC5D0DA536BD3DD7829C9DC67 /* Pods-TrackX-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TrackX-frameworks.sh"; sourceTree = "<group>"; };
 		AABCE16604575CA152748E485E4064F8 /* Pods-TrackXTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TrackXTests"; path = Pods_TrackXTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B144CF3778A1A07679A2BF767788D15F /* Pods-TrackXTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TrackXTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		B59D4A25B7592039331E748D73A2CE15 /* FileResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileResource.swift; path = Library/Core/FileResource.swift; sourceTree = "<group>"; };
 		B6708365FEE7F18969BB59254631C000 /* R.swift.Library-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "R.swift.Library-dummy.m"; sourceTree = "<group>"; };
-		B8AE096F1372463A367FA8190EC392D7 /* Pods-TrackX CountdownExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TrackX CountdownExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		BCEC91FB7F54809CB11DD95480C41894 /* UITableView+ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableView+ReuseIdentifierProtocol.swift"; path = "Library/UIKit/UITableView+ReuseIdentifierProtocol.swift"; sourceTree = "<group>"; };
-		C0FC4A144AB575FD0B5C4CB71444588C /* Pods-TrackX CountdownExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TrackX CountdownExtension-umbrella.h"; sourceTree = "<group>"; };
 		C418B58409BCD143B9BF8AEE98999BB1 /* Bundle+FileResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bundle+FileResource.swift"; path = "Library/Foundation/Bundle+FileResource.swift"; sourceTree = "<group>"; };
 		C4C2DA649054F688A973AD3589DD5DE8 /* NibResource+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NibResource+UIKit.swift"; path = "Library/UIKit/NibResource+UIKit.swift"; sourceTree = "<group>"; };
 		C5B0852590CC2A426021D97EF67D1554 /* Data+FileResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+FileResource.swift"; path = "Library/Foundation/Data+FileResource.swift"; sourceTree = "<group>"; };
-		C817EAA4B0AD5ECC99A3E175956CD9AF /* Pods-TrackXTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TrackXTests-Info.plist"; sourceTree = "<group>"; };
 		CA4E3B66CE4D02048C77392B64FD0ABB /* Rswift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Rswift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFCEF9F2B71B9958F8905758676A784 /* NibResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NibResource.swift; path = Library/Core/NibResource.swift; sourceTree = "<group>"; };
+		CD7A31E6DDB1762B36EE7F871D00F86C /* Pods-TrackXTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TrackXTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D0476F1151C57415A16CAE0BB880BBB3 /* UIViewController+StoryboardSegueIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+StoryboardSegueIdentifierProtocol.swift"; path = "Library/UIKit/UIViewController+StoryboardSegueIdentifierProtocol.swift"; sourceTree = "<group>"; };
 		D07A127EE624081D70397E45FE1FFD2C /* R.swift.Library-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "R.swift.Library-Info.plist"; sourceTree = "<group>"; };
-		D231CA3E8A59F3DC2DC48C05AC9DED9D /* Pods-TrackX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TrackX-umbrella.h"; sourceTree = "<group>"; };
-		DA8D4BDBE402865788590115EEC21E4E /* Pods-TrackXTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TrackXTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DCF160B8CA82DFA345583BFB129EFA2C /* Pods-TrackX CountdownExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TrackX CountdownExtension-dummy.m"; sourceTree = "<group>"; };
+		D1F85BFFACDAB5157D74B4316E56FC8C /* Pods-TrackXTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TrackXTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E5A89055395A93CC981E7A749F77537F /* Pods-TrackX */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TrackX"; path = Pods_TrackX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBED8377EE45F68E11C13F3A2A88BCC /* StoryboardSegueIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardSegueIdentifierProtocol.swift; path = Library/Core/StoryboardSegueIdentifierProtocol.swift; sourceTree = "<group>"; };
-		EF27B18BBFB7EC153B56D0503C89FA3A /* Pods-TrackX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TrackX.modulemap"; sourceTree = "<group>"; };
-		EFC0392D274CBEBFE9A0167BECC7DD28 /* Pods-TrackX CountdownExtension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TrackX CountdownExtension-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F6BB4A7FD16D86EB28F8BA6B513CA942 /* UICollectionView+ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UICollectionView+ReuseIdentifierProtocol.swift"; path = "Library/UIKit/UICollectionView+ReuseIdentifierProtocol.swift"; sourceTree = "<group>"; };
 		F80AC4191A311EAD8CBD6DDBC79FE75B /* StoryboardResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardResource.swift; path = Library/Core/StoryboardResource.swift; sourceTree = "<group>"; };
 		FF3E2C1E930DF90609A65F2B0DFBCD21 /* R.swift.Library.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = R.swift.Library.debug.xcconfig; sourceTree = "<group>"; };
@@ -188,43 +176,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EDF0E4D0F75FE334CB8698032ED915BC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7F69A12D133D20A8DFF16351AB82B2DD /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A8C2E3206F0C64DD0A7D27032F338A1 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				A5CA92840C2F10D4FFC0BD86E5026973 /* Pods-TrackX */,
-				4276358680D29239A1FEB97D5C373550 /* Pods-TrackX CountdownExtension */,
-				A5BB6661C92A142FDB3F2685D35A9DC1 /* Pods-TrackXTests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		4276358680D29239A1FEB97D5C373550 /* Pods-TrackX CountdownExtension */ = {
-			isa = PBXGroup;
-			children = (
-				7496FD98EBD0D8A86D00B866A63FD5F4 /* Pods-TrackX CountdownExtension.modulemap */,
-				EFC0392D274CBEBFE9A0167BECC7DD28 /* Pods-TrackX CountdownExtension-acknowledgements.markdown */,
-				001D9A2110974CB81049A087D0E35B10 /* Pods-TrackX CountdownExtension-acknowledgements.plist */,
-				DCF160B8CA82DFA345583BFB129EFA2C /* Pods-TrackX CountdownExtension-dummy.m */,
-				076F9343ACF51E2B31FB3FD1939441F5 /* Pods-TrackX CountdownExtension-Info.plist */,
-				C0FC4A144AB575FD0B5C4CB71444588C /* Pods-TrackX CountdownExtension-umbrella.h */,
-				B8AE096F1372463A367FA8190EC392D7 /* Pods-TrackX CountdownExtension.debug.xcconfig */,
-				30C1B93FFFF11A74CF64D31BD7F35258 /* Pods-TrackX CountdownExtension.release.xcconfig */,
-			);
-			name = "Pods-TrackX CountdownExtension";
-			path = "Target Support Files/Pods-TrackX CountdownExtension";
-			sourceTree = "<group>";
-		};
 		465B090EA1DA9CE61C4360D8C3785379 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,17 +186,6 @@
 				C665CE31CE0E6CE96AE69C5B70C80805 /* R.swift.Library */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		50D3F66872098FA6A9446C38897035B0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E5A89055395A93CC981E7A749F77537F /* Pods-TrackX */,
-				A483C33189D9B7526D47539FA9B9E8F1 /* Pods-TrackX CountdownExtension */,
-				AABCE16604575CA152748E485E4064F8 /* Pods-TrackXTests */,
-				CA4E3B66CE4D02048C77392B64FD0ABB /* Rswift.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		518A4A5B6AF4A0C86EFA3C62CEC1063F /* Support Files */ = {
@@ -286,39 +229,6 @@
 			path = "../Target Support Files/R.swift";
 			sourceTree = "<group>";
 		};
-		A5BB6661C92A142FDB3F2685D35A9DC1 /* Pods-TrackXTests */ = {
-			isa = PBXGroup;
-			children = (
-				295412733676AB6880D670E991560D6A /* Pods-TrackXTests.modulemap */,
-				46526F5D276706CCCD90461CC1F0251D /* Pods-TrackXTests-acknowledgements.markdown */,
-				10B73107AD3F0FB9C799B1E3481F1D6F /* Pods-TrackXTests-acknowledgements.plist */,
-				457AD0696C8EE14CBAEF96A2032E73BD /* Pods-TrackXTests-dummy.m */,
-				C817EAA4B0AD5ECC99A3E175956CD9AF /* Pods-TrackXTests-Info.plist */,
-				915030819C9D03D8179CF2CFE9EEA48E /* Pods-TrackXTests-umbrella.h */,
-				DA8D4BDBE402865788590115EEC21E4E /* Pods-TrackXTests.debug.xcconfig */,
-				3D302D25CAAFD8CA1DB3695BAEBAD5C9 /* Pods-TrackXTests.release.xcconfig */,
-			);
-			name = "Pods-TrackXTests";
-			path = "Target Support Files/Pods-TrackXTests";
-			sourceTree = "<group>";
-		};
-		A5CA92840C2F10D4FFC0BD86E5026973 /* Pods-TrackX */ = {
-			isa = PBXGroup;
-			children = (
-				EF27B18BBFB7EC153B56D0503C89FA3A /* Pods-TrackX.modulemap */,
-				1FDA8414D1BB15991694840362E0CD9D /* Pods-TrackX-acknowledgements.markdown */,
-				7005D5243455EC4142F24655B3FCF38E /* Pods-TrackX-acknowledgements.plist */,
-				95D90F0196E693215E79F4237BCF4369 /* Pods-TrackX-dummy.m */,
-				A810716FC5D0DA536BD3DD7829C9DC67 /* Pods-TrackX-frameworks.sh */,
-				5FA05E567882EED69ED63D9680799B14 /* Pods-TrackX-Info.plist */,
-				D231CA3E8A59F3DC2DC48C05AC9DED9D /* Pods-TrackX-umbrella.h */,
-				60A6668D982C4A9ACF57FE81BB43462E /* Pods-TrackX.debug.xcconfig */,
-				71B4785E0C422465515C26ED6EA7295C /* Pods-TrackX.release.xcconfig */,
-			);
-			name = "Pods-TrackX";
-			path = "Target Support Files/Pods-TrackX";
-			sourceTree = "<group>";
-		};
 		C665CE31CE0E6CE96AE69C5B70C80805 /* R.swift.Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,8 +270,8 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				465B090EA1DA9CE61C4360D8C3785379 /* Pods */,
-				50D3F66872098FA6A9446C38897035B0 /* Products */,
-				0A8C2E3206F0C64DD0A7D27032F338A1 /* Targets Support Files */,
+				E272D4BED2F6C188AB406FA900CDB564 /* Products */,
+				F937C7CB504A92658A3028287D1E2B90 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -373,17 +283,61 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D28F46F297A145BCC66458343A4DE854 /* Pods-TrackX */ = {
+			isa = PBXGroup;
+			children = (
+				2201BAB4AAC5A23270414968D3AA8A78 /* Pods-TrackX.modulemap */,
+				6D10079A671531F90DB15111F39669D8 /* Pods-TrackX-acknowledgements.markdown */,
+				1DE7DFD953656C4E435F4EF148D66DCE /* Pods-TrackX-acknowledgements.plist */,
+				2B0C12F458B8FB79A5275B29A99B6637 /* Pods-TrackX-dummy.m */,
+				4F857F6FE3A977E53172D5F860453555 /* Pods-TrackX-frameworks.sh */,
+				537EF8DEE40F9415F31D2758383FE74B /* Pods-TrackX-Info.plist */,
+				7AB7750A4061C8E6565751F0AA459C98 /* Pods-TrackX-umbrella.h */,
+				53ACA08F26DB8D498BE255282AF8E98B /* Pods-TrackX.debug.xcconfig */,
+				84A723D519A7AF1321CC5F150E731341 /* Pods-TrackX.release.xcconfig */,
+			);
+			name = "Pods-TrackX";
+			path = "Target Support Files/Pods-TrackX";
+			sourceTree = "<group>";
+		};
+		DC27AF196266267AE16E143FEF55CDBD /* Pods-TrackXTests */ = {
+			isa = PBXGroup;
+			children = (
+				383619D2F78EE7292817A63BF4A4C423 /* Pods-TrackXTests.modulemap */,
+				D1F85BFFACDAB5157D74B4316E56FC8C /* Pods-TrackXTests-acknowledgements.markdown */,
+				B144CF3778A1A07679A2BF767788D15F /* Pods-TrackXTests-acknowledgements.plist */,
+				33B56A839EDCDE3BDF2AFECDA804013A /* Pods-TrackXTests-dummy.m */,
+				816B4150F90F15466934B67A901D11F0 /* Pods-TrackXTests-Info.plist */,
+				279CC0F1079D2356B5814A20F6C3F5E5 /* Pods-TrackXTests-umbrella.h */,
+				CD7A31E6DDB1762B36EE7F871D00F86C /* Pods-TrackXTests.debug.xcconfig */,
+				296838AD222BE0628AAFF2E86E5CBA50 /* Pods-TrackXTests.release.xcconfig */,
+			);
+			name = "Pods-TrackXTests";
+			path = "Target Support Files/Pods-TrackXTests";
+			sourceTree = "<group>";
+		};
+		E272D4BED2F6C188AB406FA900CDB564 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E5A89055395A93CC981E7A749F77537F /* Pods-TrackX */,
+				AABCE16604575CA152748E485E4064F8 /* Pods-TrackXTests */,
+				CA4E3B66CE4D02048C77392B64FD0ABB /* Rswift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F937C7CB504A92658A3028287D1E2B90 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D28F46F297A145BCC66458343A4DE854 /* Pods-TrackX */,
+				DC27AF196266267AE16E143FEF55CDBD /* Pods-TrackXTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4F5B9CEAC4E09229E37796E2BE26EC04 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8639546EC5A46C8EF31F5B6AA2107AA4 /* Pods-TrackX CountdownExtension-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6E6BFAC41D826EDABDA9859A304FEF7D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -411,24 +365,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		22925221F2705F72318434C8E14415B8 /* Pods-TrackX CountdownExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 603976E1ED7281A51431289ACCFB51AF /* Build configuration list for PBXNativeTarget "Pods-TrackX CountdownExtension" */;
-			buildPhases = (
-				4F5B9CEAC4E09229E37796E2BE26EC04 /* Headers */,
-				0F0CDD60BA9385C73CE6511EEE7E91DD /* Sources */,
-				EDF0E4D0F75FE334CB8698032ED915BC /* Frameworks */,
-				20885FE24B12B0A82010FF4DF3A46AA9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-TrackX CountdownExtension";
-			productName = Pods_TrackX_CountdownExtension;
-			productReference = A483C33189D9B7526D47539FA9B9E8F1 /* Pods-TrackX CountdownExtension */;
-			productType = "com.apple.product-type.framework";
-		};
 		47907F068355AE5CA5D07E3560ADA1D0 /* Pods-TrackXTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56AD74AB16D971C6B0DCDB801D481330 /* Build configuration list for PBXNativeTarget "Pods-TrackXTests" */;
@@ -504,12 +440,11 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 50D3F66872098FA6A9446C38897035B0 /* Products */;
+			productRefGroup = E272D4BED2F6C188AB406FA900CDB564 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				E668A227FD762534B59ACB6CB46900DF /* Pods-TrackX */,
-				22925221F2705F72318434C8E14415B8 /* Pods-TrackX CountdownExtension */,
 				47907F068355AE5CA5D07E3560ADA1D0 /* Pods-TrackXTests */,
 				230984053C6652DFF510F450F21C5CF7 /* R.swift */,
 				B12748D8506CB48696BD90F2CA4F4E38 /* R.swift.Library */,
@@ -518,13 +453,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		20885FE24B12B0A82010FF4DF3A46AA9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5311A96538080021BD5133C588BCAE25 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -549,14 +477,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0F0CDD60BA9385C73CE6511EEE7E91DD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8E32C04ADB3F12FCE0E4652F9FA46280 /* Pods-TrackX CountdownExtension-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AA15D2C9E5492508F84FBD1602A0818A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -640,7 +560,7 @@
 /* Begin XCBuildConfiguration section */
 		00FC0F50B3097025F9E647A00A27C784 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D302D25CAAFD8CA1DB3695BAEBAD5C9 /* Pods-TrackXTests.release.xcconfig */;
+			baseConfigurationReference = 296838AD222BE0628AAFF2E86E5CBA50 /* Pods-TrackXTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -662,44 +582,6 @@
 				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-TrackXTests/Pods-TrackXTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		0CD97CB512F77FFD4BEFF5A2498D9946 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30C1B93FFFF11A74CF64D31BD7F35258 /* Pods-TrackX CountdownExtension.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TrackX CountdownExtension/Pods-TrackX CountdownExtension-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TrackX CountdownExtension/Pods-TrackX CountdownExtension.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -782,7 +664,7 @@
 		};
 		518131E30F5663E702AFBB18277A91C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60A6668D982C4A9ACF57FE81BB43462E /* Pods-TrackX.debug.xcconfig */;
+			baseConfigurationReference = 53ACA08F26DB8D498BE255282AF8E98B /* Pods-TrackX.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -870,7 +752,7 @@
 		};
 		80B0E3707ED06175CE22D8C660629235 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA8D4BDBE402865788590115EEC21E4E /* Pods-TrackXTests.debug.xcconfig */;
+			baseConfigurationReference = CD7A31E6DDB1762B36EE7F871D00F86C /* Pods-TrackXTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -967,43 +849,6 @@
 			};
 			name = Release;
 		};
-		A3B98A414596E652D7AB5CD7905E4C8F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8AE096F1372463A367FA8190EC392D7 /* Pods-TrackX CountdownExtension.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TrackX CountdownExtension/Pods-TrackX CountdownExtension-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TrackX CountdownExtension/Pods-TrackX CountdownExtension.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		C8DF14A4073831600590BC36AF8BF186 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 94A77B91866E0913085A95828A431EC6 /* R.swift.Library.release.xcconfig */;
@@ -1057,7 +902,7 @@
 		};
 		CDB3C1FB0BE4AF9B5AF426624F4DD595 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71B4785E0C422465515C26ED6EA7295C /* Pods-TrackX.release.xcconfig */;
+			baseConfigurationReference = 84A723D519A7AF1321CC5F150E731341 /* Pods-TrackX.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1119,15 +964,6 @@
 			buildConfigurations = (
 				80B0E3707ED06175CE22D8C660629235 /* Debug */,
 				00FC0F50B3097025F9E647A00A27C784 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		603976E1ED7281A51431289ACCFB51AF /* Build configuration list for PBXNativeTarget "Pods-TrackX CountdownExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A3B98A414596E652D7AB5CD7905E4C8F /* Debug */,
-				0CD97CB512F77FFD4BEFF5A2498D9946 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

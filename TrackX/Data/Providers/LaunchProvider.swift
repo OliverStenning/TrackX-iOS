@@ -10,14 +10,13 @@ import Foundation
 class LaunchProvider {
     
     //MARK: - Utility Properties
-    weak var launchProviderDelegate: LaunchProviderDelegate?
-    
     private var networkManager: NetworkManager
     private var error: String? = nil
     
     weak var nextLaunchDelegate: NextLaunchDelegate?
     weak var scheduledLaunchesDelegate: ScheduledLaunchesDelegate?
     weak var recentLaunchesDelegate: RecentLaunchesDelegate?
+    weak var launchTableDelegate: LaunchTableDelegate?
     
     //MARK: - Data Properties
     private var capsules: [String: Capsule] = [:]
@@ -57,8 +56,8 @@ class LaunchProvider {
         fetchData(completion: fetchRecentLaunchesCompletion)
     }
     
-    func fetchLaunchListData() {
-        fetchData(completion: fetchLaunchListCompletionHandler)
+    func fetchLaunchTableData() {
+        fetchData(completion: fetchLaunchTableCompletionHandler)
     }
     
     private func fetchData(completion: @escaping () -> Void) {
@@ -160,17 +159,17 @@ class LaunchProvider {
             return
         }
         
-        var upcomingLaunches: [Launch] = []
+        var scheduledLaunches: [Launch] = []
         for (_, launch) in self.launches {
             if launch.upcoming {
-                upcomingLaunches.append(launch)
+                scheduledLaunches.append(launch)
             }
         }
         
         // Sort arrays chronologically
-        upcomingLaunches.sort(by: Arrays.unixTimeSort(x:y:))
+        scheduledLaunches.sort(by: Arrays.unixTimeSort(x:y:))
 
-        for launch in upcomingLaunches {
+        for launch in scheduledLaunches {
             if launch.dateUnix > Int(Date().timeIntervalSince1970) {
                 delegate.launchProvider(self, nextLaunchUpdate: self.createFullLaunch(from: launch))
                 return
@@ -228,8 +227,8 @@ class LaunchProvider {
         delegate.launchProvider(self, launchesUpdated: recentFullLaunches)
     }
     
-    private func fetchLaunchListCompletionHandler() {
-        guard let delegate = self.launchProviderDelegate else { return }
+    private func fetchLaunchTableCompletionHandler() {
+        guard let delegate = self.launchTableDelegate else { return }
 
         /*
          Only populate tableview with data if all network requests return successfully.
@@ -247,26 +246,26 @@ class LaunchProvider {
             fullLaunches[key] = self.createFullLaunch(from: launch)
         }
         
-        var previousLaunches: [Launch] = []
-        var upcomingLaunches: [Launch] = []
+        var recentLaunches: [Launch] = []
+        var scheduledLaunches: [Launch] = []
         var allLaunches: [Launch]
         
         for (_, launch) in self.launches {
             if launch.upcoming {
-                upcomingLaunches.append(launch)
+                scheduledLaunches.append(launch)
             } else {
-                previousLaunches.append(launch)
+                recentLaunches.append(launch)
             }
         }
-        allLaunches = previousLaunches + upcomingLaunches
+        allLaunches = recentLaunches + scheduledLaunches
         
         // Sort arrays chronologically
-        previousLaunches.sort(by: Arrays.unixTimeSort(x:y:))
-        upcomingLaunches.sort(by: Arrays.unixTimeSort(x:y:))
+        recentLaunches.sort(by: Arrays.unixTimeSort(x:y:))
+        scheduledLaunches.sort(by: Arrays.unixTimeSort(x:y:))
         allLaunches.sort(by: Arrays.unixTimeSort(x:y:))
         
-        delegate.launchProvider(self, previousLaunchesUpdate: createTableData(launches: previousLaunches, fullLaunches: fullLaunches))
-        delegate.launchProvider(self, upcomingLaunchesUpdate: createTableData(launches: upcomingLaunches, fullLaunches: fullLaunches))
+        delegate.launchProvider(self, recentLaunchesUpdate: createTableData(launches: recentLaunches, fullLaunches: fullLaunches))
+        delegate.launchProvider(self, scheduledLaunchesUpdate: createTableData(launches: scheduledLaunches, fullLaunches: fullLaunches))
         delegate.launchProvider(self, allLaunchesUpdate: createTableData(launches: allLaunches, fullLaunches: fullLaunches))
         delegate.launchProvider(self, dataWasUpdated: true)
     }
@@ -379,9 +378,9 @@ protocol RecentLaunchesDelegate: AnyObject {
     func launchProvider(_ provider: LaunchProvider, launchesUpdated: [FullLaunch])
 }
 
-protocol LaunchProviderDelegate: AnyObject {
-    func launchProvider(_ provider: LaunchProvider, previousLaunchesUpdate: LaunchTableData)
-    func launchProvider(_ provider: LaunchProvider, upcomingLaunchesUpdate: LaunchTableData)
+protocol LaunchTableDelegate: AnyObject {
+    func launchProvider(_ provider: LaunchProvider, scheduledLaunchesUpdate: LaunchTableData)
+    func launchProvider(_ provider: LaunchProvider, recentLaunchesUpdate: LaunchTableData)
     func launchProvider(_ provider: LaunchProvider, allLaunchesUpdate: LaunchTableData)
     func launchProvider(_ provider: LaunchProvider, dataWasUpdated: Bool)
     func launchProvider(_ provider: LaunchProvider, dataFailedToUpDate: String)

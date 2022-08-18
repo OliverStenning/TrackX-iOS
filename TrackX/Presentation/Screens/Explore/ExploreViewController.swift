@@ -99,6 +99,7 @@ class ExploreViewController: UIViewController {
     }
     
     private func configureViews() {
+        title = R.string.localizable.explore()
         view.backgroundColor = R.color.backgroundColor()
         rocketsCard.isHidden = true
 
@@ -143,31 +144,33 @@ class ExploreViewController: UIViewController {
         let launchDetailVC = LaunchDetailViewController(fullLaunch: fullLaunch)
         navigationController?.pushViewController(launchDetailVC, animated: true)
     }
+    
+    private func showLaunchTableView(launchType: LaunchType) {
+        let launchTableVC = LaunchTableViewController(launchProvider: launchProvider, launchType: launchType)
+        navigationController?.pushViewController(launchTableVC, animated: true)
+    }
 }
 
 extension ExploreViewController: NextLaunchSectionDelegate {
     func nextLaunchSection(_ sectionView: NextLaunchSectionView, launchSelected: FullLaunch) {
-        print("Pressed launch: \(launchSelected.launch.name)")
         showLaunchDetailView(with: launchSelected)
     }
 }
 
 extension ExploreViewController: ScheduledLaunchesSectionDelegate {
-    func scheduledLaunchesSection(_ sectionView: ScheduledLaunchesSectionView, launchSelected: FullLaunch) {
-        print("Pressed launch: \(launchSelected.launch.name)")
-        showLaunchDetailView(with: launchSelected)
+    func scheduledLaunchesSection(_ sectionView: ScheduledLaunchesSectionView, didSelectLaunch fullLaunch: FullLaunch) {
+        showLaunchDetailView(with: fullLaunch)
     }
-    func scheduledLaunchesSection(_ sectionView: ScheduledLaunchesSectionView, allLaunchesSelected: [FullLaunch]) {
-        print("Pressed show all scheduled launches")
+    func scheduledLaunchesSection(_ sectionView: ScheduledLaunchesSectionView, didSelectAllLaunches: Bool) {
+        showLaunchTableView(launchType: .scheduled)
     }
 }
 
 extension ExploreViewController: RecentLaunchesSectionDelegate {
-    func recentLaunchesSection(_ recentLaunchesSection: RecentLaunchesSectionView, launchSelected: FullLaunch) {
-        print("Pressed launch: \(launchSelected.launch.name)")
-        showLaunchDetailView(with: launchSelected)
+    func recentLaunchesSection(_ recentLaunchesSection: RecentLaunchesSectionView, didSelectLaunch fullLaunch: FullLaunch) {
+        showLaunchDetailView(with: fullLaunch)
     }
-    func recentLaunchesSection(_ recentLaunchesSection: RecentLaunchesSectionView, showAllLaunches: [FullLaunch]) {
-        print("Pressed show all recent launches")
+    func recentLaunchesSection(_ recentLaunchesSection: RecentLaunchesSectionView, didSelectAllLaunches: Bool) {
+        showLaunchTableView(launchType: .recent)
     }
 }

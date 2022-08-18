@@ -1,5 +1,5 @@
 //
-//  ScheduledLaunchesCardView.swift
+//  RecentLaunchesCardView.swift
 //  TrackX
 //
 //  Created by Oliver Stenning on 13/08/2022.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-class ScheduledLaunchesSectionView: UIView {
+class RecentLaunchesSectionView: UIView {
     
     //MARK: - Views
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = R.string.localizable.scheduled()
+        label.text = R.string.localizable.recent()
         label.textColor = R.color.textColor()
         label.font = R.font.archivoSemiBold(size: 22)
         return label
@@ -32,15 +32,14 @@ class ScheduledLaunchesSectionView: UIView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.register(ScheduledLaunchCollectionCell.self, forCellWithReuseIdentifier: LaunchCellIdentifiers.scheduled)
+        collectionView.register(RecentLaunchCollectionCell.self, forCellWithReuseIdentifier: LaunchCellIdentifiers.recent)
         return collectionView
     }()
     
     //MARK: - Properties
     private let launchProvider: LaunchProvider
-    private var scheduledDataSource: LaunchCollectionDataSource?
-    var delegate: ScheduledLaunchesSectionDelegate?
-    var launchCollectionViewDelegate: UICollectionViewDelegate?
+    private var recentDataSource: LaunchCollectionDataSource?
+    var delegate: RecentLaunchesSectionDelegate?
     
     //MARK: - Initializers
     init(launchProvider: LaunchProvider) {
@@ -49,10 +48,9 @@ class ScheduledLaunchesSectionView: UIView {
         addViews()
         configureViews()
         configureConstraints()
-
-        launchCollectionViewDelegate = self
-        launchProvider.scheduledLaunchesDelegate = self
-        launchProvider.fetchScheduledLaunches()
+        
+        launchProvider.recentLaunchesDelegate = self
+        launchProvider.fetchRecentLaunches()
     }
     
     required init(coder: NSCoder) {
@@ -67,14 +65,14 @@ class ScheduledLaunchesSectionView: UIView {
     }
     
     private func configureViews() {
-        launchCollectionView.delegate = launchCollectionViewDelegate
+        launchCollectionView.delegate = self
         showAllButton.addTarget(self, action: #selector(pressShowAll), for: .touchUpInside)
     }
     
     private func configureConstraints() {
         let margin: CGFloat = 16
         
-        self.anchorSize(height: 180)
+        self.anchorSize(height: 240)
         
         titleLabel.anchor(
             top: topAnchor,
@@ -82,11 +80,11 @@ class ScheduledLaunchesSectionView: UIView {
             padding: .init(top: margin, left: margin, bottom: 0, right: 0)
         )
         
+        showAllButton.anchorYCenter(to: titleLabel)
         showAllButton.anchor(
             trailing: trailingAnchor,
             padding: .init(top: 0, left: 0, bottom: 0, right: margin)
         )
-        showAllButton.anchorYCenter(to: titleLabel)
         
         launchCollectionView.anchor(
             top: titleLabel.bottomAnchor,
@@ -99,46 +97,43 @@ class ScheduledLaunchesSectionView: UIView {
 
     //MARK: - Interaction Functions
     @objc private func pressShowAll() {
-        if let delegate = delegate, let dataSource = scheduledDataSource {
-            delegate.scheduledLaunchesSection(self, allLaunchesSelected: dataSource.launches)
+        if let delegate = delegate {
+            delegate.recentLaunchesSection(self, didSelectAllLaunches: true)
         }
     }
-    
 }
 
 //MARK: - Launch Provider Delegate
-extension ScheduledLaunchesSectionView: ScheduledLaunchesDelegate {
+extension RecentLaunchesSectionView: RecentLaunchesDelegate {
     func launchProvider(_ provider: LaunchProvider, launchesUpdated: [FullLaunch]) {
-        scheduledDataSource = LaunchCollectionDataSource(launchType: .scheduled, launches: launchesUpdated)
-        launchCollectionView.dataSource = scheduledDataSource
-        launchCollectionView.delegate = self
+        recentDataSource = LaunchCollectionDataSource(launchType: .recent, launches: launchesUpdated)
+        launchCollectionView.dataSource = recentDataSource
         if launchCollectionView.dataSource != nil {
             launchCollectionView.reloadData()
         }
     }
 }
 
-//MARK: - CollectionView Delegate
-extension ScheduledLaunchesSectionView: UICollectionViewDelegate {
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let delegate = delegate, let dataSource = scheduledDataSource {
-            delegate.scheduledLaunchesSection(self, launchSelected: dataSource.launches[indexPath.item])
-        }
-    }
-}
-
 //MARK: - CollectionView Layout Delegate
-extension ScheduledLaunchesSectionView: UICollectionViewDelegateFlowLayout {
+extension RecentLaunchesSectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: frame.width - 40, height: launchCollectionView.frame.height)
+        CGSize(width: frame.width - 40, height: launchCollectionView.frame.height)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         .init(top: 0, left: 16, bottom: 0, right: 16)
     }
 }
 
-protocol ScheduledLaunchesSectionDelegate {
-    func scheduledLaunchesSection(_ section: ScheduledLaunchesSectionView, launchSelected: FullLaunch)
-    func scheduledLaunchesSection(_ section: ScheduledLaunchesSectionView, allLaunchesSelected: [FullLaunch])
+extension RecentLaunchesSectionView: UICollectionViewDelegate {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let delegate = delegate, let dataSource = recentDataSource {
+            delegate.recentLaunchesSection(self, didSelectLaunch: dataSource.launches[indexPath.item])
+        }
+    }
+}
+
+protocol RecentLaunchesSectionDelegate {
+    func recentLaunchesSection(_ recentLaunchesSection: RecentLaunchesSectionView, didSelectLaunch fullLaunch: FullLaunch)
+    func recentLaunchesSection(_ recentLaunchesSection: RecentLaunchesSectionView, didSelectAllLaunches: Bool)
 }

@@ -14,11 +14,3 @@ target 'TrackX' do
   end
 
 end
-
-target 'TrackX CountdownExtension' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for TrackX CountdownExtension
-
-end

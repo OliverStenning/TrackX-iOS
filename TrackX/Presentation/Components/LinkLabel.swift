@@ -35,7 +35,6 @@ class LinkLabel: UILabel {
     }
     
     @objc func tapLink() {
-        print(url)
         if let url = URL(string: url) {
             UIApplication.shared.open(url)
         }
