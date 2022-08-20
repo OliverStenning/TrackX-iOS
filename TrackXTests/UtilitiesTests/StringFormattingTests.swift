@@ -20,7 +20,7 @@ class StringFormattingTests: XCTestCase {
     
     func testFormatDate() throws {
         // Given
-        let date = "2022-07-11T01:39:00.000Z"
+        let date = "2022-07-11T13:39:00.000Z"
 
         // When
         let shortDate = formatDate(from: date, as: .shortDate, timeZone: "UTC")
@@ -32,9 +32,9 @@ class StringFormattingTests: XCTestCase {
         // Then
         XCTAssertEqual(shortDate, "11 Jul 2022")
         XCTAssertEqual(longDate, "11 July 2022")
-        XCTAssertEqual(shortDateAndTime, "11 Jul 2022, 1:39 AM")
-        XCTAssertEqual(longDateAndTime, "11 July 2022, 1:39 AM")
-        XCTAssertEqual(time, "1:39 AM")
+        XCTAssertEqual(shortDateAndTime, "11 Jul 2022, 13:39")
+        XCTAssertEqual(longDateAndTime, "11 July 2022, 13:39")
+        XCTAssertEqual(time, "13:39")
         
     }
     

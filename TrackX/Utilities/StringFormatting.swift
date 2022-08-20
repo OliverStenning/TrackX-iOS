@@ -30,11 +30,11 @@ func formatDate(from inputDate: String, as dateFormat: DateFormat = DateFormat.s
         case .longDate:
             dateFormatterEnd.dateFormat = "d MMMM yyyy"
         case .shortDateAndTime:
-            dateFormatterEnd.dateFormat = "d MMM yyyy, h:mm a"
+            dateFormatterEnd.dateFormat = "d MMM yyyy, HH:mm"
         case .longDateAndTime:
-            dateFormatterEnd.dateFormat = "d MMMM yyyy, h:mm a"
+            dateFormatterEnd.dateFormat = "d MMMM yyyy, HH:mm"
         case .time:
-            dateFormatterEnd.dateFormat = "h:mm a"
+            dateFormatterEnd.dateFormat = "HH:mm"
     }
     
     if let date = Dates.dateFromISO8601(inputDate) {

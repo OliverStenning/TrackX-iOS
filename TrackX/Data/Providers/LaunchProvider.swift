@@ -318,7 +318,7 @@ class LaunchProvider {
         return (sectionNames, LaunchIds)
     }
 
-    private func createFullLaunch(from launch: Launch) -> FullLaunch {
+    func createFullLaunch(from launch: Launch) -> FullLaunch {
         
         let rocket = rockets[launch.rocket ?? ""]
         let launchpad = launchpads[launch.launchpad ?? ""]
