@@ -10,157 +10,44 @@ import Foundation
 class LaunchProvider {
     
     //MARK: - Utility Properties
-    private var networkManager: NetworkManager
-    private var error: String? = nil
+    let dataManager: DataManager
     
     weak var nextLaunchDelegate: NextLaunchDelegate?
     weak var scheduledLaunchesDelegate: ScheduledLaunchesDelegate?
     weak var recentLaunchesDelegate: RecentLaunchesDelegate?
     weak var launchTableDelegate: LaunchTableDelegate?
     
-    //MARK: - Data Properties
-    private var capsules: [String: Capsule] = [:]
-    private var cores: [String: Core] = [:]
-    private var landpads: [String: Landpad] = [:]
-    private var launches: [String: Launch] = [:]
-    private var launchpads: [String: Launchpad] = [:]
-    private var payloads: [String: Payload] = [:]
-    private var rockets: [String: Rocket] = [:]
-    
     //MARK: - Initializers
-    init(networkManager: NetworkManager) {
-        self.networkManager = networkManager
-    }
-    
-    init(networkManager: NetworkManager, capsules: [String: Capsule], cores: [String: Core], landpads: [String: Landpad], launches: [String: Launch], launchpads: [String: Launchpad], payloads: [String: Payload], rockets: [String: Rocket]) {
-        self.networkManager = networkManager
-        self.capsules = capsules
-        self.cores = cores
-        self.landpads = landpads
-        self.launches = launches
-        self.launchpads = launchpads
-        self.payloads = payloads
-        self.rockets = rockets
+    init(dataManager: DataManager) {
+        self.dataManager = dataManager
     }
     
     //MARK: - Data Functions
     func fetchNextLaunch() {
-        fetchData(completion: fetchNextLaunchCompletion)
+        dataManager.fetchData(completion: fetchNextLaunchCompletion)
     }
     
     func fetchScheduledLaunches() {
-        fetchData(completion: fetchScheduledLaunchesCompletion)
+        dataManager.fetchData(completion: fetchScheduledLaunchesCompletion)
     }
     
     func fetchRecentLaunches() {
-        fetchData(completion: fetchRecentLaunchesCompletion)
+        dataManager.fetchData(completion: fetchRecentLaunchesCompletion)
     }
     
     func fetchLaunchTableData() {
-        fetchData(completion: fetchLaunchTableCompletionHandler)
-    }
-    
-    private func fetchData(completion: @escaping () -> Void) {
-        let networkGroup = DispatchGroup()
-    
-        setLaunches(networkGroup: networkGroup)
-        setRockets(networkGroup: networkGroup)
-        setLaunchpads(networkGroup: networkGroup)
-        setLandpads(networkGroup: networkGroup)
-        setPayloads(networkGroup: networkGroup)
-        setCores(networkGroup: networkGroup)
-        
-        networkGroup.notify(queue: .main, execute: completion)
-    }
-    
-    //MARK: - Data Setters
-    private func setLaunches(networkGroup: DispatchGroup) {
-        networkGroup.enter()
-        networkManager.getLaunches() { launchArray, error in
-            guard error == nil, let launchArray = launchArray else {
-                self.error = error
-                networkGroup.leave()
-                return
-            }
-            self.launches = Arrays.arrayToDictionary(launchArray)
-            networkGroup.leave()
-        }
-    }
-    
-    private func setRockets(networkGroup: DispatchGroup) {
-        networkGroup.enter()
-        networkManager.getRockets { rocketArray, error in
-            guard error == nil, let rocketArray = rocketArray else {
-                self.error = error
-                networkGroup.leave()
-                return
-            }
-            self.rockets = Arrays.arrayToDictionary(rocketArray)
-            networkGroup.leave()
-        }
-    }
-    
-    private func setLaunchpads(networkGroup: DispatchGroup) {
-        networkGroup.enter()
-        networkManager.getLaunchpads() { launchpadArray, error in
-            guard error == nil, let launchpadArray = launchpadArray else {
-                self.error = error
-                networkGroup.leave()
-                return
-            }
-            self.launchpads = Arrays.arrayToDictionary(launchpadArray)
-            networkGroup.leave()
-        }
-    }
-    
-    private func setLandpads(networkGroup: DispatchGroup) {
-        networkGroup.enter()
-        networkManager.getLandpads() { landpadArray, error in
-            guard error == nil, let landpadArray = landpadArray else {
-                self.error = error
-                networkGroup.leave()
-                return
-            }
-            self.landpads = Arrays.arrayToDictionary(landpadArray)
-            networkGroup.leave()
-        }
-    }
-    
-    private func setPayloads(networkGroup: DispatchGroup) {
-        networkGroup.enter()
-        networkManager.getPayloads() { payloadArray, error in
-            guard error == nil, let payloadArray = payloadArray else {
-                self.error = error
-                networkGroup.leave()
-                return
-            }
-            self.payloads = Arrays.arrayToDictionary(payloadArray)
-            networkGroup.leave()
-        }
-    }
-    
-    private func setCores(networkGroup: DispatchGroup) {
-        networkGroup.enter()
-        networkManager.getCores() { coreArray, error in
-            guard error == nil, let coreArray = coreArray else {
-                self.error = error
-                networkGroup.leave()
-                return
-            }
-            self.cores = Arrays.arrayToDictionary(coreArray)
-            networkGroup.leave()
-        }
+        dataManager.fetchData(completion: fetchLaunchTableCompletionHandler)
     }
     
     //MARK: - Data Fetch Completion
-    private func fetchNextLaunchCompletion() {
+    private func fetchNextLaunchCompletion(launches: [String: Launch], error: String?) {
         guard let delegate = self.nextLaunchDelegate else { return }
-        if let _ = self.error {
+        if let _ = error {
             return
         }
         
         var scheduledLaunches: [Launch] = []
-        for (_, launch) in self.launches {
+        for (_, launch) in launches {
             if launch.upcoming {
                 scheduledLaunches.append(launch)
             }
@@ -171,13 +58,15 @@ class LaunchProvider {
 
         for launch in scheduledLaunches {
             if launch.dateUnix > Int(Date().timeIntervalSince1970) {
-                delegate.launchProvider(self, nextLaunchUpdate: self.createFullLaunch(from: launch))
-                return
+                if let fullLaunch = dataManager.createFullLaunch(from: launch.id) {
+                    delegate.launchProvider(self, nextLaunchUpdate: fullLaunch)
+                    return
+                }
             }
         }
     }
     
-    private func fetchScheduledLaunchesCompletion() {
+    private func fetchScheduledLaunchesCompletion(launches: [String: Launch], error: String?) {
         guard let delegate = self.scheduledLaunchesDelegate else { return }
         if let _ = error {
             return
@@ -185,7 +74,7 @@ class LaunchProvider {
         
         var scheduledLaunches: [Launch] = []
 
-        for (_, launch) in self.launches {
+        for (_, launch) in launches {
             if launch.upcoming {
                 scheduledLaunches.append(launch)
             }
@@ -196,13 +85,15 @@ class LaunchProvider {
         
         var scheduledFullLaunches: [FullLaunch] = []
         for launch in scheduledLaunches {
-            scheduledFullLaunches.append(self.createFullLaunch(from: launch))
+            if let fullLaunch = dataManager.createFullLaunch(from: launch.id) {
+                scheduledFullLaunches.append(fullLaunch)
+            }
         }
         
         delegate.launchProvider(self, launchesUpdated: scheduledFullLaunches)
     }
     
-    private func fetchRecentLaunchesCompletion() {
+    private func fetchRecentLaunchesCompletion(launches: [String: Launch], error: String?) {
         guard let delegate = self.recentLaunchesDelegate else { return }
         if let _ = error {
             return
@@ -210,7 +101,7 @@ class LaunchProvider {
         
         var recentLaunches: [Launch] = []
         
-        for (_, launch) in self.launches {
+        for (_, launch) in launches {
             if !launch.upcoming {
                 recentLaunches.append(launch)
             }
@@ -221,13 +112,15 @@ class LaunchProvider {
         
         var recentFullLaunches: [FullLaunch] = []
         for launch in recentLaunches {
-            recentFullLaunches.append(self.createFullLaunch(from: launch))
+            if let fullLaunch = dataManager.createFullLaunch(from: launch.id) {
+                recentFullLaunches.append(fullLaunch)
+            }
         }
         
         delegate.launchProvider(self, launchesUpdated: recentFullLaunches)
     }
     
-    private func fetchLaunchTableCompletionHandler() {
+    private func fetchLaunchTableCompletionHandler(launches: [String: Launch], error: String?) {
         guard let delegate = self.launchTableDelegate else { return }
 
         /*
@@ -235,22 +128,24 @@ class LaunchProvider {
          This could be made less strict, but edge cases based on which combination of data is
          returned may cause UI issues. For now simpler to keep strict.
          */
-        if let error = self.error {
+        if let error = error {
             delegate.launchProvider(self, dataFailedToUpDate: error)
             return
         }
         
         // Create dictionary of full launches
         var fullLaunches: [String: FullLaunch] = [:]
-        for (key, launch) in self.launches {
-            fullLaunches[key] = self.createFullLaunch(from: launch)
+        for (key, launch) in launches {
+            if let fullLaunch = dataManager.createFullLaunch(from: launch.id) {
+                fullLaunches[key] = fullLaunch
+            }
         }
         
         var recentLaunches: [Launch] = []
         var scheduledLaunches: [Launch] = []
         var allLaunches: [Launch]
         
-        for (_, launch) in self.launches {
+        for (_, launch) in launches {
             if launch.upcoming {
                 scheduledLaunches.append(launch)
             } else {
@@ -316,52 +211,6 @@ class LaunchProvider {
             }
         }
         return (sectionNames, LaunchIds)
-    }
-
-    func createFullLaunch(from launch: Launch) -> FullLaunch {
-        
-        let rocket = rockets[launch.rocket ?? ""]
-        let launchpad = launchpads[launch.launchpad ?? ""]
-        
-        var capsules: [Capsule] = []
-        launch.capsules?.forEach({ capsuleId in
-            if let capsule = self.capsules[capsuleId] {
-                capsules.append(capsule)
-            }
-        })
-        
-        var payloads: [Payload] = []
-        launch.payloads?.forEach({ payloadId in
-            if let payload = self.payloads[payloadId] {
-                payloads.append(payload)
-            }
-        })
-        
-        var cores: [Core] = []
-        var coreLandpads: [Landpad] = []
-        launch.cores?.forEach({ launchCore in
-            if let coreId = launchCore.core {
-                if let core = self.cores[coreId] {
-                    cores.append(core)
-                }
-            }
-            if let landpadId = launchCore.landpad {
-                if let coreLandpad = self.landpads[landpadId] {
-                    coreLandpads.append(coreLandpad)
-                }
-            }
-        })
-        
-        let fullLaunch = FullLaunch(
-            launch: launch,
-            rocket: rocket,
-            launchpad:  launchpad,
-            capsules: capsules.isEmpty ? nil : capsules,
-            payloads: payloads.isEmpty ? nil : payloads,
-            cores: cores.isEmpty ? nil : cores,
-            coreLandpads: coreLandpads.isEmpty ? nil : coreLandpads
-        )
-        return fullLaunch
     }
     
 }

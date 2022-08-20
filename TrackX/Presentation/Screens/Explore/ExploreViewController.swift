@@ -44,13 +44,13 @@ class ExploreViewController: UIViewController {
     private let footerSection = UIView()
     
     // MARK: - Properties
-    private let networkManager: NetworkManager
+    private let dataManager: DataManager
     private let launchProvider: LaunchProvider
     
     // MARK: - Initializers
-    init(networkManager: NetworkManager) {
-        self.networkManager = networkManager
-        self.launchProvider = LaunchProvider(networkManager: networkManager)
+    init(dataManager: DataManager) {
+        self.dataManager = dataManager
+        self.launchProvider = LaunchProvider(dataManager: dataManager)
         
         self.nextLaunchSection = NextLaunchSectionView(launchProvider: self.launchProvider)
         self.scheduledLaunchesSection = ScheduledLaunchesSectionView(launchProvider: self.launchProvider)
