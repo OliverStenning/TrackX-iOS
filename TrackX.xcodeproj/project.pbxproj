@@ -300,6 +300,7 @@
 		F2E2EC472859327D00AF06CC /* FullLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullLaunch.swift; sourceTree = "<group>"; };
 		F2E63E0D289B0E7F005C6E8B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F2E63E0F289B0E7F005C6E8B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		F2ECA6F928B192040030516B /* TrackX.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TrackX.xctestplan; sourceTree = "<group>"; };
 		F2F0937827EE2818005CCD09 /* TrackX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F0937B27EE2818005CCD09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2F0937D27EE2818005CCD09 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -764,6 +765,7 @@
 				F26CBE852880E66D00D2DFDC /* Data */,
 				F230AF58287F8EDD00FF7769 /* ModelTests */,
 				F230AF59287F8EE800FF7769 /* UtilitiesTests */,
+				F2ECA6F928B192040030516B /* TrackX.xctestplan */,
 			);
 			path = TrackXTests;
 			sourceTree = "<group>";
