@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
          <BreakpointContent
             uuid = "B837ACCF-705A-4C06-AAA2-F8C2144EFAB8"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             nameForDebugger = "boringssl_disable"
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"

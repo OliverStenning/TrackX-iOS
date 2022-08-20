@@ -23,6 +23,10 @@ class LaunchProvider {
     }
     
     //MARK: - Data Functions
+    func getNextLaunchData() {
+        
+    }
+    
     func fetchNextLaunch() {
         dataManager.fetchData(completion: fetchNextLaunchCompletion)
     }
@@ -40,87 +44,57 @@ class LaunchProvider {
     }
     
     //MARK: - Data Fetch Completion
-    private func fetchNextLaunchCompletion(launches: [String: Launch], error: String?) {
-        guard let delegate = self.nextLaunchDelegate else { return }
-        if let _ = error {
-            return
-        }
+    private func fetchNextLaunchCompletion() {
+        print("Fetch next launch complete")
+        guard let delegate = self.nextLaunchDelegate, dataManager.error == nil else { return }
         
-        var scheduledLaunches: [Launch] = []
-        for (_, launch) in launches {
-            if launch.upcoming {
-                scheduledLaunches.append(launch)
+        var scheduledFullLaunches: [FullLaunch] = []
+        for fullLaunch in dataManager.fullLaunchesArray {
+            if fullLaunch.launch.upcoming {
+                scheduledFullLaunches.append(fullLaunch)
             }
         }
-        
-        // Sort arrays chronologically
-        scheduledLaunches.sort(by: Arrays.unixTimeSort(x:y:))
+        scheduledFullLaunches.sort(by: Arrays.fullLaunchUnixTimeSort(x:y:))
 
-        for launch in scheduledLaunches {
-            if launch.dateUnix > Int(Date().timeIntervalSince1970) {
-                if let fullLaunch = dataManager.createFullLaunch(from: launch.id) {
-                    delegate.launchProvider(self, nextLaunchUpdate: fullLaunch)
-                    return
-                }
+        // Return first item with date in the future
+        for fullLaunch in scheduledFullLaunches {
+            if fullLaunch.launch.dateUnix > Int(Date().timeIntervalSince1970) {
+                delegate.launchProvider(self, nextLaunchUpdate: fullLaunch)
+                return
             }
         }
     }
     
-    private func fetchScheduledLaunchesCompletion(launches: [String: Launch], error: String?) {
-        guard let delegate = self.scheduledLaunchesDelegate else { return }
-        if let _ = error {
-            return
-        }
-        
-        var scheduledLaunches: [Launch] = []
-
-        for (_, launch) in launches {
-            if launch.upcoming {
-                scheduledLaunches.append(launch)
-            }
-        }
-        
-        // Sort arrays chronologically
-        scheduledLaunches.sort(by: Arrays.unixTimeSort(x:y:))
+    private func fetchScheduledLaunchesCompletion() {
+        guard let delegate = self.scheduledLaunchesDelegate, dataManager.error == nil else { return }
         
         var scheduledFullLaunches: [FullLaunch] = []
-        for launch in scheduledLaunches {
-            if let fullLaunch = dataManager.createFullLaunch(from: launch.id) {
+        for fullLaunch in dataManager.fullLaunchesArray {
+            if fullLaunch.launch.upcoming {
                 scheduledFullLaunches.append(fullLaunch)
             }
         }
+        scheduledFullLaunches.sort(by: Arrays.fullLaunchUnixTimeSort(x:y:))
         
         delegate.launchProvider(self, launchesUpdated: scheduledFullLaunches)
     }
     
-    private func fetchRecentLaunchesCompletion(launches: [String: Launch], error: String?) {
-        guard let delegate = self.recentLaunchesDelegate else { return }
-        if let _ = error {
-            return
-        }
-        
-        var recentLaunches: [Launch] = []
-        
-        for (_, launch) in launches {
-            if !launch.upcoming {
-                recentLaunches.append(launch)
-            }
-        }
-        
-        recentLaunches.sort(by: Arrays.unixTimeSort(x:y:))
-        recentLaunches.reverse()
+    private func fetchRecentLaunchesCompletion() {
+        guard let delegate = self.recentLaunchesDelegate, dataManager.error == nil else { return }
         
         var recentFullLaunches: [FullLaunch] = []
-        for launch in recentLaunches {
-            if let fullLaunch = dataManager.createFullLaunch(from: launch.id) {
+        for fullLaunch in dataManager.fullLaunchesArray {
+            if !fullLaunch.launch.upcoming {
                 recentFullLaunches.append(fullLaunch)
             }
         }
+        recentFullLaunches.sort(by: Arrays.fullLaunchUnixTimeSort(x:y:))
+        recentFullLaunches.reverse()
         
         delegate.launchProvider(self, launchesUpdated: recentFullLaunches)
     }
     
-    private func fetchLaunchTableCompletionHandler(launches: [String: Launch], error: String?) {
+    private func fetchLaunchTableCompletionHandler() {
         guard let delegate = self.launchTableDelegate else { return }
 
         /*
@@ -128,24 +102,17 @@ class LaunchProvider {
          This could be made less strict, but edge cases based on which combination of data is
          returned may cause UI issues. For now simpler to keep strict.
          */
-        if let error = error {
+        if let error = dataManager.error {
             delegate.launchProvider(self, dataFailedToUpDate: error)
             return
         }
         
         // Create dictionary of full launches
-        var fullLaunches: [String: FullLaunch] = [:]
-        for (key, launch) in launches {
-            if let fullLaunch = dataManager.createFullLaunch(from: launch.id) {
-                fullLaunches[key] = fullLaunch
-            }
-        }
-        
         var recentLaunches: [Launch] = []
         var scheduledLaunches: [Launch] = []
         var allLaunches: [Launch]
         
-        for (_, launch) in launches {
+        for launch in dataManager.launchesArray {
             if launch.upcoming {
                 scheduledLaunches.append(launch)
             } else {
@@ -155,20 +122,20 @@ class LaunchProvider {
         allLaunches = recentLaunches + scheduledLaunches
         
         // Sort arrays chronologically
-        recentLaunches.sort(by: Arrays.unixTimeSort(x:y:))
-        scheduledLaunches.sort(by: Arrays.unixTimeSort(x:y:))
-        allLaunches.sort(by: Arrays.unixTimeSort(x:y:))
+        recentLaunches.sort(by: Arrays.launchUnixTimeSort(x:y:))
+        scheduledLaunches.sort(by: Arrays.launchUnixTimeSort(x:y:))
+        allLaunches.sort(by: Arrays.launchUnixTimeSort(x:y:))
         
-        delegate.launchProvider(self, recentLaunchesUpdate: createTableData(launches: recentLaunches, fullLaunches: fullLaunches))
-        delegate.launchProvider(self, scheduledLaunchesUpdate: createTableData(launches: scheduledLaunches, fullLaunches: fullLaunches))
-        delegate.launchProvider(self, allLaunchesUpdate: createTableData(launches: allLaunches, fullLaunches: fullLaunches))
+        delegate.launchProvider(self, recentLaunchesUpdate: createTableData(launches: recentLaunches))
+        delegate.launchProvider(self, scheduledLaunchesUpdate: createTableData(launches: scheduledLaunches))
+        delegate.launchProvider(self, allLaunchesUpdate: createTableData(launches: allLaunches))
         delegate.launchProvider(self, dataWasUpdated: true)
     }
     
     //MARK: - Data Manipulation Functions
-    private func createTableData(launches: [Launch], fullLaunches: [String: FullLaunch]) -> LaunchTableData {
+    private func createTableData(launches: [Launch]) -> LaunchTableData {
         let splitted = self.splitLaunchesIntoSections(launches: launches)
-        return LaunchTableData(sections: splitted.sectionNames, launchIds: splitted.sectionedIds, fullLaunches: fullLaunches)
+        return LaunchTableData(sections: splitted.sectionNames, launchIds: splitted.sectionedIds, fullLaunches: dataManager.fullLaunches)
     }
     
     private func splitLaunchesIntoSections(launches: [Launch]) -> (sectionNames: [String], sectionedIds: [[String]]) {

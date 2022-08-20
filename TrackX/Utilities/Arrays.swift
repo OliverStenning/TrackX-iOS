@@ -21,8 +21,12 @@ struct Arrays {
         return dictionary
     }
     
-    static func unixTimeSort(x: Launch, y: Launch) -> Bool {
+    static func launchUnixTimeSort(x: Launch, y: Launch) -> Bool {
         return x.dateUnix < y.dateUnix
+    }
+    
+    static func fullLaunchUnixTimeSort(x: FullLaunch, y: FullLaunch) -> Bool {
+        return x.launch.dateUnix < y.launch.dateUnix
     }
     
 }
