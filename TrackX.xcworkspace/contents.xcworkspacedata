@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "container:Features"
+      name = "Features">
+      <FileRef
+         location = "group:Rockets">
+      </FileRef>
+      <FileRef
+         location = "group:Launches">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:Core"
+      name = "Core">
+      <FileRef
+         location = "group:Utilities">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:Shared"
+      name = "Shared">
+      <FileRef
+         location = "group:RaptorKit">
+      </FileRef>
+      <FileRef
+         location = "group:Networking">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:TrackX.xcodeproj">
    </FileRef>
