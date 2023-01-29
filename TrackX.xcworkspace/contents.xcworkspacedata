@@ -1,26 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <Group
-      location = "container:Features"
-      name = "Features">
-      <FileRef
-         location = "group:Rockets">
-      </FileRef>
-      <FileRef
-         location = "group:Launches">
-      </FileRef>
-   </Group>
-   <Group
-      location = "container:Core"
-      name = "Core">
-      <FileRef
-         location = "group:Utilities">
-      </FileRef>
-   </Group>
+   <FileRef
+      location = "group:TrackX.xcodeproj">
+   </FileRef>
    <Group
       location = "container:Shared"
-      name = "Shared">
+      name = "Core">
+      <FileRef
+         location = "group:/Users/oliverstenning/Documents/Xcode/TrackX-iOS/Shared/Utilities">
+      </FileRef>
       <FileRef
          location = "group:RaptorKit">
       </FileRef>
@@ -28,9 +17,6 @@
          location = "group:Networking">
       </FileRef>
    </Group>
-   <FileRef
-      location = "group:TrackX.xcodeproj">
-   </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>

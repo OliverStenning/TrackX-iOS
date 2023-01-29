@@ -15,7 +15,7 @@ Check it out on the [App Store](https://apps.apple.com/us/app/trackx-for-rocket-
 
 ## How it looks...
 <p float="left">
-  <img src="Screenshots/Main%20List.png" width="240" />
-  <img src="Screenshots/Details.png" width="240" /> 
-  <img src="Screenshots/Second%20Details.png" width="240" />
+  <img src="Screenshots/main-list.png" width="240" />
+  <img src="Screenshots/details.png" width="240" /> 
+  <img src="Screenshots/second-details.png" width="240" />
 </p>

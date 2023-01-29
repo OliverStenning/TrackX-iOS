@@ -46,9 +46,6 @@
 		F215F610287B8EAC006F67FC /* CLLocationCoordinate2D+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F60F287B8EAC006F67FC /* CLLocationCoordinate2D+Extensions.swift */; };
 		F215F612287C3835006F67FC /* LinksSectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F611287C3835006F67FC /* LinksSectionStackView.swift */; };
 		F215F614287C39F8006F67FC /* LinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F613287C39F8006F67FC /* LinkLabel.swift */; };
-		F215F625287C895B006F67FC /* Main List.png in Resources */ = {isa = PBXBuildFile; fileRef = F215F622287C895A006F67FC /* Main List.png */; };
-		F215F626287C895B006F67FC /* Details.png in Resources */ = {isa = PBXBuildFile; fileRef = F215F623287C895B006F67FC /* Details.png */; };
-		F215F627287C895B006F67FC /* Second Details.png in Resources */ = {isa = PBXBuildFile; fileRef = F215F624287C895B006F67FC /* Second Details.png */; };
 		F215F629287E0BC8006F67FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F628287E0BC8006F67FC /* Constants.swift */; };
 		F215F62D287E1C1F006F67FC /* Arrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F62C287E1C1F006F67FC /* Arrays.swift */; };
 		F226470928B193F000980DC6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226470828B193F000980DC6 /* DataManager.swift */; };
@@ -216,9 +213,6 @@
 		F215F60F287B8EAC006F67FC /* CLLocationCoordinate2D+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extensions.swift"; sourceTree = "<group>"; };
 		F215F611287C3835006F67FC /* LinksSectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksSectionStackView.swift; sourceTree = "<group>"; };
 		F215F613287C39F8006F67FC /* LinkLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkLabel.swift; sourceTree = "<group>"; };
-		F215F622287C895A006F67FC /* Main List.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Main List.png"; sourceTree = "<group>"; };
-		F215F623287C895B006F67FC /* Details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Details.png; sourceTree = "<group>"; };
-		F215F624287C895B006F67FC /* Second Details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Second Details.png"; sourceTree = "<group>"; };
 		F215F628287E0BC8006F67FC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F215F62C287E1C1F006F67FC /* Arrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrays.swift; sourceTree = "<group>"; };
 		F226470828B193F000980DC6 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -453,16 +447,6 @@
 				F215F60528634C7D006F67FC /* ImageLoader.swift */,
 			);
 			path = Cache;
-			sourceTree = "<group>";
-		};
-		F215F615287C865A006F67FC /* Screenshots */ = {
-			isa = PBXGroup;
-			children = (
-				F215F623287C895B006F67FC /* Details.png */,
-				F215F622287C895A006F67FC /* Main List.png */,
-				F215F624287C895B006F67FC /* Second Details.png */,
-			);
-			path = Screenshots;
 			sourceTree = "<group>";
 		};
 		F230AF58287F8EDD00FF7769 /* ModelTests */ = {
@@ -733,7 +717,6 @@
 			children = (
 				F2F0937A27EE2818005CCD09 /* TrackX */,
 				F2F0939127EE2819005CCD09 /* TrackXTests */,
-				F215F615287C865A006F67FC /* Screenshots */,
 				F2E63E0C289B0E7F005C6E8B /* Frameworks */,
 				F2F0937927EE2818005CCD09 /* Products */,
 				AF8DEEEE8F947D9F39DFC1DA /* Pods */,
@@ -954,7 +937,6 @@
 				F23BADB428A4412F00BCFC8F /* Archivo-Medium.ttf in Resources */,
 				F23BADC328A4420000BCFC8F /* Rubik-Bold.ttf in Resources */,
 				F23BADCC28A452A100BCFC8F /* Localizable.strings in Resources */,
-				F215F626287C895B006F67FC /* Details.png in Resources */,
 				F2F0938827EE2819005CCD09 /* LaunchScreen.storyboard in Resources */,
 				F23BADC028A4420000BCFC8F /* Rubik-Black.ttf in Resources */,
 				F23BADB528A4412F00BCFC8F /* Archivo-Thin.ttf in Resources */,
@@ -962,7 +944,6 @@
 				F23BADC528A4420000BCFC8F /* Rubik-SemiBold.ttf in Resources */,
 				F23BADC428A4420000BCFC8F /* Rubik-Light.ttf in Resources */,
 				F20D7CB528A852E50002B5FE /* Lato-Black.ttf in Resources */,
-				F215F625287C895B006F67FC /* Main List.png in Resources */,
 				F20D7CB328A852DE0002B5FE /* Lato-Bold.ttf in Resources */,
 				F23BADC228A4420000BCFC8F /* Rubik-Medium.ttf in Resources */,
 				F23BADAD28A4412F00BCFC8F /* Archivo-Regular.ttf in Resources */,
@@ -974,7 +955,6 @@
 				F23BADAC28A4412F00BCFC8F /* Archivo-SemiBold.ttf in Resources */,
 				F20D7CB128A8529B0002B5FE /* Lato-Regular.ttf in Resources */,
 				F23BADB628A4412F00BCFC8F /* Archivo-Black.ttf in Resources */,
-				F215F627287C895B006F67FC /* Second Details.png in Resources */,
 				F23BADC628A4420000BCFC8F /* Rubik-ExtraBold.ttf in Resources */,
 				F23BADB228A4412F00BCFC8F /* Archivo-ExtraLight.ttf in Resources */,
 			);
