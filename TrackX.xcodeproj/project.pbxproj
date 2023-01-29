@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -749,6 +749,7 @@
 			children = (
 				F2F093AB27EE2829005CCD09 /* Application */,
 				F254D45C2857C9560009A2A0 /* Data */,
+				F218B5F52987098200FC6435 /* Generated */,
 				F2396D28284552270084DF79 /* Networking */,
 				F2F093AD27EE2870005CCD09 /* Presentation */,
 				F2F093AC27EE2833005CCD09 /* Resources */,
@@ -781,7 +782,6 @@
 		F2F093AC27EE2833005CCD09 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F218B5F52987098200FC6435 /* Generated */,
 				F2F0938427EE2819005CCD09 /* Assets.xcassets */,
 				F2F234552853E66000CAB70C /* Fonts */,
 				F218B5F629870A1C00FC6435 /* Localizable.strings */,
@@ -862,6 +862,7 @@
 			buildConfigurationList = F2F093A227EE2819005CCD09 /* Build configuration list for PBXNativeTarget "TrackX" */;
 			buildPhases = (
 				C5EF82016F7E7D6C82B48AAD /* [CP] Check Pods Manifest.lock */,
+				F241989C29871A2E00DE5BF8 /* SwiftGen */,
 				F2F0937427EE2818005CCD09 /* Sources */,
 				F2F0937527EE2818005CCD09 /* Frameworks */,
 				F2F0937627EE2818005CCD09 /* Resources */,
@@ -920,7 +921,7 @@
 				};
 			};
 			buildConfigurationList = F2F0937327EE2817005CCD09 /* Build configuration list for PBXProject "TrackX" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1039,6 +1040,25 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		F241989C29871A2E00DE5BF8 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi \n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1179,6 +1199,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_WARNINGS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1239,6 +1260,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_WARNINGS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
