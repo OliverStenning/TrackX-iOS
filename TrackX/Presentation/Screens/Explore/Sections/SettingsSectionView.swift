@@ -17,7 +17,7 @@ class SettingsSectionView: UIView {
     private let settingsLabel: UILabel = {
         let label = UILabel()
         label.text = L10n.settings
-        label.textColor = RKAssets.Colors.textColor.color
+        label.textColor = RKAssets.Colors.textPrimary.color
         label.font = RKFonts.Archivo.medium.font(size: 20)
         return label
     }()
@@ -25,7 +25,7 @@ class SettingsSectionView: UIView {
     private let settingsIcon: UIImageView = {
         let image = UIImage(systemSymbol: .gearshapeFill)
         let imageView = UIImageView(image: image)
-        imageView.tintColor = RKAssets.Colors.textColor.color
+        imageView.tintColor = RKAssets.Colors.textPrimary.color
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
@@ -50,7 +50,7 @@ class SettingsSectionView: UIView {
     }
     
     private func configureViews() {
-        cardView.backgroundColor = RKAssets.Colors.secondaryBackgroundColor.color
+        cardView.backgroundColor = RKAssets.Colors.backgroundSecondary.color
         cardView.layer.cornerRadius = 16
         cardView.layer.masksToBounds = true
         

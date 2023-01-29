@@ -37,7 +37,7 @@ class LaunchTableSectionHeader: UIView {
     
     //MARK: - Configuration Functions
     private func configureViews() {
-        backgroundColor = RKAssets.Colors.backgroundColor.color
+        backgroundColor = RKAssets.Colors.backgroundPrimary.color
         addSubview(nameLabel)
     }
     

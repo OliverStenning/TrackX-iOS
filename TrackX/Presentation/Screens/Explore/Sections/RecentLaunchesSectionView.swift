@@ -14,7 +14,7 @@ class RecentLaunchesSectionView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = L10n.recent
-        label.textColor = RKAssets.Colors.textColor.color
+        label.textColor = RKAssets.Colors.textPrimary.color
         label.font = RKFonts.Archivo.semiBold.font(size: 22)
         return label
     }()
@@ -22,7 +22,7 @@ class RecentLaunchesSectionView: UIView {
     private let showAllButton: UIButton = {
         let button = UIButton()
         button.setTitle(L10n.showAll, for: .normal)
-        button.setTitleColor(RKAssets.Colors.accentColor.color, for: .normal)
+        button.setTitleColor(RKAssets.Colors.accent.color, for: .normal)
         button.titleLabel?.font = RKFonts.Rubik.medium.font(size: 16)
         return button
     }()

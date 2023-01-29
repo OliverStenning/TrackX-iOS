@@ -20,7 +20,7 @@ class StatusView: UIView {
     private let statusLabel: UILabel = {
         let label = UILabel()
         label.font = RKFonts.Archivo.semiBold.font(size: 14)
-        label.textColor = RKAssets.Colors.backgroundColor.color
+        label.textColor = RKAssets.Colors.backgroundPrimary.color
         label.textAlignment = .center
         return label
     }()
@@ -66,15 +66,15 @@ class StatusView: UIView {
             case .success:
                 backgroundColor = .systemGreen
                 statusLabel.text = "Success"
-                statusLabel.textColor = RKAssets.Colors.backgroundColor.color
+                statusLabel.textColor = RKAssets.Colors.backgroundPrimary.color
             case .failed:
                 backgroundColor = .systemRed
                 statusLabel.text = "Failed"
-                statusLabel.textColor = RKAssets.Colors.backgroundColor.color
+                statusLabel.textColor = RKAssets.Colors.backgroundPrimary.color
             case .scheduled:
-                backgroundColor = RKAssets.Colors.accentColor.color
+                backgroundColor = RKAssets.Colors.accent.color
                 statusLabel.text = "Scheduled"
-                statusLabel.textColor = RKAssets.Colors.backgroundColor.color
+                statusLabel.textColor = RKAssets.Colors.backgroundPrimary.color
                 
         }
     }

@@ -92,7 +92,7 @@ class LaunchDetailViewController: UIViewController {
     //MARK: - Configuration Functions
     private func configureViews() {
         title = "Launch Info"
-        view.backgroundColor = RKAssets.Colors.secondaryBackgroundColor.color
+        view.backgroundColor = RKAssets.Colors.backgroundSecondary.color
         
         view.addSubview(scrollView)
         scrollView.addSubview(headerImage)

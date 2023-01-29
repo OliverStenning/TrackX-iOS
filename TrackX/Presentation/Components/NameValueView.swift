@@ -21,21 +21,21 @@ final class NameValueView: UIView {
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.font = RKFonts.Rubik.medium.font(size: 15)
-        label.textColor = RKAssets.Colors.secondaryTextColor.color
+        label.textColor = RKAssets.Colors.textSecondary.color
         return label
     }()
     
     private let valueLabel: UILabel = {
         let label = UILabel()
         label.font = RKFonts.Rubik.regular.font(size: 15)
-        label.textColor = RKAssets.Colors.textColor.color
+        label.textColor = RKAssets.Colors.textPrimary.color
         return label
     }()
     
     private let alternateLabel: UILabel = {
         let label = UILabel()
         label.font = RKFonts.Rubik.regular.font(size: 15)
-        label.textColor = RKAssets.Colors.textColor.color
+        label.textColor = RKAssets.Colors.textPrimary.color
         label.isHidden = true
         return label
     }()

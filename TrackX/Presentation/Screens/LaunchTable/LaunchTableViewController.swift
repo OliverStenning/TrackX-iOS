@@ -20,10 +20,10 @@ class LaunchTableViewController: UIViewController {
         ])
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(nil, action: #selector(switchLaunchTable), for: .valueChanged)
-        segmentedControl.selectedSegmentTintColor = RKAssets.Colors.accentColor.color
+        segmentedControl.selectedSegmentTintColor = RKAssets.Colors.accent.color
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemGray], for: .normal)
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
-        segmentedControl.backgroundColor = RKAssets.Colors.secondaryBackgroundColor.color
+        segmentedControl.backgroundColor = RKAssets.Colors.backgroundSecondary.color
         return segmentedControl
     }()
     
@@ -31,7 +31,7 @@ class LaunchTableViewController: UIViewController {
         let tableView = UITableView(frame: CGRect.zero, style: .grouped)
         tableView.estimatedRowHeight = 150
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.backgroundColor = RKAssets.Colors.backgroundColor.color
+        tableView.backgroundColor = RKAssets.Colors.backgroundPrimary.color
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         tableView.register(RecentLaunchTableCell.self, forCellReuseIdentifier: LaunchCells.recent)
@@ -91,7 +91,7 @@ class LaunchTableViewController: UIViewController {
     
     func configureViews() {
         title = L10n.launches
-        view.backgroundColor = RKAssets.Colors.backgroundColor.color
+        view.backgroundColor = RKAssets.Colors.backgroundPrimary.color
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(systemSymbol: .arrowUpArrowDown),

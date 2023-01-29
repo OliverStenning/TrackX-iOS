@@ -26,14 +26,14 @@ class NextLaunchSectionView: UIView {
     private let rocketLabel: UILabel = {
         let label = UILabel()
         label.font = RKFonts.Archivo.bold.font(size: 14)
-        label.textColor = RKAssets.Colors.secondaryTextColor.color
+        label.textColor = RKAssets.Colors.textSecondary.color
         return label
     }()
     
     private let launchpadLabel: UILabel = {
         let label = UILabel()
         label.font = RKFonts.Archivo.bold.font(size: 14)
-        label.textColor = RKAssets.Colors.secondaryTextColor.color
+        label.textColor = RKAssets.Colors.textSecondary.color
         return label
     }()
     
@@ -82,7 +82,7 @@ class NextLaunchSectionView: UIView {
         gesture.numberOfTapsRequired = 1
         cardView.addGestureRecognizer(gesture)
         
-        cardView.backgroundColor = RKAssets.Colors.secondaryBackgroundColor.color
+        cardView.backgroundColor = RKAssets.Colors.backgroundSecondary.color
         cardView.layer.cornerRadius = 16
         cardView.layer.masksToBounds = true
         self.isUserInteractionEnabled = true

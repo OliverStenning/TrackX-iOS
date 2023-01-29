@@ -17,7 +17,7 @@ class AboutSectionView: UIView {
     private let aboutLabel: UILabel = {
         let label = UILabel()
         label.text = L10n.about
-        label.textColor = RKAssets.Colors.textColor.color
+        label.textColor = RKAssets.Colors.textPrimary.color
         label.font = RKFonts.Archivo.medium.font(size: 20)
         return label
     }()
@@ -25,7 +25,7 @@ class AboutSectionView: UIView {
     private let aboutIcon: UIImageView = {
         let image = UIImage(systemSymbol: .infoCircleFill)
         let imageView = UIImageView(image: image)
-        imageView.tintColor = RKAssets.Colors.textColor.color
+        imageView.tintColor = RKAssets.Colors.textPrimary.color
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
@@ -50,7 +50,7 @@ class AboutSectionView: UIView {
     }
     
     private func configureViews() {
-        cardView.backgroundColor = RKAssets.Colors.secondaryBackgroundColor.color
+        cardView.backgroundColor = RKAssets.Colors.backgroundSecondary.color
         cardView.layer.cornerRadius = 16
         cardView.layer.masksToBounds = true
         

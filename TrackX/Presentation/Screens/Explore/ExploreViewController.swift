@@ -30,7 +30,7 @@ class ExploreViewController: UIViewController {
         let label = UILabel()
         label.text = "Explore"
         label.font = RKFonts.Archivo.semiBold.font(size: 36)
-        label.textColor = RKAssets.Colors.textColor.color
+        label.textColor = RKAssets.Colors.textPrimary.color
         label.textAlignment = .left
         return label
     }()
@@ -101,7 +101,7 @@ class ExploreViewController: UIViewController {
     
     private func configureViews() {
         title = L10n.explore
-        view.backgroundColor = RKAssets.Colors.backgroundColor.color
+        view.backgroundColor = RKAssets.Colors.backgroundPrimary.color
         rocketsCard.isHidden = true
 
         // Interaction delegates

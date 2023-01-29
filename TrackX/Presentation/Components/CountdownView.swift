@@ -29,14 +29,14 @@ class CountdownView: UIView {
         let label = UILabel()
         label.text = ":"
         label.font = RKFonts.Archivo.bold.font(size: 24)
-        label.textColor = RKAssets.Colors.secondaryTextColor.color
+        label.textColor = RKAssets.Colors.textSecondary.color
         return label
     }()
     
     private let firstUnit: UILabel = {
         let label = UILabel()
         label.font = RKFonts.Archivo.bold.font(size: 13)
-        label.textColor = RKAssets.Colors.secondaryTextColor.color
+        label.textColor = RKAssets.Colors.textSecondary.color
         label.isHidden = true
         return label
     }()
@@ -44,7 +44,7 @@ class CountdownView: UIView {
     private let secondUnit: UILabel = {
         let label = UILabel()
         label.font = RKFonts.Archivo.bold.font(size: 13)
-        label.textColor = RKAssets.Colors.secondaryTextColor.color
+        label.textColor = RKAssets.Colors.textSecondary.color
         label.isHidden = true
         return label
     }()
@@ -169,10 +169,10 @@ class CountdownView: UIView {
         var firstOutput: String
         var secondOutput: String
         
-        firstDigit.numberLabel.textColor = RKAssets.Colors.textColor.color
-        secondDigit.numberLabel.textColor = RKAssets.Colors.textColor.color
-        thirdDigit.numberLabel.textColor = RKAssets.Colors.textColor.color
-        fourthDigit.numberLabel.textColor = RKAssets.Colors.textColor.color
+        firstDigit.numberLabel.textColor = RKAssets.Colors.textPrimary.color
+        secondDigit.numberLabel.textColor = RKAssets.Colors.textPrimary.color
+        thirdDigit.numberLabel.textColor = RKAssets.Colors.textPrimary.color
+        fourthDigit.numberLabel.textColor = RKAssets.Colors.textPrimary.color
         
         firstUnit.isHidden = false
         secondUnit.isHidden = false

@@ -16,7 +16,7 @@ class LinkLabel: UILabel {
         self.url = url
         super.init(frame: .zero)
         self.text = text
-        self.textColor = RKAssets.Colors.accentColor.color
+        self.textColor = RKAssets.Colors.accent.color
         self.font = RKFonts.Archivo.semiBold.font(size: 16)
         self.numberOfLines = 0
         self.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)

@@ -33,7 +33,7 @@ class BodyLabel: UILabel {
         
         self.text = text
         
-        textColor = RKAssets.Colors.textColor.color
+        textColor = RKAssets.Colors.textPrimary.color
         numberOfLines = lineCount
         isUserInteractionEnabled = true
         

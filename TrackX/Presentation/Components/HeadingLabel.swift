@@ -21,7 +21,7 @@ class HeadingLabel: UILabel {
     init(text: String = "", size: HeadingSize) {
         super.init(frame: .zero)
         self.text = text
-        self.textColor = RKAssets.Colors.textColor.color
+        self.textColor = RKAssets.Colors.textPrimary.color
         self.font = RKFonts.Archivo.semiBold.font(size: getFontSize(size: size))
         self.numberOfLines = 0
         self.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)

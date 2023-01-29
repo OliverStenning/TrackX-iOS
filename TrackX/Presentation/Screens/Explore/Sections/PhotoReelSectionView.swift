@@ -14,7 +14,7 @@ class PhotoReelSectionView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = L10n.latestPhotos
-        label.textColor = RKAssets.Colors.textColor.color
+        label.textColor = RKAssets.Colors.textPrimary.color
         label.font = RKFonts.Archivo.semiBold.font(size: 22)
         return label
     }()
