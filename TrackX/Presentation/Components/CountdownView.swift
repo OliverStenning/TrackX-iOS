@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 13/08/2022.
 //
 
+import RaptorKit
 import UIKit
 
 class CountdownView: UIView {
@@ -27,23 +28,23 @@ class CountdownView: UIView {
     private let separator: UILabel = {
         let label = UILabel()
         label.text = ":"
-//        label.font = R.font.archivoBold(size: 24)
-//        label.textColor = R.color.secondaryTextColor()
+        label.font = RKFonts.Archivo.bold.font(size: 24)
+        label.textColor = RKAssets.Colors.secondaryTextColor.color
         return label
     }()
     
     private let firstUnit: UILabel = {
         let label = UILabel()
-//        label.font = R.font.archivoBold(size: 13)
-//        label.textColor = R.color.secondaryTextColor()
+        label.font = RKFonts.Archivo.bold.font(size: 13)
+        label.textColor = RKAssets.Colors.secondaryTextColor.color
         label.isHidden = true
         return label
     }()
     
     private let secondUnit: UILabel = {
         let label = UILabel()
-//        label.font = R.font.archivoBold(size: 13)
-//        label.textColor = R.color.secondaryTextColor()
+        label.font = RKFonts.Archivo.bold.font(size: 13)
+        label.textColor = RKAssets.Colors.secondaryTextColor.color
         label.isHidden = true
         return label
     }()
@@ -168,10 +169,10 @@ class CountdownView: UIView {
         var firstOutput: String
         var secondOutput: String
         
-//        firstDigit.numberLabel.textColor = R.color.textColor()
-//        secondDigit.numberLabel.textColor = R.color.textColor()
-//        thirdDigit.numberLabel.textColor = R.color.textColor()
-//        fourthDigit.numberLabel.textColor = R.color.textColor()
+        firstDigit.numberLabel.textColor = RKAssets.Colors.textColor.color
+        secondDigit.numberLabel.textColor = RKAssets.Colors.textColor.color
+        thirdDigit.numberLabel.textColor = RKAssets.Colors.textColor.color
+        fourthDigit.numberLabel.textColor = RKAssets.Colors.textColor.color
         
         firstUnit.isHidden = false
         secondUnit.isHidden = false

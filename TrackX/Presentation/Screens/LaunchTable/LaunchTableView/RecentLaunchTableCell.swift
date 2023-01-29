@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 09/06/2022.
 //
 
+import RaptorKit
 import UIKit
 import Combine
 
@@ -19,7 +20,7 @@ class RecentLaunchTableCell: LaunchTableCell {
     
     private let backgroundGradient: UIView = {
         let view = GradientView()
-//        view.bottomColor = R.color.secondaryBackgroundColor() ?? .black
+        view.bottomColor = RKAssets.Colors.secondaryBackgroundColor.color
         view.locations = [-1.0, 1.0]
         return view
     }()
@@ -95,7 +96,7 @@ class RecentLaunchTableCell: LaunchTableCell {
         if let imageUrl = fullLaunch?.getLaunchImageUrl() {
             cancellable = loadImage(for: imageUrl).sink { [unowned self] image in self.showImage(image: image)}
         } else {
-//            showImage(image: R.image.placeholder())
+            showImage(image: RKAssets.Images.placeholder.image)
         }
     }
     

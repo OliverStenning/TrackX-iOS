@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 29/05/2022.
 //
 
+import RaptorKit
 import UIKit
 import Combine
 
@@ -91,7 +92,7 @@ class LaunchDetailViewController: UIViewController {
     //MARK: - Configuration Functions
     private func configureViews() {
         title = "Launch Info"
-//        view.backgroundColor = R.color.secondaryBackgroundColor()
+        view.backgroundColor = RKAssets.Colors.secondaryBackgroundColor.color
         
         view.addSubview(scrollView)
         scrollView.addSubview(headerImage)
@@ -157,7 +158,7 @@ class LaunchDetailViewController: UIViewController {
         if let imageUrl = fullLaunch?.getLaunchImageUrl() {
             cancellable = loadImage(for: imageUrl).sink { [unowned self] image in self.showImage(image: image)}
         } else {
-//            showImage(image: R.image.placeholder())
+            showImage(image: RKAssets.Images.placeholder.image)
         }
     }
     

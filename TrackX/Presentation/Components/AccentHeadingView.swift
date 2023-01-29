@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 21/06/2022.
 //
 
+import RaptorKit
 import UIKit
 
 class AccentHeadingView: UIView {
@@ -12,8 +13,7 @@ class AccentHeadingView: UIView {
     //MARK: - Views
     private let capsule: UIView = {
         let view = UIView()
-//        view.backgroundColor = R.color.accentColor()
-        view.backgroundColor = .white
+        view.backgroundColor = RKAssets.Colors.accentColor.color
         
         return view
     }()

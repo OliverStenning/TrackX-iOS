@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 14/08/2022.
 //
 
+import RaptorKit
 import UIKit
 
 class ScheduledLaunchCollectionCell: UICollectionViewCell {
@@ -53,7 +54,7 @@ class ScheduledLaunchCollectionCell: UICollectionViewCell {
         gesture.cancelsTouchesInView = false
         cardView.addGestureRecognizer(gesture)
         
-//        cardView.backgroundColor = R.color.secondaryBackgroundColor()
+        cardView.backgroundColor = RKAssets.Colors.secondaryBackgroundColor.color
         cardView.layer.cornerRadius = 16
         cardView.layer.masksToBounds = true
     }

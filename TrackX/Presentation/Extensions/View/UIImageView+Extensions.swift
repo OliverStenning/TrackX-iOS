@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 07/06/2022.
 //
 
+import RaptorKit
 import UIKit
 
 extension UIImageView {
@@ -42,8 +43,7 @@ extension UIImageView {
     }
     
     func imageFromFullLaunch(fullLaunch: FullLaunch?) {
-//        let placeholder = R.image.placeholder()
-        let placeholder = UIImage(named: "")
+        let placeholder = RKAssets.Images.placeholder.image
         if let flickr = fullLaunch?.launch.links?.flickr?.original {
             if !flickr.isEmpty {
                 imageFromURL(flickr[0], placeHolder: placeholder)

@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 13/08/2022.
 //
 
+import RaptorKit
 import UIKit
 
 class RocketsSectionView: UIView {
@@ -12,9 +13,9 @@ class RocketsSectionView: UIView {
     //MARK: - Views
     private let titleLabel: UILabel = {
         let label = UILabel()
-//        label.text = R.string.localizable.rockets()
-//        label.textColor = R.color.textColor()
-//        label.font = R.font.archivoSemiBold(size: 20)
+        label.text = L10n.rockets
+        label.textColor = RKAssets.Colors.textColor.color
+        label.font = RKFonts.Archivo.semiBold.font(size: 20)
         return label
     }()
     
@@ -42,7 +43,7 @@ class RocketsSectionView: UIView {
     }
     
     private func configureViews() {
-//        card.backgroundColor = R.color.secondaryBackgroundColor()
+        card.backgroundColor = RKAssets.Colors.secondaryBackgroundColor.color
         card.layer.cornerRadius = 16
         card.layer.masksToBounds = true
     }

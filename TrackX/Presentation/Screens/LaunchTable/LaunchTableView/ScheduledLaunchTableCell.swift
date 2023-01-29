@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 25/03/2022.
 //
 
+import RaptorKit
 import UIKit
 
 class ScheduledLaunchTableCell: LaunchTableCell {
@@ -43,7 +44,7 @@ class ScheduledLaunchTableCell: LaunchTableCell {
     private func configureViews() {
         backgroundColor = .clear
         selectionStyle = .none
-//        container.backgroundColor = R.color.secondaryBackgroundColor()
+        container.backgroundColor = RKAssets.Colors.secondaryBackgroundColor.color
     }
     
     private func configureConstraints() {

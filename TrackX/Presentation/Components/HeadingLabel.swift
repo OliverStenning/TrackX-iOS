@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 13/06/2022.
 //
 
+import RaptorKit
 import UIKit
 
 public enum HeadingSize {
@@ -20,8 +21,8 @@ class HeadingLabel: UILabel {
     init(text: String = "", size: HeadingSize) {
         super.init(frame: .zero)
         self.text = text
-//        self.textColor = R.color.textColor()
-//        self.font = R.font.archivoSemiBold(size: getFontSize(size: size))
+        self.textColor = RKAssets.Colors.textColor.color
+        self.font = RKFonts.Archivo.semiBold.font(size: getFontSize(size: size))
         self.numberOfLines = 0
         self.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }

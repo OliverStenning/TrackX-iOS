@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 13/08/2022.
 //
 
+import RaptorKit
 import UIKit
 
 class NextLaunchSectionView: UIView {
@@ -24,15 +25,15 @@ class NextLaunchSectionView: UIView {
     
     private let rocketLabel: UILabel = {
         let label = UILabel()
-//        label.font = R.font.archivoBold(size: 14)
-//        label.textColor = R.color.secondaryTextColor()
+        label.font = RKFonts.Archivo.bold.font(size: 14)
+        label.textColor = RKAssets.Colors.secondaryTextColor.color
         return label
     }()
     
     private let launchpadLabel: UILabel = {
         let label = UILabel()
-//        label.font = R.font.archivoBold(size: 14)
-//        label.textColor = R.color.secondaryTextColor()
+        label.font = RKFonts.Archivo.bold.font(size: 14)
+        label.textColor = RKAssets.Colors.secondaryTextColor.color
         return label
     }()
     
@@ -81,7 +82,7 @@ class NextLaunchSectionView: UIView {
         gesture.numberOfTapsRequired = 1
         cardView.addGestureRecognizer(gesture)
         
-//        cardView.backgroundColor = R.color.secondaryBackgroundColor()
+        cardView.backgroundColor = RKAssets.Colors.secondaryBackgroundColor.color
         cardView.layer.cornerRadius = 16
         cardView.layer.masksToBounds = true
         self.isUserInteractionEnabled = true

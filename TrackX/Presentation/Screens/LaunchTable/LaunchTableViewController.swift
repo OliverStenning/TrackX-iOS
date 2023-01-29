@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 18/08/2022.
 //
 
+import RaptorKit
 import UIKit
 import SFSafeSymbols
 
@@ -13,16 +14,16 @@ class LaunchTableViewController: UIViewController {
     // MARK: - Views
     let launchTableControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: [
-//            R.string.localizable.scheduled(),
-//            R.string.localizable.recent(),
-//            R.string.localizable.all()
+            L10n.scheduled,
+            L10n.recent,
+            L10n.all
         ])
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(nil, action: #selector(switchLaunchTable), for: .valueChanged)
-//        segmentedControl.selectedSegmentTintColor = R.color.accentColor()
+        segmentedControl.selectedSegmentTintColor = RKAssets.Colors.accentColor.color
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemGray], for: .normal)
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
-//        segmentedControl.backgroundColor = R.color.secondaryBackgroundColor()
+        segmentedControl.backgroundColor = RKAssets.Colors.secondaryBackgroundColor.color
         return segmentedControl
     }()
     
@@ -30,7 +31,7 @@ class LaunchTableViewController: UIViewController {
         let tableView = UITableView(frame: CGRect.zero, style: .grouped)
         tableView.estimatedRowHeight = 150
         tableView.rowHeight = UITableView.automaticDimension
-//        tableView.backgroundColor = R.color.backgroundColor()
+        tableView.backgroundColor = RKAssets.Colors.backgroundColor.color
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         tableView.register(RecentLaunchTableCell.self, forCellReuseIdentifier: LaunchCells.recent)
@@ -89,8 +90,8 @@ class LaunchTableViewController: UIViewController {
     }
     
     func configureViews() {
-//        title = R.string.localizable.launches()
-//        view.backgroundColor = R.color.backgroundColor()
+        title = L10n.launches
+        view.backgroundColor = RKAssets.Colors.backgroundColor.color
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(systemSymbol: .arrowUpArrowDown),

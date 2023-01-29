@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 18/06/2022.
 //
 
+import RaptorKit
 import UIKit
 
 enum StatusType {
@@ -18,8 +19,8 @@ class StatusView: UIView {
     //MARK: - Views
     private let statusLabel: UILabel = {
         let label = UILabel()
-//        label.font = R.font.archivoSemiBold(size: 14)
-//        label.textColor = R.color.backgroundColor()
+        label.font = RKFonts.Archivo.semiBold.font(size: 14)
+        label.textColor = RKAssets.Colors.backgroundColor.color
         label.textAlignment = .center
         return label
     }()
@@ -65,15 +66,15 @@ class StatusView: UIView {
             case .success:
                 backgroundColor = .systemGreen
                 statusLabel.text = "Success"
-//                statusLabel.textColor = R.color.backgroundColor()
+                statusLabel.textColor = RKAssets.Colors.backgroundColor.color
             case .failed:
                 backgroundColor = .systemRed
                 statusLabel.text = "Failed"
-//                statusLabel.textColor = R.color.backgroundColor()
+                statusLabel.textColor = RKAssets.Colors.backgroundColor.color
             case .scheduled:
-//                backgroundColor = R.color.accentColor()
+                backgroundColor = RKAssets.Colors.accentColor.color
                 statusLabel.text = "Scheduled"
-//                statusLabel.textColor = R.color.backgroundColor()
+                statusLabel.textColor = RKAssets.Colors.backgroundColor.color
                 
         }
     }

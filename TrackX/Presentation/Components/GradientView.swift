@@ -5,12 +5,12 @@
 //  Created by Oliver Stenning on 12/06/2022.
 //
 
+import RaptorKit
 import UIKit
 
 class GradientView: UIView {
     var topColor: UIColor = UIColor.clear
-//    var bottomColor: UIColor = R.color.secondaryBackgroundColor() ?? UIColor.clear
-    var bottomColor: UIColor = .white
+    var bottomColor: UIColor = RKAssets.Colors.secondaryBackgroundColor.color
     var locations: [NSNumber] = [0.0, 1.0]
     
     override class var layerClass: AnyClass {

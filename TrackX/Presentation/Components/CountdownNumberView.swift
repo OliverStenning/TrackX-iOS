@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 13/08/2022.
 //
 
+import RaptorKit
 import UIKit
 
 class CountdownNumberView: UIView {
@@ -12,8 +13,8 @@ class CountdownNumberView: UIView {
     //MARK: - Views
     let numberLabel: UILabel = {
         let label = UILabel()
-//        label.font = R.font.latoBold(size: 24)
-//        label.textColor = R.color.textColor()
+        label.font = RKFonts.Lato.bold.font(size: 24)
+        label.textColor = RKAssets.Colors.textColor.color
         label.textAlignment = .center
         return label
     }()
@@ -35,7 +36,7 @@ class CountdownNumberView: UIView {
     
     //MARK: - Configuration Functions
     private func configureViews() {
-//        backgroundColor = R.color.backgroundColor()
+        backgroundColor = RKAssets.Colors.backgroundColor.color
         layer.cornerRadius = 8
         
         addSubview(numberLabel)

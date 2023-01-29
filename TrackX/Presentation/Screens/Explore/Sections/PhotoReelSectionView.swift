@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 15/08/2022.
 //
 
+import RaptorKit
 import UIKit
 
 class PhotoReelSectionView: UIView {
@@ -12,9 +13,9 @@ class PhotoReelSectionView: UIView {
     //MARK: - Views
     private let titleLabel: UILabel = {
         let label = UILabel()
-//        label.text = R.string.localizable.latestPhotos()
-//        label.textColor = R.color.textColor()
-//        label.font = R.font.archivoSemiBold(size: 22)
+        label.text = L10n.latestPhotos
+        label.textColor = RKAssets.Colors.textColor.color
+        label.font = RKFonts.Archivo.semiBold.font(size: 22)
         return label
     }()
 
