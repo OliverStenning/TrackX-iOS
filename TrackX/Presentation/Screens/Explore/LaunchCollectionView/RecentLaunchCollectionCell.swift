@@ -20,7 +20,7 @@ class RecentLaunchCollectionCell: UICollectionViewCell {
     
     private let backgroundGradient: UIView = {
         let view = GradientView()
-        view.bottomColor = R.color.secondaryBackgroundColor() ?? .black
+//        view.bottomColor = R.color.secondaryBackgroundColor() ?? .black
         view.locations = [-1.0, 1.0]
         return view
     }()
@@ -79,7 +79,7 @@ class RecentLaunchCollectionCell: UICollectionViewCell {
         gesture.cancelsTouchesInView = false
         cardView.addGestureRecognizer(gesture)
         
-        cardView.backgroundColor = R.color.secondaryBackgroundColor()
+//        cardView.backgroundColor = R.color.secondaryBackgroundColor()
         cardView.layer.cornerRadius = 16
         cardView.layer.masksToBounds = true
     }
@@ -108,7 +108,7 @@ class RecentLaunchCollectionCell: UICollectionViewCell {
         if let imageUrl = fullLaunch?.getLaunchImageUrl() {
             cancellable = loadImage(for: imageUrl).sink { [unowned self] image in self.showImage(image: image)}
         } else {
-            showImage(image: R.image.placeholder())
+//            showImage(image: R.image.placeholder())
         }
     }
 

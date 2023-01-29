@@ -27,23 +27,23 @@ class CountdownView: UIView {
     private let separator: UILabel = {
         let label = UILabel()
         label.text = ":"
-        label.font = R.font.archivoBold(size: 24)
-        label.textColor = R.color.secondaryTextColor()
+//        label.font = R.font.archivoBold(size: 24)
+//        label.textColor = R.color.secondaryTextColor()
         return label
     }()
     
     private let firstUnit: UILabel = {
         let label = UILabel()
-        label.font = R.font.archivoBold(size: 13)
-        label.textColor = R.color.secondaryTextColor()
+//        label.font = R.font.archivoBold(size: 13)
+//        label.textColor = R.color.secondaryTextColor()
         label.isHidden = true
         return label
     }()
     
     private let secondUnit: UILabel = {
         let label = UILabel()
-        label.font = R.font.archivoBold(size: 13)
-        label.textColor = R.color.secondaryTextColor()
+//        label.font = R.font.archivoBold(size: 13)
+//        label.textColor = R.color.secondaryTextColor()
         label.isHidden = true
         return label
     }()
@@ -168,10 +168,10 @@ class CountdownView: UIView {
         var firstOutput: String
         var secondOutput: String
         
-        firstDigit.numberLabel.textColor = R.color.textColor()
-        secondDigit.numberLabel.textColor = R.color.textColor()
-        thirdDigit.numberLabel.textColor = R.color.textColor()
-        fourthDigit.numberLabel.textColor = R.color.textColor()
+//        firstDigit.numberLabel.textColor = R.color.textColor()
+//        secondDigit.numberLabel.textColor = R.color.textColor()
+//        thirdDigit.numberLabel.textColor = R.color.textColor()
+//        fourthDigit.numberLabel.textColor = R.color.textColor()
         
         firstUnit.isHidden = false
         secondUnit.isHidden = false

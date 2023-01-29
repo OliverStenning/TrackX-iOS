@@ -12,17 +12,17 @@ class ScheduledLaunchesSectionView: UIView {
     //MARK: - Views
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = R.string.localizable.scheduled()
-        label.textColor = R.color.textColor()
-        label.font = R.font.archivoSemiBold(size: 22)
+//        label.text = R.string.localizable.scheduled()
+//        label.textColor = R.color.textColor()
+//        label.font = R.font.archivoSemiBold(size: 22)
         return label
     }()
     
     private let showAllButton: UIButton = {
         let button = UIButton()
-        button.setTitle(R.string.localizable.showAll(), for: .normal)
-        button.setTitleColor(R.color.accentColor(), for: .normal)
-        button.titleLabel?.font = R.font.rubikMedium(size: 16)
+//        button.setTitle(R.string.localizable.showAll(), for: .normal)
+//        button.setTitleColor(R.color.accentColor(), for: .normal)
+//        button.titleLabel?.font = R.font.rubikMedium(size: 16)
         return button
     }()
     

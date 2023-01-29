@@ -18,8 +18,8 @@ class StatusView: UIView {
     //MARK: - Views
     private let statusLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.archivoSemiBold(size: 14)
-        label.textColor = R.color.backgroundColor()
+//        label.font = R.font.archivoSemiBold(size: 14)
+//        label.textColor = R.color.backgroundColor()
         label.textAlignment = .center
         return label
     }()
@@ -65,15 +65,15 @@ class StatusView: UIView {
             case .success:
                 backgroundColor = .systemGreen
                 statusLabel.text = "Success"
-                statusLabel.textColor = R.color.backgroundColor()
+//                statusLabel.textColor = R.color.backgroundColor()
             case .failed:
                 backgroundColor = .systemRed
                 statusLabel.text = "Failed"
-                statusLabel.textColor = R.color.backgroundColor()
+//                statusLabel.textColor = R.color.backgroundColor()
             case .scheduled:
-                backgroundColor = R.color.accentColor()
+//                backgroundColor = R.color.accentColor()
                 statusLabel.text = "Scheduled"
-                statusLabel.textColor = R.color.backgroundColor()
+//                statusLabel.textColor = R.color.backgroundColor()
                 
         }
     }

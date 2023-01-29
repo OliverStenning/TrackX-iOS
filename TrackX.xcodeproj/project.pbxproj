@@ -48,6 +48,7 @@
 		F215F614287C39F8006F67FC /* LinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F613287C39F8006F67FC /* LinkLabel.swift */; };
 		F215F629287E0BC8006F67FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F628287E0BC8006F67FC /* Constants.swift */; };
 		F215F62D287E1C1F006F67FC /* Arrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F62C287E1C1F006F67FC /* Arrays.swift */; };
+		F218B5F729870A1C00FC6435 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F218B5F629870A1C00FC6435 /* Localizable.strings */; };
 		F226470928B193F000980DC6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226470828B193F000980DC6 /* DataManager.swift */; };
 		F230AF53287E44ED00FF7769 /* LaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF52287E44ED00FF7769 /* LaunchTests.swift */; };
 		F230AF56287E47CF00FF7769 /* launch.json in Resources */ = {isa = PBXBuildFile; fileRef = F230AF55287E47CF00FF7769 /* launch.json */; };
@@ -103,8 +104,10 @@
 		F23BADC428A4420000BCFC8F /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BADBD28A4420000BCFC8F /* Rubik-Light.ttf */; };
 		F23BADC528A4420000BCFC8F /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BADBE28A4420000BCFC8F /* Rubik-SemiBold.ttf */; };
 		F23BADC628A4420000BCFC8F /* Rubik-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F23BADBF28A4420000BCFC8F /* Rubik-ExtraBold.ttf */; };
-		F23BADCC28A452A100BCFC8F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F23BADCE28A452A100BCFC8F /* Localizable.strings */; };
 		F23BADD428A4569E00BCFC8F /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = F23BADD328A4569E00BCFC8F /* SFSafeSymbols */; };
+		F24198902987140800DE5BF8 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F241988F2987140800DE5BF8 /* Strings+Generated.swift */; };
+		F241989A2987180B00DE5BF8 /* RaptorKit in Frameworks */ = {isa = PBXBuildFile; productRef = F24198992987180B00DE5BF8 /* RaptorKit */; };
+		F241989B2987180B00DE5BF8 /* RaptorKit in Embed Frameworks */ = {isa = PBXBuildFile; productRef = F24198992987180B00DE5BF8 /* RaptorKit */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F254D44D2857876F0009A2A0 /* HeadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D44C2857876F0009A2A0 /* HeadingLabel.swift */; };
 		F254D45128578DDB0009A2A0 /* BodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D45028578DDB0009A2A0 /* BodyLabel.swift */; };
 		F254D455285792160009A2A0 /* RocketSectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D454285792160009A2A0 /* RocketSectionStackView.swift */; };
@@ -112,7 +115,6 @@
 		F254D4592857A19B0009A2A0 /* LaunchpadSectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D4582857A19B0009A2A0 /* LaunchpadSectionStackView.swift */; };
 		F254D45E2857C9660009A2A0 /* LaunchProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D45D2857C9660009A2A0 /* LaunchProvider.swift */; };
 		F25B2DD528AED03D000B110F /* LaunchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B2DD428AED03D000B110F /* LaunchTableViewController.swift */; };
-		F25B2DDA28AEDBF3000B110F /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B2DD928AEDBF3000B110F /* R.generated.swift */; };
 		F26CBE872880E6F700D2DFDC /* StringFormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26CBE862880E6F700D2DFDC /* StringFormattingTests.swift */; };
 		F2AC1A5C28A80CD90007F688 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC1A5B28A80CD90007F688 /* ExploreViewController.swift */; };
 		F2AC1A6428A818520007F688 /* ScheduledLaunchesSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC1A6328A818520007F688 /* ScheduledLaunchesSectionView.swift */; };
@@ -156,14 +158,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F2E63E1D289B0E81005C6E8B /* Embed App Extensions */ = {
+		F218B5FD29870C2F00FC6435 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F241989B2987180B00DE5BF8 /* RaptorKit in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2E63E1D289B0E81005C6E8B /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -212,6 +225,7 @@
 		F215F613287C39F8006F67FC /* LinkLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkLabel.swift; sourceTree = "<group>"; };
 		F215F628287E0BC8006F67FC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F215F62C287E1C1F006F67FC /* Arrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrays.swift; sourceTree = "<group>"; };
+		F218B5F629870A1C00FC6435 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		F226470828B193F000980DC6 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F230AF52287E44ED00FF7769 /* LaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTests.swift; sourceTree = "<group>"; };
 		F230AF55287E47CF00FF7769 /* launch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = launch.json; sourceTree = "<group>"; };
@@ -267,7 +281,7 @@
 		F23BADBD28A4420000BCFC8F /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
 		F23BADBE28A4420000BCFC8F /* Rubik-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBold.ttf"; sourceTree = "<group>"; };
 		F23BADBF28A4420000BCFC8F /* Rubik-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-ExtraBold.ttf"; sourceTree = "<group>"; };
-		F23BADCD28A452A100BCFC8F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F241988F2987140800DE5BF8 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		F254D44C2857876F0009A2A0 /* HeadingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingLabel.swift; sourceTree = "<group>"; };
 		F254D45028578DDB0009A2A0 /* BodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyLabel.swift; sourceTree = "<group>"; };
 		F254D454285792160009A2A0 /* RocketSectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketSectionStackView.swift; sourceTree = "<group>"; };
@@ -275,7 +289,6 @@
 		F254D4582857A19B0009A2A0 /* LaunchpadSectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadSectionStackView.swift; sourceTree = "<group>"; };
 		F254D45D2857C9660009A2A0 /* LaunchProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchProvider.swift; sourceTree = "<group>"; };
 		F25B2DD428AED03D000B110F /* LaunchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTableViewController.swift; sourceTree = "<group>"; };
-		F25B2DD928AEDBF3000B110F /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		F26CBE862880E6F700D2DFDC /* StringFormattingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormattingTests.swift; sourceTree = "<group>"; };
 		F2AC1A5B28A80CD90007F688 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		F2AC1A6328A818520007F688 /* ScheduledLaunchesSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledLaunchesSectionView.swift; sourceTree = "<group>"; };
@@ -323,6 +336,7 @@
 			files = (
 				F23BADD428A4569E00BCFC8F /* SFSafeSymbols in Frameworks */,
 				1122EAB36317A2497F103440 /* Pods_TrackX.framework in Frameworks */,
+				F241989A2987180B00DE5BF8 /* RaptorKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +359,6 @@
 				FD6DCD14241DAE013686E48A /* Pods-TrackXTests.debug.xcconfig */,
 				0D6D5007C977ABFDE33AD287 /* Pods-TrackXTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -447,6 +460,14 @@
 				F215F60528634C7D006F67FC /* ImageLoader.swift */,
 			);
 			path = Cache;
+			sourceTree = "<group>";
+		};
+		F218B5F52987098200FC6435 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				F241988F2987140800DE5BF8 /* Strings+Generated.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 		F230AF58287F8EDD00FF7769 /* ModelTests */ = {
@@ -577,14 +598,6 @@
 				F23BADBE28A4420000BCFC8F /* Rubik-SemiBold.ttf */,
 			);
 			path = Rubik;
-			sourceTree = "<group>";
-		};
-		F23BADC728A450C000BCFC8F /* Strings */ = {
-			isa = PBXGroup;
-			children = (
-				F23BADCE28A452A100BCFC8F /* Localizable.strings */,
-			);
-			path = Strings;
 			sourceTree = "<group>";
 		};
 		F254D45C2857C9560009A2A0 /* Data */ = {
@@ -768,10 +781,10 @@
 		F2F093AC27EE2833005CCD09 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F25B2DD928AEDBF3000B110F /* R.generated.swift */,
+				F218B5F52987098200FC6435 /* Generated */,
 				F2F0938427EE2819005CCD09 /* Assets.xcassets */,
 				F2F234552853E66000CAB70C /* Fonts */,
-				F23BADC728A450C000BCFC8F /* Strings */,
+				F218B5F629870A1C00FC6435 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -849,11 +862,11 @@
 			buildConfigurationList = F2F093A227EE2819005CCD09 /* Build configuration list for PBXNativeTarget "TrackX" */;
 			buildPhases = (
 				C5EF82016F7E7D6C82B48AAD /* [CP] Check Pods Manifest.lock */,
-				F23BAD8D28A434CB00BCFC8F /* ShellScript */,
 				F2F0937427EE2818005CCD09 /* Sources */,
 				F2F0937527EE2818005CCD09 /* Frameworks */,
 				F2F0937627EE2818005CCD09 /* Resources */,
-				F2E63E1D289B0E81005C6E8B /* Embed App Extensions */,
+				F2E63E1D289B0E81005C6E8B /* Embed Foundation Extensions */,
+				F218B5FD29870C2F00FC6435 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -862,6 +875,7 @@
 			name = TrackX;
 			packageProductDependencies = (
 				F23BADD328A4569E00BCFC8F /* SFSafeSymbols */,
+				F24198992987180B00DE5BF8 /* RaptorKit */,
 			);
 			productName = TrackX;
 			productReference = F2F0937827EE2818005CCD09 /* TrackX.app */;
@@ -894,7 +908,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					F2F0937727EE2818005CCD09 = {
 						CreatedOnToolsVersion = 13.3;
@@ -915,7 +929,7 @@
 			);
 			mainGroup = F2F0936F27EE2817005CCD09;
 			packageReferences = (
-				F23BADD228A4569E00BCFC8F /* XCRemoteSwiftPackageReference "SFSafeSymbols.git" */,
+				F23BADD228A4569E00BCFC8F /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
 			);
 			productRefGroup = F2F0937927EE2818005CCD09 /* Products */;
 			projectDirPath = "";
@@ -934,7 +948,6 @@
 			files = (
 				F23BADB428A4412F00BCFC8F /* Archivo-Medium.ttf in Resources */,
 				F23BADC328A4420000BCFC8F /* Rubik-Bold.ttf in Resources */,
-				F23BADCC28A452A100BCFC8F /* Localizable.strings in Resources */,
 				F2F0938827EE2819005CCD09 /* LaunchScreen.storyboard in Resources */,
 				F23BADC028A4420000BCFC8F /* Rubik-Black.ttf in Resources */,
 				F23BADB528A4412F00BCFC8F /* Archivo-Thin.ttf in Resources */,
@@ -945,6 +958,7 @@
 				F20D7CB328A852DE0002B5FE /* Lato-Bold.ttf in Resources */,
 				F23BADC228A4420000BCFC8F /* Rubik-Medium.ttf in Resources */,
 				F23BADAD28A4412F00BCFC8F /* Archivo-Regular.ttf in Resources */,
+				F218B5F729870A1C00FC6435 /* Localizable.strings in Resources */,
 				F23BADA728A4412F00BCFC8F /* Archivo-Bold.ttf in Resources */,
 				F23BADC128A4420000BCFC8F /* Rubik-Regular.ttf in Resources */,
 				F23BADAE28A4412F00BCFC8F /* Archivo-ExtraBold.ttf in Resources */,
@@ -1026,25 +1040,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F23BAD8D28A434CB00BCFC8F /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$SRCROOT/TrackX/Resources/R.generated.swift",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/TrackX/Resources/R.generated.swift\"\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1094,7 +1089,6 @@
 				F2396D4D2847A9A90084DF79 /* Landpad.swift in Sources */,
 				F254D4592857A19B0009A2A0 /* LaunchpadSectionStackView.swift in Sources */,
 				F2AC1A6428A818520007F688 /* ScheduledLaunchesSectionView.swift in Sources */,
-				F25B2DDA28AEDBF3000B110F /* R.generated.swift in Sources */,
 				F2396D4F2847A9C40084DF79 /* Core.swift in Sources */,
 				F215F5FF2863480A006F67FC /* UIImage+Extensions.swift in Sources */,
 				F2396D35284553E00084DF79 /* ParameterEncoding.swift in Sources */,
@@ -1137,6 +1131,7 @@
 				F215F60C287B7DCC006F67FC /* Location.swift in Sources */,
 				F20D7CBD28A966FD0002B5FE /* RecentLaunchCollectionCell.swift in Sources */,
 				F254D455285792160009A2A0 /* RocketSectionStackView.swift in Sources */,
+				F24198902987140800DE5BF8 /* Strings+Generated.swift in Sources */,
 				14409ED1B895ECA8C135E83F /* NextLaunchSectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1169,14 +1164,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F23BADCE28A452A100BCFC8F /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F23BADCD28A452A100BCFC8F /* en */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
 		F2F0938627EE2819005CCD09 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1439,7 +1426,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F23BADD228A4569E00BCFC8F /* XCRemoteSwiftPackageReference "SFSafeSymbols.git" */ = {
+		F23BADD228A4569E00BCFC8F /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols.git";
 			requirement = {
@@ -1452,8 +1439,12 @@
 /* Begin XCSwiftPackageProductDependency section */
 		F23BADD328A4569E00BCFC8F /* SFSafeSymbols */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F23BADD228A4569E00BCFC8F /* XCRemoteSwiftPackageReference "SFSafeSymbols.git" */;
+			package = F23BADD228A4569E00BCFC8F /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
 			productName = SFSafeSymbols;
+		};
+		F24198992987180B00DE5BF8 /* RaptorKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RaptorKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -12,8 +12,8 @@ class CountdownNumberView: UIView {
     //MARK: - Views
     let numberLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.latoBold(size: 24)
-        label.textColor = R.color.textColor()
+//        label.font = R.font.latoBold(size: 24)
+//        label.textColor = R.color.textColor()
         label.textAlignment = .center
         return label
     }()
@@ -35,7 +35,7 @@ class CountdownNumberView: UIView {
     
     //MARK: - Configuration Functions
     private func configureViews() {
-        backgroundColor = R.color.backgroundColor()
+//        backgroundColor = R.color.backgroundColor()
         layer.cornerRadius = 8
         
         addSubview(numberLabel)

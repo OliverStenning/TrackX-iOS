@@ -1,0 +1,25 @@
+strings:
+  - inputs: TrackX/Resources/Localizable.strings
+    outputs: 
+      templateName: structured-swift5
+      output: TrackX/Resources/Generated/Strings+Generated.swift
+
+  - inputs: RaptorKit/Sources/RaptorKit/Resources/Localizable.strings
+    outputs:
+        templateName: structured-swift5
+        output: RaptorKit/Sources/RaptorKit/Resources/Generated/Strings+Generated.swift
+        bundle: Bundle.raptorKit
+        enumName: RaptorL10n
+        publicAccess:
+
+xcassets:
+  inputs:
+    - RaptorKit/Sources/RaptorKit/Resources/Colors.xcassets
+    - RaptorKit/Sources/RaptorKit/Resources/Images.xcassets
+  outputs:
+    templateName: swift5
+    output: RaptorKit/Sources/RaptorKit/Resources/Generated/Assets+Generated.swift
+    params:
+      bundle: Bundle.raptorKit
+      enumName: Raptor
+      publicAccess:

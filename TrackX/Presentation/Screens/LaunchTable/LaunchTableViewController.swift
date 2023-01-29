@@ -13,16 +13,16 @@ class LaunchTableViewController: UIViewController {
     // MARK: - Views
     let launchTableControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: [
-            R.string.localizable.scheduled(),
-            R.string.localizable.recent(),
-            R.string.localizable.all()
+//            R.string.localizable.scheduled(),
+//            R.string.localizable.recent(),
+//            R.string.localizable.all()
         ])
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(nil, action: #selector(switchLaunchTable), for: .valueChanged)
-        segmentedControl.selectedSegmentTintColor = R.color.accentColor()
+//        segmentedControl.selectedSegmentTintColor = R.color.accentColor()
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemGray], for: .normal)
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
-        segmentedControl.backgroundColor = R.color.secondaryBackgroundColor()
+//        segmentedControl.backgroundColor = R.color.secondaryBackgroundColor()
         return segmentedControl
     }()
     
@@ -30,7 +30,7 @@ class LaunchTableViewController: UIViewController {
         let tableView = UITableView(frame: CGRect.zero, style: .grouped)
         tableView.estimatedRowHeight = 150
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.backgroundColor = R.color.backgroundColor()
+//        tableView.backgroundColor = R.color.backgroundColor()
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         tableView.register(RecentLaunchTableCell.self, forCellReuseIdentifier: LaunchCells.recent)
@@ -89,8 +89,8 @@ class LaunchTableViewController: UIViewController {
     }
     
     func configureViews() {
-        title = R.string.localizable.launches()
-        view.backgroundColor = R.color.backgroundColor()
+//        title = R.string.localizable.launches()
+//        view.backgroundColor = R.color.backgroundColor()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(systemSymbol: .arrowUpArrowDown),
@@ -180,13 +180,13 @@ extension LaunchTableViewController: LaunchTableDelegate {
     }
     
     func launchProvider(_ provider: LaunchProvider, dataFailedToUpDate: String) {
-        let ac = UIAlertController(
-            title: R.string.localizable.networkIssue(),
-            message: R.string.localizable.unableToConnect(),
-            preferredStyle: .alert
-        )
-        ac.addAction(UIAlertAction(title: R.string.localizable.dismiss(), style: .cancel))
-        present(ac, animated: true)
+//        let ac = UIAlertController(
+//            title: R.string.localizable.networkIssue(),
+//            message: R.string.localizable.unableToConnect(),
+//            preferredStyle: .alert
+//        )
+//        ac.addAction(UIAlertAction(title: R.string.localizable.dismiss(), style: .cancel))
+//        present(ac, animated: true)
     }
 }
 

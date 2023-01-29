@@ -91,7 +91,7 @@ class LaunchDetailViewController: UIViewController {
     //MARK: - Configuration Functions
     private func configureViews() {
         title = "Launch Info"
-        view.backgroundColor = R.color.secondaryBackgroundColor()
+//        view.backgroundColor = R.color.secondaryBackgroundColor()
         
         view.addSubview(scrollView)
         scrollView.addSubview(headerImage)
@@ -157,7 +157,7 @@ class LaunchDetailViewController: UIViewController {
         if let imageUrl = fullLaunch?.getLaunchImageUrl() {
             cancellable = loadImage(for: imageUrl).sink { [unowned self] image in self.showImage(image: image)}
         } else {
-            showImage(image: R.image.placeholder())
+//            showImage(image: R.image.placeholder())
         }
     }
     

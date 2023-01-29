@@ -15,16 +15,16 @@ class SettingsSectionView: UIView {
     
     private let settingsLabel: UILabel = {
         let label = UILabel()
-        label.text = R.string.localizable.settings()
-        label.font = R.font.archivoMedium(size: 20)
-        label.textColor = R.color.textColor()
+//        label.text = R.string.localizable.settings()
+//        label.font = R.font.archivoMedium(size: 20)
+//        label.textColor = R.color.textColor()
         return label
     }()
     
     private let settingsIcon: UIImageView = {
         let image = UIImage(systemSymbol: .gearshapeFill)
         let imageView = UIImageView(image: image)
-        imageView.tintColor = R.color.textColor()
+//        imageView.tintColor = R.color.textColor()
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
@@ -49,7 +49,7 @@ class SettingsSectionView: UIView {
     }
     
     private func configureViews() {
-        cardView.backgroundColor = R.color.secondaryBackgroundColor()
+//        cardView.backgroundColor = R.color.secondaryBackgroundColor()
         cardView.layer.cornerRadius = 16
         cardView.layer.masksToBounds = true
         

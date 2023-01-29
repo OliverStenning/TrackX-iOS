@@ -23,8 +23,8 @@ class LaunchSectionStackView: UIStackView {
     
     private let dateLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.archivoMedium(size: 18)
-        label.textColor = R.color.secondaryTextColor()
+//        label.font = R.font.archivoMedium(size: 18)
+//        label.textColor = R.color.secondaryTextColor()
         return label
     }()
     

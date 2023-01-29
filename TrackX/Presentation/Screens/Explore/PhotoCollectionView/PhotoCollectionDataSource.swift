@@ -17,11 +17,11 @@ class PhotoCollectionDataSource: NSObject, UICollectionViewDataSource {
     let collectionHeight: CGFloat
     var photos: [UIImage] = {
         var placeholders: [UIImage] = []
-        placeholders.append(R.image.placeholder1()!)
-        placeholders.append(R.image.placeholder2()!)
-        placeholders.append(R.image.placeholder3()!)
-        placeholders.append(R.image.placeholder4()!)
-        placeholders.append(R.image.placeholder5()!)
+//        placeholders.append(R.image.placeholder1()!)
+//        placeholders.append(R.image.placeholder2()!)
+//        placeholders.append(R.image.placeholder3()!)
+//        placeholders.append(R.image.placeholder4()!)
+//        placeholders.append(R.image.placeholder5()!)
         return placeholders
     }()
     

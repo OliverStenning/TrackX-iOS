@@ -28,8 +28,8 @@ class ExploreViewController: UIViewController {
     private let titleView: UILabel = {
         let label = UILabel()
         label.text = "Explore"
-        label.font = R.font.archivoSemiBold(size: 36)
-        label.textColor = R.color.textColor()
+//        label.font = R.font.archivoSemiBold(size: 36)
+//        label.textColor = R.color.textColor()
         label.textAlignment = .left
         return label
     }()
@@ -99,8 +99,8 @@ class ExploreViewController: UIViewController {
     }
     
     private func configureViews() {
-        title = R.string.localizable.explore()
-        view.backgroundColor = R.color.backgroundColor()
+//        title = R.string.localizable.explore()
+//        view.backgroundColor = R.color.backgroundColor()
         rocketsCard.isHidden = true
 
         // Interaction delegates

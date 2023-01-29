@@ -12,9 +12,9 @@ class RocketsSectionView: UIView {
     //MARK: - Views
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = R.string.localizable.rockets()
-        label.textColor = R.color.textColor()
-        label.font = R.font.archivoSemiBold(size: 20)
+//        label.text = R.string.localizable.rockets()
+//        label.textColor = R.color.textColor()
+//        label.font = R.font.archivoSemiBold(size: 20)
         return label
     }()
     
@@ -42,7 +42,7 @@ class RocketsSectionView: UIView {
     }
     
     private func configureViews() {
-        card.backgroundColor = R.color.secondaryBackgroundColor()
+//        card.backgroundColor = R.color.secondaryBackgroundColor()
         card.layer.cornerRadius = 16
         card.layer.masksToBounds = true
     }

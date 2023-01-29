@@ -20,8 +20,8 @@ class HeadingLabel: UILabel {
     init(text: String = "", size: HeadingSize) {
         super.init(frame: .zero)
         self.text = text
-        self.textColor = R.color.textColor()
-        self.font = R.font.archivoSemiBold(size: getFontSize(size: size))
+//        self.textColor = R.color.textColor()
+//        self.font = R.font.archivoSemiBold(size: getFontSize(size: size))
         self.numberOfLines = 0
         self.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }

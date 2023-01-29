@@ -19,22 +19,23 @@ final class NameValueView: UIView {
     
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.rubikMedium(size: 15)
-        label.textColor = R.color.secondaryTextColor()
+//        label.font = R.font.rubikMedium(size: 15)
+//        label.textColor = R.color.secondaryTextColor()
+        label.textColor = .white
         return label
     }()
     
     private let valueLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.rubikRegular(size: 15)
-        label.textColor = R.color.textColor()
+//        label.font = R.font.rubikRegular(size: 15)
+//        label.textColor = R.color.textColor()
         return label
     }()
     
     private let alternateLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.rubikRegular(size: 15)
-        label.textColor = R.color.textColor()
+//        label.font = R.font.rubikRegular(size: 15)
+//        label.textColor = R.color.textColor()
         label.isHidden = true
         return label
     }()

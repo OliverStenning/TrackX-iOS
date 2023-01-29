@@ -12,9 +12,9 @@ class PhotoReelSectionView: UIView {
     //MARK: - Views
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = R.string.localizable.latestPhotos()
-        label.textColor = R.color.textColor()
-        label.font = R.font.archivoSemiBold(size: 22)
+//        label.text = R.string.localizable.latestPhotos()
+//        label.textColor = R.color.textColor()
+//        label.font = R.font.archivoSemiBold(size: 22)
         return label
     }()
 
