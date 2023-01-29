@@ -1,3 +1,4 @@
+# Uncomment the next line to define a global platform for your project
 platform :ios, '14.0'
 
 target 'TrackX' do
@@ -5,9 +6,8 @@ target 'TrackX' do
   use_frameworks!
 
   # Pods for TrackX
+  pod 'SwiftGen', '~> 6.0'
 
-  pod 'R.swift'
-  
   target 'TrackXTests' do
     inherit! :search_paths
     # Pods for testing
