@@ -2,29 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Archivo-Black.ttf</string>
-		<string>Archivo-Bold.ttf</string>
-		<string>Archivo-ExtraBold.ttf</string>
-		<string>Archivo-ExtraLight.ttf</string>
-		<string>Archivo-Light.ttf</string>
-		<string>Archivo-Medium.ttf</string>
-		<string>Archivo-Regular.ttf</string>
-		<string>Archivo-SemiBold.ttf</string>
-		<string>Archivo-Thin.ttf</string>
-		<string>Rubik-Black.ttf</string>
-		<string>Rubik-Bold.ttf</string>
-		<string>Rubik-ExtraBold.ttf</string>
-		<string>Rubik-Light.ttf</string>
-		<string>Rubik-Medium.ttf</string>
-		<string>Rubik-Regular.ttf</string>
-		<string>Rubik-SemiBold.ttf</string>
-		<string>ShareTech-Regular.ttf</string>
-		<string>Lato-Regular.ttf</string>
-		<string>Lato-Bold.ttf</string>
-		<string>Lato-Black.ttf</string>
-	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

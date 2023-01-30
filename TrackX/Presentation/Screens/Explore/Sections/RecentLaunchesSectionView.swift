@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 13/08/2022.
 //
 
+import RaptorKit
 import UIKit
 
 class RecentLaunchesSectionView: UIView {
@@ -12,17 +13,17 @@ class RecentLaunchesSectionView: UIView {
     //MARK: - Views
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = R.string.localizable.recent()
-        label.textColor = R.color.textColor()
-        label.font = R.font.archivoSemiBold(size: 22)
+        label.text = L10n.recent
+        label.textColor = RKAssets.Colors.textPrimary.color
+        label.font = RKFonts.Archivo.semiBold.font(size: 22)
         return label
     }()
     
     private let showAllButton: UIButton = {
         let button = UIButton()
-        button.setTitle(R.string.localizable.showAll(), for: .normal)
-        button.setTitleColor(R.color.accentColor(), for: .normal)
-        button.titleLabel?.font = R.font.rubikMedium(size: 16)
+        button.setTitle(L10n.showAll, for: .normal)
+        button.setTitleColor(RKAssets.Colors.accent.color, for: .normal)
+        button.titleLabel?.font = RKFonts.Rubik.medium.font(size: 16)
         return button
     }()
     

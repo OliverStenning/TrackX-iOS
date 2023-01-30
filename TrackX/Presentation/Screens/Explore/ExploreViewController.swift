@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 13/08/2022.
 //
 
+import RaptorKit
 import UIKit
 
 class ExploreViewController: UIViewController {
@@ -28,8 +29,8 @@ class ExploreViewController: UIViewController {
     private let titleView: UILabel = {
         let label = UILabel()
         label.text = "Explore"
-        label.font = R.font.archivoSemiBold(size: 36)
-        label.textColor = R.color.textColor()
+        label.font = RKFonts.Archivo.semiBold.font(size: 36)
+        label.textColor = RKAssets.Colors.textPrimary.color
         label.textAlignment = .left
         return label
     }()
@@ -99,8 +100,8 @@ class ExploreViewController: UIViewController {
     }
     
     private func configureViews() {
-        title = R.string.localizable.explore()
-        view.backgroundColor = R.color.backgroundColor()
+        title = L10n.explore
+        view.backgroundColor = RKAssets.Colors.backgroundPrimary.color
         rocketsCard.isHidden = true
 
         // Interaction delegates

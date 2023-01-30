@@ -1,0 +1,34 @@
+strings:
+  - inputs: TrackX/Resources/Localizable.strings
+    outputs: 
+      templateName: structured-swift5
+      output: TrackX/Generated/Strings+Generated.swift
+
+  - inputs: RaptorKit/Sources/RaptorKit/Resources/Localizable.strings
+    outputs:
+        templateName: structured-swift5
+        output: RaptorKit/Sources/RaptorKit/Generated/Strings+Generated.swift
+        # bundle: Bundle.raptorKit
+        enumName: RKStrings
+        publicAccess:
+
+xcassets:
+  inputs:
+    - RaptorKit/Sources/RaptorKit/Resources/Colors.xcassets
+    - RaptorKit/Sources/RaptorKit/Resources/Images.xcassets
+  outputs:
+    templateName: swift5
+    output: RaptorKit/Sources/RaptorKit/Generated/Assets+Generated.swift
+    params:
+      # bundle: Bundle.raptorKit
+      enumName: RKAssets
+      publicAccess:
+
+fonts:
+  inputs: RaptorKit/Sources/RaptorKit/Resources/Fonts
+  outputs:
+    templateName: swift5
+    output: RaptorKit/Sources/RaptorKit/Generated/Fonts+Generated.swift
+    params:
+      enumName: RKFonts
+      publicAccess:

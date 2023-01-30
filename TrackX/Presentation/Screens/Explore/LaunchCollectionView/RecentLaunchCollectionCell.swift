@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 14/08/2022.
 //
 
+import RaptorKit
 import UIKit
 import Combine
 
@@ -20,7 +21,7 @@ class RecentLaunchCollectionCell: UICollectionViewCell {
     
     private let backgroundGradient: UIView = {
         let view = GradientView()
-        view.bottomColor = R.color.secondaryBackgroundColor() ?? .black
+        view.bottomColor = RKAssets.Colors.backgroundSecondary.color
         view.locations = [-1.0, 1.0]
         return view
     }()
@@ -79,7 +80,7 @@ class RecentLaunchCollectionCell: UICollectionViewCell {
         gesture.cancelsTouchesInView = false
         cardView.addGestureRecognizer(gesture)
         
-        cardView.backgroundColor = R.color.secondaryBackgroundColor()
+        cardView.backgroundColor = RKAssets.Colors.backgroundSecondary.color
         cardView.layer.cornerRadius = 16
         cardView.layer.masksToBounds = true
     }
@@ -108,7 +109,7 @@ class RecentLaunchCollectionCell: UICollectionViewCell {
         if let imageUrl = fullLaunch?.getLaunchImageUrl() {
             cancellable = loadImage(for: imageUrl).sink { [unowned self] image in self.showImage(image: image)}
         } else {
-            showImage(image: R.image.placeholder())
+            showImage(image: RKAssets.Images.placeholder.image)
         }
     }
 

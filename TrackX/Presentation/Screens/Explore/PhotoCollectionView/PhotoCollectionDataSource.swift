@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 15/08/2022.
 //
 
+import RaptorKit
 import UIKit
 
 struct PhotoCellIdentifiers {
@@ -15,15 +16,13 @@ class PhotoCollectionDataSource: NSObject, UICollectionViewDataSource {
     
     //MARK: - Properties
     let collectionHeight: CGFloat
-    var photos: [UIImage] = {
-        var placeholders: [UIImage] = []
-        placeholders.append(R.image.placeholder1()!)
-        placeholders.append(R.image.placeholder2()!)
-        placeholders.append(R.image.placeholder3()!)
-        placeholders.append(R.image.placeholder4()!)
-        placeholders.append(R.image.placeholder5()!)
-        return placeholders
-    }()
+    var photos: [UIImage] = [
+        RKAssets.Images.placeholder1.image,
+        RKAssets.Images.placeholder2.image,
+        RKAssets.Images.placeholder3.image,
+        RKAssets.Images.placeholder4.image,
+        RKAssets.Images.placeholder5.image
+    ]
     
     //MARK: - Initialziers
     init(collectionHeight: CGFloat) {

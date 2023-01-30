@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 11/07/2022.
 //
 
+import RaptorKit
 import UIKit
 
 class LinkLabel: UILabel {
@@ -15,8 +16,8 @@ class LinkLabel: UILabel {
         self.url = url
         super.init(frame: .zero)
         self.text = text
-        self.textColor = R.color.accentColor()
-        self.font = R.font.archivoSemiBold(size: 16)
+        self.textColor = RKAssets.Colors.accent.color
+        self.font = RKFonts.Archivo.semiBold.font(size: 16)
         self.numberOfLines = 0
         self.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         self.isUserInteractionEnabled = true

@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 15/08/2022.
 //
 
+import RaptorKit
 import UIKit
 import SFSafeSymbols
 
@@ -15,16 +16,16 @@ class SettingsSectionView: UIView {
     
     private let settingsLabel: UILabel = {
         let label = UILabel()
-        label.text = R.string.localizable.settings()
-        label.font = R.font.archivoMedium(size: 20)
-        label.textColor = R.color.textColor()
+        label.text = L10n.settings
+        label.textColor = RKAssets.Colors.textPrimary.color
+        label.font = RKFonts.Archivo.medium.font(size: 20)
         return label
     }()
     
     private let settingsIcon: UIImageView = {
         let image = UIImage(systemSymbol: .gearshapeFill)
         let imageView = UIImageView(image: image)
-        imageView.tintColor = R.color.textColor()
+        imageView.tintColor = RKAssets.Colors.textPrimary.color
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
@@ -49,7 +50,7 @@ class SettingsSectionView: UIView {
     }
     
     private func configureViews() {
-        cardView.backgroundColor = R.color.secondaryBackgroundColor()
+        cardView.backgroundColor = RKAssets.Colors.backgroundSecondary.color
         cardView.layer.cornerRadius = 16
         cardView.layer.masksToBounds = true
         

@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 13/08/2022.
 //
 
+import RaptorKit
 import UIKit
 
 class NextLaunchSectionView: UIView {
@@ -24,15 +25,15 @@ class NextLaunchSectionView: UIView {
     
     private let rocketLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.archivoBold(size: 14)
-        label.textColor = R.color.secondaryTextColor()
+        label.font = RKFonts.Archivo.bold.font(size: 14)
+        label.textColor = RKAssets.Colors.textSecondary.color
         return label
     }()
     
     private let launchpadLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.archivoBold(size: 14)
-        label.textColor = R.color.secondaryTextColor()
+        label.font = RKFonts.Archivo.bold.font(size: 14)
+        label.textColor = RKAssets.Colors.textSecondary.color
         return label
     }()
     
@@ -81,7 +82,7 @@ class NextLaunchSectionView: UIView {
         gesture.numberOfTapsRequired = 1
         cardView.addGestureRecognizer(gesture)
         
-        cardView.backgroundColor = R.color.secondaryBackgroundColor()
+        cardView.backgroundColor = RKAssets.Colors.backgroundSecondary.color
         cardView.layer.cornerRadius = 16
         cardView.layer.masksToBounds = true
         self.isUserInteractionEnabled = true
@@ -133,8 +134,8 @@ class NextLaunchSectionView: UIView {
     private func updateInformation() {
         if let fullLaunch = fullLaunch {
             launchLabel.text = fullLaunch.launch.name
-            rocketLabel.text = fullLaunch.rocket?.name ?? R.string.localizable.unknown()
-            launchpadLabel.text = fullLaunch.launchpad?.name ?? R.string.localizable.unknown()
+//            rocketLabel.text = fullLaunch.rocket?.name ?? R.string.localizable.unknown()
+//            launchpadLabel.text = fullLaunch.launchpad?.name ?? R.string.localizable.unknown()
             
             countdownView.launchDate = Dates.dateFromISO8601(fullLaunch.launch.dateUtc)
         }

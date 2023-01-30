@@ -4,19 +4,9 @@
    <FileRef
       location = "group:TrackX.xcodeproj">
    </FileRef>
-   <Group
-      location = "container:Shared"
-      name = "Core">
-      <FileRef
-         location = "group:/Users/oliverstenning/Documents/Xcode/TrackX-iOS/Shared/Utilities">
-      </FileRef>
-      <FileRef
-         location = "group:RaptorKit">
-      </FileRef>
-      <FileRef
-         location = "group:Networking">
-      </FileRef>
-   </Group>
+   <FileRef
+      location = "group:RaptorKit">
+   </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>

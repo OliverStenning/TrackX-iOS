@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 07/06/2022.
 //
 
+import RaptorKit
 import UIKit
 
 final class NameValueView: UIView {
@@ -19,22 +20,22 @@ final class NameValueView: UIView {
     
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.rubikMedium(size: 15)
-        label.textColor = R.color.secondaryTextColor()
+        label.font = RKFonts.Rubik.medium.font(size: 15)
+        label.textColor = RKAssets.Colors.textSecondary.color
         return label
     }()
     
     private let valueLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.rubikRegular(size: 15)
-        label.textColor = R.color.textColor()
+        label.font = RKFonts.Rubik.regular.font(size: 15)
+        label.textColor = RKAssets.Colors.textPrimary.color
         return label
     }()
     
     private let alternateLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.rubikRegular(size: 15)
-        label.textColor = R.color.textColor()
+        label.font = RKFonts.Rubik.regular.font(size: 15)
+        label.textColor = RKAssets.Colors.textPrimary.color
         label.isHidden = true
         return label
     }()

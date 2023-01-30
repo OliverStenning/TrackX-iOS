@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 13/06/2022.
 //
 
+import RaptorKit
 import UIKit
 
 class BodyLabel: UILabel {
@@ -17,9 +18,9 @@ class BodyLabel: UILabel {
     var bold: Bool {
         didSet {
             if bold {
-                font = R.font.rubikMedium(size: 15)
+                font = RKFonts.Rubik.medium.font(size: 15)
             } else {
-                font = R.font.rubikRegular(size: 15)
+                font = RKFonts.Rubik.regular.font(size: 15)
             }
         }
     }
@@ -32,7 +33,7 @@ class BodyLabel: UILabel {
         
         self.text = text
         
-        textColor = R.color.textColor()
+        textColor = RKAssets.Colors.textPrimary.color
         numberOfLines = lineCount
         isUserInteractionEnabled = true
         

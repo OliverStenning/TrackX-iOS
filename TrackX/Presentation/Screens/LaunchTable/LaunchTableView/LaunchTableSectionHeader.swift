@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 10/06/2022.
 //
 
+import RaptorKit
 import UIKit
 
 class LaunchTableSectionHeader: UIView {
@@ -36,7 +37,7 @@ class LaunchTableSectionHeader: UIView {
     
     //MARK: - Configuration Functions
     private func configureViews() {
-        backgroundColor = R.color.backgroundColor()
+        backgroundColor = RKAssets.Colors.backgroundPrimary.color
         addSubview(nameLabel)
     }
     

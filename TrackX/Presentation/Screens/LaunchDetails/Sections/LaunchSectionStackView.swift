@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 13/06/2022.
 //
 
+import RaptorKit
 import UIKit
 
 class LaunchSectionStackView: UIStackView {
@@ -23,8 +24,8 @@ class LaunchSectionStackView: UIStackView {
     
     private let dateLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.archivoMedium(size: 18)
-        label.textColor = R.color.secondaryTextColor()
+        label.font = RKFonts.Archivo.medium.font(size: 18)
+        label.textColor = RKAssets.Colors.textSecondary.color
         return label
     }()
     
