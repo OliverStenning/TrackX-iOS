@@ -1,1 +1,10 @@
-TrackX.xcworkspace/xcuserdata/oliverstenning.xcuserdatad
+# Xcode
+## User Data
+xcuserdata/
+
+## App Packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+.DS_Store
