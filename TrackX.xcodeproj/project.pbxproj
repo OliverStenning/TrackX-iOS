@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -768,6 +768,7 @@
 				F2F0937627EE2818005CCD09 /* Resources */,
 				F2E63E1D289B0E81005C6E8B /* Embed Foundation Extensions */,
 				F218B5FD29870C2F00FC6435 /* Embed Frameworks */,
+				FEB46DFB98EF4D0856912DA2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -821,7 +822,7 @@
 				};
 			};
 			buildConfigurationList = F2F0937327EE2817005CCD09 /* Build configuration list for PBXProject "TrackX" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -830,7 +831,7 @@
 			);
 			mainGroup = F2F0936F27EE2817005CCD09;
 			packageReferences = (
-				F23BADD228A4569E00BCFC8F /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+				F23BADD228A4569E00BCFC8F /* XCRemoteSwiftPackageReference "SFSafeSymbols.git" */,
 			);
 			productRefGroup = F2F0937927EE2818005CCD09 /* Products */;
 			projectDirPath = "";
@@ -939,6 +940,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi \n";
+		};
+		FEB46DFB98EF4D0856912DA2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TrackX/Pods-TrackX-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TrackX/Pods-TrackX-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TrackX/Pods-TrackX-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1328,7 +1346,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F23BADD228A4569E00BCFC8F /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
+		F23BADD228A4569E00BCFC8F /* XCRemoteSwiftPackageReference "SFSafeSymbols.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols.git";
 			requirement = {
@@ -1341,7 +1359,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		F23BADD328A4569E00BCFC8F /* SFSafeSymbols */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F23BADD228A4569E00BCFC8F /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			package = F23BADD228A4569E00BCFC8F /* XCRemoteSwiftPackageReference "SFSafeSymbols.git" */;
 			productName = SFSafeSymbols;
 		};
 		F24198992987180B00DE5BF8 /* RaptorKit */ = {
