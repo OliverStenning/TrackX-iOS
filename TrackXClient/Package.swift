@@ -6,16 +6,12 @@ import PackageDescription
 let package = Package(
     name: "TrackXClient",
     platforms: [.iOS(.v14)],
-    products: [.library(name: "TrackXClient", targets: ["TrackXClient"])],
-    dependencies: [
-        .package(url: "https://github.com/Alamofire/Alamofire.git", exact: "5.6.4")
-    ],
+    products: [.library(name: "TrackXClient", type: .dynamic, targets: ["TrackXClient"])],
+    dependencies: [],
     targets: [
         .target(
             name: "TrackXClient",
-            dependencies: [
-                .product(name: "Alamofire", package: "Alamofire")
-            ]
+            dependencies: []
         ),
         .testTarget(
             name: "TrackXClientTests",
