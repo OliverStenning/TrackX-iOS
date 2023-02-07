@@ -5,6 +5,7 @@
 //  Created by Oliver Stenning on 25/03/2022.
 //
 
+import TrackXClient
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {

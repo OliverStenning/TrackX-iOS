@@ -6,7 +6,6 @@ target 'TrackX' do
   use_frameworks!
 
   # Pods for TrackX
-  pod 'Alamofire', '~> 5.6.4'
   pod 'SwiftGen', '~> 6.0'
 
   target 'TrackXTests' do

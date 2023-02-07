@@ -6,6 +6,7 @@
 //
 
 import RaptorKit
+import TrackXClient
 import UIKit
 
 class ExploreViewController: UIViewController {
@@ -48,6 +49,8 @@ class ExploreViewController: UIViewController {
     private let dataManager: DataManager
     private let launchProvider: LaunchProvider
     
+    private let newLaunchService: LaunchServiceProtocol = LaunchService()
+    
     // MARK: - Initializers
     init(dataManager: DataManager) {
         self.dataManager = dataManager
@@ -71,6 +74,7 @@ class ExploreViewController: UIViewController {
         addViews()
         configureViews()
         configureConstraints()
+        fetchData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -83,6 +87,17 @@ class ExploreViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
+    private func fetchData() {
+        Task.init {
+            do {
+                let launch = try await newLaunchService.getLatestLaunch()
+                debugPrint(launch)
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
     // MARK: - Configuration Functions
     private func addViews() {
         view.addSubview(scrollView)

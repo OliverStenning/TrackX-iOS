@@ -28,19 +28,19 @@ class LaunchProvider {
     }
     
     func fetchNextLaunch() {
-        dataManager.fetchData(completion: fetchNextLaunchCompletion)
+//        dataManager.fetchData(completion: fetchNextLaunchCompletion)
     }
     
     func fetchScheduledLaunches() {
-        dataManager.fetchData(completion: fetchScheduledLaunchesCompletion)
+//        dataManager.fetchData(completion: fetchScheduledLaunchesCompletion)
     }
     
     func fetchRecentLaunches() {
-        dataManager.fetchData(completion: fetchRecentLaunchesCompletion)
+//        dataManager.fetchData(completion: fetchRecentLaunchesCompletion)
     }
     
     func fetchLaunchTableData() {
-        dataManager.fetchData(completion: fetchLaunchTableCompletionHandler)
+//        dataManager.fetchData(completion: fetchLaunchTableCompletionHandler)
     }
     
     //MARK: - Data Fetch Completion

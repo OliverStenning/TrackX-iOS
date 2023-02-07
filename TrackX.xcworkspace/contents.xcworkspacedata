@@ -5,7 +5,7 @@
       location = "group:TrackX.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Networking">
+      location = "group:TrackXClient">
    </FileRef>
    <FileRef
       location = "group:RaptorKit">
