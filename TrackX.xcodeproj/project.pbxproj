@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1122EAB36317A2497F103440 /* Pods_TrackX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA365AC1F5C632E29AE9F56E /* Pods_TrackX.framework */; };
 		14409ED1B895ECA8C135E83F /* NextLaunchSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14409D396F8773A2E0919CC0 /* NextLaunchSectionView.swift */; };
-		52B99FBE28ADF208241D0807 /* Pods_TrackXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F696CD6F9F2299C057342701 /* Pods_TrackXTests.framework */; };
 		F2051657285D3BC000584F11 /* LaunchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2051656285D3BC000584F11 /* LaunchEndpoint.swift */; };
 		F20D7CB728A85FD10002B5FE /* CountdownNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D7CB628A85FD10002B5FE /* CountdownNumberView.swift */; };
 		F20D7CB928A867AA0002B5FE /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D7CB828A867AA0002B5FE /* String+Extensions.swift */; };
@@ -46,22 +45,6 @@
 		F215F62D287E1C1F006F67FC /* Arrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = F215F62C287E1C1F006F67FC /* Arrays.swift */; };
 		F218B5F729870A1C00FC6435 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F218B5F629870A1C00FC6435 /* Localizable.strings */; };
 		F226470928B193F000980DC6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226470828B193F000980DC6 /* DataManager.swift */; };
-		F230AF53287E44ED00FF7769 /* LaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF52287E44ED00FF7769 /* LaunchTests.swift */; };
-		F230AF56287E47CF00FF7769 /* launch.json in Resources */ = {isa = PBXBuildFile; fileRef = F230AF55287E47CF00FF7769 /* launch.json */; };
-		F230AF62287F919F00FF7769 /* rocket.json in Resources */ = {isa = PBXBuildFile; fileRef = F230AF61287F919F00FF7769 /* rocket.json */; };
-		F230AF64287F91A500FF7769 /* payload.json in Resources */ = {isa = PBXBuildFile; fileRef = F230AF63287F91A500FF7769 /* payload.json */; };
-		F230AF66287F91AB00FF7769 /* launchpad.json in Resources */ = {isa = PBXBuildFile; fileRef = F230AF65287F91AB00FF7769 /* launchpad.json */; };
-		F230AF68287F91B200FF7769 /* landpad.json in Resources */ = {isa = PBXBuildFile; fileRef = F230AF67287F91B200FF7769 /* landpad.json */; };
-		F230AF6A287F91B800FF7769 /* core.json in Resources */ = {isa = PBXBuildFile; fileRef = F230AF69287F91B800FF7769 /* core.json */; };
-		F230AF6C287F91BE00FF7769 /* capsule.json in Resources */ = {isa = PBXBuildFile; fileRef = F230AF6B287F91BE00FF7769 /* capsule.json */; };
-		F230AF6E287F91D800FF7769 /* CapsuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF6D287F91D800FF7769 /* CapsuleTests.swift */; };
-		F230AF70287F91FD00FF7769 /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF6F287F91FD00FF7769 /* CoreTests.swift */; };
-		F230AF72287F923000FF7769 /* LandpadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF71287F923000FF7769 /* LandpadTests.swift */; };
-		F230AF74287F925D00FF7769 /* LaunchpadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF73287F925D00FF7769 /* LaunchpadTests.swift */; };
-		F230AF76287F929A00FF7769 /* PayloadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF75287F929A00FF7769 /* PayloadTests.swift */; };
-		F230AF78287F92D200FF7769 /* RocketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF77287F92D200FF7769 /* RocketTests.swift */; };
-		F230AF7B287F9AE600FF7769 /* DataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF7A287F9AE600FF7769 /* DataManagerTests.swift */; };
-		F230AF7E287FA08700FF7769 /* TestDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230AF7D287FA08700FF7769 /* TestDataLoader.swift */; };
 		F2396D272844060E0084DF79 /* LaunchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D262844060E0084DF79 /* LaunchDetailViewController.swift */; };
 		F2396D2F284552720084DF79 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D2E284552720084DF79 /* EndPointType.swift */; };
 		F2396D31284552DB0084DF79 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2396D30284552DB0084DF79 /* HTTPMethod.swift */; };
@@ -96,19 +79,12 @@
 		F254D4592857A19B0009A2A0 /* LaunchpadSectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D4582857A19B0009A2A0 /* LaunchpadSectionStackView.swift */; };
 		F254D45E2857C9660009A2A0 /* LaunchProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254D45D2857C9660009A2A0 /* LaunchProvider.swift */; };
 		F25B2DD528AED03D000B110F /* LaunchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B2DD428AED03D000B110F /* LaunchTableViewController.swift */; };
-		F26CBE872880E6F700D2DFDC /* StringFormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26CBE862880E6F700D2DFDC /* StringFormattingTests.swift */; };
 		F2AC1A5C28A80CD90007F688 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC1A5B28A80CD90007F688 /* ExploreViewController.swift */; };
 		F2AC1A6428A818520007F688 /* ScheduledLaunchesSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC1A6328A818520007F688 /* ScheduledLaunchesSectionView.swift */; };
 		F2AC1A6628A818720007F688 /* RecentLaunchesSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC1A6528A818720007F688 /* RecentLaunchesSectionView.swift */; };
 		F2AC1A6828A8189B0007F688 /* RocketsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC1A6728A8189B0007F688 /* RocketsSectionView.swift */; };
 		F2AC1A6A28A834860007F688 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC1A6928A834860007F688 /* CountdownView.swift */; };
-		F2D0F2202880BF52004BC16D /* allLaunches.json in Resources */ = {isa = PBXBuildFile; fileRef = F2D0F2192880BF52004BC16D /* allLaunches.json */; };
-		F2D0F2212880BF52004BC16D /* allLaunchpads.json in Resources */ = {isa = PBXBuildFile; fileRef = F2D0F21A2880BF52004BC16D /* allLaunchpads.json */; };
-		F2D0F2222880BF53004BC16D /* allLandpads.json in Resources */ = {isa = PBXBuildFile; fileRef = F2D0F21B2880BF52004BC16D /* allLandpads.json */; };
-		F2D0F2232880BF53004BC16D /* allRockets.json in Resources */ = {isa = PBXBuildFile; fileRef = F2D0F21C2880BF52004BC16D /* allRockets.json */; };
-		F2D0F2242880BF53004BC16D /* allCapsules.json in Resources */ = {isa = PBXBuildFile; fileRef = F2D0F21D2880BF52004BC16D /* allCapsules.json */; };
-		F2D0F2252880BF53004BC16D /* allPayloads.json in Resources */ = {isa = PBXBuildFile; fileRef = F2D0F21E2880BF52004BC16D /* allPayloads.json */; };
-		F2D0F2262880BF53004BC16D /* allCores.json in Resources */ = {isa = PBXBuildFile; fileRef = F2D0F21F2880BF52004BC16D /* allCores.json */; };
+		F2CD62272992F2DE00B28E13 /* TrackXClient in Embed Frameworks */ = {isa = PBXBuildFile; productRef = F24224302991BCF700406AE8 /* TrackXClient */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F2E2EC4628592EC500AF06CC /* LaunchTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2EC4528592EC500AF06CC /* LaunchTableDataSource.swift */; };
 		F2E2EC482859327D00AF06CC /* FullLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2EC472859327D00AF06CC /* FullLaunch.swift */; };
 		F2F0937C27EE2818005CCD09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0937B27EE2818005CCD09 /* AppDelegate.swift */; };
@@ -128,16 +104,6 @@
 		F2F2346128563A2900CAB70C /* ScheduledLaunchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2346028563A2900CAB70C /* ScheduledLaunchTableCell.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		F2F0938F27EE2819005CCD09 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F2F0937027EE2817005CCD09 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F2F0937727EE2818005CCD09;
-			remoteInfo = TrackX;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		F218B5FD29870C2F00FC6435 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -145,6 +111,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				F2CD62272992F2DE00B28E13 /* TrackXClient in Embed Frameworks */,
 				F241989B2987180B00DE5BF8 /* RaptorKit in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -204,22 +171,6 @@
 		F215F62C287E1C1F006F67FC /* Arrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrays.swift; sourceTree = "<group>"; };
 		F218B5F629870A1C00FC6435 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		F226470828B193F000980DC6 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		F230AF52287E44ED00FF7769 /* LaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTests.swift; sourceTree = "<group>"; };
-		F230AF55287E47CF00FF7769 /* launch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = launch.json; sourceTree = "<group>"; };
-		F230AF61287F919F00FF7769 /* rocket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rocket.json; sourceTree = "<group>"; };
-		F230AF63287F91A500FF7769 /* payload.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = payload.json; sourceTree = "<group>"; };
-		F230AF65287F91AB00FF7769 /* launchpad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = launchpad.json; sourceTree = "<group>"; };
-		F230AF67287F91B200FF7769 /* landpad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = landpad.json; sourceTree = "<group>"; };
-		F230AF69287F91B800FF7769 /* core.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = core.json; sourceTree = "<group>"; };
-		F230AF6B287F91BE00FF7769 /* capsule.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = capsule.json; sourceTree = "<group>"; };
-		F230AF6D287F91D800FF7769 /* CapsuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleTests.swift; sourceTree = "<group>"; };
-		F230AF6F287F91FD00FF7769 /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
-		F230AF71287F923000FF7769 /* LandpadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandpadTests.swift; sourceTree = "<group>"; };
-		F230AF73287F925D00FF7769 /* LaunchpadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadTests.swift; sourceTree = "<group>"; };
-		F230AF75287F929A00FF7769 /* PayloadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadTests.swift; sourceTree = "<group>"; };
-		F230AF77287F92D200FF7769 /* RocketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketTests.swift; sourceTree = "<group>"; };
-		F230AF7A287F9AE600FF7769 /* DataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerTests.swift; sourceTree = "<group>"; };
-		F230AF7D287FA08700FF7769 /* TestDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataLoader.swift; sourceTree = "<group>"; };
 		F2396D262844060E0084DF79 /* LaunchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailViewController.swift; sourceTree = "<group>"; };
 		F2396D2E284552720084DF79 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		F2396D30284552DB0084DF79 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -250,31 +201,21 @@
 		F254D4582857A19B0009A2A0 /* LaunchpadSectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadSectionStackView.swift; sourceTree = "<group>"; };
 		F254D45D2857C9660009A2A0 /* LaunchProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchProvider.swift; sourceTree = "<group>"; };
 		F25B2DD428AED03D000B110F /* LaunchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTableViewController.swift; sourceTree = "<group>"; };
-		F26CBE862880E6F700D2DFDC /* StringFormattingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormattingTests.swift; sourceTree = "<group>"; };
 		F2AC1A5B28A80CD90007F688 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		F2AC1A6328A818520007F688 /* ScheduledLaunchesSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledLaunchesSectionView.swift; sourceTree = "<group>"; };
 		F2AC1A6528A818720007F688 /* RecentLaunchesSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentLaunchesSectionView.swift; sourceTree = "<group>"; };
 		F2AC1A6728A8189B0007F688 /* RocketsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsSectionView.swift; sourceTree = "<group>"; };
 		F2AC1A6928A834860007F688 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
-		F2D0F2192880BF52004BC16D /* allLaunches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allLaunches.json; sourceTree = "<group>"; };
-		F2D0F21A2880BF52004BC16D /* allLaunchpads.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allLaunchpads.json; sourceTree = "<group>"; };
-		F2D0F21B2880BF52004BC16D /* allLandpads.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allLandpads.json; sourceTree = "<group>"; };
-		F2D0F21C2880BF52004BC16D /* allRockets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allRockets.json; sourceTree = "<group>"; };
-		F2D0F21D2880BF52004BC16D /* allCapsules.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allCapsules.json; sourceTree = "<group>"; };
-		F2D0F21E2880BF52004BC16D /* allPayloads.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allPayloads.json; sourceTree = "<group>"; };
-		F2D0F21F2880BF52004BC16D /* allCores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allCores.json; sourceTree = "<group>"; };
 		F2E2EC4528592EC500AF06CC /* LaunchTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTableDataSource.swift; sourceTree = "<group>"; };
 		F2E2EC472859327D00AF06CC /* FullLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullLaunch.swift; sourceTree = "<group>"; };
 		F2E63E0D289B0E7F005C6E8B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F2E63E0F289B0E7F005C6E8B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		F2ECA6F928B192040030516B /* TrackX.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TrackX.xctestplan; sourceTree = "<group>"; };
 		F2F0937827EE2818005CCD09 /* TrackX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F0937B27EE2818005CCD09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2F0937D27EE2818005CCD09 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F2F0938427EE2819005CCD09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2F0938727EE2819005CCD09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2F0938927EE2819005CCD09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F2F0938E27EE2819005CCD09 /* TrackXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F093AF27EE2BBF005CCD09 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		F2F093B527EE2F8B005CCD09 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		F2F2343A284D6A6500CAB70C /* StringFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatting.swift; sourceTree = "<group>"; };
@@ -299,14 +240,6 @@
 				F23BADD428A4569E00BCFC8F /* SFSafeSymbols in Frameworks */,
 				1122EAB36317A2497F103440 /* Pods_TrackX.framework in Frameworks */,
 				F241989A2987180B00DE5BF8 /* RaptorKit in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F2F0938B27EE2819005CCD09 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				52B99FBE28ADF208241D0807 /* Pods_TrackXTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,51 +345,6 @@
 				F241988F2987140800DE5BF8 /* Strings+Generated.swift */,
 			);
 			path = Generated;
-			sourceTree = "<group>";
-		};
-		F230AF58287F8EDD00FF7769 /* ModelTests */ = {
-			isa = PBXGroup;
-			children = (
-				F230AF6D287F91D800FF7769 /* CapsuleTests.swift */,
-				F230AF6F287F91FD00FF7769 /* CoreTests.swift */,
-				F230AF71287F923000FF7769 /* LandpadTests.swift */,
-				F230AF73287F925D00FF7769 /* LaunchpadTests.swift */,
-				F230AF52287E44ED00FF7769 /* LaunchTests.swift */,
-				F230AF75287F929A00FF7769 /* PayloadTests.swift */,
-				F230AF77287F92D200FF7769 /* RocketTests.swift */,
-				F230AF79287F9A6A00FF7769 /* TestData */,
-			);
-			path = ModelTests;
-			sourceTree = "<group>";
-		};
-		F230AF59287F8EE800FF7769 /* UtilitiesTests */ = {
-			isa = PBXGroup;
-			children = (
-				F26CBE862880E6F700D2DFDC /* StringFormattingTests.swift */,
-			);
-			path = UtilitiesTests;
-			sourceTree = "<group>";
-		};
-		F230AF79287F9A6A00FF7769 /* TestData */ = {
-			isa = PBXGroup;
-			children = (
-				F230AF7D287FA08700FF7769 /* TestDataLoader.swift */,
-				F2D0F21D2880BF52004BC16D /* allCapsules.json */,
-				F2D0F21F2880BF52004BC16D /* allCores.json */,
-				F2D0F21B2880BF52004BC16D /* allLandpads.json */,
-				F2D0F2192880BF52004BC16D /* allLaunches.json */,
-				F2D0F21A2880BF52004BC16D /* allLaunchpads.json */,
-				F2D0F21E2880BF52004BC16D /* allPayloads.json */,
-				F2D0F21C2880BF52004BC16D /* allRockets.json */,
-				F230AF6B287F91BE00FF7769 /* capsule.json */,
-				F230AF69287F91B800FF7769 /* core.json */,
-				F230AF67287F91B200FF7769 /* landpad.json */,
-				F230AF55287E47CF00FF7769 /* launch.json */,
-				F230AF65287F91AB00FF7769 /* launchpad.json */,
-				F230AF63287F91A500FF7769 /* payload.json */,
-				F230AF61287F919F00FF7769 /* rocket.json */,
-			);
-			path = TestData;
 			sourceTree = "<group>";
 		};
 		F2396D28284552270084DF79 /* Networking */ = {
@@ -600,14 +488,6 @@
 			path = Sections;
 			sourceTree = "<group>";
 		};
-		F26CBE852880E66D00D2DFDC /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				F230AF7A287F9AE600FF7769 /* DataManagerTests.swift */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		F2AC1A5A28A80CA80007F688 /* Explore */ = {
 			isa = PBXGroup;
 			children = (
@@ -642,7 +522,6 @@
 			isa = PBXGroup;
 			children = (
 				F2F0937A27EE2818005CCD09 /* TrackX */,
-				F2F0939127EE2819005CCD09 /* TrackXTests */,
 				F2E63E0C289B0E7F005C6E8B /* Frameworks */,
 				F2F0937927EE2818005CCD09 /* Products */,
 				B2B4AEA472F156C44C4EF8F9 /* Pods */,
@@ -653,7 +532,6 @@
 			isa = PBXGroup;
 			children = (
 				F2F0937827EE2818005CCD09 /* TrackX.app */,
-				F2F0938E27EE2819005CCD09 /* TrackXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -670,17 +548,6 @@
 				F2F093AE27EE2B9C005CCD09 /* Utilities */,
 			);
 			path = TrackX;
-			sourceTree = "<group>";
-		};
-		F2F0939127EE2819005CCD09 /* TrackXTests */ = {
-			isa = PBXGroup;
-			children = (
-				F26CBE852880E66D00D2DFDC /* Data */,
-				F230AF58287F8EDD00FF7769 /* ModelTests */,
-				F230AF59287F8EE800FF7769 /* UtilitiesTests */,
-				F2ECA6F928B192040030516B /* TrackX.xctestplan */,
-			);
-			path = TrackXTests;
 			sourceTree = "<group>";
 		};
 		F2F093AB27EE2829005CCD09 /* Application */ = {
@@ -785,25 +652,6 @@
 			productReference = F2F0937827EE2818005CCD09 /* TrackX.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F2F0938D27EE2819005CCD09 /* TrackXTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F2F093A527EE2819005CCD09 /* Build configuration list for PBXNativeTarget "TrackXTests" */;
-			buildPhases = (
-				09EA2777E38EE07E0652AFB2 /* [CP] Check Pods Manifest.lock */,
-				F2F0938A27EE2819005CCD09 /* Sources */,
-				F2F0938B27EE2819005CCD09 /* Frameworks */,
-				F2F0938C27EE2819005CCD09 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F2F0939027EE2819005CCD09 /* PBXTargetDependency */,
-			);
-			name = TrackXTests;
-			productName = TrackXTests;
-			productReference = F2F0938E27EE2819005CCD09 /* TrackXTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -817,10 +665,6 @@
 					F2F0937727EE2818005CCD09 = {
 						CreatedOnToolsVersion = 13.3;
 					};
-					F2F0938D27EE2819005CCD09 = {
-						CreatedOnToolsVersion = 13.3;
-						TestTargetID = F2F0937727EE2818005CCD09;
-					};
 				};
 			};
 			buildConfigurationList = F2F0937327EE2817005CCD09 /* Build configuration list for PBXProject "TrackX" */;
@@ -833,14 +677,13 @@
 			);
 			mainGroup = F2F0936F27EE2817005CCD09;
 			packageReferences = (
-				F23BADD228A4569E00BCFC8F /* XCRemoteSwiftPackageReference "SFSafeSymbols.git" */,
+				F23BADD228A4569E00BCFC8F /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
 			);
 			productRefGroup = F2F0937927EE2818005CCD09 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				F2F0937727EE2818005CCD09 /* TrackX */,
-				F2F0938D27EE2819005CCD09 /* TrackXTests */,
 			);
 		};
 /* End PBXProject section */
@@ -856,52 +699,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2F0938C27EE2819005CCD09 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F230AF6C287F91BE00FF7769 /* capsule.json in Resources */,
-				F230AF6A287F91B800FF7769 /* core.json in Resources */,
-				F2D0F2232880BF53004BC16D /* allRockets.json in Resources */,
-				F230AF64287F91A500FF7769 /* payload.json in Resources */,
-				F230AF56287E47CF00FF7769 /* launch.json in Resources */,
-				F2D0F2242880BF53004BC16D /* allCapsules.json in Resources */,
-				F2D0F2252880BF53004BC16D /* allPayloads.json in Resources */,
-				F2D0F2222880BF53004BC16D /* allLandpads.json in Resources */,
-				F2D0F2262880BF53004BC16D /* allCores.json in Resources */,
-				F2D0F2202880BF52004BC16D /* allLaunches.json in Resources */,
-				F230AF68287F91B200FF7769 /* landpad.json in Resources */,
-				F2D0F2212880BF52004BC16D /* allLaunchpads.json in Resources */,
-				F230AF66287F91AB00FF7769 /* launchpad.json in Resources */,
-				F230AF62287F919F00FF7769 /* rocket.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		09EA2777E38EE07E0652AFB2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TrackXTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C5EF82016F7E7D6C82B48AAD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1039,32 +839,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2F0938A27EE2819005CCD09 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F230AF7E287FA08700FF7769 /* TestDataLoader.swift in Sources */,
-				F230AF74287F925D00FF7769 /* LaunchpadTests.swift in Sources */,
-				F230AF7B287F9AE600FF7769 /* DataManagerTests.swift in Sources */,
-				F230AF53287E44ED00FF7769 /* LaunchTests.swift in Sources */,
-				F230AF6E287F91D800FF7769 /* CapsuleTests.swift in Sources */,
-				F26CBE872880E6F700D2DFDC /* StringFormattingTests.swift in Sources */,
-				F230AF70287F91FD00FF7769 /* CoreTests.swift in Sources */,
-				F230AF72287F923000FF7769 /* LandpadTests.swift in Sources */,
-				F230AF76287F929A00FF7769 /* PayloadTests.swift in Sources */,
-				F230AF78287F92D200FF7769 /* RocketTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		F2F0939027EE2819005CCD09 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F2F0937727EE2818005CCD09 /* TrackX */;
-			targetProxy = F2F0938F27EE2819005CCD09 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F2F0938627EE2819005CCD09 /* LaunchScreen.storyboard */ = {
@@ -1256,48 +1031,6 @@
 			};
 			name = Release;
 		};
-		F2F093A627EE2819005CCD09 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD6DCD14241DAE013686E48A /* Pods-TrackXTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 36LYYU944F;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = co.stenning.TrackXTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrackX.app/TrackX";
-			};
-			name = Debug;
-		};
-		F2F093A727EE2819005CCD09 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D6D5007C977ABFDE33AD287 /* Pods-TrackXTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 36LYYU944F;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = co.stenning.TrackXTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrackX.app/TrackX";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1319,19 +1052,10 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F2F093A527EE2819005CCD09 /* Build configuration list for PBXNativeTarget "TrackXTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F2F093A627EE2819005CCD09 /* Debug */,
-				F2F093A727EE2819005CCD09 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F23BADD228A4569E00BCFC8F /* XCRemoteSwiftPackageReference "SFSafeSymbols.git" */ = {
+		F23BADD228A4569E00BCFC8F /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols.git";
 			requirement = {
@@ -1344,7 +1068,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		F23BADD328A4569E00BCFC8F /* SFSafeSymbols */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F23BADD228A4569E00BCFC8F /* XCRemoteSwiftPackageReference "SFSafeSymbols.git" */;
+			package = F23BADD228A4569E00BCFC8F /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
 			productName = SFSafeSymbols;
 		};
 		F24198992987180B00DE5BF8 /* RaptorKit */ = {
