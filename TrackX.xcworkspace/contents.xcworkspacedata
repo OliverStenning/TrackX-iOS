@@ -6,6 +6,13 @@
    </FileRef>
    <Group
       location = "container:"
+      name = "Features">
+      <FileRef
+         location = "group:Features/Launch">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
       name = "Shared">
       <FileRef
          location = "group:Shared/TrackXClient">
