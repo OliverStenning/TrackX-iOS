@@ -15,6 +15,9 @@
       location = "container:"
       name = "Shared">
       <FileRef
+         location = "group:Shared/Utilities">
+      </FileRef>
+      <FileRef
          location = "group:Shared/TrackXClient">
       </FileRef>
       <FileRef

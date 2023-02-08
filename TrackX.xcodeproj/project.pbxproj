@@ -85,6 +85,8 @@
 		F2AC1A6A28A834860007F688 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC1A6928A834860007F688 /* CountdownView.swift */; };
 		F2BD49EB2993217000A3923B /* Launch in Frameworks */ = {isa = PBXBuildFile; productRef = F2BD49EA2993217000A3923B /* Launch */; };
 		F2BD49EC2993220B00A3923B /* Launch in Embed Frameworks */ = {isa = PBXBuildFile; productRef = F2BD49EA2993217000A3923B /* Launch */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		F2BD49EE2993228500A3923B /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = F2BD49ED2993228500A3923B /* Utilities */; };
+		F2BD49EF2993228500A3923B /* Utilities in Embed Frameworks */ = {isa = PBXBuildFile; productRef = F2BD49ED2993228500A3923B /* Utilities */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F2CD62272992F2DE00B28E13 /* TrackXClient in Embed Frameworks */ = {isa = PBXBuildFile; productRef = F24224302991BCF700406AE8 /* TrackXClient */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F2E2EC4628592EC500AF06CC /* LaunchTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2EC4528592EC500AF06CC /* LaunchTableDataSource.swift */; };
 		F2E2EC482859327D00AF06CC /* FullLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2EC472859327D00AF06CC /* FullLaunch.swift */; };
@@ -113,6 +115,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				F2CD62272992F2DE00B28E13 /* TrackXClient in Embed Frameworks */,
+				F2BD49EF2993228500A3923B /* Utilities in Embed Frameworks */,
 				F241989B2987180B00DE5BF8 /* RaptorKit in Embed Frameworks */,
 				F2BD49EC2993220B00A3923B /* Launch in Embed Frameworks */,
 			);
@@ -237,6 +240,7 @@
 				F24224312991BCF700406AE8 /* TrackXClient in Frameworks */,
 				F2BD49EB2993217000A3923B /* Launch in Frameworks */,
 				F23BADD428A4569E00BCFC8F /* SFSafeSymbols in Frameworks */,
+				F2BD49EE2993228500A3923B /* Utilities in Frameworks */,
 				F241989A2987180B00DE5BF8 /* RaptorKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -642,6 +646,7 @@
 				F24198992987180B00DE5BF8 /* RaptorKit */,
 				F24224302991BCF700406AE8 /* TrackXClient */,
 				F2BD49EA2993217000A3923B /* Launch */,
+				F2BD49ED2993228500A3923B /* Utilities */,
 			);
 			productName = TrackX;
 			productReference = F2F0937827EE2818005CCD09 /* TrackX.app */;
@@ -1077,6 +1082,10 @@
 		F2BD49EA2993217000A3923B /* Launch */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Launch;
+		};
+		F2BD49ED2993228500A3923B /* Utilities */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Utilities;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
