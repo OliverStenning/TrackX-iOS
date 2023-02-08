@@ -4,12 +4,16 @@
    <FileRef
       location = "group:TrackX.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:TrackXClient">
-   </FileRef>
-   <FileRef
-      location = "group:RaptorKit">
-   </FileRef>
+   <Group
+      location = "container:"
+      name = "Shared">
+      <FileRef
+         location = "group:Shared/TrackXClient">
+      </FileRef>
+      <FileRef
+         location = "group:Shared/RaptorKit">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>

@@ -493,6 +493,13 @@
 			path = Explore;
 			sourceTree = "<group>";
 		};
+		F2BD49E52993205700A3923B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F2E2EC4B285CF06C00AF06CC /* Providers */ = {
 			isa = PBXGroup;
 			children = (
@@ -507,6 +514,7 @@
 				F2F0937A27EE2818005CCD09 /* TrackX */,
 				F2F0937927EE2818005CCD09 /* Products */,
 				B2B4AEA472F156C44C4EF8F9 /* Pods */,
+				F2BD49E52993205700A3923B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
