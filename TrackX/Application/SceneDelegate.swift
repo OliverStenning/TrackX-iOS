@@ -1,35 +1,28 @@
-//
-//  SceneDelegate.swift
-//  TrackX
-//
-//  Created by Oliver Stenning on 25/03/2022.
-//
-
-import TrackXClient
+import RaptorKit
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
+    var appCoordinator: AppCoordinator?
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        let navigationController = UINavigationController()
+        appCoordinator = AppCoordinator(navigationController: navigationController)
+        appCoordinator?.start(animated: false)
+  
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
         
-        let navController = UINavigationController(rootViewController: ExploreViewController(dataManager: DataManager(networkManager: NetworkManager())))
+        // TODO: Remove this once finished removing old UI
+//        let navController = UINavigationController(rootViewController: ExploreViewController(dataManager: DataManager(networkManager: NetworkManager())))
 
 //        let navController = UINavigationController(rootViewController: LaunchViewController(networkManager: NetworkManager()))
 //        // Required to set status bar color to white
 //        navController.navigationBar.barStyle = .black
-
-        
-        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        window?.windowScene = windowScene
-        window?.rootViewController = navController
-        window?.makeKeyAndVisible()
-        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

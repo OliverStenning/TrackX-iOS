@@ -32,13 +32,13 @@ enum NetworkEnvironment {
 
 struct NetworkManager {
     static let environment : NetworkEnvironment = .production
-    private let launchRouter = Router<LaunchEndpoint>()
-    private let rocketRouter = Router<RocketEndpoint>()
-    private let launchpadRouter = Router<LaunchpadEndpoint>()
-    private let landpadRouter = Router<LandpadEndpoint>()
-    private let coreRouter = Router<CoreEndpoint>()
-    private let capsuleRouter = Router<CapsuleEndpoint>()
-    private let payloadRouter = Router<PayloadEndpoint>()
+    private let launchRouter = NetworkRouter<LaunchEndpoint>()
+    private let rocketRouter = NetworkRouter<RocketEndpoint>()
+    private let launchpadRouter = NetworkRouter<LaunchpadEndpoint>()
+    private let landpadRouter = NetworkRouter<LandpadEndpoint>()
+    private let coreRouter = NetworkRouter<CoreEndpoint>()
+    private let capsuleRouter = NetworkRouter<CapsuleEndpoint>()
+    private let payloadRouter = NetworkRouter<PayloadEndpoint>()
     
     // MARK: - Launch functions
     func getLaunches(completion: @escaping (_ launches: [Launch]?, _ error: String?) -> ()) {

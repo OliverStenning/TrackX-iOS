@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Router<EndPoint: EndPointType> {
+class NetworkRouter<EndPoint: EndPointType> {
     private var task: URLSessionTask?
     
     fileprivate func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String> {
