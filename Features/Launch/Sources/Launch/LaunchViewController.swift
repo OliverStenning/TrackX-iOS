@@ -1,3 +1,5 @@
+import Combine
+import RaptorKit
 import UIKit
 
 // MARK: - LaunchViewController
@@ -25,19 +27,94 @@ final class LaunchViewController: UIViewController {
         setup()
     }
     
-    // MARK: - Internal
-    
-    let viewModel: LaunchViewModel
-    
     // MARK: - Private
+    
+    private typealias DataSource = UITableViewDiffableDataSource<LaunchSection, LaunchCellType>
+    
+    private let viewModel: LaunchViewModel
+    private let tableView = UITableView(frame: .zero)
+    
+    private var cancellables = Set<AnyCancellable>()
+    
+    private lazy var dataSource = DataSource(tableView: tableView) { tableView, indexPath, launchItem -> UITableViewCell? in
+        switch launchItem {
+        case let .upcoming(viewModel):
+            let cell: LatestLaunchCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.configure(viewModel: viewModel)
+            return cell
+        case let .recent(viewModel):
+            let cell: LatestLaunchCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.configure(viewModel: viewModel)
+            return cell        }
+    }
+    
     
     private func setup() {
         navigationItem.title = viewModel.title
         view.backgroundColor = .systemBackground
+        
+        bindViewModel()
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        tableView.register(LatestLaunchCell.self)
+        tableView.register(LabelHeaderView.self)
+        tableView.dataSource = dataSource
+        tableView.delegate = self
     }
     
     private func layout() {
-        
+        view.addSubview(tableView)
+        tableView.pin(edges: .all, to: view)
+    }
+    
+    private func bindViewModel() {
+        viewModel.sectionsPublisher.sink { [weak self] sections in
+            guard let self else { return }
+            self.updateSections(sections)
+        }.store(in: &cancellables)
+    }
+    
+    private func updateSections(_ sections: [LaunchSection]) {
+        var snapshot = NSDiffableDataSourceSnapshot<LaunchSection, LaunchCellType>()
+        snapshot.appendSections(sections)
+        sections.forEach { section in
+            switch section {
+            case .upcoming:
+                snapshot.appendItems([.upcoming(LatestLaunchCellViewModel())], toSection: section)
+            case .recent:
+                snapshot.appendItems([.recent(LatestLaunchCellViewModel())], toSection: section)
+            }
+        }
+        dataSource.apply(snapshot, animatingDifferences: false)
+    }
+    
+}
+
+extension LaunchViewController: UITableViewDelegate {
+    
+    // MARK: - Headers
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let sectionType = dataSource.snapshot().sectionIdentifiers[section]
+        guard let sectionTitle = sectionTitle(for: sectionType) else { return nil }
+        let headerView: LabelHeaderView = tableView.dequeueReusableHeaderFooterView()
+        headerView.configure(with: sectionTitle)
+        return headerView
+    }
+    
+    private func sectionTitle(for section: LaunchSection) -> String? {
+        switch section {
+        case .upcoming: return "Upcoming"
+        case .recent: return "Recent"
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let sectionType = dataSource.snapshot().sectionIdentifiers[section]
+        guard sectionTitle(for: sectionType) != nil else { return 0 }
+        return UITableView.automaticDimension
     }
     
 }
