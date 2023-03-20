@@ -27,6 +27,7 @@ public final class RKLabelHeaderView: UITableViewHeaderFooterView {
     private let titleLabel = UILabel()
     
     private func setup() {
+        titleLabel.textColor = RKAssets.Colors.neutral2.color
         titleLabel.font = RKFonts.Archivo.medium.font(size: 22)
         
         contentView.addSubview(titleLabel)

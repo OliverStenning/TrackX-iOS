@@ -20,7 +20,7 @@ class RecentLaunchTableCell: LaunchTableCell {
     
     private let backgroundGradient: UIView = {
         let view = GradientView()
-        view.bottomColor = RKAssets.Colors.backgroundSecondary.color
+        view.bottomColor = RKAssets.Colors.background2.color
         view.locations = [-1.0, 1.0]
         return view
     }()

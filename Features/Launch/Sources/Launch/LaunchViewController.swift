@@ -51,7 +51,7 @@ final class LaunchViewController: UIViewController {
     
     private func setup() {
         navigationItem.title = viewModel.title
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = RKAssets.Colors.background1.color
         
         bindViewModel()
         setupTableView()
@@ -66,6 +66,7 @@ final class LaunchViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.backgroundColor = .systemBackground
         tableView.estimatedSectionHeaderHeight = 100
+        tableView.backgroundColor = .clear
     }
     
     private func layout() {

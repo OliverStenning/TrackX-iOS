@@ -21,7 +21,7 @@ class RecentLaunchCollectionCell: UICollectionViewCell {
     
     private let backgroundGradient: UIView = {
         let view = GradientView()
-        view.bottomColor = RKAssets.Colors.backgroundSecondary.color
+        view.bottomColor = RKAssets.Colors.background2.color
         view.locations = [-1.0, 1.0]
         return view
     }()
@@ -80,7 +80,7 @@ class RecentLaunchCollectionCell: UICollectionViewCell {
         gesture.cancelsTouchesInView = false
         cardView.addGestureRecognizer(gesture)
         
-        cardView.backgroundColor = RKAssets.Colors.backgroundSecondary.color
+        cardView.backgroundColor = RKAssets.Colors.background2.color
         cardView.layer.cornerRadius = 16
         cardView.layer.masksToBounds = true
     }

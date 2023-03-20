@@ -25,9 +25,25 @@ public typealias AssetImageTypeAlias = ImageAsset.Image
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum RKAssets {
   public enum Colors {
+    public static let accent1 = ColorAsset(name: "Accent1")
+    public static let accent2 = ColorAsset(name: "Accent2")
+    public static let accent3 = ColorAsset(name: "Accent3")
+    public static let accent4 = ColorAsset(name: "Accent4")
+    public static let accent5 = ColorAsset(name: "Accent5")
+    public static let background1 = ColorAsset(name: "Background1")
+    public static let background2 = ColorAsset(name: "Background2")
+    public static let background3 = ColorAsset(name: "Background3")
+    public static let neutral1 = ColorAsset(name: "Neutral1")
+    public static let neutral10 = ColorAsset(name: "Neutral10")
+    public static let neutral2 = ColorAsset(name: "Neutral2")
+    public static let neutral3 = ColorAsset(name: "Neutral3")
+    public static let neutral4 = ColorAsset(name: "Neutral4")
+    public static let neutral5 = ColorAsset(name: "Neutral5")
+    public static let neutral6 = ColorAsset(name: "Neutral6")
+    public static let neutral7 = ColorAsset(name: "Neutral7")
+    public static let neutral8 = ColorAsset(name: "Neutral8")
+    public static let neutral9 = ColorAsset(name: "Neutral9")
     public static let accent = ColorAsset(name: "Accent")
-    public static let backgroundPrimary = ColorAsset(name: "BackgroundPrimary")
-    public static let backgroundSecondary = ColorAsset(name: "BackgroundSecondary")
     public static let textPrimary = ColorAsset(name: "TextPrimary")
     public static let textSecondary = ColorAsset(name: "TextSecondary")
   }

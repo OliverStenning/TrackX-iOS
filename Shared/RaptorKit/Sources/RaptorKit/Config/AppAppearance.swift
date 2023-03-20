@@ -13,7 +13,7 @@ public enum AppAppearance {
     private static func setupNavBar() {
         let largeTitleTextAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont(font: RKFonts.Archivo.semiBold, size: 34) ?? UIFont.systemFont(ofSize: 34),
-            .foregroundColor: UIColor.label
+            .foregroundColor: RKAssets.Colors.neutral1.color
         ]
         
         let titleTextAttributes: [NSAttributedString.Key: Any] = [
@@ -23,14 +23,14 @@ public enum AppAppearance {
         
         let defaultNavBarAppearance = UINavigationBarAppearance()
         defaultNavBarAppearance.configureWithOpaqueBackground()
-        defaultNavBarAppearance.backgroundColor = .systemBackground
+        defaultNavBarAppearance.backgroundColor = RKAssets.Colors.background1.color
         defaultNavBarAppearance.shadowColor = .separator
         defaultNavBarAppearance.largeTitleTextAttributes = largeTitleTextAttributes
         defaultNavBarAppearance.titleTextAttributes = titleTextAttributes
         
         let scrollEdgeNavBarAppearance = UINavigationBarAppearance()
         scrollEdgeNavBarAppearance.configureWithOpaqueBackground()
-        scrollEdgeNavBarAppearance.backgroundColor = .systemBackground
+        scrollEdgeNavBarAppearance.backgroundColor = RKAssets.Colors.background1.color
         scrollEdgeNavBarAppearance.shadowColor = .clear
         scrollEdgeNavBarAppearance.largeTitleTextAttributes = largeTitleTextAttributes
         scrollEdgeNavBarAppearance.titleTextAttributes = titleTextAttributes
@@ -39,7 +39,7 @@ public enum AppAppearance {
         navBarAppearance.standardAppearance = defaultNavBarAppearance
         navBarAppearance.compactAppearance = defaultNavBarAppearance
         navBarAppearance.scrollEdgeAppearance = scrollEdgeNavBarAppearance
-        navBarAppearance.tintColor = RKAssets.Colors.accent.color
+        navBarAppearance.tintColor = RKAssets.Colors.accent3.color
         navBarAppearance.prefersLargeTitles = true
     }
     

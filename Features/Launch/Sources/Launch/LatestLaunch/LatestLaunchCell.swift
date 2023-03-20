@@ -30,7 +30,7 @@ final class LatestLaunchCell: UITableViewCell {
     private func setup() {
         layout()
         backgroundConfiguration = .clear()
-        cardView.backgroundColor = .secondarySystemBackground
+        cardView.backgroundColor = RKAssets.Colors.background2.color
         cardView.layer.cornerRadius = 12
     }
     

@@ -116,7 +116,7 @@ class ExploreViewController: UIViewController {
     
     private func configureViews() {
         title = L10n.explore
-        view.backgroundColor = RKAssets.Colors.backgroundPrimary.color
+        view.backgroundColor = RKAssets.Colors.background1.color
         rocketsCard.isHidden = true
 
         // Interaction delegates

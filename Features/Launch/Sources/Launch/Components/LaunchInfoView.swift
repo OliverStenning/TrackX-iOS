@@ -34,7 +34,7 @@ final class LaunchInfoView: UIView {
     }
     
     private func setupLabels() {
-        rocketLabel.textColor = .label
+        rocketLabel.textColor = RKAssets.Colors.neutral1.color
         rocketLabel.font = RKFonts.Archivo.medium.font(size: 22)
         
         launchpadLabel.icon.image = UIImage(systemName: "map.fill")

@@ -54,7 +54,7 @@ class ScheduledLaunchCollectionCell: UICollectionViewCell {
         gesture.cancelsTouchesInView = false
         cardView.addGestureRecognizer(gesture)
         
-        cardView.backgroundColor = RKAssets.Colors.backgroundSecondary.color
+        cardView.backgroundColor = RKAssets.Colors.background2.color
         cardView.layer.cornerRadius = 16
         cardView.layer.masksToBounds = true
     }

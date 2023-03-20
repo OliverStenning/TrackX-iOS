@@ -43,7 +43,7 @@ class RocketsSectionView: UIView {
     }
     
     private func configureViews() {
-        card.backgroundColor = RKAssets.Colors.backgroundSecondary.color
+        card.backgroundColor = RKAssets.Colors.background2.color
         card.layer.cornerRadius = 16
         card.layer.masksToBounds = true
     }

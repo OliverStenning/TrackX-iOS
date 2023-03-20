@@ -50,7 +50,7 @@ class SettingsSectionView: UIView {
     }
     
     private func configureViews() {
-        cardView.backgroundColor = RKAssets.Colors.backgroundSecondary.color
+        cardView.backgroundColor = RKAssets.Colors.background1.color
         cardView.layer.cornerRadius = 16
         cardView.layer.masksToBounds = true
         

@@ -44,7 +44,7 @@ class ScheduledLaunchTableCell: LaunchTableCell {
     private func configureViews() {
         backgroundColor = .clear
         selectionStyle = .none
-        container.backgroundColor = RKAssets.Colors.backgroundSecondary.color
+        container.backgroundColor = RKAssets.Colors.background2.color
     }
     
     private func configureConstraints() {

@@ -82,7 +82,7 @@ class NextLaunchSectionView: UIView {
         gesture.numberOfTapsRequired = 1
         cardView.addGestureRecognizer(gesture)
         
-        cardView.backgroundColor = RKAssets.Colors.backgroundSecondary.color
+        cardView.backgroundColor = RKAssets.Colors.background2.color
         cardView.layer.cornerRadius = 16
         cardView.layer.masksToBounds = true
         self.isUserInteractionEnabled = true

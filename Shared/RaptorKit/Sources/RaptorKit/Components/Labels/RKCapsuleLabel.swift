@@ -33,12 +33,12 @@ final public class RKCapsuleLabel: UIView {
     }
     
     private func setupCapsule() {
-        capsule.backgroundColor = RKAssets.Colors.accent.color
+        capsule.backgroundColor = RKAssets.Colors.accent3.color
     }
     
     private func setupLabel() {
+        label.textColor = RKAssets.Colors.neutral1.color
         label.font = RKFonts.Archivo.medium.font(size: 28)
-        label.textColor = .label
     }
     
     private func updateCapsuleSize() {

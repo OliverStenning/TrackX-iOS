@@ -30,12 +30,12 @@ final public class RKIconLabel: UIView {
     }
     
     private func setupIcon() {
-        icon.tintColor = .secondaryLabel
+        icon.tintColor = RKAssets.Colors.neutral5.color
     }
     
     private func setupLabel() {
+        label.textColor = RKAssets.Colors.neutral5.color
         label.font = RKFonts.Archivo.regular.font(size: 18)
-        label.textColor = .secondaryLabel
     }
     
     private func layout() {
