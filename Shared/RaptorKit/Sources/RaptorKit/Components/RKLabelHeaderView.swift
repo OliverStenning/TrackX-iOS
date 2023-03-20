@@ -1,8 +1,8 @@
 import UIKit
 
-// MARK: - LabelHeaderView
+// MARK: - RKLabelHeaderView
 
-public final class LabelHeaderView: UITableViewHeaderFooterView {
+public final class RKLabelHeaderView: UITableViewHeaderFooterView {
     
     // MARK: - Lifecycle
     
@@ -27,8 +27,10 @@ public final class LabelHeaderView: UITableViewHeaderFooterView {
     private let titleLabel = UILabel()
     
     private func setup() {
+        titleLabel.font = RKFonts.Archivo.medium.font(size: 22)
+        
         contentView.addSubview(titleLabel)
-        titleLabel.pin(edges: .all, to: contentView)
+        titleLabel.pin(edges: .all, to: contentView, insets: .only(top: 8, left: 16, bottom: 8, right: 16))
     }
     
 }

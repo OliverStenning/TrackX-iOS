@@ -5,14 +5,14 @@ import Foundation
 
 enum LaunchSection {
     case upcoming
-    case recent
+    case latest
 }
 
 // MARK: - LaunchCellType
 
 enum LaunchCellType: Hashable {
-    case upcoming(LatestLaunchCellViewModel)
-    case recent(LatestLaunchCellViewModel)
+    case upcoming(UpcomingLaunchCellViewModel)
+    case latest(LatestLaunchCellViewModel)
 }
 
 public final class LaunchViewModel {
@@ -36,7 +36,7 @@ public final class LaunchViewModel {
     private func setSections() {
         sections = [
             .upcoming,
-            .recent
+            .latest
         ]
     }
     

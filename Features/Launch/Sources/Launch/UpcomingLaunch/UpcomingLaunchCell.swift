@@ -1,9 +1,9 @@
 import RaptorKit
 import UIKit
 
-// MARK: - LatestLaunchCell
+// MARK: - UpcomingLaunchCell
 
-final class LatestLaunchCell: UITableViewCell {
+final class UpcomingLaunchCell: UITableViewCell {
     
     // MARK: - Lifecycle
     
@@ -18,7 +18,7 @@ final class LatestLaunchCell: UITableViewCell {
     
     // MARK: - Internal
     
-    func configure(viewModel: LatestLaunchCellViewModel) {
+    func configure(viewModel: UpcomingLaunchCellViewModel) {
         launchInfoView.configure(with: LaunchInfoViewModel())
     }
     

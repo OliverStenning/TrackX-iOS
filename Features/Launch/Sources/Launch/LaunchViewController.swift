@@ -32,17 +32,17 @@ final class LaunchViewController: UIViewController {
     private typealias DataSource = UITableViewDiffableDataSource<LaunchSection, LaunchCellType>
     
     private let viewModel: LaunchViewModel
-    private let tableView = UITableView(frame: .zero)
+    private let tableView = UITableView(frame: .zero, style: .grouped)
     
     private var cancellables = Set<AnyCancellable>()
     
     private lazy var dataSource = DataSource(tableView: tableView) { tableView, indexPath, launchItem -> UITableViewCell? in
         switch launchItem {
         case let .upcoming(viewModel):
-            let cell: LatestLaunchCell = tableView.dequeueReusableCell(for: indexPath)
+            let cell: UpcomingLaunchCell = tableView.dequeueReusableCell(for: indexPath)
             cell.configure(viewModel: viewModel)
             return cell
-        case let .recent(viewModel):
+        case let .latest(viewModel):
             let cell: LatestLaunchCell = tableView.dequeueReusableCell(for: indexPath)
             cell.configure(viewModel: viewModel)
             return cell        }
@@ -58,10 +58,14 @@ final class LaunchViewController: UIViewController {
     }
     
     private func setupTableView() {
+        tableView.register(UpcomingLaunchCell.self)
         tableView.register(LatestLaunchCell.self)
-        tableView.register(LabelHeaderView.self)
+        tableView.register(RKLabelHeaderView.self)
         tableView.dataSource = dataSource
         tableView.delegate = self
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .systemBackground
+        tableView.estimatedSectionHeaderHeight = 100
     }
     
     private func layout() {
@@ -82,9 +86,9 @@ final class LaunchViewController: UIViewController {
         sections.forEach { section in
             switch section {
             case .upcoming:
-                snapshot.appendItems([.upcoming(LatestLaunchCellViewModel())], toSection: section)
-            case .recent:
-                snapshot.appendItems([.recent(LatestLaunchCellViewModel())], toSection: section)
+                snapshot.appendItems([.upcoming(UpcomingLaunchCellViewModel())], toSection: section)
+            case .latest:
+                snapshot.appendItems([.latest(LatestLaunchCellViewModel())], toSection: section)
             }
         }
         dataSource.apply(snapshot, animatingDifferences: false)
@@ -99,7 +103,7 @@ extension LaunchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionType = dataSource.snapshot().sectionIdentifiers[section]
         guard let sectionTitle = sectionTitle(for: sectionType) else { return nil }
-        let headerView: LabelHeaderView = tableView.dequeueReusableHeaderFooterView()
+        let headerView: RKLabelHeaderView = tableView.dequeueReusableHeaderFooterView()
         headerView.configure(with: sectionTitle)
         return headerView
     }
@@ -107,7 +111,7 @@ extension LaunchViewController: UITableViewDelegate {
     private func sectionTitle(for section: LaunchSection) -> String? {
         switch section {
         case .upcoming: return "Upcoming"
-        case .recent: return "Recent"
+        case .latest: return "Latest"
         }
     }
     

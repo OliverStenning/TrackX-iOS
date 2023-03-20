@@ -1,15 +1,15 @@
 import Foundation
 
-// MARK: - LatestLaunchCellViewModel
+// MARK: - UpcomingLaunchCellViewModel
 
-struct LatestLaunchCellViewModel: Hashable {
+struct UpcomingLaunchCellViewModel: Hashable {
     
     // MARK: - Lifecycle
     
     public init() {
+
     }
     
     // MARK: - Internal
-    
-    
+
 }
