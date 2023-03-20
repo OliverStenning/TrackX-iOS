@@ -10,6 +10,7 @@
 		14409ED1B895ECA8C135E83F /* NextLaunchSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14409D396F8773A2E0919CC0 /* NextLaunchSectionView.swift */; };
 		A72BD3B829B3DFAB004A0000 /* SetupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72BD3B729B3DFAA004A0000 /* SetupManager.swift */; };
 		A7785CB229B3F21C002D52FF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7785CB129B3F21C002D52FF /* AppCoordinator.swift */; };
+		A782558229C7DEC700263D5D /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = A782558129C7DEC700263D5D /* SFSafeSymbols */; };
 		F2051657285D3BC000584F11 /* LaunchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2051656285D3BC000584F11 /* LaunchEndpoint.swift */; };
 		F20D7CB728A85FD10002B5FE /* CountdownNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D7CB628A85FD10002B5FE /* CountdownNumberView.swift */; };
 		F20D7CB928A867AA0002B5FE /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D7CB828A867AA0002B5FE /* String+Extensions.swift */; };
@@ -240,6 +241,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A782558229C7DEC700263D5D /* SFSafeSymbols in Frameworks */,
 				F24224312991BCF700406AE8 /* TrackXClient in Frameworks */,
 				F2BD49EB2993217000A3923B /* Launch in Frameworks */,
 				F2BD49EE2993228500A3923B /* Utilities in Frameworks */,
@@ -658,6 +660,7 @@
 				F24224302991BCF700406AE8 /* TrackXClient */,
 				F2BD49EA2993217000A3923B /* Launch */,
 				F2BD49ED2993228500A3923B /* Utilities */,
+				A782558129C7DEC700263D5D /* SFSafeSymbols */,
 			);
 			productName = TrackX;
 			productReference = F2F0937827EE2818005CCD09 /* TrackX.app */;
@@ -688,6 +691,7 @@
 			);
 			mainGroup = F2F0936F27EE2817005CCD09;
 			packageReferences = (
+				A782558029C7DEC700263D5D /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
 			);
 			productRefGroup = F2F0937927EE2818005CCD09 /* Products */;
 			projectDirPath = "";
@@ -1068,7 +1072,23 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		A782558029C7DEC700263D5D /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		A782558129C7DEC700263D5D /* SFSafeSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A782558029C7DEC700263D5D /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			productName = SFSafeSymbols;
+		};
 		F24198992987180B00DE5BF8 /* RaptorKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RaptorKit;
