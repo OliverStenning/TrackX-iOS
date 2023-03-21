@@ -2,16 +2,16 @@ import Foundation
 
 public final class RocketModel {
     
-    let id: UUID
-    let name: String?
-    let active: Bool?
-    let stages: Int?
-    let boosters: Int?
-    let launchCost: Int?
-    let successRate: Int?
-    let height: Double
-    let diameter: Double
-    let mass: Double
+    public let id: UUID
+    public let name: String?
+    public let active: Bool?
+    public let stages: Int?
+    public let boosters: Int?
+    public let launchCost: Int?
+    public let successRate: Int?
+    public let height: Double
+    public let diameter: Double
+    public let mass: Double
     
     init(
         id: UUID,

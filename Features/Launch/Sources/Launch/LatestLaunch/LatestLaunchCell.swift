@@ -19,7 +19,7 @@ final class LatestLaunchCell: UITableViewCell {
     // MARK: - Internal
     
     func configure(viewModel: LatestLaunchCellViewModel) {
-        launchInfoView.configure(with: LaunchInfoViewModel())
+        launchInfoView.configure(with: viewModel.launchInfoViewModel)
     }
     
     // MARK: - Private

@@ -1,11 +1,12 @@
 import Combine
 import Foundation
+import TrackXClient
 
 // MARK: - LaunchSection
 
-enum LaunchSection {
-    case upcoming
-    case latest
+enum LaunchSection: Hashable {
+    case upcoming(UpcomingLaunchCellViewModel)
+    case latest(LatestLaunchCellViewModel)
 }
 
 // MARK: - LaunchCellType
@@ -19,8 +20,8 @@ public final class LaunchViewModel {
     
     // MARK: - Lifecycle
     
-    init() {
-        setSections()
+    init(launchService: LaunchServiceProtocol = LaunchService()) {
+        self.launchService = launchService
     }
     
     // MARK: - Internal
@@ -31,12 +32,34 @@ public final class LaunchViewModel {
     
     var title: String { "Launches" }
     
+    func loadLaunches() {
+        getLaunchData()
+    }
+    
     // MARK: - Private
     
-    private func setSections() {
+    private let launchService: LaunchServiceProtocol
+    
+    private func getLaunchData() {
+        Task {
+            do {
+                async let latestLaunch = launchService.getLatestLaunch()
+                async let upcomingLaunch = launchService.getNextLaunch()
+                try await handleLaunchDataSuccess(latestLaunch: latestLaunch, upcomingLaunch: upcomingLaunch)
+            } catch {
+                // TODO: Show error screen
+            }
+        }
+    }
+    
+    @MainActor
+    private func handleLaunchDataSuccess(latestLaunch: LaunchModel, upcomingLaunch: LaunchModel) {
+        let latestLaunchViewModel = LatestLaunchCellViewModel(latestLaunch: latestLaunch)
+        let upcomingLaunchViewModel = UpcomingLaunchCellViewModel(upcomingLaunch: upcomingLaunch)
+        
         sections = [
-            .upcoming,
-            .latest
+            .upcoming(upcomingLaunchViewModel),
+            .latest(latestLaunchViewModel)
         ]
     }
     

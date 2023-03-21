@@ -2,12 +2,12 @@ import Foundation
 
 public final class LaunchpadModel {
     
-    let id: UUID
-    let name: String
-    let fullName: String
-    let region: String
-    let longitude: Double
-    let latitude: Double
+    public let id: UUID
+    public let name: String
+    public let fullName: String
+    public let region: String
+    public let longitude: Double
+    public let latitude: Double
     
     init(
         id: UUID,

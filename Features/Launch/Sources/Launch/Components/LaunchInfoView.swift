@@ -35,7 +35,7 @@ final class LaunchInfoView: UIView {
     
     private func setupLabels() {
         rocketLabel.textColor = RKAssets.Colors.neutral1.color
-        rocketLabel.font = RKFonts.Archivo.medium.font(size: 22)
+        rocketLabel.font = RKFonts.Archivo.medium.font(size: 20)
         
         launchpadLabel.icon.image = UIImage(systemName: "map.fill")
         dateLabel.icon.image = UIImage(systemName: "calendar")
@@ -47,7 +47,7 @@ final class LaunchInfoView: UIView {
         nameLabel.pin(edges: [.top, .leadingAndTrailing], to: self, insets: .only(top: 16, left: 16, right: 16))
         
         rocketLabel.pin(edges: .leadingAndTrailing, to: self, insets: .symmetrical(horizontal: 16))
-        rocketLabel.pin(.top, to: .bottom, of: nameLabel, constant: -12)
+        rocketLabel.pin(.top, to: .bottom, of: nameLabel, constant: -8)
         
         launchpadLabel.pin(edges: [.leadingAndTrailing], to: self, insets: .symmetrical(horizontal: 16))
         launchpadLabel.pin(.top, to: .bottom, of: rocketLabel, constant: -8)

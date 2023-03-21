@@ -1,4 +1,5 @@
 import Foundation
+import TrackXClient
 
 // MARK: - LaunchInfoViewModel
 
@@ -6,11 +7,11 @@ struct LaunchInfoViewModel: Hashable {
     
     // MARK: - Lifecycle
     
-    public init() {
-        self.name = "Crew 4"
-        self.rocket = "Falcon 9"
-        self.launchpad = "LC39A Kennedy Space Center"
-        self.date = "28 Oct 2022, 12:00 UTC"
+    public init(launch: LaunchModel) {
+        self.name = launch.name
+        self.rocket = launch.rocket.name ?? "Falcon 9"
+        self.launchpad = launch.launchpad.name
+        self.date = launch.dateUtc
     }
     
     // MARK: - Internal

@@ -19,7 +19,7 @@ final class UpcomingLaunchCell: UITableViewCell {
     // MARK: - Internal
     
     func configure(viewModel: UpcomingLaunchCellViewModel) {
-        launchInfoView.configure(with: LaunchInfoViewModel())
+        launchInfoView.configure(with: viewModel.launchInfoViewModel)
     }
     
     // MARK: - Private
@@ -30,7 +30,6 @@ final class UpcomingLaunchCell: UITableViewCell {
     private func setup() {
         layout()
         backgroundConfiguration = .clear()
-//        cardView.backgroundColor = .secondarySystemBackground
         cardView.backgroundColor = RKAssets.Colors.background2.color
         cardView.layer.cornerRadius = 12
     }

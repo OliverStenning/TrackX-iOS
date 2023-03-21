@@ -2,16 +2,16 @@ import Foundation
 
 public final class LaunchModel {
     
-    let id: UUID
-    let name: String
-    let dateUtc: String
-    let upcoming: Bool
-    let success: Bool?
-    let description: String?
-    let rocket: RocketModel
-    let cores: String
-    let payloads: String
-    let launchpad: LaunchpadModel
+    public let id: UUID
+    public let name: String
+    public let dateUtc: String
+    public let upcoming: Bool
+    public let success: Bool?
+    public let description: String?
+    public let rocket: RocketModel
+    public let cores: String
+    public let payloads: String
+    public let launchpad: LaunchpadModel
     
     init(
         id: UUID,

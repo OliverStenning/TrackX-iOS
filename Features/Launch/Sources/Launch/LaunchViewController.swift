@@ -55,6 +55,8 @@ final class LaunchViewController: UIViewController {
         
         bindViewModel()
         setupTableView()
+        
+        viewModel.loadLaunches()
     }
     
     private func setupTableView() {
@@ -86,10 +88,10 @@ final class LaunchViewController: UIViewController {
         snapshot.appendSections(sections)
         sections.forEach { section in
             switch section {
-            case .upcoming:
-                snapshot.appendItems([.upcoming(UpcomingLaunchCellViewModel())], toSection: section)
-            case .latest:
-                snapshot.appendItems([.latest(LatestLaunchCellViewModel())], toSection: section)
+            case let .upcoming(viewModel):
+                snapshot.appendItems([.upcoming(viewModel)], toSection: section)
+            case let .latest(viewModel):
+                snapshot.appendItems([.latest(viewModel)], toSection: section)
             }
         }
         dataSource.apply(snapshot, animatingDifferences: false)
