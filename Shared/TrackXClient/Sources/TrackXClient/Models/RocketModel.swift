@@ -1,6 +1,6 @@
 import Foundation
 
-public final class RocketModel {
+public struct RocketModel: Hashable {
     
     public let id: UUID
     public let name: String?

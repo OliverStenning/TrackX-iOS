@@ -22,8 +22,7 @@ public enum AppAppearance {
         
         
         let defaultNavBarAppearance = UINavigationBarAppearance()
-        defaultNavBarAppearance.configureWithOpaqueBackground()
-        defaultNavBarAppearance.backgroundColor = RKAssets.Colors.background1.color
+        defaultNavBarAppearance.configureWithDefaultBackground()
         defaultNavBarAppearance.shadowColor = .separator
         defaultNavBarAppearance.largeTitleTextAttributes = largeTitleTextAttributes
         defaultNavBarAppearance.titleTextAttributes = titleTextAttributes

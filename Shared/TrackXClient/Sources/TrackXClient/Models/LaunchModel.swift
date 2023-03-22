@@ -1,6 +1,6 @@
 import Foundation
 
-public final class LaunchModel {
+public struct LaunchModel: Hashable {
     
     public let id: UUID
     public let name: String

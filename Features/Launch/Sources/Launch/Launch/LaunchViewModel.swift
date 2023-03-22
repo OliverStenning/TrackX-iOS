@@ -16,11 +16,21 @@ enum LaunchCellType: Hashable {
     case latest(LatestLaunchCellViewModel)
 }
 
+// MARK: - LaunchViewModelDelegate
+
+protocol LaunchViewModelDelegate: AnyObject {
+    func didTapUpcomingLaunch(launch: LaunchModel)
+    func didTapLatestLaunch(launch: LaunchModel)
+}
+
+// MARK: - LaunchViewModel
+
 public final class LaunchViewModel {
     
     // MARK: - Lifecycle
     
-    init(launchService: LaunchServiceProtocol = LaunchService()) {
+    init(coordinator: LaunchViewModelDelegate, launchService: LaunchServiceProtocol = LaunchService()) {
+        self.coordinator = coordinator
         self.launchService = launchService
     }
     
@@ -36,9 +46,18 @@ public final class LaunchViewModel {
         getLaunchData()
     }
     
+    func didTapUpcomingLaunch(launch: LaunchModel) {
+        coordinator?.didTapUpcomingLaunch(launch: launch)
+    }
+    
+    func didTapLatestLaunch(launch:LaunchModel) {
+        coordinator?.didTapLatestLaunch(launch: launch)
+    }
+    
     // MARK: - Private
     
     private let launchService: LaunchServiceProtocol
+    private weak var coordinator: LaunchViewModelDelegate?
     
     private func getLaunchData() {
         Task {

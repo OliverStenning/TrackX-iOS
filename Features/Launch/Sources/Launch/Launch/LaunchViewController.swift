@@ -124,4 +124,14 @@ extension LaunchViewController: UITableViewDelegate {
         return UITableView.automaticDimension
     }
     
+    // MARK: - Actions
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
+        switch item {
+        case let .upcoming(cellViewModel): viewModel.didTapUpcomingLaunch(launch: cellViewModel.launch)
+        case let .latest(cellViewModel): viewModel.didTapLatestLaunch(launch: cellViewModel.launch)
+        }
+    }
+    
 }
