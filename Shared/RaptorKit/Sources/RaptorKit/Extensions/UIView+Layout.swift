@@ -146,6 +146,22 @@ public extension UIView {
     }
     
     @discardableResult
+    func center(_ axis: Axis, to view: UIView, constant: CGFloat = 0) -> UIView {
+        translatesAutoresizingMaskIntoConstraints = false
+        let constraint = NSLayoutConstraint(
+            item: self,
+            attribute: axis.centerAttribute,
+            relatedBy: .equal,
+            toItem: view,
+            attribute: axis.centerAttribute,
+            multiplier: 1,
+            constant: constant
+        )
+        constraint.isActive = true
+        return self
+    }
+    
+    @discardableResult
     func size(_ size: CGSize, priority: UILayoutPriority = .required) -> UIView {
         self.size(.width, relation: .equal, constant: size.width, priority: priority)
         self.size(.height, relation: .equal, constant: size.height, priority: priority)

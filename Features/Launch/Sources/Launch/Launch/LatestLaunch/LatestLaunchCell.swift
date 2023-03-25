@@ -19,27 +19,58 @@ final class LatestLaunchCell: UITableViewCell {
     // MARK: - Internal
     
     func configure(viewModel: LatestLaunchCellViewModel) {
+        headerImageView.image = RKAssets.Images.placeholder1.image
+        
+        statusView.text = "Success"
+        statusView.backgroundColor = RKAssets.Colors.success.color
+        
         launchInfoView.configure(with: viewModel.launchInfoViewModel)
     }
     
     // MARK: - Private
     
     private let cardView = UIView()
+    private let cardBackgroundView = UIView()
+    private let headerImageView = UIImageView()
+    private let statusView = RKTagView()
     private let launchInfoView = LaunchInfoView()
+    private let chevronView = UIImageView()
     
     private func setup() {
-        layout()
         backgroundConfiguration = .clear()
-        cardView.backgroundColor = RKAssets.Colors.background2.color
         cardView.layer.cornerRadius = 12
+        cardView.clipsToBounds = true
+
+        headerImageView.contentMode = .scaleAspectFill
+        headerImageView.clipsToBounds = true
+        
+        cardBackgroundView.backgroundColor = RKAssets.Colors.background2.color
+        
+        chevronView.image = UIImage(systemName: "chevron.right")
+        chevronView.tintColor = RKAssets.Colors.neutral3.color
+        
+        layout()
     }
     
     private func layout() {
-        addSubview(cardView)
-        cardView.addSubview(launchInfoView)
+        contentView.addSubview(cardView)
+        cardView.addSubviews(cardBackgroundView, headerImageView, statusView, launchInfoView, chevronView)
         
-        cardView.pin(edges: .all, to: self, insets: .symmetrical(horizontal: 16))
-        launchInfoView.pin(edges: .all, to: cardView)
+        cardView.pin(edges: .all, to: contentView, insets: .symmetrical(horizontal: 16))
+        cardBackgroundView.pin(edges: .all, to: cardView)
+        
+        headerImageView.pin(edges: [.top, .leadingAndTrailing], to: cardView)
+        headerImageView.size(.height, constant: 200)
+        
+        statusView.pin(edges: [.top, .leading], to: cardView, insets: .symmetrical(horizontal: 16, vertical: 16))
+        
+        chevronView.pin(.trailing, to: .trailing, of: cardView, constant: 16)
+        chevronView.center(.vertical, to: launchInfoView)
+        chevronView.setContentHuggingPriority(.required, for: .horizontal)
+        
+        launchInfoView.pin(edges: [.leading, .bottom], to: cardView)
+        launchInfoView.pin(.trailing, to: .leading, of: chevronView)
+        launchInfoView.pin(.top, to: .bottom, of: headerImageView)
     }
     
 }
