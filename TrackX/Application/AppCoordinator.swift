@@ -17,7 +17,7 @@ final class AppCoordinator: Coordinator {
     var childCoordinators: [Coordinator]
     
     func start(animated: Bool) {
-        let launchCoordinator = LaunchCoordinator(navigationController: navigationController)
+        let launchCoordinator = LaunchesCoordinator(navigationController: navigationController)
         childCoordinators.append(launchCoordinator)
         launchCoordinator.start(animated: animated)
     }

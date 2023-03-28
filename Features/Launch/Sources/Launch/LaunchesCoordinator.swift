@@ -2,7 +2,7 @@ import RaptorKit
 import UIKit
 import TrackXClient
 
-public final class LaunchCoordinator: Coordinator {
+public final class LaunchesCoordinator: Coordinator {
     
     // MARK: - Lifecycle
     
@@ -16,11 +16,9 @@ public final class LaunchCoordinator: Coordinator {
     public var navigationController: UINavigationController
     
     public func start(animated: Bool) {
-//        let launchViewModel = LaunchViewModel(coordinator: self)
-//        let launchViewController = LaunchViewController(viewModel: launchViewModel)
-        
-        let launchPagerViewController = LaunchPagerViewController()
-        navigationController.pushViewController(launchPagerViewController, animated: animated)
+        let launchesViewModel = LaunchesViewModel(coordinator: self)
+        let launchesViewController = LaunchesViewController(viewModel: launchesViewModel)
+        navigationController.pushViewController(launchesViewController, animated: animated)
     }
     
     // MARK: - Private
@@ -28,18 +26,14 @@ public final class LaunchCoordinator: Coordinator {
     private func openLaunchDetails(launch: LaunchModel) {
         let launchDetailsViewModel = LaunchDetailsViewModel(launch: launch)
         let launchDetailsViewController = LaunchDetailsViewController(viewModel: launchDetailsViewModel)
-        navigationController.pushViewController(launchDetailsViewController, animated: true)
+        navigationController.present(launchDetailsViewController, animated: true)
     }
     
 }
 
-extension LaunchCoordinator: LaunchViewModelDelegate {
+extension LaunchesCoordinator: LaunchesViewModelDelegate {
     
-    func didTapUpcomingLaunch(launch: LaunchModel) {
-        openLaunchDetails(launch: launch)
-    }
-    
-    func didTapLatestLaunch(launch: LaunchModel) {
+    func didTapLaunchViewDetails(launch: LaunchModel) {
         openLaunchDetails(launch: launch)
     }
     

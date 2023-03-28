@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "TrackXClient",
-    platforms: [.iOS(.v14)],
+    platforms: [.iOS(.v15)],
     products: [.library(name: "TrackXClient", type: .dynamic, targets: ["TrackXClient"])],
     dependencies: [],
     targets: [

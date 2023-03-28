@@ -7,7 +7,8 @@ final class LaunchPageViewController: UIViewController {
     
     // MARK: - Lifecycle
     
-    init() {
+    init(viewModel: LaunchPageViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -26,6 +27,8 @@ final class LaunchPageViewController: UIViewController {
     }
     
     // MARK: - Private
+    
+    private let viewModel: LaunchPageViewModel
     
     private var backgroundImageView = UIImageView()
     private var backgroundGradientView = RKGradientView()
@@ -77,7 +80,6 @@ final class LaunchPageViewController: UIViewController {
     
     private func setupButton() {
         var buttonConfig = UIButton.Configuration.filled()
-        buttonConfig.title = "View Details"
         buttonConfig.titleAlignment = .center
         buttonConfig.contentInsets = .symmetrical(horizontal: 24, vertical: 8)
         buttonConfig.baseBackgroundColor = RKAssets.Colors.accent3.color
@@ -89,6 +91,7 @@ final class LaunchPageViewController: UIViewController {
         buttonConfig.attributedTitle = buttonText
         
         viewDetailsButton.configuration = buttonConfig
+        viewDetailsButton.addTarget(self, action: #selector(didTapViewDetails), for: .touchUpInside)
     }
     
     private func layout() {
@@ -113,6 +116,10 @@ final class LaunchPageViewController: UIViewController {
         
         viewDetailsButton.pin(edges: .leading, to: view, insets: .symmetrical(horizontal: 16))
         viewDetailsButton.pin(.bottom, to: .bottom, of: view, constant: 64)
+    }
+    
+    @objc private func didTapViewDetails() {
+        viewModel.didTapViewDetails()
     }
     
 }

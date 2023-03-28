@@ -49,6 +49,7 @@ public enum RKAssets {
     public static let success = ColorAsset(name: "Success")
   }
   public enum Images {
+    public static let launchScreenIcon = ImageAsset(name: "LaunchScreenIcon")
     public static let placeholder = ImageAsset(name: "Placeholder")
     public static let placeholder1 = ImageAsset(name: "Placeholder1")
     public static let placeholder2 = ImageAsset(name: "Placeholder2")
