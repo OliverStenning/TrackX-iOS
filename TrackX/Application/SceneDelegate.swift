@@ -16,13 +16,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        
-        // TODO: Remove this once finished removing old UI
-//        let navController = UINavigationController(rootViewController: ExploreViewController(dataManager: DataManager(networkManager: NetworkManager())))
-
-//        let navController = UINavigationController(rootViewController: LaunchViewController(networkManager: NetworkManager()))
-//        // Required to set status bar color to white
-//        navController.navigationBar.barStyle = .black
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
