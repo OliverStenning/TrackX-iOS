@@ -16,9 +16,11 @@ public final class LaunchCoordinator: Coordinator {
     public var navigationController: UINavigationController
     
     public func start(animated: Bool) {
-        let launchViewModel = LaunchViewModel(coordinator: self)
-        let launchViewController = LaunchViewController(viewModel: launchViewModel)
-        navigationController.pushViewController(launchViewController, animated: animated)
+//        let launchViewModel = LaunchViewModel(coordinator: self)
+//        let launchViewController = LaunchViewController(viewModel: launchViewModel)
+        
+        let launchPagerViewController = LaunchPagerViewController()
+        navigationController.pushViewController(launchPagerViewController, animated: animated)
     }
     
     // MARK: - Private

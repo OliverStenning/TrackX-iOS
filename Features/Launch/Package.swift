@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "Launch",
-    platforms: [.iOS(.v14)],
+    platforms: [.iOS(.v15)],
     products: [.library( name: "Launch", type: .dynamic, targets: ["Launch"])],
     dependencies: [
         .package(path: "../Shared/RaptorKit"),

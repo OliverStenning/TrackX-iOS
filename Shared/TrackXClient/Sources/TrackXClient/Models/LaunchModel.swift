@@ -49,5 +49,40 @@ public struct LaunchModel: Hashable {
         self.payloads = launch.payloads
         self.launchpad = LaunchpadModel(from: launch.launchpad)
     }
+    
+    public static func mock() -> LaunchModel {
+        LaunchModel(
+            id: UUID(),
+            name: "Falcon 9 Block 5 | Starlink Group 5-5",
+            dateUtc: "2023-03-24T15:43:10Z",
+            upcoming: true,
+            success: nil,
+            description: "",
+            rocket:
+                .init(
+                    id: UUID(),
+                    name: "Falcon 9",
+                    active: true,
+                    stages: 2,
+                    boosters: 1,
+                    launchCost: 10,
+                    successRate: 99,
+                    height: 90,
+                    diameter: 10,
+                    mass: 100
+                ),
+            cores: "1",
+            payloads: "",
+            launchpad:
+                .init(
+                    id: UUID(),
+                    name: "LC39A",
+                    fullName: "Launch Complex 39A",
+                    region: "Florida",
+                    longitude: 100,
+                    latitude: 100
+                )
+        )
+    }
 
 }

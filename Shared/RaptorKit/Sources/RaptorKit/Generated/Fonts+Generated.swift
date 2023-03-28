@@ -38,6 +38,27 @@ public enum RKFonts {
     public static let regular = FontConvertible(name: "Lato-Regular", family: "Lato", path: "Lato-Regular.ttf")
     public static let all: [FontConvertible] = [black, bold, regular]
   }
+  public enum Poppins {
+    public static let black = FontConvertible(name: "Poppins-Black", family: "Poppins", path: "Poppins-Black.ttf")
+    public static let blackItalic = FontConvertible(name: "Poppins-BlackItalic", family: "Poppins", path: "Poppins-BlackItalic.ttf")
+    public static let bold = FontConvertible(name: "Poppins-Bold", family: "Poppins", path: "Poppins-Bold.ttf")
+    public static let boldItalic = FontConvertible(name: "Poppins-BoldItalic", family: "Poppins", path: "Poppins-BoldItalic.ttf")
+    public static let extraBold = FontConvertible(name: "Poppins-ExtraBold", family: "Poppins", path: "Poppins-ExtraBold.ttf")
+    public static let extraBoldItalic = FontConvertible(name: "Poppins-ExtraBoldItalic", family: "Poppins", path: "Poppins-ExtraBoldItalic.ttf")
+    public static let extraLight = FontConvertible(name: "Poppins-ExtraLight", family: "Poppins", path: "Poppins-ExtraLight.ttf")
+    public static let extraLightItalic = FontConvertible(name: "Poppins-ExtraLightItalic", family: "Poppins", path: "Poppins-ExtraLightItalic.ttf")
+    public static let italic = FontConvertible(name: "Poppins-Italic", family: "Poppins", path: "Poppins-Italic.ttf")
+    public static let light = FontConvertible(name: "Poppins-Light", family: "Poppins", path: "Poppins-Light.ttf")
+    public static let lightItalic = FontConvertible(name: "Poppins-LightItalic", family: "Poppins", path: "Poppins-LightItalic.ttf")
+    public static let medium = FontConvertible(name: "Poppins-Medium", family: "Poppins", path: "Poppins-Medium.ttf")
+    public static let mediumItalic = FontConvertible(name: "Poppins-MediumItalic", family: "Poppins", path: "Poppins-MediumItalic.ttf")
+    public static let regular = FontConvertible(name: "Poppins-Regular", family: "Poppins", path: "Poppins-Regular.ttf")
+    public static let semiBold = FontConvertible(name: "Poppins-SemiBold", family: "Poppins", path: "Poppins-SemiBold.ttf")
+    public static let semiBoldItalic = FontConvertible(name: "Poppins-SemiBoldItalic", family: "Poppins", path: "Poppins-SemiBoldItalic.ttf")
+    public static let thin = FontConvertible(name: "Poppins-Thin", family: "Poppins", path: "Poppins-Thin.ttf")
+    public static let thinItalic = FontConvertible(name: "Poppins-ThinItalic", family: "Poppins", path: "Poppins-ThinItalic.ttf")
+    public static let all: [FontConvertible] = [black, blackItalic, bold, boldItalic, extraBold, extraBoldItalic, extraLight, extraLightItalic, italic, light, lightItalic, medium, mediumItalic, regular, semiBold, semiBoldItalic, thin, thinItalic]
+  }
   public enum Rubik {
     public static let black = FontConvertible(name: "Rubik-Black", family: "Rubik", path: "Rubik-Black.ttf")
     public static let bold = FontConvertible(name: "Rubik-Bold", family: "Rubik", path: "Rubik-Bold.ttf")
@@ -52,7 +73,15 @@ public enum RKFonts {
     public static let regular = FontConvertible(name: "ShareTech-Regular", family: "Share Tech", path: "ShareTech-Regular.ttf")
     public static let all: [FontConvertible] = [regular]
   }
-  public static let allCustomFonts: [FontConvertible] = [Archivo.all, Lato.all, Rubik.all, ShareTech.all].flatMap { $0 }
+  public enum SpaceGrotesk {
+    public static let bold = FontConvertible(name: "SpaceGrotesk-Bold", family: "Space Grotesk", path: "SpaceGrotesk-Bold.ttf")
+    public static let light = FontConvertible(name: "SpaceGrotesk-Light", family: "Space Grotesk", path: "SpaceGrotesk-Light.ttf")
+    public static let medium = FontConvertible(name: "SpaceGrotesk-Medium", family: "Space Grotesk", path: "SpaceGrotesk-Medium.ttf")
+    public static let regular = FontConvertible(name: "SpaceGrotesk-Regular", family: "Space Grotesk", path: "SpaceGrotesk-Regular.ttf")
+    public static let semiBold = FontConvertible(name: "SpaceGrotesk-SemiBold", family: "Space Grotesk", path: "SpaceGrotesk-SemiBold.ttf")
+    public static let all: [FontConvertible] = [bold, light, medium, regular, semiBold]
+  }
+  public static let allCustomFonts: [FontConvertible] = [Archivo.all, Lato.all, Poppins.all, Rubik.all, ShareTech.all, SpaceGrotesk.all].flatMap { $0 }
   public static func registerAllCustomFonts() {
     allCustomFonts.forEach { $0.register() }
   }

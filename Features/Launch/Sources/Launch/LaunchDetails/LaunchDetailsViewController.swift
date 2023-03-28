@@ -59,8 +59,9 @@ final class LaunchDetailsViewController: UIViewController {
     
     
     private func setup() {
-        navigationItem.title = viewModel.title
-        navigationItem.largeTitleDisplayMode = .never
+//        navigationItem.title = viewModel.title
+//        navigationItem.largeTitleDisplayMode = .never
+        navigationController?.setNavigationBarHidden(true, animated: false)
         
         view.backgroundColor = RKAssets.Colors.background1.color
         
@@ -75,16 +76,18 @@ final class LaunchDetailsViewController: UIViewController {
         tableView.register(LaunchDetailsLaunchpadCell.self)
         tableView.register(RKLabelHeaderView.self)
         tableView.dataSource = dataSource
-        tableView.delegate = self
+        tableView.delegate = self 
         tableView.separatorStyle = .none
         tableView.backgroundColor = .systemBackground
         tableView.estimatedSectionHeaderHeight = 100
         tableView.backgroundColor = .clear
+        tableView.contentInsetAdjustmentBehavior = .never
+        tableView.insetsContentViewsToSafeArea = false
     }
     
     private func layout() {
         view.addSubview(tableView)
-        tableView.pin(edges: .all, to: view)
+        tableView.pin(edges: .all, to: view, safeAreaEdges: [.top])
     }
     
     private func bindViewModel() {
