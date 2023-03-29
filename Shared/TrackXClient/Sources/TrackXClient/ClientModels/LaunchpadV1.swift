@@ -1,14 +1,13 @@
 import Foundation
 
 final class LaunchpadV1: Codable {
-    
     let id: UUID
     let name: String
     let fullName: String
     let region: String
     let longitude: Double
     let latitude: Double
-    
+
     init(
         id: UUID,
         name: String,
@@ -24,7 +23,7 @@ final class LaunchpadV1: Codable {
         self.longitude = longitude
         self.latitude = latitude
     }
-    
+
     enum CodingKeys: String, CodingKey {
         case id
         case name
@@ -33,25 +32,24 @@ final class LaunchpadV1: Codable {
         case longitude
         case latitude
     }
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try container.decode(UUID.self, forKey: .id)
-        self.name = try container.decode(String.self, forKey: .name)
-        self.fullName = try container.decode(String.self, forKey: .fullName)
-        self.region = try container.decode(String.self, forKey: .region)
-        self.longitude = try container.decode(Double.self, forKey: .longitude)
-        self.latitude = try container.decode(Double.self, forKey: .latitude)
+        id = try container.decode(UUID.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        fullName = try container.decode(String.self, forKey: .fullName)
+        region = try container.decode(String.self, forKey: .region)
+        longitude = try container.decode(Double.self, forKey: .longitude)
+        latitude = try container.decode(Double.self, forKey: .latitude)
     }
-    
+
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(self.id, forKey: .id)
-        try container.encode(self.name, forKey: .name)
-        try container.encode(self.fullName, forKey: .fullName)
-        try container.encode(self.region, forKey: .region)
-        try container.encode(self.longitude, forKey: .longitude)
-        try container.encode(self.latitude, forKey: .latitude)
+        try container.encode(id, forKey: .id)
+        try container.encode(name, forKey: .name)
+        try container.encode(fullName, forKey: .fullName)
+        try container.encode(region, forKey: .region)
+        try container.encode(longitude, forKey: .longitude)
+        try container.encode(latitude, forKey: .latitude)
     }
-    
 }

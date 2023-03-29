@@ -1,5 +1,5 @@
-import XCTest
 @testable import TrackXClient
+import XCTest
 
 final class TrackXClientTests: XCTestCase {
     func testExample() throws {

@@ -2,45 +2,44 @@ import UIKit
 
 // MARK: - RKCapsuleLabel
 
-final public class RKCapsuleLabel: UIView {
-    
+public final class RKCapsuleLabel: UIView {
     // MARK: - Lifecycle
-    
+
     public init() {
         super.init(frame: .zero)
         setup()
     }
-    
+
     @available(*, unavailable)
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - Public
-    
+
     public let label = UILabel()
-    
+
     // MARK: - Private
-    
+
     private let capsule = UIView()
     private var capsuleWidthConstraint: NSLayoutConstraint?
     private var capsuleWidth: CGFloat = 8.0
-    
+
     private func setup() {
         setupCapsule()
         setupLabel()
         layout()
     }
-    
+
     private func setupCapsule() {
         capsule.backgroundColor = RKAssets.Colors.accent3.color
     }
-    
+
     private func setupLabel() {
         label.textColor = RKAssets.Colors.neutral1.color
         label.font = RKFonts.Archivo.medium.font(size: 24)
     }
-    
+
     private func updateCapsuleSize() {
         capsule.translatesAutoresizingMaskIntoConstraints = false
         if let capsuleWidthConstraint {
@@ -52,16 +51,15 @@ final public class RKCapsuleLabel: UIView {
 
         capsule.layer.cornerRadius = capsuleWidth / 2
     }
-    
+
     private func layout() {
         addSubviews(capsule, label)
-        
+
         capsule.pin(edges: [.topAndBottom, .leading], to: self)
-        
+
         label.pin(.leading, to: .trailing, of: capsule, constant: -8)
         label.pin(edges: [.topAndBottom, .trailing], to: self)
-        
+
         updateCapsuleSize()
     }
-    
 }

@@ -1,7 +1,6 @@
 import Foundation
 
 public struct RocketModel: Hashable {
-    
     public let id: UUID
     public let name: String?
     public let active: Bool?
@@ -12,7 +11,7 @@ public struct RocketModel: Hashable {
     public let height: Double
     public let diameter: Double
     public let mass: Double
-    
+
     init(
         id: UUID,
         name: String?,
@@ -36,19 +35,17 @@ public struct RocketModel: Hashable {
         self.diameter = diameter
         self.mass = mass
     }
-    
+
     init(from rocket: RocketV1) {
-        self.id = rocket.id
-        self.name = rocket.name
-        self.active = rocket.active
-        self.stages = rocket.stages
-        self.boosters = rocket.boosters
-        self.launchCost = rocket.launchCost
-        self.successRate = rocket.successRate
-        self.height = rocket.height
-        self.diameter = rocket.diameter
-        self.mass = rocket.mass
+        id = rocket.id
+        name = rocket.name
+        active = rocket.active
+        stages = rocket.stages
+        boosters = rocket.boosters
+        launchCost = rocket.launchCost
+        successRate = rocket.successRate
+        height = rocket.height
+        diameter = rocket.diameter
+        mass = rocket.mass
     }
-    
-    
 }

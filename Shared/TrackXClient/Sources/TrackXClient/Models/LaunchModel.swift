@@ -1,7 +1,6 @@
 import Foundation
 
 public struct LaunchModel: Hashable {
-    
     public let id: UUID
     public let name: String
     public let dateUtc: String
@@ -12,7 +11,7 @@ public struct LaunchModel: Hashable {
     public let cores: String
     public let payloads: String
     public let launchpad: LaunchpadModel
-    
+
     init(
         id: UUID,
         name: String,
@@ -36,20 +35,20 @@ public struct LaunchModel: Hashable {
         self.payloads = payloads
         self.launchpad = launchpad
     }
-    
+
     init(from launch: LaunchV1) {
-        self.id = launch.id
-        self.name = launch.name
-        self.dateUtc = launch.dateUtc
-        self.upcoming = launch.upcoming
-        self.success = launch.success
-        self.description = launch.description
-        self.rocket = RocketModel(from: launch.rocket)
-        self.cores = launch.cores
-        self.payloads = launch.payloads
-        self.launchpad = LaunchpadModel(from: launch.launchpad)
+        id = launch.id
+        name = launch.name
+        dateUtc = launch.dateUtc
+        upcoming = launch.upcoming
+        success = launch.success
+        description = launch.description
+        rocket = RocketModel(from: launch.rocket)
+        cores = launch.cores
+        payloads = launch.payloads
+        launchpad = LaunchpadModel(from: launch.launchpad)
     }
-    
+
     public static func mock() -> LaunchModel {
         LaunchModel(
             id: UUID(),
@@ -59,30 +58,29 @@ public struct LaunchModel: Hashable {
             success: nil,
             description: "",
             rocket:
-                .init(
-                    id: UUID(),
-                    name: "Falcon 9",
-                    active: true,
-                    stages: 2,
-                    boosters: 1,
-                    launchCost: 10,
-                    successRate: 99,
-                    height: 90,
-                    diameter: 10,
-                    mass: 100
-                ),
+            .init(
+                id: UUID(),
+                name: "Falcon 9",
+                active: true,
+                stages: 2,
+                boosters: 1,
+                launchCost: 10,
+                successRate: 99,
+                height: 90,
+                diameter: 10,
+                mass: 100
+            ),
             cores: "1",
             payloads: "",
             launchpad:
-                .init(
-                    id: UUID(),
-                    name: "LC39A",
-                    fullName: "Launch Complex 39A",
-                    region: "Florida",
-                    longitude: 100,
-                    latitude: 100
-                )
+            .init(
+                id: UUID(),
+                name: "LC39A",
+                fullName: "Launch Complex 39A",
+                region: "Florida",
+                longitude: 100,
+                latitude: 100
+            )
         )
     }
-
 }

@@ -16,6 +16,6 @@ let package = Package(
         .testTarget(
             name: "TrackXClientTests",
             dependencies: ["TrackXClient"]
-        )
+        ),
     ]
 )

@@ -17,6 +17,6 @@ let package = Package(
         .testTarget(
             name: "RaptorKitTests",
             dependencies: ["RaptorKit"]
-        )
+        ),
     ]
 )

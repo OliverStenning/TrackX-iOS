@@ -3,23 +3,22 @@ import UIKit
 // MARK: - RKLoadingView
 
 public final class RKLoadingView: UIView {
-    
     // MARK: - Lifecycle
-    
-    public override init(frame: CGRect) {
+
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
-    
+
     @available(*, unavailable)
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - Private
-    
+
     private let loadingIndicator = UIActivityIndicatorView(style: .large)
-    
+
     private func setup() {
         layout()
         backgroundColor = RKAssets.Colors.background1.color
@@ -27,11 +26,10 @@ public final class RKLoadingView: UIView {
         loadingIndicator.tintColor = RKAssets.Colors.accent3.color
         loadingIndicator.startAnimating()
     }
-    
+
     private func layout() {
         addSubview(loadingIndicator)
         loadingIndicator.center(.horizontal, to: self)
         loadingIndicator.center(.vertical, to: self)
     }
-    
 }
