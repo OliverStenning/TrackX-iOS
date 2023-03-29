@@ -37,8 +37,8 @@ final class LaunchDetailsLaunchCell: UITableViewCell {
     }
 
     private func setupLabels() {
-        nameLabel.label.font = RKFonts.Archivo.medium.font(size: 30)
-        dateLabel.font = RKFonts.Archivo.medium.font(size: 18)
+        nameLabel.label.font = RKFonts.Poppins.medium.font(size: 30)
+        dateLabel.font = RKFonts.Poppins.medium.font(size: 18)
         dateLabel.textColor = RKAssets.Colors.neutral5.color
     }
 

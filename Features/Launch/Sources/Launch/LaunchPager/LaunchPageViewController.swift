@@ -34,11 +34,11 @@ final class LaunchPageViewController: UIViewController {
 
     private var backgroundImageView = UIImageView()
     private var backgroundGradientView = RKGradientView()
-    private var statusLabel = UILabel()
+    private var statusLabel = RKLabel()
     private var separatorView = UIView()
-    private var launchNameLabel = UILabel()
-    private var launchDateLabel = UILabel()
-    private var viewDetailsButton = UIButton()
+    private var launchNameLabel = RKLabel()
+    private var launchDateLabel = RKLabel()
+    private var viewDetailsButton = RKButton()
 
     private func setup() {
         setupBackground()
@@ -62,17 +62,15 @@ final class LaunchPageViewController: UIViewController {
 //        statusLabel.textColor = RKAssets.Colors.accent2.color.darkOnly
 
         statusLabel.text = "Success"
-        statusLabel.font = RKFonts.SpaceGrotesk.bold.font(size: 32)
+        statusLabel.fontStyle = .title1
         statusLabel.textColor = RKAssets.Colors.success.color.darkOnly
 
         launchNameLabel.text = "Falcon 9 Block 5 | Starlink Group 5-10"
-        launchNameLabel.numberOfLines = 0
-        launchNameLabel.font = RKFonts.Poppins.semiBold.font(size: 32)
+        launchNameLabel.fontStyle = .largeTitle
         launchNameLabel.textColor = RKAssets.Colors.neutral1.color.darkOnly
 
         launchDateLabel.text = "20:11 UTC - 29th March"
-        launchDateLabel.numberOfLines = 0
-        launchDateLabel.font = RKFonts.SpaceGrotesk.medium.font(size: 20)
+        launchDateLabel.fontStyle = .title3
         launchDateLabel.textColor = RKAssets.Colors.neutral3.color.darkOnly
     }
 
@@ -81,22 +79,8 @@ final class LaunchPageViewController: UIViewController {
     }
 
     private func setupButton() {
-        var buttonConfig = UIButton.Configuration.filled()
-        buttonConfig.titleAlignment = .center
-        buttonConfig.contentInsets = .symmetrical(horizontal: 24, vertical: 8)
-        buttonConfig.baseBackgroundColor = RKAssets.Colors.accent3.color
-        buttonConfig.baseForegroundColor = RKAssets.Colors.neutral1.color.darkOnly
-        buttonConfig.cornerStyle = .medium
-
-        var buttonText = AttributedString("View details")
-        buttonText.font = RKFonts.SpaceGrotesk.medium.font(size: 18)
-        buttonConfig.attributedTitle = buttonText
-
-        buttonConfig.image = UIImage(systemSymbol: .chevronUpSquareFill, withConfiguration: UIImage.SymbolConfiguration(scale: .medium))
-        buttonConfig.imagePlacement = .leading
-        buttonConfig.imagePadding = 8.0
-
-        viewDetailsButton.configuration = buttonConfig
+        viewDetailsButton.text = "View details"
+        viewDetailsButton.image = UIImage(systemSymbol: .chevronUpSquareFill)
         viewDetailsButton.addTarget(self, action: #selector(didTapViewDetails), for: .touchUpInside)
     }
 
@@ -106,22 +90,22 @@ final class LaunchPageViewController: UIViewController {
         backgroundImageView.pin(edges: .all, to: view)
         backgroundGradientView.pin(edges: .all, to: view)
 
-        statusLabel.pin(edges: .leadingAndTrailing, to: view, insets: .symmetrical(horizontal: 16))
+        statusLabel.pin(edges: .leadingAndTrailing, to: view, insets: .symmetrical(horizontal: 24))
         statusLabel.pin(.bottom, to: .top, of: separatorView, constant: 8)
 
         separatorView.size(.height, constant: 4)
         separatorView.size(.width, constant: 64)
-        separatorView.pin(edges: .leading, to: view, insets: .symmetrical(horizontal: 16))
+        separatorView.pin(edges: .leading, to: view, insets: .symmetrical(horizontal: 24))
         separatorView.pin(.bottom, to: .top, of: launchNameLabel, constant: 8)
 
-        launchNameLabel.pin(edges: .leadingAndTrailing, to: view, insets: .symmetrical(horizontal: 16))
+        launchNameLabel.pin(edges: .leadingAndTrailing, to: view, insets: .symmetrical(horizontal: 24))
         launchNameLabel.pin(.bottom, to: .top, of: launchDateLabel, constant: 8)
 
-        launchDateLabel.pin(edges: .leadingAndTrailing, to: view, insets: .symmetrical(horizontal: 16))
+        launchDateLabel.pin(edges: .leadingAndTrailing, to: view, insets: .symmetrical(horizontal: 24))
         launchDateLabel.pin(.bottom, to: .top, of: viewDetailsButton, constant: 24)
 
-        viewDetailsButton.pin(edges: .leading, to: view, insets: .symmetrical(horizontal: 16))
-        viewDetailsButton.pin(.bottom, to: .bottom, of: view, constant: 64)
+        viewDetailsButton.pin(edges: .leading, to: view, insets: .symmetrical(horizontal: 24))
+        viewDetailsButton.pin(.bottom, to: .bottom, of: view, constant: 96)
     }
 
     @objc private func didTapViewDetails() {

@@ -25,9 +25,9 @@ public final class RKErrorView: UIView {
 
     private let containerView = UIView()
     private let errorIcon = UIImageView()
-    private let errorTitleLabel = UILabel()
-    private let errorBodyLabel = UILabel()
-    private let retryButton = UIButton()
+    private let errorTitleLabel = RKLabel()
+    private let errorBodyLabel = RKLabel()
+    private let retryButton = RKButton()
 
     private func setup() {
         backgroundColor = RKAssets.Colors.background1.color
@@ -45,35 +45,18 @@ public final class RKErrorView: UIView {
 
     private func setupLabels() {
         errorTitleLabel.text = "Something went wrong"
-        errorTitleLabel.textColor = RKAssets.Colors.neutral1.color
-        errorTitleLabel.font = RKFonts.Poppins.semiBold.font(size: 24)
+        errorTitleLabel.fontStyle = .title2
         errorTitleLabel.textAlignment = .center
-        errorTitleLabel.numberOfLines = 0
 
         errorBodyLabel.text = "Check your network connection and try again."
         errorBodyLabel.textColor = RKAssets.Colors.neutral3.color
-        errorBodyLabel.font = RKFonts.Rubik.regular.font(size: 16)
+        errorBodyLabel.fontStyle = .body
         errorBodyLabel.textAlignment = .center
-        errorBodyLabel.numberOfLines = 0
     }
 
     private func setupButton() {
-        var buttonConfig = UIButton.Configuration.filled()
-        buttonConfig.titleAlignment = .center
-        buttonConfig.contentInsets = .symmetrical(horizontal: 64, vertical: 8)
-        buttonConfig.baseBackgroundColor = RKAssets.Colors.accent3.color
-        buttonConfig.baseForegroundColor = RKAssets.Colors.neutral1.color.darkOnly
-        buttonConfig.cornerStyle = .medium
-
-        var buttonText = AttributedString("Retry")
-        buttonText.font = RKFonts.SpaceGrotesk.medium.font(size: 18)
-        buttonConfig.attributedTitle = buttonText
-
-        buttonConfig.image = UIImage(systemSymbol: .arrowClockwise, withConfiguration: UIImage.SymbolConfiguration(scale: .medium))
-        buttonConfig.imagePlacement = .leading
-        buttonConfig.imagePadding = 8.0
-
-        retryButton.configuration = buttonConfig
+        retryButton.text = "Retry"
+        retryButton.image = UIImage(systemSymbol: .arrowClockwise)
         retryButton.addTarget(self, action: #selector(retryAction), for: .touchUpInside)
     }
 

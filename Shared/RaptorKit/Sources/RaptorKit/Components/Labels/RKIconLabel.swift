@@ -35,7 +35,7 @@ public final class RKIconLabel: UIView {
 
     private func setupLabel() {
         label.textColor = RKAssets.Colors.neutral5.color
-        label.font = RKFonts.Archivo.regular.font(size: 16)
+        label.font = RKFonts.Poppins.regular.font(size: 16)
     }
 
     private func layout() {

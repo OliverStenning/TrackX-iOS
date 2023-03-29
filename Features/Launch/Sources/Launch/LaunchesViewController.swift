@@ -51,7 +51,7 @@ final class LaunchesViewController: UIViewController {
         setupScrollView()
         setupPager()
         setupPagerControl()
-        errorView.action = viewModel.refreshLaunches
+        errorView.action = viewModel.loadLaunches
 
         layout()
         bindViewModel()
@@ -85,7 +85,7 @@ final class LaunchesViewController: UIViewController {
         pageViewController.view.size(.width, to: .width, of: view)
         pageViewController.view.size(.height, to: .height, of: view)
 
-        pageControl.pin(.bottom, to: .bottom, of: view, constant: 20)
+        pageControl.pin(.bottom, to: .bottom, of: view, constant: 32)
         pageControl.center(.horizontal, to: view)
 
         loadingView.pin(edges: .all, to: view)

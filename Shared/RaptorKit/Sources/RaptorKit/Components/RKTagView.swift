@@ -30,7 +30,7 @@ public final class RKTagView: UIView {
         }
     }
 
-    public var font: UIFont = RKFonts.Archivo.semiBold.font(size: 16) {
+    public var font: UIFont = RKFonts.Poppins.semiBold.font(size: 16) {
         didSet {
             label.font = font
         }

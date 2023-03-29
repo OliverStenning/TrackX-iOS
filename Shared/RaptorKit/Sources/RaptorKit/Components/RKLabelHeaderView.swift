@@ -28,7 +28,7 @@ public final class RKLabelHeaderView: UITableViewHeaderFooterView {
 
     private func setup() {
         titleLabel.textColor = RKAssets.Colors.neutral2.color
-        titleLabel.font = RKFonts.Archivo.medium.font(size: 22)
+        titleLabel.font = RKFonts.Poppins.medium.font(size: 22)
 
         contentView.addSubview(titleLabel)
         titleLabel.pin(edges: .all, to: contentView, insets: .only(top: 8, left: 16, bottom: 8, right: 16))

@@ -57,11 +57,11 @@ public final class RKNamedLabel: UIView {
 
     private func setupLabels() {
         nameLabel.text = name
-        nameLabel.font = RKFonts.Rubik.medium.font(size: 15)
+        nameLabel.font = RKFonts.Poppins.medium.font(size: 15)
         nameLabel.textColor = RKAssets.Colors.neutral5.color
 
         valueLabel.numberOfLines = lineCount
-        valueLabel.font = RKFonts.Rubik.regular.font(size: 15)
+        valueLabel.font = RKFonts.Poppins.regular.font(size: 15)
         valueLabel.textColor = RKAssets.Colors.neutral1.color
     }
 

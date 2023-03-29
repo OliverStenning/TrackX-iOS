@@ -15,13 +15,13 @@
       location = "container:"
       name = "Shared">
       <FileRef
-         location = "group:Shared/Utilities">
+         location = "group:Shared/RaptorKit">
       </FileRef>
       <FileRef
          location = "group:Shared/TrackXClient">
       </FileRef>
       <FileRef
-         location = "group:Shared/RaptorKit">
+         location = "group:Shared/Utilities">
       </FileRef>
    </Group>
 </Workspace>

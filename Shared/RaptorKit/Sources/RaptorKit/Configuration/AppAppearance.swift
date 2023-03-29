@@ -14,12 +14,12 @@ public enum AppAppearance {
 
     private static func setupNavBar() {
         let largeTitleTextAttributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont(font: RKFonts.Archivo.semiBold, size: 34) ?? UIFont.systemFont(ofSize: 34),
+            .font: UIFont(font: RKFonts.Poppins.semiBold, size: 34) ?? UIFont.systemFont(ofSize: 34),
             .foregroundColor: RKAssets.Colors.neutral1.color
         ]
 
         let titleTextAttributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont(font: RKFonts.Archivo.semiBold, size: 18) ?? UIFont.systemFont(ofSize: 32)
+            .font: UIFont(font: RKFonts.Poppins.semiBold, size: 18) ?? UIFont.systemFont(ofSize: 32)
         ]
 
         let defaultNavBarAppearance = UINavigationBarAppearance()
