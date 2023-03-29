@@ -15,8 +15,10 @@ public class RKGradientView: UIView {
     }
     
     public override func layoutSubviews() {
-        (layer as! CAGradientLayer).colors = [topColor.cgColor, bottomColor.cgColor]
-        (layer as! CAGradientLayer).locations = locations
+        if let layer = layer as? CAGradientLayer {
+            layer.colors = [topColor.cgColor, bottomColor.cgColor]
+            layer.locations = locations
+        }
     }
     
 }
