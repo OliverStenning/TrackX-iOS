@@ -24,7 +24,4 @@
          location = "group:Shared/RaptorKit">
       </FileRef>
    </Group>
-   <FileRef
-      location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
 </Workspace>
