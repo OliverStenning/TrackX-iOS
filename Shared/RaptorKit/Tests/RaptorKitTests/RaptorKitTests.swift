@@ -1,5 +1,5 @@
-@testable import RaptorKit
 import XCTest
+@testable import RaptorKit
 
 final class RaptorKitTests: XCTestCase {
     func testExample() throws {

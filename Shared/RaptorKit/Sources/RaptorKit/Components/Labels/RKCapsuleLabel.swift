@@ -3,7 +3,8 @@ import UIKit
 // MARK: - RKCapsuleLabel
 
 public final class RKCapsuleLabel: UIView {
-    // MARK: - Lifecycle
+
+    // MARK: Lifecycle
 
     public init() {
         super.init(frame: .zero)
@@ -15,11 +16,11 @@ public final class RKCapsuleLabel: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Public
+    // MARK: Public
 
     public let label = UILabel()
 
-    // MARK: - Private
+    // MARK: Private
 
     private let capsule = UIView()
     private var capsuleWidthConstraint: NSLayoutConstraint?

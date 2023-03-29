@@ -3,9 +3,10 @@ import UIKit
 // MARK: - RKLoadingView
 
 public final class RKLoadingView: UIView {
-    // MARK: - Lifecycle
 
-    override public init(frame: CGRect) {
+    // MARK: Lifecycle
+
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
@@ -15,7 +16,7 @@ public final class RKLoadingView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Private
+    // MARK: Private
 
     private let loadingIndicator = UIActivityIndicatorView(style: .large)
 

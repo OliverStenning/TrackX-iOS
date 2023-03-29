@@ -11,14 +11,15 @@ protocol LaunchesViewModelDelegate: AnyObject {
 // MARK: - LaunchesViewModel
 
 public final class LaunchesViewModel {
-    // MARK: - Lifecycle
+
+    // MARK: Lifecycle
 
     init(coordinator: LaunchesViewModelDelegate, launchService: LaunchServiceProtocol = LaunchService()) {
         self.coordinator = coordinator
         self.launchService = launchService
     }
 
-    // MARK: - Internal
+    // MARK: Internal
 
     enum State: Equatable {
         case initial
@@ -48,7 +49,7 @@ public final class LaunchesViewModel {
         coordinator?.didTapLaunchViewDetails(launch: launch)
     }
 
-    // MARK: - Private
+    // MARK: Private
 
     private let launchService: LaunchServiceProtocol
     private weak var coordinator: LaunchesViewModelDelegate?
@@ -69,7 +70,7 @@ public final class LaunchesViewModel {
     private func handleLaunchDataSuccess(latestLaunch: LaunchModel, upcomingLaunch: LaunchModel) {
         pageModels = [
             LaunchPageViewModel(delegate: self, launch: upcomingLaunch),
-            LaunchPageViewModel(delegate: self, launch: latestLaunch),
+            LaunchPageViewModel(delegate: self, launch: latestLaunch)
         ]
 
         // Not a fan of this but makes the UX feel better
@@ -84,6 +85,8 @@ public final class LaunchesViewModel {
         state = .error
     }
 }
+
+// MARK: LaunchPageViewModelDelegate
 
 extension LaunchesViewModel: LaunchPageViewModelDelegate {
     func didTapViewDetails(launch: LaunchModel) {

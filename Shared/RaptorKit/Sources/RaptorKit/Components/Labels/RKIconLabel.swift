@@ -3,7 +3,8 @@ import UIKit
 // MARK: - RKIconLabel
 
 public final class RKIconLabel: UIView {
-    // MARK: - Lifecycle
+
+    // MARK: Lifecycle
 
     public init() {
         super.init(frame: .zero)
@@ -15,12 +16,12 @@ public final class RKIconLabel: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Public
+    // MARK: Public
 
     public let icon = UIImageView()
     public let label = UILabel()
 
-    // MARK: - Private
+    // MARK: Private
 
     private func setup() {
         setupIcon()

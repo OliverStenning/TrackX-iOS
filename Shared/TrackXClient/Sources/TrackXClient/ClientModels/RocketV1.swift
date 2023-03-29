@@ -1,16 +1,8 @@
 import Foundation
 
 final class RocketV1: Codable {
-    let id: UUID
-    let name: String?
-    let active: Bool?
-    let stages: Int?
-    let boosters: Int?
-    let launchCost: Int?
-    let successRate: Int?
-    let height: Double
-    let diameter: Double
-    let mass: Double
+
+    // MARK: Lifecycle
 
     init(
         id: UUID,
@@ -36,19 +28,6 @@ final class RocketV1: Codable {
         self.mass = mass
     }
 
-    enum CodingKeys: String, CodingKey {
-        case id
-        case name
-        case active
-        case stages
-        case boosters
-        case launchCost = "launch_cost"
-        case successRate = "success_rate"
-        case height
-        case diameter
-        case mass
-    }
-
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(UUID.self, forKey: .id)
@@ -62,6 +41,32 @@ final class RocketV1: Codable {
         diameter = try container.decode(Double.self, forKey: .diameter)
         mass = try container.decode(Double.self, forKey: .mass)
     }
+
+    // MARK: Internal
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case active
+        case stages
+        case boosters
+        case launchCost = "launch_cost"
+        case successRate = "success_rate"
+        case height
+        case diameter
+        case mass
+    }
+
+    let id: UUID
+    let name: String?
+    let active: Bool?
+    let stages: Int?
+    let boosters: Int?
+    let launchCost: Int?
+    let successRate: Int?
+    let height: Double
+    let diameter: Double
+    let mass: Double
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)

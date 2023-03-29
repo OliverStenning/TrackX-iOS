@@ -1,5 +1,11 @@
 public struct Utilities {
-    public private(set) var text = "Hello, World!"
+
+    // MARK: Lifecycle
 
     public init() {}
+
+    // MARK: Public
+
+    public private(set) var text = "Hello, World!"
+
 }

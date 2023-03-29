@@ -5,7 +5,8 @@ import UIKit
 // MARK: - LaunchDetailsViewController
 
 final class LaunchDetailsViewController: UIViewController {
-    // MARK: - Lifecycle
+
+    // MARK: Lifecycle
 
     init(viewModel: LaunchDetailsViewModel) {
         self.viewModel = viewModel
@@ -27,7 +28,7 @@ final class LaunchDetailsViewController: UIViewController {
         setup()
     }
 
-    // MARK: - Private
+    // MARK: Private
 
     private typealias DataSource = UITableViewDiffableDataSource<LaunchDetailsSection, LaunchDetailsCellType>
 
@@ -114,6 +115,8 @@ final class LaunchDetailsViewController: UIViewController {
         dataSource.apply(snapshot, animatingDifferences: false)
     }
 }
+
+// MARK: UITableViewDelegate
 
 extension LaunchDetailsViewController: UITableViewDelegate {
     // MARK: - Headers

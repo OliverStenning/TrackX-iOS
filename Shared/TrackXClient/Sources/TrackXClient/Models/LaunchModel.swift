@@ -1,16 +1,8 @@
 import Foundation
 
 public struct LaunchModel: Hashable {
-    public let id: UUID
-    public let name: String
-    public let dateUtc: String
-    public let upcoming: Bool
-    public let success: Bool?
-    public let description: String?
-    public let rocket: RocketModel
-    public let cores: String
-    public let payloads: String
-    public let launchpad: LaunchpadModel
+
+    // MARK: Lifecycle
 
     init(
         id: UUID,
@@ -48,6 +40,19 @@ public struct LaunchModel: Hashable {
         payloads = launch.payloads
         launchpad = LaunchpadModel(from: launch.launchpad)
     }
+
+    // MARK: Public
+
+    public let id: UUID
+    public let name: String
+    public let dateUtc: String
+    public let upcoming: Bool
+    public let success: Bool?
+    public let description: String?
+    public let rocket: RocketModel
+    public let cores: String
+    public let payloads: String
+    public let launchpad: LaunchpadModel
 
     public static func mock() -> LaunchModel {
         LaunchModel(

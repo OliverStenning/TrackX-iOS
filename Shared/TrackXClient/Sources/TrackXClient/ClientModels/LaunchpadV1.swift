@@ -1,12 +1,8 @@
 import Foundation
 
 final class LaunchpadV1: Codable {
-    let id: UUID
-    let name: String
-    let fullName: String
-    let region: String
-    let longitude: Double
-    let latitude: Double
+
+    // MARK: Lifecycle
 
     init(
         id: UUID,
@@ -24,15 +20,6 @@ final class LaunchpadV1: Codable {
         self.latitude = latitude
     }
 
-    enum CodingKeys: String, CodingKey {
-        case id
-        case name
-        case fullName = "full_name"
-        case region
-        case longitude
-        case latitude
-    }
-
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(UUID.self, forKey: .id)
@@ -42,6 +29,24 @@ final class LaunchpadV1: Codable {
         longitude = try container.decode(Double.self, forKey: .longitude)
         latitude = try container.decode(Double.self, forKey: .latitude)
     }
+
+    // MARK: Internal
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case fullName = "full_name"
+        case region
+        case longitude
+        case latitude
+    }
+
+    let id: UUID
+    let name: String
+    let fullName: String
+    let region: String
+    let longitude: Double
+    let latitude: Double
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)

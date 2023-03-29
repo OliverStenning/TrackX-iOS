@@ -11,7 +11,8 @@ protocol LaunchPageViewModelDelegate: AnyObject {
 // MARK: - LaunchPageViewModel
 
 public final class LaunchPageViewModel {
-    // MARK: - Lifecycle
+
+    // MARK: Lifecycle
 
     init(delegate: LaunchPageViewModelDelegate, launch: LaunchModel) {
         self.delegate = delegate
@@ -22,7 +23,7 @@ public final class LaunchPageViewModel {
         launchDate = launch.dateUtc
     }
 
-    // MARK: - Internal
+    // MARK: Internal
 
     let launchStatus: String
     let launchStatusColor: UIColor
@@ -33,7 +34,7 @@ public final class LaunchPageViewModel {
         delegate?.didTapViewDetails(launch: launch)
     }
 
-    // MARK: - Private
+    // MARK: Private
 
     private weak var delegate: LaunchPageViewModelDelegate?
     private let launch: LaunchModel

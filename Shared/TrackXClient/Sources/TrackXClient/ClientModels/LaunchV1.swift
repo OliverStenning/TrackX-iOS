@@ -1,16 +1,8 @@
 import Foundation
 
 final class LaunchV1: Codable {
-    let id: UUID
-    let name: String
-    let dateUtc: String
-    let upcoming: Bool
-    let success: Bool?
-    let description: String?
-    let rocket: RocketV1
-    let cores: String
-    let payloads: String
-    let launchpad: LaunchpadV1
+
+    // MARK: Lifecycle
 
     init(
         id: UUID,
@@ -36,19 +28,6 @@ final class LaunchV1: Codable {
         self.launchpad = launchpad
     }
 
-    enum CodingKeys: String, CodingKey {
-        case id
-        case name
-        case dateUtc = "date_utc"
-        case upcoming
-        case success
-        case description
-        case rocket
-        case cores
-        case payloads
-        case launchpad
-    }
-
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(UUID.self, forKey: .id)
@@ -62,6 +41,32 @@ final class LaunchV1: Codable {
         payloads = try container.decode(String.self, forKey: .payloads)
         launchpad = try container.decode(LaunchpadV1.self, forKey: .launchpad)
     }
+
+    // MARK: Internal
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case dateUtc = "date_utc"
+        case upcoming
+        case success
+        case description
+        case rocket
+        case cores
+        case payloads
+        case launchpad
+    }
+
+    let id: UUID
+    let name: String
+    let dateUtc: String
+    let upcoming: Bool
+    let success: Bool?
+    let description: String?
+    let rocket: RocketV1
+    let cores: String
+    let payloads: String
+    let launchpad: LaunchpadV1
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)

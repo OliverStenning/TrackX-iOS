@@ -4,9 +4,10 @@ import UIKit
 // MARK: - LaunchDetailsRocketCell
 
 final class LaunchDetailsRocketCell: UITableViewCell {
-    // MARK: - Lifecycle
 
-    override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    // MARK: Lifecycle
+
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
     }
@@ -16,14 +17,14 @@ final class LaunchDetailsRocketCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Internal
+    // MARK: Internal
 
     func configure(viewModel: LaunchDetailsRocketCellViewModel) {
         nameLabel.value = viewModel.launch.rocket.name ?? "Unknown"
         descriptionLabel.value = "Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft."
     }
 
-    // MARK: - Private
+    // MARK: Private
 
     private let cardView = UIView()
     private let nameLabel = RKNamedLabel()

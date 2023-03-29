@@ -3,9 +3,10 @@ import UIKit
 // MARK: - RKErrorView
 
 public final class RKErrorView: UIView {
-    // MARK: - Lifecycle
 
-    override public init(frame: CGRect) {
+    // MARK: Lifecycle
+
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
@@ -15,11 +16,11 @@ public final class RKErrorView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Public
+    // MARK: Public
 
     public var action: (() -> Void)?
 
-    // MARK: - Private
+    // MARK: Private
 
     private let containerView = UIView()
     private let errorIcon = UIImageView()

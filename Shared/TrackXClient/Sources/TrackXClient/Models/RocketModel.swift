@@ -1,16 +1,8 @@
 import Foundation
 
 public struct RocketModel: Hashable {
-    public let id: UUID
-    public let name: String?
-    public let active: Bool?
-    public let stages: Int?
-    public let boosters: Int?
-    public let launchCost: Int?
-    public let successRate: Int?
-    public let height: Double
-    public let diameter: Double
-    public let mass: Double
+
+    // MARK: Lifecycle
 
     init(
         id: UUID,
@@ -48,4 +40,18 @@ public struct RocketModel: Hashable {
         diameter = rocket.diameter
         mass = rocket.mass
     }
+
+    // MARK: Public
+
+    public let id: UUID
+    public let name: String?
+    public let active: Bool?
+    public let stages: Int?
+    public let boosters: Int?
+    public let launchCost: Int?
+    public let successRate: Int?
+    public let height: Double
+    public let diameter: Double
+    public let mass: Double
+
 }

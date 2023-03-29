@@ -3,14 +3,15 @@ import RaptorKit
 import UIKit
 
 final class AppCoordinator: Coordinator {
-    // MARK: - Lifecycle
+
+    // MARK: Lifecycle
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         childCoordinators = []
     }
 
-    // MARK: - Internal
+    // MARK: Internal
 
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator]

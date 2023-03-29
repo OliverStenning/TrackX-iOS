@@ -4,9 +4,10 @@ import UIKit
 // MARK: - LaunchDetailsLaunchCell
 
 final class LaunchDetailsLaunchCell: UITableViewCell {
-    // MARK: - Lifecycle
 
-    override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    // MARK: Lifecycle
+
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
     }
@@ -16,14 +17,14 @@ final class LaunchDetailsLaunchCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Internal
+    // MARK: Internal
 
     func configure(viewModel: LaunchDetailsLaunchCellViewModel) {
         nameLabel.label.text = viewModel.launch.name
         dateLabel.text = viewModel.launch.dateUtc
     }
 
-    // MARK: - Private
+    // MARK: Private
 
     private let nameLabel = RKCapsuleLabel()
     private let dateLabel = UILabel()

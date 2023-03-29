@@ -2,14 +2,17 @@ import RaptorKit
 import TrackXClient
 import UIKit
 
+// MARK: - LaunchesCoordinator
+
 public final class LaunchesCoordinator: Coordinator {
-    // MARK: - Lifecycle
+
+    // MARK: Lifecycle
 
     public init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
 
-    // MARK: - Public
+    // MARK: Public
 
     public var childCoordinators = [Coordinator]()
     public var navigationController: UINavigationController
@@ -20,7 +23,7 @@ public final class LaunchesCoordinator: Coordinator {
         navigationController.pushViewController(launchesViewController, animated: animated)
     }
 
-    // MARK: - Private
+    // MARK: Private
 
     private func openLaunchDetails(launch: LaunchModel) {
         let launchDetailsViewModel = LaunchDetailsViewModel(launch: launch)
@@ -28,6 +31,8 @@ public final class LaunchesCoordinator: Coordinator {
         navigationController.present(launchDetailsViewController, animated: true)
     }
 }
+
+// MARK: LaunchesViewModelDelegate
 
 extension LaunchesCoordinator: LaunchesViewModelDelegate {
     func didTapLaunchViewDetails(launch: LaunchModel) {

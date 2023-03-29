@@ -1,9 +1,13 @@
 import Foundation
 
+// MARK: - LaunchEndpointV1
+
 enum LaunchEndpointV1 {
     case latest
     case next
 }
+
+// MARK: Endpoint
 
 extension LaunchEndpointV1: Endpoint {
     var path: String {
@@ -16,7 +20,7 @@ extension LaunchEndpointV1: Endpoint {
     }
 
     var queries: [URLQueryItem] {
-        return [URLQueryItem(name: "provider", value: "spacex")]
+        [URLQueryItem(name: "provider", value: "spacex")]
     }
 
     var method: HTTPMethod {
@@ -27,10 +31,10 @@ extension LaunchEndpointV1: Endpoint {
     }
 
     var header: [String: String]? {
-        return nil
+        nil
     }
 
     var body: [String: String]? {
-        return nil
+        nil
     }
 }

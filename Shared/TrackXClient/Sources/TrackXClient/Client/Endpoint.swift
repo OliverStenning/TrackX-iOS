@@ -1,5 +1,7 @@
 import Foundation
 
+// MARK: - Endpoint
+
 protocol Endpoint {
     var scheme: String { get }
     var host: String { get }
@@ -12,10 +14,10 @@ protocol Endpoint {
 
 extension Endpoint {
     var scheme: String {
-        return "https"
+        "https"
     }
 
     var host: String {
-        return "t-minus.fly.dev"
+        "t-minus.fly.dev"
     }
 }

@@ -4,13 +4,14 @@ import TrackXClient
 // MARK: - LaunchDetailsHeaderCellViewModel
 
 struct LaunchDetailsHeaderCellViewModel: Hashable {
-    // MARK: - Lifecycle
+
+    // MARK: Lifecycle
 
     public init(launch: LaunchModel) {
         self.launch = launch
     }
 
-    // MARK: - Internal
+    // MARK: Internal
 
     let launch: LaunchModel
 }

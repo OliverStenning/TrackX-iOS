@@ -9,20 +9,20 @@ let package = Package(
     products: [.library(name: "Launch", type: .dynamic, targets: ["Launch"])],
     dependencies: [
         .package(path: "../Shared/RaptorKit"),
-        .package(path: "../Shared/TrackXClient"),
+        .package(path: "../Shared/TrackXClient")
     ],
     targets: [
         .target(
             name: "Launch",
             dependencies: [
                 .product(name: "RaptorKit", package: "RaptorKit"),
-                .product(name: "TrackXClient", package: "TrackXClient"),
+                .product(name: "TrackXClient", package: "TrackXClient")
             ],
             resources: [.process("Resources")]
         ),
         .testTarget(
             name: "LaunchTests",
             dependencies: ["Launch"]
-        ),
+        )
     ]
 )

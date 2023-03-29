@@ -3,8 +3,11 @@ import RaptorKit
 import TrackXClient
 import UIKit
 
+// MARK: - LaunchesViewController
+
 final class LaunchesViewController: UIViewController {
-    // MARK: - Lifecycle
+
+    // MARK: Lifecycle
 
     init(viewModel: LaunchesViewModel) {
         self.viewModel = viewModel
@@ -31,7 +34,7 @@ final class LaunchesViewController: UIViewController {
         setup()
     }
 
-    // MARK: - Private
+    // MARK: Private
 
     private let viewModel: LaunchesViewModel
     private let scrollView = UIScrollView()
@@ -144,6 +147,8 @@ final class LaunchesViewController: UIViewController {
     }
 }
 
+// MARK: UIPageViewControllerDataSource
+
 extension LaunchesViewController: UIPageViewControllerDataSource {
     func pageViewController(_: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let index = pages.firstIndex(of: viewController), index > 0 else { return nil }
@@ -155,6 +160,8 @@ extension LaunchesViewController: UIPageViewControllerDataSource {
         return pages[index + 1]
     }
 }
+
+// MARK: UIPageViewControllerDelegate
 
 extension LaunchesViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating _: Bool, previousViewControllers _: [UIViewController], transitionCompleted _: Bool) {

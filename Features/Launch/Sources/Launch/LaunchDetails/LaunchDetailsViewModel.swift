@@ -11,7 +11,7 @@ enum LaunchDetailsSection: Hashable {
     case launchpad(LaunchDetailsLaunchpadCellViewModel)
 }
 
-// MARK: - LaunchCellType
+// MARK: - LaunchDetailsCellType
 
 enum LaunchDetailsCellType: Hashable {
     case header(LaunchDetailsHeaderCellViewModel)
@@ -23,14 +23,15 @@ enum LaunchDetailsCellType: Hashable {
 // MARK: - LaunchDetailsViewModel
 
 public final class LaunchDetailsViewModel {
-    // MARK: - Lifecycle
+
+    // MARK: Lifecycle
 
     init(launch: LaunchModel) {
         self.launch = launch
         setSections()
     }
 
-    // MARK: - Internal
+    // MARK: Internal
 
     @Published private(set) var sections = [LaunchDetailsSection]()
 
@@ -38,7 +39,7 @@ public final class LaunchDetailsViewModel {
 
     var title: String { "Launch Info" }
 
-    // MARK: - Private
+    // MARK: Private
 
     private let launch: LaunchModel
 
@@ -47,7 +48,7 @@ public final class LaunchDetailsViewModel {
             .header(LaunchDetailsHeaderCellViewModel(launch: launch)),
             .launch(LaunchDetailsLaunchCellViewModel(launch: launch)),
             .rocket(LaunchDetailsRocketCellViewModel(launch: launch)),
-            .launchpad(LaunchDetailsLaunchpadCellViewModel(launch: launch)),
+            .launchpad(LaunchDetailsLaunchpadCellViewModel(launch: launch))
         ]
     }
 }

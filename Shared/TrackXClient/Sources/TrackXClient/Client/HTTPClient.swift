@@ -1,5 +1,7 @@
 import Foundation
 
+// MARK: - HTTPClient
+
 protocol HTTPClient {
     func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async throws -> T
 }

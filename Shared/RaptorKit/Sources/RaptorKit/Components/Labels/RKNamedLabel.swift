@@ -1,7 +1,8 @@
 import UIKit
 
 public final class RKNamedLabel: UIView {
-    // MARK: - Lifecycle
+
+    // MARK: Lifecycle
 
     @available(*, unavailable)
     required init?(coder _: NSCoder) {
@@ -15,7 +16,7 @@ public final class RKNamedLabel: UIView {
         setup()
     }
 
-    // MARK: - Public
+    // MARK: Public
 
     public var name: String {
         didSet {
@@ -35,7 +36,7 @@ public final class RKNamedLabel: UIView {
         }
     }
 
-    // MARK: - Private
+    // MARK: Private
 
     private let lineCount: Int
     private let containerStack = UIStackView()

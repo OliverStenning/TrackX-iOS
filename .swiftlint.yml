@@ -1,25 +1,25 @@
 reporter: "xcode"
 
 disabled_rules:
+  - blanket_disable_command
   - line_length
   - function_parameter_count
   - type_name
   - nesting
   - xctfail_message
 
+opt_in_rules:
+  - force_unwrapping
+  - closure_spacing
+  - overridden_super_call
+  - redundant_nil_coalescing
+  - operator_usage_whitespace
+  - weak_delegate
+
+superfluous_disable_command:
+  severity: warning
+
 large_tuple: 3
-
-type_body_length:
-  warning: 400
-  error: 500
-
-file_length:
-  warning: 500
-  error: 600
-
-function_body_length:
-  warning: 50
-  error: 60
 
 overridden_super_call:
   severity: error
@@ -29,3 +29,5 @@ unused_optional_binding:
 
 force_unwrapping: error
 force_cast: error
+force_try: error
+weak_delegate: error

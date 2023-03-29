@@ -2,14 +2,15 @@ import Foundation
 import RaptorKit
 
 enum SetupManager {
-    // MARK: - Internal
+
+    // MARK: Internal
 
     static func setup() {
         setupAppAppearance()
         setupFirstLaunch()
     }
 
-    // MARK: - Private
+    // MARK: Private
 
     private static func setupAppAppearance() {
         AppAppearance.setup()

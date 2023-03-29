@@ -3,9 +3,10 @@ import UIKit
 // MARK: - RKLabelHeaderView
 
 public final class RKLabelHeaderView: UITableViewHeaderFooterView {
-    // MARK: - Lifecycle
 
-    override public init(reuseIdentifier: String?) {
+    // MARK: Lifecycle
+
+    public override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         setup()
     }
@@ -15,13 +16,13 @@ public final class RKLabelHeaderView: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Public
+    // MARK: Public
 
     public func configure(with title: String) {
         titleLabel.text = title
     }
 
-    // MARK: - Private
+    // MARK: Private
 
     private let titleLabel = UILabel()
 

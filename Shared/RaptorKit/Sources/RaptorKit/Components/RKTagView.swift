@@ -3,7 +3,8 @@ import UIKit
 // MARK: - RKTagView
 
 public final class RKTagView: UIView {
-    // MARK: - Lifecycle
+
+    // MARK: Lifecycle
 
     public init() {
         super.init(frame: .zero)
@@ -15,7 +16,7 @@ public final class RKTagView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Public
+    // MARK: Public
 
     public var text: String = "" {
         didSet {
@@ -35,7 +36,7 @@ public final class RKTagView: UIView {
         }
     }
 
-    // MARK: - Private
+    // MARK: Private
 
     private let label = UILabel()
 

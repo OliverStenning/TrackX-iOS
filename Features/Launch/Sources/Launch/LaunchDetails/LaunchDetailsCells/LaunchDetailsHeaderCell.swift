@@ -4,9 +4,10 @@ import UIKit
 // MARK: - LaunchDetailsHeaderCell
 
 final class LaunchDetailsHeaderCell: UITableViewCell {
-    // MARK: - Lifecycle
 
-    override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    // MARK: Lifecycle
+
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
     }
@@ -16,13 +17,17 @@ final class LaunchDetailsHeaderCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Internal
+    // MARK: Internal
 
     func configure(viewModel _: LaunchDetailsHeaderCellViewModel) {
         backgroundImage.image = RKAssets.Images.placeholder.image
     }
 
-    // MARK: - Private
+    override func traitCollectionDidChange(_: UITraitCollection?) {
+        backgroundGradient.isHidden = hideGradient
+    }
+
+    // MARK: Private
 
     private let backgroundImage = UIImageView()
     private let backgroundGradient = RKGradientView()
@@ -51,7 +56,4 @@ final class LaunchDetailsHeaderCell: UITableViewCell {
         backgroundGradient.pin(edges: .all, to: contentView)
     }
 
-    override func traitCollectionDidChange(_: UITraitCollection?) {
-        backgroundGradient.isHidden = hideGradient
-    }
 }

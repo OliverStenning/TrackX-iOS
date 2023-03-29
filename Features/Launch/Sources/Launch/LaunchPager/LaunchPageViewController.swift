@@ -4,7 +4,8 @@ import UIKit
 // MARK: - LaunchPageViewController
 
 final class LaunchPageViewController: UIViewController {
-    // MARK: - Lifecycle
+
+    // MARK: Lifecycle
 
     init(viewModel: LaunchPageViewModel) {
         self.viewModel = viewModel
@@ -26,7 +27,7 @@ final class LaunchPageViewController: UIViewController {
         setup()
     }
 
-    // MARK: - Private
+    // MARK: Private
 
     private let viewModel: LaunchPageViewModel
 

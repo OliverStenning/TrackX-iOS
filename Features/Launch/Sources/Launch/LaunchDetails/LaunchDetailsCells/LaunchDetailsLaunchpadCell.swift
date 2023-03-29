@@ -4,9 +4,10 @@ import UIKit
 // MARK: - LaunchDetailsLaunchpadCell
 
 final class LaunchDetailsLaunchpadCell: UITableViewCell {
-    // MARK: - Lifecycle
 
-    override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    // MARK: Lifecycle
+
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
     }
@@ -16,11 +17,11 @@ final class LaunchDetailsLaunchpadCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Internal
+    // MARK: Internal
 
     func configure(viewModel _: LaunchDetailsLaunchpadCellViewModel) {}
 
-    // MARK: - Private
+    // MARK: Private
 
     private let cardView = UIView()
     private let label = UILabel()

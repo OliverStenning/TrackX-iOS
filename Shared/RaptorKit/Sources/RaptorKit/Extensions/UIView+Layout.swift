@@ -3,13 +3,14 @@ import UIKit
 // MARK: - EdgeSet
 
 public struct EdgeSet: OptionSet {
-    // MARK: - Lifecycle
+
+    // MARK: Lifecycle
 
     public init(rawValue: Int) {
         self.rawValue = rawValue
     }
 
-    // MARK: - Public
+    // MARK: Public
 
     public static let top = EdgeSet(rawValue: 1 << 0)
     public static let bottom = EdgeSet(rawValue: 1 << 1)
@@ -29,7 +30,7 @@ public struct EdgeSet: OptionSet {
 public enum Edge {
     case top, bottom, leading, trailing
 
-    // MARK: - Internal
+    // MARK: Internal
 
     var attribute: NSLayoutConstraint.Attribute {
         switch self {
@@ -46,7 +47,7 @@ public enum Edge {
 public enum Axis {
     case horizontal, vertical
 
-    // MARK: - Internal
+    // MARK: Internal
 
     var centerAttribute: NSLayoutConstraint.Attribute {
         switch self {
@@ -56,12 +57,12 @@ public enum Axis {
     }
 }
 
-// MARK: - SizeDimension {
+// MARK: - SizeDimension
 
 public enum SizeDimension {
     case width, height
 
-    // MARK: - Internal
+    // MARK: Internal
 
     var sizeAttribute: NSLayoutConstraint.Attribute {
         switch self {
@@ -102,7 +103,15 @@ public extension UIView {
     }
 
     @discardableResult
-    func pin(_ edge: Edge, to otherViewEdge: Edge, of otherView: UIView, constant: CGFloat = 0, relation: NSLayoutConstraint.Relation = .equal, priority: UILayoutPriority = .required, usingSafeArea: Bool = false) -> UIView {
+    func pin(
+        _ edge: Edge,
+        to otherViewEdge: Edge,
+        of otherView: UIView,
+        constant: CGFloat = 0,
+        relation: NSLayoutConstraint.Relation = .equal,
+        priority: UILayoutPriority = .required,
+        usingSafeArea: Bool = false
+    ) -> UIView {
         translatesAutoresizingMaskIntoConstraints = false
         let negativeEdges: [Edge] = [.trailing, .bottom]
         let constant: CGFloat = (negativeEdges.contains(edge) || negativeEdges.contains(otherViewEdge)) ? -1 * constant : constant

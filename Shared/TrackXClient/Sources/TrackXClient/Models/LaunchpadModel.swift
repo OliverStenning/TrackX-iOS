@@ -1,12 +1,8 @@
 import Foundation
 
 public struct LaunchpadModel: Hashable {
-    public let id: UUID
-    public let name: String
-    public let fullName: String
-    public let region: String
-    public let longitude: Double
-    public let latitude: Double
+
+    // MARK: Lifecycle
 
     init(
         id: UUID,
@@ -32,4 +28,14 @@ public struct LaunchpadModel: Hashable {
         longitude = launchpad.longitude
         latitude = launchpad.latitude
     }
+
+    // MARK: Public
+
+    public let id: UUID
+    public let name: String
+    public let fullName: String
+    public let region: String
+    public let longitude: Double
+    public let latitude: Double
+
 }
