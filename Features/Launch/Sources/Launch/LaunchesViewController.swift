@@ -48,6 +48,7 @@ final class LaunchesViewController: UIViewController {
     private var cancellables = Set<AnyCancellable>()
 
     private func setup() {
+        navigationItem.largeTitleDisplayMode = .never
         setupScrollView()
         setupPager()
         setupPagerControl()
@@ -111,22 +112,19 @@ final class LaunchesViewController: UIViewController {
         case .loading:
             loadingView.isHidden = false
             errorView.isHidden = true
-            refreshControl.endRefreshing()
-            scrollView.contentInsetAdjustmentBehavior = .never
+            endRefreshing()
         case .refreshing:
             loadingView.isHidden = true
             errorView.isHidden = true
-            refreshControl.beginRefreshing()
+            beginRefreshing()
         case .loaded:
             loadingView.isHidden = true
             errorView.isHidden = true
-            refreshControl.endRefreshing()
-            scrollView.contentInsetAdjustmentBehavior = .never
+            endRefreshing()
         case .error:
             loadingView.isHidden = true
             errorView.isHidden = false
-            refreshControl.endRefreshing()
-            scrollView.contentInsetAdjustmentBehavior = .never
+            endRefreshing()
         }
     }
 
@@ -141,8 +139,17 @@ final class LaunchesViewController: UIViewController {
         pageControl.currentPage = 0
     }
 
-    @objc private func refreshLaunches() {
+    private func beginRefreshing() {
         scrollView.contentInsetAdjustmentBehavior = .automatic
+        refreshControl.beginRefreshing()
+    }
+
+    private func endRefreshing() {
+        scrollView.contentInsetAdjustmentBehavior = .never
+        refreshControl.endRefreshing()
+    }
+
+    @objc private func refreshLaunches() {
         viewModel.refreshLaunches()
     }
 }
