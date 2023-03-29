@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A72BD3B829B3DFAB004A0000 /* SetupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72BD3B729B3DFAA004A0000 /* SetupManager.swift */; };
 		A7785CB229B3F21C002D52FF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7785CB129B3F21C002D52FF /* AppCoordinator.swift */; };
-		A782558229C7DEC700263D5D /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = A782558129C7DEC700263D5D /* SFSafeSymbols */; };
 		F218B5F729870A1C00FC6435 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F218B5F629870A1C00FC6435 /* Localizable.strings */; };
 		F24198902987140800DE5BF8 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F241988F2987140800DE5BF8 /* Strings+Generated.swift */; };
 		F241989A2987180B00DE5BF8 /* RaptorKit in Frameworks */ = {isa = PBXBuildFile; productRef = F24198992987180B00DE5BF8 /* RaptorKit */; };
@@ -71,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A782558229C7DEC700263D5D /* SFSafeSymbols in Frameworks */,
 				F24224312991BCF700406AE8 /* TrackXClient in Frameworks */,
 				F2BD49EB2993217000A3923B /* Launch in Frameworks */,
 				F2BD49EE2993228500A3923B /* Utilities in Frameworks */,
@@ -172,7 +170,6 @@
 				F24224302991BCF700406AE8 /* TrackXClient */,
 				F2BD49EA2993217000A3923B /* Launch */,
 				F2BD49ED2993228500A3923B /* Utilities */,
-				A782558129C7DEC700263D5D /* SFSafeSymbols */,
 			);
 			productName = TrackX;
 			productReference = F2F0937827EE2818005CCD09 /* TrackX.app */;
@@ -203,7 +200,6 @@
 			);
 			mainGroup = F2F0936F27EE2817005CCD09;
 			packageReferences = (
-				A782558029C7DEC700263D5D /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
 			);
 			productRefGroup = F2F0937927EE2818005CCD09 /* Products */;
 			projectDirPath = "";
@@ -515,23 +511,7 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		A782558029C7DEC700263D5D /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		A782558129C7DEC700263D5D /* SFSafeSymbols */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A782558029C7DEC700263D5D /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
-			productName = SFSafeSymbols;
-		};
 		F24198992987180B00DE5BF8 /* RaptorKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RaptorKit;

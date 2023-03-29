@@ -1,4 +1,5 @@
 import RaptorKit
+import SFSafeSymbols
 import UIKit
 
 // MARK: - LaunchPageViewController
@@ -90,6 +91,10 @@ final class LaunchPageViewController: UIViewController {
         var buttonText = AttributedString("View details")
         buttonText.font = RKFonts.SpaceGrotesk.medium.font(size: 18)
         buttonConfig.attributedTitle = buttonText
+
+        buttonConfig.image = UIImage(systemSymbol: .chevronUpSquareFill, withConfiguration: UIImage.SymbolConfiguration(scale: .medium))
+        buttonConfig.imagePlacement = .leading
+        buttonConfig.imagePadding = 8.0
 
         viewDetailsButton.configuration = buttonConfig
         viewDetailsButton.addTarget(self, action: #selector(didTapViewDetails), for: .touchUpInside)

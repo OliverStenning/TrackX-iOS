@@ -7,11 +7,15 @@ let package = Package(
     name: "RaptorKit",
     platforms: [.iOS(.v15)],
     products: [.library(name: "RaptorKit", type: .dynamic, targets: ["RaptorKit"])],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/SFSafeSymbols/SFSafeSymbols.git", exact: "4.1.1")
+    ],
     targets: [
         .target(
             name: "RaptorKit",
-            dependencies: [],
+            dependencies: [
+                .product(name: "SFSafeSymbols", package: "SFSafeSymbols")
+            ],
             resources: [.process("Resources")]
         ),
         .testTarget(

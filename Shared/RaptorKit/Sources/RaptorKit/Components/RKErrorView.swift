@@ -1,3 +1,4 @@
+import SFSafeSymbols
 import UIKit
 
 // MARK: - RKErrorView
@@ -67,6 +68,10 @@ public final class RKErrorView: UIView {
         var buttonText = AttributedString("Retry")
         buttonText.font = RKFonts.SpaceGrotesk.medium.font(size: 18)
         buttonConfig.attributedTitle = buttonText
+
+        buttonConfig.image = UIImage(systemSymbol: .arrowClockwise, withConfiguration: UIImage.SymbolConfiguration(scale: .medium))
+        buttonConfig.imagePlacement = .leading
+        buttonConfig.imagePadding = 8.0
 
         retryButton.configuration = buttonConfig
         retryButton.addTarget(self, action: #selector(retryAction), for: .touchUpInside)

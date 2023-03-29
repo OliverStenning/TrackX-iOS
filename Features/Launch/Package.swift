@@ -9,14 +9,16 @@ let package = Package(
     products: [.library(name: "Launch", type: .dynamic, targets: ["Launch"])],
     dependencies: [
         .package(path: "../Shared/RaptorKit"),
-        .package(path: "../Shared/TrackXClient")
+        .package(path: "../Shared/TrackXClient"),
+        .package(url: "https://github.com/SFSafeSymbols/SFSafeSymbols.git", exact: "4.1.1")
     ],
     targets: [
         .target(
             name: "Launch",
             dependencies: [
                 .product(name: "RaptorKit", package: "RaptorKit"),
-                .product(name: "TrackXClient", package: "TrackXClient")
+                .product(name: "TrackXClient", package: "TrackXClient"),
+                .product(name: "SFSafeSymbols", package: "SFSafeSymbols")
             ],
             resources: [.process("Resources")]
         ),
