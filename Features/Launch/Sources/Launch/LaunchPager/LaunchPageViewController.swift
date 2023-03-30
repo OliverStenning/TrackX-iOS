@@ -34,17 +34,13 @@ final class LaunchPageViewController: UIViewController {
 
     private var backgroundImageView = UIImageView()
     private var backgroundGradientView = RKGradientView()
-    private var statusLabel = RKLabel()
-    private var separatorView = UIView()
-    private var launchNameLabel = RKLabel()
-    private var launchDateLabel = RKLabel()
+    private var launchInfoView = LaunchInfoView(backgroundType: .image)
     private var viewDetailsButton = RKButton()
 
     private func setup() {
         setupBackground()
-        setupLabels()
-        setupSeparator()
         setupButton()
+        launchInfoView.configure(with: viewModel.launch)
     }
 
     private func setupBackground() {
@@ -56,28 +52,6 @@ final class LaunchPageViewController: UIViewController {
         backgroundGradientView.bottomColor = UIColor(red: 23 / 255, green: 23 / 255, blue: 33 / 255, alpha: 1).darkOnly
     }
 
-    private func setupLabels() {
-//        statusLabel.text = "Upcoming"
-//        statusLabel.font = RKFonts.SpaceGrotesk.bold.font(size: 32)
-//        statusLabel.textColor = RKAssets.Colors.accent2.color.darkOnly
-
-        statusLabel.text = "Success"
-        statusLabel.fontStyle = .title1
-        statusLabel.textColor = RKAssets.Colors.success.color.darkOnly
-
-        launchNameLabel.text = "Falcon 9 Block 5 | Starlink Group 5-10"
-        launchNameLabel.fontStyle = .largeTitle
-        launchNameLabel.textColor = RKAssets.Colors.neutral1.color.darkOnly
-
-        launchDateLabel.text = "20:11 UTC - 29th March"
-        launchDateLabel.fontStyle = .title3
-        launchDateLabel.textColor = RKAssets.Colors.neutral3.color.darkOnly
-    }
-
-    private func setupSeparator() {
-        separatorView.backgroundColor = RKAssets.Colors.neutral2.color.darkOnly
-    }
-
     private func setupButton() {
         viewDetailsButton.text = "View details"
         viewDetailsButton.image = UIImage(systemSymbol: .chevronUpSquareFill)
@@ -85,24 +59,13 @@ final class LaunchPageViewController: UIViewController {
     }
 
     private func layout() {
-        view.addSubviews(backgroundImageView, backgroundGradientView, statusLabel, separatorView, launchNameLabel, launchDateLabel, viewDetailsButton)
+        view.addSubviews(backgroundImageView, backgroundGradientView, launchInfoView, viewDetailsButton)
 
         backgroundImageView.pin(edges: .all, to: view)
         backgroundGradientView.pin(edges: .all, to: view)
 
-        statusLabel.pin(edges: .leadingAndTrailing, to: view, insets: .symmetrical(horizontal: 24))
-        statusLabel.pin(.bottom, to: .top, of: separatorView, constant: 8)
-
-        separatorView.size(.height, constant: 4)
-        separatorView.size(.width, constant: 64)
-        separatorView.pin(edges: .leading, to: view, insets: .symmetrical(horizontal: 24))
-        separatorView.pin(.bottom, to: .top, of: launchNameLabel, constant: 8)
-
-        launchNameLabel.pin(edges: .leadingAndTrailing, to: view, insets: .symmetrical(horizontal: 24))
-        launchNameLabel.pin(.bottom, to: .top, of: launchDateLabel, constant: 8)
-
-        launchDateLabel.pin(edges: .leadingAndTrailing, to: view, insets: .symmetrical(horizontal: 24))
-        launchDateLabel.pin(.bottom, to: .top, of: viewDetailsButton, constant: 24)
+        launchInfoView.pin(edges: .leadingAndTrailing, to: view, insets: .symmetrical(horizontal: 24))
+        launchInfoView.pin(.bottom, to: .top, of: viewDetailsButton, constant: 24)
 
         viewDetailsButton.pin(edges: .leading, to: view, insets: .symmetrical(horizontal: 24))
         viewDetailsButton.pin(.bottom, to: .bottom, of: view, constant: 96)

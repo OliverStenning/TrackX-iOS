@@ -19,28 +19,15 @@ final class LaunchDetailsLaunchpadCell: UITableViewCell {
 
     // MARK: Internal
 
-    func configure(viewModel _: LaunchDetailsLaunchpadCellViewModel) {}
+    func configure(viewModel _: LaunchDetailsLaunchpadCellModel) {}
 
     // MARK: Private
 
-    private let cardView = UIView()
-    private let label = UILabel()
-
     private func setup() {
-        layout()
         backgroundConfiguration = .clear()
-        cardView.backgroundColor = RKAssets.Colors.background2.color
-        cardView.layer.cornerRadius = 12
-
-        label.text = "Launchpad Info"
-        label.textAlignment = .center
+        layout()
     }
 
-    private func layout() {
-        addSubview(cardView)
-        cardView.addSubview(label)
+    private func layout() {}
 
-        cardView.pin(edges: .all, to: self, insets: .symmetrical(horizontal: 16))
-        label.pin(edges: .all, to: cardView, insets: .all(16))
-    }
 }

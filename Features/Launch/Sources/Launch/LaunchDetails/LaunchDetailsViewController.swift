@@ -32,6 +32,7 @@ final class LaunchDetailsViewController: UIViewController {
 
     private typealias DataSource = UITableViewDiffableDataSource<LaunchDetailsSection, LaunchDetailsCellType>
 
+    private let closeButton = RKIconButton()
     private let viewModel: LaunchDetailsViewModel
     private let tableView = UITableView(frame: .zero, style: .grouped)
 
@@ -39,10 +40,6 @@ final class LaunchDetailsViewController: UIViewController {
 
     private lazy var dataSource = DataSource(tableView: tableView) { tableView, indexPath, launchDetailsItem -> UITableViewCell? in
         switch launchDetailsItem {
-        case let .header(viewModel):
-            let cell: LaunchDetailsHeaderCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.configure(viewModel: viewModel)
-            return cell
         case let .launch(viewModel):
             let cell: LaunchDetailsLaunchCell = tableView.dequeueReusableCell(for: indexPath)
             cell.configure(viewModel: viewModel)
@@ -59,18 +56,19 @@ final class LaunchDetailsViewController: UIViewController {
     }
 
     private func setup() {
-//        navigationItem.title = viewModel.title
-//        navigationItem.largeTitleDisplayMode = .never
-        navigationController?.setNavigationBarHidden(true, animated: false)
-
         view.backgroundColor = RKAssets.Colors.background1.color
 
         bindViewModel()
+        setupCloseButton()
         setupTableView()
     }
 
+    private func setupCloseButton() {
+        closeButton.image = UIImage(systemSymbol: .xmark)
+        closeButton.addTarget(self, action: #selector(didTapClose), for: .touchUpInside)
+    }
+
     private func setupTableView() {
-        tableView.register(LaunchDetailsHeaderCell.self)
         tableView.register(LaunchDetailsLaunchCell.self)
         tableView.register(LaunchDetailsRocketCell.self)
         tableView.register(LaunchDetailsLaunchpadCell.self)
@@ -80,14 +78,17 @@ final class LaunchDetailsViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.backgroundColor = .systemBackground
         tableView.estimatedSectionHeaderHeight = 100
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.backgroundColor = .clear
         tableView.contentInsetAdjustmentBehavior = .never
         tableView.insetsContentViewsToSafeArea = false
     }
 
     private func layout() {
-        view.addSubview(tableView)
+        view.addSubviews(tableView, closeButton)
         tableView.pin(edges: .all, to: view, safeAreaEdges: [.top])
+
+        closeButton.pin(edges: [.top, .trailing], to: view, insets: .only(top: 24, right: 24))
     }
 
     private func bindViewModel() {
@@ -102,8 +103,6 @@ final class LaunchDetailsViewController: UIViewController {
         snapshot.appendSections(sections)
         sections.forEach { section in
             switch section {
-            case let .header(viewModel):
-                snapshot.appendItems([.header(viewModel)], toSection: section)
             case let .launch(viewModel):
                 snapshot.appendItems([.launch(viewModel)], toSection: section)
             case let .rocket(viewModel):
@@ -114,6 +113,11 @@ final class LaunchDetailsViewController: UIViewController {
         }
         dataSource.apply(snapshot, animatingDifferences: false)
     }
+
+    @objc private func didTapClose() {
+        dismiss(animated: true)
+    }
+
 }
 
 // MARK: UITableViewDelegate
@@ -131,7 +135,6 @@ extension LaunchDetailsViewController: UITableViewDelegate {
 
     private func sectionTitle(for section: LaunchDetailsSection) -> String? {
         switch section {
-        case .header: return nil
         case .launch: return nil
         case .rocket: return "Launch Vehicle"
         case .launchpad: return "Launchpad"
@@ -144,13 +147,4 @@ extension LaunchDetailsViewController: UITableViewDelegate {
         return UITableView.automaticDimension
     }
 
-    func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if let item = dataSource.itemIdentifier(for: indexPath) {
-            switch item {
-            case .header: return view.frame.height / 2.5
-            default: break
-            }
-        }
-        return UITableView.automaticDimension
-    }
 }

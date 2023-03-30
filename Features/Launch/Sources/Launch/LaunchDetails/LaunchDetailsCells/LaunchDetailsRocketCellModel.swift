@@ -1,9 +1,9 @@
 import Foundation
 import TrackXClient
 
-// MARK: - LaunchDetailsHeaderCellViewModel
+// MARK: - LaunchDetailsRocketCellModel
 
-struct LaunchDetailsHeaderCellViewModel: Hashable {
+struct LaunchDetailsRocketCellModel: Hashable {
 
     // MARK: Lifecycle
 

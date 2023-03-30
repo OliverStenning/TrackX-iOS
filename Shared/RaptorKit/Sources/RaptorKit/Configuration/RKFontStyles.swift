@@ -22,8 +22,8 @@ public enum RKFontStyle: CaseIterable {
 
     public var uiFont: UIFont {
         switch self {
-        case .largeTitle: return RKFonts.Poppins.semiBold.font(size: 34)
-        case .largeTitleAlt: return RKFonts.SpaceGrotesk.bold.font(size: 34)
+        case .largeTitle: return RKFonts.Poppins.semiBold.font(size: 32)
+        case .largeTitleAlt: return RKFonts.SpaceGrotesk.bold.font(size: 32)
         case .title1: return RKFonts.SpaceGrotesk.bold.font(size: 28)
         case .title2: return RKFonts.SpaceGrotesk.bold.font(size: 22)
         case .title3: return RKFonts.SpaceGrotesk.bold.font(size: 20)

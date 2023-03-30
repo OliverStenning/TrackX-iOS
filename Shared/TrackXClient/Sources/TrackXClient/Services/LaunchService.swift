@@ -3,8 +3,8 @@ import Foundation
 // MARK: - LaunchServiceProtocol
 
 public protocol LaunchServiceProtocol {
-    func getLatestLaunch() async throws -> LaunchModel
-    func getNextLaunch() async throws -> LaunchModel
+    func getUpcoming() async throws -> [TCLaunch]
+    func getLatest() async throws -> [TCLaunch]
 }
 
 // MARK: - LaunchService
@@ -16,12 +16,13 @@ public struct LaunchService: HTTPClient, LaunchServiceProtocol {
     public init() {}
 
     // MARK: Public
-
-    public func getLatestLaunch() async throws -> LaunchModel {
-        try await LaunchModel(from: sendRequest(endpoint: LaunchEndpointV1.latest, responseModel: LaunchV1.self))
+    
+    public func getUpcoming() async throws -> [TCLaunch] {
+        try await sendRequest(endpoint: LaunchEndpoints.upcoming, responseModel: TCLaunchResponse.self).results
     }
 
-    public func getNextLaunch() async throws -> LaunchModel {
-        try await LaunchModel(from: sendRequest(endpoint: LaunchEndpointV1.next, responseModel: LaunchV1.self))
+    public func getLatest() async throws -> [TCLaunch] {
+        try await sendRequest(endpoint: LaunchEndpoints.latest, responseModel: TCLaunchResponse.self).results
     }
+
 }

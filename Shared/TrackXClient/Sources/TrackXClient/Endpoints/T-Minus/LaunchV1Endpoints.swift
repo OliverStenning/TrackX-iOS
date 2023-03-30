@@ -10,6 +10,11 @@ enum LaunchEndpointV1 {
 // MARK: Endpoint
 
 extension LaunchEndpointV1: Endpoint {
+
+    var host: String {
+        "t-minus.fly.dev"
+    }
+
     var path: String {
         switch self {
         case .latest:
@@ -37,4 +42,5 @@ extension LaunchEndpointV1: Endpoint {
     var body: [String: String]? {
         nil
     }
+
 }

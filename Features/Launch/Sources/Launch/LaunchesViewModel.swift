@@ -57,21 +57,27 @@ public final class LaunchesViewModel {
     private func getLaunchData() {
         Task {
             do {
-                async let latestLaunch = launchService.getLatestLaunch()
-                async let upcomingLaunch = launchService.getNextLaunch()
-                try await handleLaunchDataSuccess(latestLaunch: latestLaunch, upcomingLaunch: upcomingLaunch)
+//                async let latestLaunch = launchService.getLatestLaunch()
+//                async let upcomingLaunch = launchService.getNextLaunch()
+                async let launchLibraryData = launchService.getLatest()
+                try await handleLaunchDataSuccess(launches: launchLibraryData)
+//                try await handleLaunchDataSuccess(latestLaunch: latestLaunch, upcomingLaunch: upcomingLaunch)
             } catch {
+                print(error)
                 await handleLaunchDataError()
             }
         }
     }
 
     @MainActor
-    private func handleLaunchDataSuccess(latestLaunch: LaunchModel, upcomingLaunch: LaunchModel) {
-        pageModels = [
-            LaunchPageViewModel(delegate: self, launch: upcomingLaunch),
-            LaunchPageViewModel(delegate: self, launch: latestLaunch)
-        ]
+//    private func handleLaunchDataSuccess(latestLaunch: LaunchModel, upcomingLaunch: LaunchModel) {
+    private func handleLaunchDataSuccess(launches: [TCLaunch]) {
+//        pageModels = [
+//            LaunchPageViewModel(delegate: self, launch: upcomingLaunch),
+//            LaunchPageViewModel(delegate: self, launch: latestLaunch)
+//        ]
+
+        pageModels = launches.map { LaunchPageViewModel(delegate: self, launch: $0) }
 
         // Not a fan of this but makes the UX feel better
         let delay = state == .refreshing ? 0.5 : 0.0

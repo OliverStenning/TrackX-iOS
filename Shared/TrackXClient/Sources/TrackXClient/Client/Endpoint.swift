@@ -13,11 +13,9 @@ protocol Endpoint {
 }
 
 extension Endpoint {
+    
     var scheme: String {
         "https"
     }
 
-    var host: String {
-        "t-minus.fly.dev"
-    }
 }

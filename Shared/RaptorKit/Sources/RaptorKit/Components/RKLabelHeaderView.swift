@@ -24,13 +24,13 @@ public final class RKLabelHeaderView: UITableViewHeaderFooterView {
 
     // MARK: Private
 
-    private let titleLabel = UILabel()
+    private let titleLabel = RKLabel()
 
     private func setup() {
         titleLabel.textColor = RKAssets.Colors.neutral2.color
-        titleLabel.font = RKFonts.Poppins.medium.font(size: 22)
+        titleLabel.fontStyle = .title1
 
         contentView.addSubview(titleLabel)
-        titleLabel.pin(edges: .all, to: contentView, insets: .only(top: 8, left: 16, bottom: 8, right: 16))
+        titleLabel.pin(edges: .all, to: contentView, insets: .only(top: 24, left: 24, bottom: 8, right: 24))
     }
 }

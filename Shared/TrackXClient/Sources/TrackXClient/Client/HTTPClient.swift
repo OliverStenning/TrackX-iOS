@@ -7,6 +7,7 @@ protocol HTTPClient {
 }
 
 extension HTTPClient {
+
     func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async throws -> T {
         var urlComponents = URLComponents()
         urlComponents.scheme = endpoint.scheme
@@ -26,25 +27,24 @@ extension HTTPClient {
             request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
         }
 
-        do {
-            let (data, response) = try await URLSession.shared.data(for: request)
-            guard let response = response as? HTTPURLResponse else {
-                throw RequestError.noResponse
-            }
+        let (data, response) = try await URLSession.shared.data(for: request)
+        guard let response = response as? HTTPURLResponse else {
+            throw RequestError.noResponse
+        }
 
-            switch response.statusCode {
-            case 200 ... 299:
-                guard let decodedResponse = try? JSONDecoder().decode(responseModel, from: data) else {
-                    throw RequestError.decode
-                }
-                return decodedResponse
-            case 401:
-                throw RequestError.unauthorized
-            default:
-                throw RequestError.unexpectedStatusCode
+        switch response.statusCode {
+        case 200 ... 299:
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            guard let decodedResponse = try? decoder.decode(responseModel, from: data) else {
+                throw RequestError.decode
             }
-        } catch {
-            throw RequestError.unknown
+            return decodedResponse
+        case 401:
+            throw RequestError.unauthorized
+        default:
+            throw RequestError.unexpectedStatusCode
         }
     }
+
 }

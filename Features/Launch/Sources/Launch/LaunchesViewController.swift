@@ -34,6 +34,12 @@ final class LaunchesViewController: UIViewController {
         setup()
     }
 
+    // MARK: Internal
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+
     // MARK: Private
 
     private let viewModel: LaunchesViewModel
