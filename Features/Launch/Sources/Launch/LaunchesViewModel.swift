@@ -5,7 +5,7 @@ import TrackXClient
 // MARK: - LaunchesViewModelDelegate
 
 protocol LaunchesViewModelDelegate: AnyObject {
-    func didTapLaunchViewDetails(launch: LaunchModel)
+    func didTapLaunchViewDetails(launch: Launch)
 }
 
 // MARK: - LaunchesViewModel
@@ -45,7 +45,7 @@ public final class LaunchesViewModel {
         getLaunchData()
     }
 
-    func didTapLaunchViewDetails(launch: LaunchModel) {
+    func didTapLaunchViewDetails(launch: Launch) {
         coordinator?.didTapLaunchViewDetails(launch: launch)
     }
 
@@ -57,11 +57,9 @@ public final class LaunchesViewModel {
     private func getLaunchData() {
         Task {
             do {
-//                async let latestLaunch = launchService.getLatestLaunch()
-//                async let upcomingLaunch = launchService.getNextLaunch()
-                async let launchLibraryData = launchService.getLatest()
-                try await handleLaunchDataSuccess(launches: launchLibraryData)
-//                try await handleLaunchDataSuccess(latestLaunch: latestLaunch, upcomingLaunch: upcomingLaunch)
+                async let latestLaunches = launchService.getLatest()
+                async let upcomingLaunches = launchService.getUpcoming()
+                try await handleLaunchDataSuccess(latestLaunches: latestLaunches, upcomingLaunches: upcomingLaunches)
             } catch {
                 print(error)
                 await handleLaunchDataError()
@@ -70,14 +68,10 @@ public final class LaunchesViewModel {
     }
 
     @MainActor
-//    private func handleLaunchDataSuccess(latestLaunch: LaunchModel, upcomingLaunch: LaunchModel) {
-    private func handleLaunchDataSuccess(launches: [TCLaunch]) {
-//        pageModels = [
-//            LaunchPageViewModel(delegate: self, launch: upcomingLaunch),
-//            LaunchPageViewModel(delegate: self, launch: latestLaunch)
-//        ]
-
-        pageModels = launches.map { LaunchPageViewModel(delegate: self, launch: $0) }
+    private func handleLaunchDataSuccess(latestLaunches: [Launch], upcomingLaunches: [Launch]) {
+        var launchModels = upcomingLaunches.map { LaunchPageViewModel(delegate: self, launch: $0) }
+        launchModels += latestLaunches.map { LaunchPageViewModel(delegate: self, launch: $0) }
+        pageModels = launchModels
 
         // Not a fan of this but makes the UX feel better
         let delay = state == .refreshing ? 0.5 : 0.0
@@ -95,7 +89,7 @@ public final class LaunchesViewModel {
 // MARK: LaunchPageViewModelDelegate
 
 extension LaunchesViewModel: LaunchPageViewModelDelegate {
-    func didTapViewDetails(launch: LaunchModel) {
+    func didTapViewDetails(launch: Launch) {
         coordinator?.didTapLaunchViewDetails(launch: launch)
     }
 }

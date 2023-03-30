@@ -25,7 +25,7 @@ public final class LaunchesCoordinator: Coordinator {
 
     // MARK: Private
 
-    private func openLaunchDetails(launch: LaunchModel) {
+    private func openLaunchDetails(launch: Launch) {
         let launchDetailsViewModel = LaunchDetailsViewModel(launch: launch)
         let launchDetailsViewController = LaunchDetailsViewController(viewModel: launchDetailsViewModel)
         navigationController.present(launchDetailsViewController, animated: true)
@@ -35,7 +35,7 @@ public final class LaunchesCoordinator: Coordinator {
 // MARK: LaunchesViewModelDelegate
 
 extension LaunchesCoordinator: LaunchesViewModelDelegate {
-    func didTapLaunchViewDetails(launch: LaunchModel) {
+    func didTapLaunchViewDetails(launch: Launch) {
         openLaunchDetails(launch: launch)
     }
 }

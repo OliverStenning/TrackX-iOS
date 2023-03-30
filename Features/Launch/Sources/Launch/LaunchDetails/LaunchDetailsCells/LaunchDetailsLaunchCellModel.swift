@@ -7,11 +7,11 @@ struct LaunchDetailsLaunchCellModel: Hashable {
 
     // MARK: Lifecycle
 
-    public init(launch: LaunchModel) {
+    public init(launch: Launch) {
         self.launch = launch
     }
 
     // MARK: Internal
 
-    let launch: LaunchModel
+    let launch: Launch
 }

@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - TCLaunchStatus
 
-public struct TCLaunchStatus: Hashable, Codable {
+public struct TCLaunchStatus: Codable {
 
     public let id: Int
     public let name: String

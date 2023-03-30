@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - TCProgram
 
-public struct TCProgram: Hashable, Codable {
+public struct TCProgram: Codable {
 
     public let id: Int
     public let url: String

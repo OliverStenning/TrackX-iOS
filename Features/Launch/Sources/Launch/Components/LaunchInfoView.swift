@@ -26,8 +26,7 @@ final class LaunchInfoView: UIView {
         case automatic
     }
 
-//    func configure(with launch: LaunchModel) {
-    func configure(with launch: TCLaunch) {
+    func configure(with launch: Launch) {
 //        statusLabel.text = "Upcoming"
 //        statusLabel.text = "Success"
         statusLabel.text = launch.status.name

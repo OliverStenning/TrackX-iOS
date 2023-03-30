@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - TCLauncherConfig
 
-public struct TCLauncherConfig: Hashable, Codable {
+public struct TCLauncherConfig: Codable {
 
     public let id: Int
     public let url: String

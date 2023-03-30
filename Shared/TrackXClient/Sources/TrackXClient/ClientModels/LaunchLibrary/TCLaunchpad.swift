@@ -1,8 +1,8 @@
 import Foundation
 
-// MARK: - TCPad
+// MARK: - TCLaunchpad
 
-public struct TCPad: Hashable, Codable {
+public struct TCLaunchpad: Codable {
 
     public let id: Int
     public let url: String

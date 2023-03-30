@@ -24,7 +24,7 @@ public final class LaunchDetailsViewModel {
 
     // MARK: Lifecycle
 
-    init(launch: LaunchModel) {
+    init(launch: Launch) {
         self.launch = launch
         setSections()
     }
@@ -37,7 +37,7 @@ public final class LaunchDetailsViewModel {
 
     // MARK: Private
 
-    private let launch: LaunchModel
+    private let launch: Launch
 
     private func setSections() {
         sections = [

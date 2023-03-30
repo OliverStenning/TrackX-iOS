@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - TCLaunch
 
-public struct TCLaunch: Hashable, Codable {
+public struct TCLaunch: Codable {
 
     public let id: UUID
     public let url: String
@@ -19,7 +19,7 @@ public struct TCLaunch: Hashable, Codable {
     public let launchServiceProvider: TCAgency
     public let rocket: TCRocket
     public let mission: TCMission
-    public let pad: TCPad
+    public let pad: TCLaunchpad
     public let webcastLive: Bool?
     public let image: String
     public let infographic: String?

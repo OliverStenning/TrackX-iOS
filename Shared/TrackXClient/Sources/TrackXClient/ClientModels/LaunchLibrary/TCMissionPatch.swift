@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - TCMissionPatch
 
-public struct TCMissionPatch: Hashable, Codable {
+public struct TCMissionPatch: Codable {
 
     public let id: Int
     public let name: String

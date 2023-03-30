@@ -5,7 +5,7 @@ import UIKit
 // MARK: - LaunchPageViewModelDelegate
 
 protocol LaunchPageViewModelDelegate: AnyObject {
-    func didTapViewDetails(launch: LaunchModel)
+    func didTapViewDetails(launch: Launch)
 }
 
 // MARK: - LaunchPageViewModel
@@ -14,8 +14,7 @@ public final class LaunchPageViewModel {
 
     // MARK: Lifecycle
 
-//    init(delegate: LaunchPageViewModelDelegate, launch: LaunchModel) {
-    init(delegate: LaunchPageViewModelDelegate, launch: TCLaunch) {
+    init(delegate: LaunchPageViewModelDelegate, launch: Launch) {
         self.delegate = delegate
         self.launch = launch
         launchStatus = "Success"
@@ -26,16 +25,14 @@ public final class LaunchPageViewModel {
 
     // MARK: Internal
 
-//    let launch: LaunchModel
-    let launch: TCLaunch
+    let launch: Launch
     let launchStatus: String
     let launchStatusColor: UIColor
     let launchName: String
     let launchDate: String
 
     func didTapViewDetails() {
-//        delegate?.didTapViewDetails(launch: launch)
-        delegate?.didTapViewDetails(launch: .mock())
+        delegate?.didTapViewDetails(launch: launch)
     }
 
     // MARK: Private
