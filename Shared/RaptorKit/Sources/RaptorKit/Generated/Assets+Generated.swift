@@ -46,6 +46,7 @@ public enum RKAssets {
     public static let accent = ColorAsset(name: "Accent")
     public static let textPrimary = ColorAsset(name: "TextPrimary")
     public static let textSecondary = ColorAsset(name: "TextSecondary")
+    public static let failure = ColorAsset(name: "Failure")
     public static let success = ColorAsset(name: "Success")
   }
   public enum Images {

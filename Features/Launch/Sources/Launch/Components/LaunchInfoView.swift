@@ -27,12 +27,13 @@ final class LaunchInfoView: UIView {
     }
 
     func configure(with launch: Launch) {
-//        statusLabel.text = "Upcoming"
-//        statusLabel.text = "Success"
         statusLabel.text = launch.status.name
-//        nameLabel.text = "Falcon 9 Block 5 | Starlink Group 5-10"
+        switch launch.status.type {
+        case .scheduled: statusLabel.textColor = RKAssets.Colors.accent3.color
+        case .success: statusLabel.textColor = RKAssets.Colors.success.color
+        case .failure: statusLabel.textColor = RKAssets.Colors.failure.color
+        }
         nameLabel.text = launch.name ?? "Unknown"
-//        dateLabel.text = "20:11 UTC - 29th March"
         dateLabel.text = launch.net ?? "Unknown"
     }
 
