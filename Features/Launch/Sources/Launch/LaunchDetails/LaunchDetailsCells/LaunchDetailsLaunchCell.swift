@@ -21,7 +21,7 @@ final class LaunchDetailsLaunchCell: UITableViewCell {
     // MARK: Internal
 
     func configure(viewModel: LaunchDetailsLaunchCellModel) {
-//        launchInfoView.configure(with: viewModel.launch)
+        launchInfoView.configure(with: viewModel.launch)
     }
 
     // MARK: Private

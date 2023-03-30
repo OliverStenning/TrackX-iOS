@@ -5,7 +5,7 @@ public struct Launch: Hashable {
     // MARK: Lifecycle
 
     init(from launch: TCLaunch) {
-        id = launch.id
+//        id = launch.id
         url = launch.url
         slug = launch.slug
         name = launch.name
@@ -25,7 +25,7 @@ public struct Launch: Hashable {
 
     // MARK: Public
 
-    public let id: UUID
+//    public let id: UUID
     public let url: String
     public let slug: String
     public let name: String?
