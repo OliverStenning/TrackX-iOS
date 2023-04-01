@@ -28,10 +28,11 @@ final class LaunchInfoView: UIView {
 
     func configure(with launch: Launch) {
         statusLabel.text = launch.status.name
-        switch launch.status.type {
-        case .scheduled: statusLabel.textColor = RKAssets.Colors.accent3.color
-        case .success: statusLabel.textColor = RKAssets.Colors.success.color
-        case .failure: statusLabel.textColor = RKAssets.Colors.failure.color
+        switch (launch.status.type, backgroundType) {
+        case (.scheduled, .image): statusLabel.textColor = RKAssets.Colors.accent2.color.darkOnly
+        case (.scheduled, .automatic): statusLabel.textColor = RKAssets.Colors.accent2.color
+        case (.success, _): statusLabel.textColor = RKAssets.Colors.success.color
+        case (.failure, _): statusLabel.textColor = RKAssets.Colors.failure.color
         }
         nameLabel.text = launch.name ?? "Unknown"
         dateLabel.text = launch.net ?? "Unknown"
@@ -54,13 +55,9 @@ final class LaunchInfoView: UIView {
     private func setupLabels() {
         switch backgroundType {
         case .image:
-//        statusLabel.textColor = RKAssets.Colors.accent2.color.darkOnly
-            statusLabel.textColor = RKAssets.Colors.success.color.darkOnly
             nameLabel.textColor = RKAssets.Colors.neutral1.color.darkOnly
             dateLabel.textColor = RKAssets.Colors.neutral3.color.darkOnly
         case .automatic:
-//        statusLabel.textColor = RKAssets.Colors.accent2.color
-            statusLabel.textColor = RKAssets.Colors.success.color
             nameLabel.textColor = RKAssets.Colors.neutral1.color
             dateLabel.textColor = RKAssets.Colors.neutral3.color
         }
@@ -74,12 +71,12 @@ final class LaunchInfoView: UIView {
         addSubviews(statusLabel, separatorView, nameLabel, dateLabel)
 
         statusLabel.pin(edges: [.leadingAndTrailing, .top], to: self)
-        statusLabel.pin(.bottom, to: .top, of: separatorView, constant: 8)
+        statusLabel.pin(.bottom, to: .top, of: separatorView, constant: 16)
 
         separatorView.size(.height, constant: 4)
         separatorView.size(.width, constant: 64)
         separatorView.pin(edges: .leading, to: self)
-        separatorView.pin(.bottom, to: .top, of: nameLabel, constant: 24)
+        separatorView.pin(.bottom, to: .top, of: nameLabel, constant: 16)
 
         nameLabel.pin(edges: .leadingAndTrailing, to: self)
         nameLabel.pin(.bottom, to: .top, of: dateLabel, constant: 8)
