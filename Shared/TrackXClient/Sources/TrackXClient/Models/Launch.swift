@@ -8,7 +8,7 @@ public struct Launch: Hashable {
 //        id = launch.id
         url = launch.url
         slug = launch.slug
-        name = launch.name
+        name = launch.name?.replacingOccurrences(of: " | ", with: "\n")
         status = LaunchStatus(from: launch.status)
         lastUpdated = launch.lastUpdated
         net = launch.net

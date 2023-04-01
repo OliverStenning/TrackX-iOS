@@ -12,7 +12,7 @@ enum LaunchEndpoints {
 extension LaunchEndpoints: Endpoint {
 
     var host: String {
-        "lldev.thespacedevs.com"
+        TrackXClientConfiguration.shared.launchLibraryBaseUrl
     }
 
     var path: String {

@@ -46,15 +46,17 @@ public final class LaunchPageViewModel {
     private weak var delegate: LaunchPageViewModelDelegate?
 
     private func loadBackgroundImage() {
-        guard let url = URL(string: launch.image) else { return }
-
-        Task {
-            do {
-                let imageTask = ImagePipeline.shared.imageTask(with: url)
-                backgroundImage = try await imageTask.image
-            } catch {
-                print(error)
+        if let url = URL(string: launch.image) {
+            Task {
+                do {
+                    let imageTask = ImagePipeline.shared.imageTask(with: url)
+                    backgroundImage = try await imageTask.image
+                } catch {
+                    print(error)
+                }
             }
+        } else {
+            backgroundImage = RKAssets.Images.placeholder.image
         }
     }
 
