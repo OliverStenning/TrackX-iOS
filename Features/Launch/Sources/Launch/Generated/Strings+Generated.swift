@@ -10,16 +10,18 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
-  internal enum ErrorView {
-    internal enum Button {
-      /// Retry
-      internal static let retry = L10n.tr("Localizable", "ErrorView.Button.retry", fallback: "Retry")
+  internal enum LaunchDetails {
+    internal enum Header {
+      /// Launchpad
+      internal static let launchpad = L10n.tr("Localizable", "LaunchDetails.Header.launchpad", fallback: "Launchpad")
+      /// Rocket
+      internal static let rocket = L10n.tr("Localizable", "LaunchDetails.Header.rocket", fallback: "Rocket")
     }
-    internal enum Label {
-      /// Check your network connection and try again.
-      internal static let body = L10n.tr("Localizable", "ErrorView.Label.body", fallback: "Check your network connection and try again.")
-      /// Something went wrong
-      internal static let title = L10n.tr("Localizable", "ErrorView.Label.title", fallback: "Something went wrong")
+  }
+  internal enum LaunchPage {
+    internal enum Button {
+      /// View details
+      internal static let viewDetails = L10n.tr("Localizable", "LaunchPage.Button.viewDetails", fallback: "View details")
     }
   }
 }

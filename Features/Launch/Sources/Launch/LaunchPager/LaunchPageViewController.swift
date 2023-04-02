@@ -57,7 +57,7 @@ final class LaunchPageViewController: UIViewController {
     }
 
     private func setupButton() {
-        viewDetailsButton.text = "View details"
+        viewDetailsButton.text = L10n.LaunchPage.Button.viewDetails
         viewDetailsButton.image = UIImage(systemSymbol: .chevronUpSquareFill)
         viewDetailsButton.addTarget(self, action: #selector(didTapViewDetails), for: .touchUpInside)
     }

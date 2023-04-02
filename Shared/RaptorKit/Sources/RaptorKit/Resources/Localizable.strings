@@ -1,1 +1,6 @@
 
+// MARK: - RaptorKit Strings
+
+"ErrorView.Label.title" = "Something went wrong";
+"ErrorView.Label.body" = "Check your network connection and try again.";
+"ErrorView.Button.retry" = "Retry";

@@ -1,0 +1,15 @@
+
+// MARK: - LaunchesViewController
+
+
+
+// MARK: - LaunchPageViewController
+
+"LaunchPage.Button.viewDetails" = "View details";
+
+// MARK: - LaunchDetailsViewController
+
+"LaunchDetails.Header.rocket" = "Rocket";
+"LaunchDetails.Header.launchpad" = "Launchpad";
+
+

@@ -4,6 +4,14 @@ strings:
       templateName: structured-swift5
       output: TrackX/Generated/Strings+Generated.swift
 
+  - inputs: Features/Launch/Sources/Launch/Resources/Localizable.strings
+    outputs:
+        templateName: structured-swift5
+        output: Features/Launch/Sources/Launch/Generated/Strings+Generated.swift
+        # bundle: Bundle.raptorKit
+        enumName: RKStrings
+        publicAccess:
+
   - inputs: Shared/RaptorKit/Sources/RaptorKit/Resources/Localizable.strings
     outputs:
         templateName: structured-swift5

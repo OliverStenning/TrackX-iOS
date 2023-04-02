@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F2F0937727EE2818005CCD09"
-               BuildableName = "TrackX.app"
+               BuildableName = "TrackX Dev.app"
                BlueprintName = "TrackX"
                ReferencedContainer = "container:TrackX.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F2F0937727EE2818005CCD09"
-            BuildableName = "TrackX.app"
+            BuildableName = "TrackX Dev.app"
             BlueprintName = "TrackX"
             ReferencedContainer = "container:TrackX.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F2F0937727EE2818005CCD09"
-            BuildableName = "TrackX.app"
+            BuildableName = "TrackX Dev.app"
             BlueprintName = "TrackX"
             ReferencedContainer = "container:TrackX.xcodeproj">
          </BuildableReference>

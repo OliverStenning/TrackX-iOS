@@ -44,18 +44,18 @@ public final class RKErrorView: UIView {
     }
 
     private func setupLabels() {
-        errorTitleLabel.text = "Something went wrong"
+        errorTitleLabel.text = L10n.ErrorView.Label.title
         errorTitleLabel.fontStyle = .title2
         errorTitleLabel.textAlignment = .center
 
-        errorBodyLabel.text = "Check your network connection and try again."
+        errorBodyLabel.text = L10n.ErrorView.Label.body
         errorBodyLabel.textColor = RKAssets.Colors.neutral3.color
         errorBodyLabel.fontStyle = .body
         errorBodyLabel.textAlignment = .center
     }
 
     private func setupButton() {
-        retryButton.text = "Retry"
+        retryButton.text = L10n.ErrorView.Button.retry
         retryButton.image = UIImage(systemSymbol: .arrowClockwise)
         retryButton.addTarget(self, action: #selector(retryAction), for: .touchUpInside)
     }
