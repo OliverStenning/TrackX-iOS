@@ -7,9 +7,17 @@
 
 "LaunchPage.Button.viewDetails" = "View details";
 
+// MARK: - LaunchInfoView
+"LaunchInfoView.Name.unknown" = "Unknown";
+"LaunchInfoView.Date.unknown" = "Unknown";
+
 // MARK: - LaunchDetailsViewController
 
-"LaunchDetails.Header.rocket" = "Rocket";
-"LaunchDetails.Header.launchpad" = "Launchpad";
+"LaunchDetails.Rocket.header" = "Rocket";
+"LaunchDetails.Rocket.Label.name" = "Name";
+"LaunchDetauls.Rocket.Label.fullName" = "Full name";
+
+
+"LaunchDetails.Launchpad.header" = "Launchpad";
 
 

@@ -52,11 +52,6 @@ public enum RKAssets {
   public enum Images {
     public static let launchScreenIcon = ImageAsset(name: "LaunchScreenIcon")
     public static let placeholder = ImageAsset(name: "Placeholder")
-    public static let placeholder1 = ImageAsset(name: "Placeholder1")
-    public static let placeholder2 = ImageAsset(name: "Placeholder2")
-    public static let placeholder3 = ImageAsset(name: "Placeholder3")
-    public static let placeholder4 = ImageAsset(name: "Placeholder4")
-    public static let placeholder5 = ImageAsset(name: "Placeholder5")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

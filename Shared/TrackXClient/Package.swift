@@ -7,11 +7,15 @@ let package = Package(
     name: "TrackXClient",
     platforms: [.iOS(.v15)],
     products: [.library(name: "TrackXClient", type: .dynamic, targets: ["TrackXClient"])],
-    dependencies: [],
+    dependencies: [
+        .package(path: "../Shared/Utilities")
+    ],
     targets: [
         .target(
             name: "TrackXClient",
-            dependencies: []
+            dependencies: [
+                .product(name: "Utilities", package: "Utilities")
+            ]
         ),
         .testTarget(
             name: "TrackXClientTests",

@@ -1,4 +1,5 @@
 import Foundation
+import Utilities
 
 public struct Launch: Hashable {
 
@@ -10,9 +11,9 @@ public struct Launch: Hashable {
         slug = launch.slug
         name = launch.name?.replacingOccurrences(of: " | ", with: "\n")
         status = LaunchStatus(from: launch.status)
-        lastUpdated = launch.lastUpdated
-        net = launch.net
-        windowEnd = launch.windowEnd
+        lastUpdated = launch.lastUpdated?.convertToDate()
+        net = launch.net?.convertToDate()
+        windowEnd = launch.windowEnd?.convertToDate()
         probability = launch.probability
         holdreason = launch.holdreason
         failreason = launch.failreason
@@ -30,9 +31,9 @@ public struct Launch: Hashable {
     public let slug: String
     public let name: String?
     public let status: LaunchStatus
-    public let lastUpdated: String?
-    public let net: String?
-    public let windowEnd: String?
+    public let lastUpdated: Date?
+    public let net: Date?
+    public let windowEnd: Date?
     public let probability: Int?
     public let holdreason: String?
     public let failreason: String?

@@ -1,6 +1,7 @@
 import RaptorKit
 import TrackXClient
 import UIKit
+import Utilities
 
 // MARK: - LaunchInfoView
 
@@ -8,8 +9,7 @@ final class LaunchInfoView: UIView {
 
     // MARK: Lifecycle
 
-    init(backgroundType: BackgroundType = .automatic) {
-        self.backgroundType = backgroundType
+    init() {
         super.init(frame: .zero)
         setup()
     }
@@ -21,26 +21,18 @@ final class LaunchInfoView: UIView {
 
     // MARK: Internal
 
-    enum BackgroundType {
-        case image
-        case automatic
-    }
+    func configure(with viewModel: LaunchInfoViewModel) {
+        statusLabel.text = viewModel.statusText
+        nameLabel.text = viewModel.nameText
+        dateLabel.text = viewModel.dateText
 
-    func configure(with launch: Launch) {
-        statusLabel.text = launch.status.name
-        switch (launch.status.type, backgroundType) {
-        case (.scheduled, .image): statusLabel.textColor = RKAssets.Colors.accent2.color.darkOnly
-        case (.scheduled, .automatic): statusLabel.textColor = RKAssets.Colors.accent2.color
-        case (.success, _): statusLabel.textColor = RKAssets.Colors.success.color
-        case (.failure, _): statusLabel.textColor = RKAssets.Colors.failure.color
-        }
-        nameLabel.text = launch.name ?? "Unknown"
-        dateLabel.text = launch.net ?? "Unknown"
+        statusLabel.textColor = viewModel.statusColor
+        nameLabel.textColor = viewModel.nameColor
+        dateLabel.textColor = viewModel.dateColor
     }
 
     // MARK: Private
 
-    private let backgroundType: BackgroundType
     private let statusLabel = RKLabel()
     private let separatorView = UIView()
     private let nameLabel = RKLabel()
@@ -53,15 +45,6 @@ final class LaunchInfoView: UIView {
     }
 
     private func setupLabels() {
-        switch backgroundType {
-        case .image:
-            nameLabel.textColor = RKAssets.Colors.neutral1.color.darkOnly
-            dateLabel.textColor = RKAssets.Colors.neutral3.color.darkOnly
-        case .automatic:
-            nameLabel.textColor = RKAssets.Colors.neutral1.color
-            dateLabel.textColor = RKAssets.Colors.neutral3.color
-        }
-
         statusLabel.fontStyle = .title1
         nameLabel.fontStyle = .largeTitle
         dateLabel.fontStyle = .title3

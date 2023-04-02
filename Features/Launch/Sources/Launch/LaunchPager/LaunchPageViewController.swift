@@ -36,7 +36,7 @@ final class LaunchPageViewController: UIViewController {
 
     private var backgroundImageView = UIImageView()
     private var backgroundGradientView = RKGradientView()
-    private var launchInfoView = LaunchInfoView(backgroundType: .image)
+    private var launchInfoView = LaunchInfoView()
     private var viewDetailsButton = RKButton()
     private var cancellables = Set<AnyCancellable>()
 
@@ -44,13 +44,12 @@ final class LaunchPageViewController: UIViewController {
         setupBackground()
         setupButton()
         bindViewModel()
-        launchInfoView.configure(with: viewModel.launch)
+        launchInfoView.configure(with: LaunchInfoViewModel(launch: viewModel.launch, backgroundType: .image))
     }
 
     private func setupBackground() {
         backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.clipsToBounds = true
-//        backgroundImageView.image = RKAssets.Images.placeholder1.image
 
         backgroundGradientView.topColor = UIColor(red: 28 / 255, green: 28 / 255, blue: 30 / 255, alpha: 0.35)
         backgroundGradientView.bottomColor = UIColor(red: 23 / 255, green: 23 / 255, blue: 33 / 255, alpha: 1).darkOnly

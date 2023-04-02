@@ -10,6 +10,7 @@ let package = Package(
     dependencies: [
         .package(path: "../Shared/RaptorKit"),
         .package(path: "../Shared/TrackXClient"),
+        .package(path: "../Shared/Utilities"),
         .package(url: "https://github.com/SFSafeSymbols/SFSafeSymbols.git", exact: "4.1.1"),
         .package(url: "https://github.com/kean/Nuke.git", exact: "12.1.0")
     ],
@@ -19,6 +20,7 @@ let package = Package(
             dependencies: [
                 .product(name: "RaptorKit", package: "RaptorKit"),
                 .product(name: "TrackXClient", package: "TrackXClient"),
+                .product(name: "Utilities", package: "Utilities"),
                 .product(name: "SFSafeSymbols", package: "SFSafeSymbols"),
                 .product(name: "Nuke", package: "Nuke")
             ],

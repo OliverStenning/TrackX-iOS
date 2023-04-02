@@ -42,7 +42,7 @@ public final class LaunchDetailsViewModel {
     private func setSections() {
         sections = [
             .launch(LaunchDetailsLaunchCellModel(launch: launch)),
-            .rocket(LaunchDetailsRocketCellModel(launch: launch)),
+            .rocket(LaunchDetailsRocketCellModel(rocket: launch.rocket)),
             .launchpad(LaunchDetailsLaunchpadCellModel(launch: launch))
         ]
     }

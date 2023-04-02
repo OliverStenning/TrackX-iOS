@@ -11,11 +11,35 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
   internal enum LaunchDetails {
-    internal enum Header {
+    internal enum Launchpad {
       /// Launchpad
-      internal static let launchpad = L10n.tr("Localizable", "LaunchDetails.Header.launchpad", fallback: "Launchpad")
+      internal static let header = L10n.tr("Localizable", "LaunchDetails.Launchpad.header", fallback: "Launchpad")
+    }
+    internal enum Rocket {
       /// Rocket
-      internal static let rocket = L10n.tr("Localizable", "LaunchDetails.Header.rocket", fallback: "Rocket")
+      internal static let header = L10n.tr("Localizable", "LaunchDetails.Rocket.header", fallback: "Rocket")
+      internal enum Label {
+        /// Name
+        internal static let name = L10n.tr("Localizable", "LaunchDetails.Rocket.Label.name", fallback: "Name")
+      }
+    }
+  }
+  internal enum LaunchDetauls {
+    internal enum Rocket {
+      internal enum Label {
+        /// Full name
+        internal static let fullName = L10n.tr("Localizable", "LaunchDetauls.Rocket.Label.fullName", fallback: "Full name")
+      }
+    }
+  }
+  internal enum LaunchInfoView {
+    internal enum Date {
+      /// Unknown
+      internal static let unknown = L10n.tr("Localizable", "LaunchInfoView.Date.unknown", fallback: "Unknown")
+    }
+    internal enum Name {
+      /// Unknown
+      internal static let unknown = L10n.tr("Localizable", "LaunchInfoView.Name.unknown", fallback: "Unknown")
     }
   }
   internal enum LaunchPage {
