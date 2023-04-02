@@ -2,12 +2,14 @@ import Foundation
 
 // MARK: - TCMissionPatch
 
-public struct TCMissionPatch: Codable {
+// LaunchLibrary v2.2.0 Schema Name: MissionPatch
 
-    public let id: Int
-    public let name: String
-    public let priority: Int?
-    public let imageUrl: String
-    public let agency: TCAgency
+struct TCMissionPatch: Codable {
+
+    let id: Int
+    let name: String
+    let priority: Int?
+    let imageUrl: String
+    let agency: TCAgency
 
 }

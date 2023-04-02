@@ -9,9 +9,9 @@ public struct Launch: Hashable {
 //        id = launch.id
         url = launch.url
         slug = launch.slug
-        name = launch.name?.replacingOccurrences(of: " | ", with: "\n")
+        name = launch.name.replacingOccurrences(of: " | ", with: "\n")
         status = LaunchStatus(from: launch.status)
-        lastUpdated = launch.lastUpdated?.convertToDate()
+        lastUpdated = launch.lastUpdated.convertToDate()
         net = launch.net?.convertToDate()
         windowEnd = launch.windowEnd?.convertToDate()
         probability = launch.probability

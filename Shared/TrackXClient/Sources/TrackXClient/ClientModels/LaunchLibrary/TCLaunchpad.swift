@@ -2,6 +2,8 @@ import Foundation
 
 // MARK: - TCLaunchpad
 
+// LaunchLibrary v2.2.0 Schema Name: Pad
+
 public struct TCLaunchpad: Codable {
 
     public let id: Int

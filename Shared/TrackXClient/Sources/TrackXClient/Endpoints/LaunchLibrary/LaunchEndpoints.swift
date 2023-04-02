@@ -29,8 +29,8 @@ extension LaunchEndpoints: Endpoint {
             URLQueryItem(name: "search", value: "spacex"),
             URLQueryItem(name: "format", value: "json"),
             URLQueryItem(name: "limit", value: "3"),
-            URLQueryItem(name: "offset", value: "0")
-//            URLQueryItem(name: "mode", value: "detailed")
+            URLQueryItem(name: "offset", value: "0"),
+            URLQueryItem(name: "mode", value: "detailed")
         ]
     }
 

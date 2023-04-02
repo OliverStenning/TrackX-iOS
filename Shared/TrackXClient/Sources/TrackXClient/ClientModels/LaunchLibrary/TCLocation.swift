@@ -2,6 +2,8 @@ import Foundation
 
 // MARK: - TCLocation
 
+// LaunchLibrary v2.2.0 Schema Name:
+
 public struct TCLocation: Codable {
 
     public let id: Int

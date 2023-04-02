@@ -2,6 +2,8 @@ import Foundation
 
 // MARK: - TCMission
 
+// LaunchLibrary v2.2.0 Schema Name: Mission
+
 public struct TCMission: Codable {
 
     public let id: Int

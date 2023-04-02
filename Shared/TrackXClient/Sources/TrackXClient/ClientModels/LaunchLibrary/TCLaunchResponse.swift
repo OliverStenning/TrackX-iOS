@@ -2,11 +2,13 @@ import Foundation
 
 // MARK: - TCLaunchResponse
 
-public struct TCLaunchResponse: Codable {
+// LaunchLibrary v2.2.0 Schema Name:
 
-    public let count: Int
-    public let next: String?
-    public let previous: String?
-    public let results: [TCLaunch]
+struct TCLaunchResponse: Codable {
+
+    let count: Int
+    let next: String?
+    let previous: String?
+    let results: [TCLaunch]
 
 }

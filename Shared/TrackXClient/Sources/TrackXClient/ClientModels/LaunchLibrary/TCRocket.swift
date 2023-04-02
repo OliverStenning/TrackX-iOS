@@ -2,9 +2,13 @@ import Foundation
 
 // MARK: - TCRocket
 
-public struct TCRocket: Codable {
+// LaunchLibrary v2.2.0 Schema Name: RocketDetailed
 
-    public let id: Int
-    public let configuration: TCLauncherConfig
+struct TCRocket: Codable {
+
+    let id: Int
+    let configuration: TCLauncherConfig
+    let launcherStage: [TCFirstStage]
+    let spacecraftStage: TCSpacecraftStage?
 
 }

@@ -36,10 +36,19 @@ extension HTTPClient {
         case 200 ... 299:
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
-            guard let decodedResponse = try? decoder.decode(responseModel, from: data) else {
+
+            do {
+                let decodedResponse = try decoder.decode(responseModel, from: data)
+                return decodedResponse
+            } catch {
+                print(error)
                 throw RequestError.decode
             }
-            return decodedResponse
+
+//            guard let decodedResponse = try? decoder.decode(responseModel, from: data) else {
+//                throw RequestError.decode
+//            }
+//            return decodedResponse
         case 401:
             throw RequestError.unauthorized
         default:

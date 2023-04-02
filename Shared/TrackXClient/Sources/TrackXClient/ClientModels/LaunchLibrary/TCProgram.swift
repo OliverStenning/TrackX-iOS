@@ -2,18 +2,20 @@ import Foundation
 
 // MARK: - TCProgram
 
-public struct TCProgram: Codable {
+// LaunchLibrary v2.2.0 Schema Name: Program
 
-    public let id: Int
-    public let url: String
-    public let name: String
-    public let description: String?
-    public let agencies: [TCAgency]
-    public let imageUrl: String
-    public let startDate: String?
-    public let endDate: String?
-    public let infoUrl: String?
-    public let wikiUrl: String?
-    public let missionPatches: [TCMissionPatch]
+struct TCProgram: Codable {
+
+    let id: Int
+    let url: String
+    let name: String
+    let description: String?
+    let agencies: [TCAgency]
+    let imageUrl: String
+    let startDate: String?
+    let endDate: String?
+    let infoUrl: String?
+    let wikiUrl: String?
+    let missionPatches: [TCMissionPatch]
 
 }

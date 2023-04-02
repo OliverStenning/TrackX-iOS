@@ -136,8 +136,8 @@ extension LaunchDetailsViewController: UITableViewDelegate {
     private func sectionTitle(for section: LaunchDetailsSection) -> String? {
         switch section {
         case .launch: return nil
-        case .rocket: return L10n.LaunchDetails.Header.rocket
-        case .launchpad: return L10n.LaunchDetails.Header.launchpad
+        case .rocket: return L10n.LaunchDetails.Rocket.header
+        case .launchpad: return L10n.LaunchDetails.Launchpad.header
         }
     }
 
