@@ -6,7 +6,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene.ConnectionOptions) {
-        let navigationController = UINavigationController()
+        let navigationController = RKNavigationController()
         appCoordinator = AppCoordinator(navigationController: navigationController)
         appCoordinator?.start(animated: false)
 

@@ -23,23 +23,16 @@ public enum AppAppearance {
         ]
 
         let defaultNavBarAppearance = UINavigationBarAppearance()
-        defaultNavBarAppearance.configureWithDefaultBackground()
-        defaultNavBarAppearance.shadowColor = .separator
+        defaultNavBarAppearance.configureWithTransparentBackground()
+        defaultNavBarAppearance.shadowColor = .clear
         defaultNavBarAppearance.largeTitleTextAttributes = largeTitleTextAttributes
         defaultNavBarAppearance.titleTextAttributes = titleTextAttributes
-
-        let scrollEdgeNavBarAppearance = UINavigationBarAppearance()
-        scrollEdgeNavBarAppearance.configureWithOpaqueBackground()
-        scrollEdgeNavBarAppearance.backgroundColor = RKAssets.Colors.background1.color
-        scrollEdgeNavBarAppearance.shadowColor = .clear
-        scrollEdgeNavBarAppearance.largeTitleTextAttributes = largeTitleTextAttributes
-        scrollEdgeNavBarAppearance.titleTextAttributes = titleTextAttributes
 
         let navBarAppearance = UINavigationBar.appearance()
         navBarAppearance.standardAppearance = defaultNavBarAppearance
         navBarAppearance.compactAppearance = defaultNavBarAppearance
-        navBarAppearance.scrollEdgeAppearance = scrollEdgeNavBarAppearance
-        navBarAppearance.tintColor = RKAssets.Colors.accent3.color
+        navBarAppearance.scrollEdgeAppearance = defaultNavBarAppearance
+        navBarAppearance.tintColor = RKAssets.Colors.neutral1.color.darkOnly
         navBarAppearance.prefersLargeTitles = true
     }
 }

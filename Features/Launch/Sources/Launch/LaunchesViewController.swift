@@ -19,16 +19,6 @@ final class LaunchesViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -50,11 +40,14 @@ final class LaunchesViewController: UIViewController {
     private let loadingView = RKLoadingView()
     private let errorView = RKErrorView()
 
+    private var settingsButton: UIBarButtonItem?
     private var pages = [UIViewController]()
     private var cancellables = Set<AnyCancellable>()
 
     private func setup() {
         navigationItem.largeTitleDisplayMode = .never
+
+        setupNavBar()
         setupScrollView()
         setupPager()
         setupPagerControl()
@@ -63,6 +56,10 @@ final class LaunchesViewController: UIViewController {
         layout()
         bindViewModel()
         viewModel.loadLaunches()
+    }
+
+    private func setupNavBar() {
+        settingsButton = UIBarButtonItem(image: UIImage(systemSymbol: .gearshapeFill), style: .plain, target: self, action: #selector(didTapSettings))
     }
 
     private func setupScrollView() {
@@ -118,18 +115,22 @@ final class LaunchesViewController: UIViewController {
         case .loading:
             loadingView.isHidden = false
             errorView.isHidden = true
+            navigationItem.rightBarButtonItem = nil
             endRefreshing()
         case .refreshing:
             loadingView.isHidden = true
             errorView.isHidden = true
+            navigationItem.rightBarButtonItem = nil
             beginRefreshing()
         case .loaded:
             loadingView.isHidden = true
             errorView.isHidden = true
+            navigationItem.rightBarButtonItem = settingsButton
             endRefreshing()
         case .error:
             loadingView.isHidden = true
             errorView.isHidden = false
+            navigationItem.rightBarButtonItem = nil
             endRefreshing()
         }
     }
@@ -157,6 +158,10 @@ final class LaunchesViewController: UIViewController {
 
     @objc private func refreshLaunches() {
         viewModel.refreshLaunches()
+    }
+
+    @objc private func didTapSettings() {
+        // TODO: Settings menu
     }
 }
 
