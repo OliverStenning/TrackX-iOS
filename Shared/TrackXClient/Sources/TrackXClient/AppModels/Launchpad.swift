@@ -1,5 +1,7 @@
 import Foundation
 
+// MARK: - Launchpad
+
 public struct Launchpad: Hashable {
 
     // MARK: Lifecycle
