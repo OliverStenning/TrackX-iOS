@@ -4,14 +4,14 @@ import Foundation
 
 // LaunchLibrary v2.2.0 Schema Name:
 
-public struct TCLocation: Codable {
+struct TCLocation: Codable {
 
-    public let id: Int
-    public let url: String
-    public let name: String?
-    public let countryCode: String?
-    public let mapImage: String?
-    public let totalLaunchCount: Int?
-    public let totalLandingCount: Int?
+    let id: Int
+    let url: String
+    let name: String?
+    let countryCode: String?
+    let mapImage: String?
+    let totalLaunchCount: Int?
+    let totalLandingCount: Int?
 
 }

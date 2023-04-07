@@ -11,9 +11,25 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
   internal enum LaunchDetails {
+    internal enum Landing {
+      /// Landing Details
+      internal static let header = L10n.tr("Localizable", "LaunchDetails.Landing.header", fallback: "Landing Details")
+    }
+    internal enum Launchers {
+      /// Boosters
+      internal static let header = L10n.tr("Localizable", "LaunchDetails.Launchers.header", fallback: "Boosters")
+    }
     internal enum Launchpad {
       /// Launchpad
       internal static let header = L10n.tr("Localizable", "LaunchDetails.Launchpad.header", fallback: "Launchpad")
+    }
+    internal enum Location {
+      /// Locations
+      internal static let header = L10n.tr("Localizable", "LaunchDetails.Location.header", fallback: "Locations")
+    }
+    internal enum Mission {
+      /// Mission Details
+      internal static let header = L10n.tr("Localizable", "LaunchDetails.Mission.header", fallback: "Mission Details")
     }
     internal enum Rocket {
       /// Rocket

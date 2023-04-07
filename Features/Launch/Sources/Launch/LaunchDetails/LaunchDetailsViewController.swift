@@ -48,8 +48,24 @@ final class LaunchDetailsViewController: UIViewController {
             let cell: LaunchDetailsRocketCell = tableView.dequeueReusableCell(for: indexPath)
             cell.configure(viewModel: viewModel)
             return cell
+        case let .launchers(viewModel):
+            let cell: LaunchDetailsLaunchersCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.configure(viewModel: viewModel)
+            return cell
         case let .launchpad(viewModel):
             let cell: LaunchDetailsLaunchpadCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.configure(viewModel: viewModel)
+            return cell
+        case let .landing(viewModel):
+            let cell: LaunchDetailsLandingCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.configure(viewModel: viewModel)
+            return cell
+        case let .mission(viewModel):
+            let cell: LaunchDetailsMissionCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.configure(viewModel: viewModel)
+            return cell
+        case let .location(viewModel):
+            let cell: LaunchDetailsLocationCell = tableView.dequeueReusableCell(for: indexPath)
             cell.configure(viewModel: viewModel)
             return cell
         }
@@ -71,7 +87,11 @@ final class LaunchDetailsViewController: UIViewController {
     private func setupTableView() {
         tableView.register(LaunchDetailsLaunchCell.self)
         tableView.register(LaunchDetailsRocketCell.self)
+        tableView.register(LaunchDetailsLaunchersCell.self)
         tableView.register(LaunchDetailsLaunchpadCell.self)
+        tableView.register(LaunchDetailsLandingCell.self)
+        tableView.register(LaunchDetailsMissionCell.self)
+        tableView.register(LaunchDetailsLocationCell.self)
         tableView.register(RKLabelHeaderView.self)
         tableView.dataSource = dataSource
         tableView.delegate = self
@@ -107,8 +127,16 @@ final class LaunchDetailsViewController: UIViewController {
                 snapshot.appendItems([.launch(viewModel)], toSection: section)
             case let .rocket(viewModel):
                 snapshot.appendItems([.rocket(viewModel)], toSection: section)
+            case let .launchers(viewModel):
+                snapshot.appendItems([.launchers(viewModel)], toSection: section)
             case let .launchpad(viewModel):
                 snapshot.appendItems([.launchpad(viewModel)], toSection: section)
+            case let .landing(viewModel):
+                snapshot.appendItems([.landing(viewModel)], toSection: section)
+            case let .mission(viewModel):
+                snapshot.appendItems([.mission(viewModel)], toSection: section)
+            case let .location(viewModel):
+                snapshot.appendItems([.location(viewModel)], toSection: section)
             }
         }
         dataSource.apply(snapshot, animatingDifferences: false)
@@ -137,7 +165,11 @@ extension LaunchDetailsViewController: UITableViewDelegate {
         switch section {
         case .launch: return nil
         case .rocket: return L10n.LaunchDetails.Rocket.header
+        case .launchers: return L10n.LaunchDetails.Launchers.header
         case .launchpad: return L10n.LaunchDetails.Launchpad.header
+        case .landing: return L10n.LaunchDetails.Landing.header
+        case .mission: return L10n.LaunchDetails.Mission.header
+        case .location: return L10n.LaunchDetails.Location.header
         }
     }
 

@@ -4,11 +4,11 @@ import Foundation
 
 // LaunchLibrary v2.2.0 Schema Name: LaunchStatus
 
-public struct TCLaunchStatus: Codable {
+struct TCLaunchStatus: Codable {
 
-    public let id: Int
-    public let name: String
-    public let abbrev: String?
-    public let description: String?
+    let id: Int
+    let name: String
+    let abbrev: String?
+    let description: String?
 
 }

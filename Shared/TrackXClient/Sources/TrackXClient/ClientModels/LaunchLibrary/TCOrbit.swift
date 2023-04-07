@@ -4,10 +4,10 @@ import Foundation
 
 // LaunchLibrary v2.2.0 Schema Name:
 
-public struct TCOrbit: Codable {
+struct TCOrbit: Codable {
 
-    public let id: Int
-    public let name: String
-    public let abbrev: String
+    let id: Int
+    let name: String
+    let abbrev: String
 
 }

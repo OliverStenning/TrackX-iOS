@@ -17,7 +17,12 @@
 "LaunchDetails.Rocket.Label.name" = "Name";
 "LaunchDetauls.Rocket.Label.fullName" = "Full name";
 
+"LaunchDetails.Launchers.header" = "Boosters";
 
 "LaunchDetails.Launchpad.header" = "Launchpad";
 
+"LaunchDetails.Landing.header" = "Landing Details";
 
+"LaunchDetails.Mission.header" = "Mission Details";
+
+"LaunchDetails.Location.header" = "Locations";

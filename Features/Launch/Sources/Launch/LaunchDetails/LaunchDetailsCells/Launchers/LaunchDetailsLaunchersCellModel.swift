@@ -1,8 +1,17 @@
-//
-//  File.swift
-//  
-//
-//  Created by Oliver Stenning on 07/04/2023.
-//
-
 import Foundation
+import TrackXClient
+
+// MARK: - LaunchDetailsLaunchersCellModel
+
+struct LaunchDetailsLaunchersCellModel: Hashable {
+
+    // MARK: Lifecycle
+
+    public init(launchers: [Launcher]) {
+        self.launchers = launchers
+    }
+
+    // MARK: Private
+
+    private let launchers: [Launcher]
+}

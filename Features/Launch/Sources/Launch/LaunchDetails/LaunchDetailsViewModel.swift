@@ -7,7 +7,11 @@ import TrackXClient
 enum LaunchDetailsSection: Hashable {
     case launch(LaunchDetailsLaunchCellModel)
     case rocket(LaunchDetailsRocketCellModel)
+    case launchers(LaunchDetailsLaunchersCellModel)
     case launchpad(LaunchDetailsLaunchpadCellModel)
+    case landing(LaunchDetailsLandingCellModel)
+    case mission(LaunchDetailsMissionCellModel)
+    case location(LaunchDetailsLocationCellModel)
 }
 
 // MARK: - LaunchDetailsCellType
@@ -15,7 +19,11 @@ enum LaunchDetailsSection: Hashable {
 enum LaunchDetailsCellType: Hashable {
     case launch(LaunchDetailsLaunchCellModel)
     case rocket(LaunchDetailsRocketCellModel)
+    case launchers(LaunchDetailsLaunchersCellModel)
     case launchpad(LaunchDetailsLaunchpadCellModel)
+    case landing(LaunchDetailsLandingCellModel)
+    case mission(LaunchDetailsMissionCellModel)
+    case location(LaunchDetailsLocationCellModel)
 }
 
 // MARK: - LaunchDetailsViewModel
