@@ -1,12 +1,19 @@
 import Foundation
 import RaptorKit
 import TrackXClient
+import Utilities
 
-enum SetupManager {
+final class SetupManager {
+
+    // MARK: Lifecycle
+
+    init(persistence: PersistenceManaging = PersistenceManager.shared) {
+        self.persistence = persistence
+    }
 
     // MARK: Internal
 
-    static func setup() {
+    func setup() {
         print("Current configuration: \(BuildConfiguration.shared.environment)")
         setupAppAppearance()
         setupFirstLaunch()
@@ -15,15 +22,23 @@ enum SetupManager {
 
     // MARK: Private
 
-    private static func setupAppAppearance() {
+    private let persistence: PersistenceManaging
+
+    private func setupAppAppearance() {
         AppAppearance.setup()
     }
 
-    private static func setupFirstLaunch() {
-        // TODO: Store first launch in UserDefaults
+    private func setupFirstLaunch() {
+        if persistence.date(forKey: .firstAppLaunchDate) == nil {
+            persistence.setDate(Date(), forKey: .firstAppLaunchDate)
+        }
+        persistence.incrementInteger(forKey: .numberOfAppLaunches)
+
+        print("Number of app launches: \(persistence.integer(forKey: .numberOfAppLaunches))")
+        print("First app launch date: \(String(describing: persistence.date(forKey: .firstAppLaunchDate)))")
     }
 
-    private static func setupNetworking() {
+    private func setupNetworking() {
         TrackXClient.setup(with: BuildConfiguration.shared.config)
     }
 

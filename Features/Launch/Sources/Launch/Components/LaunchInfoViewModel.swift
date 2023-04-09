@@ -35,7 +35,7 @@ struct LaunchInfoViewModel: Hashable {
     }
 
     var nameText: String {
-        launch.name ?? L10n.LaunchInfoView.Name.unknown
+        launch.name
     }
 
     var nameColor: UIColor {
